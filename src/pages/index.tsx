@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import { useState } from "react";
 import { Transition } from "@headlessui/react";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
-import imageSlide1 from "public/slider-image01.jpg";
+import { RxDotFilled } from "react-icons/rx";
 
 export default function Home() {
   const [sliderValue, setSliderValue] = useState("0");
@@ -18,20 +18,29 @@ export default function Home() {
     setIsOpen(!isOpen);
   };
 
+  const goToSlide = (slideIndex) => {
+    setCurrentIndex(slideIndex);
+  };
+
   const slides = [
     {
       url: "https://bellroy-cms-images.imgix.net/3954/slider-image01.jpg",
+      text: "Made from premium, enviormentally certified leather, that only gets better with age..."
     },
     {
       url: "https://bellroy-cms-images.imgix.net/4413/slider-image02.jpg",
+      text: "and fewer of leather, to eliminate bulk from the start..."
     },
     {
       url: "https://bellroy-cms-images.imgix.net/4414/slider-image03.jpg",
+      text: "their clever design features help keep them slim, even when they're full…"
     },
     {
       url: "https://bellroy-cms-images.imgix.net/4425/slider-image04.jpg",
+      text: "so they'll be with you from Day One to Day 1000, and beyond."
     },
   ];
+
 
   const [currentIndex, setCurrentIndex] = useState(1);
 
@@ -46,7 +55,7 @@ export default function Home() {
     const newIndex = isLastslide ? 0 : currentIndex + 1;
     setCurrentIndex(newIndex);
   };
-  
+
   let textValue;
   if (sliderValue === "9") {
     textValue = "Plus Cash";
@@ -313,16 +322,34 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="relative flex justify-center bg-gray-200">
+      <div className="relative flex flex-col py-28 justify-center bg-gray-100 items-center">
         <div
           style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
-          className="w-[582px] h-[462px] duration-500 text-9xl bg-no-repeat"
-        ></div>
-        <div className="absolute top=[50%] -translate-x-0 translate-y-[350%]  left-2 text-2xl rounded-full p-2 text-white cursor-pointer">
+          className="bg-cover w-[365px] h-[280px] duration-500 bg-no-repeat flex q"
+        >
+        </div>
+        <div className="absolute top-[50%] -translate-x-0 translate-y-[-10%]  left-2 text-2xl rounded-full p-2 text-gray-300 cursor-pointer">
           <BsChevronCompactLeft onClick={prevSlide} size="40" />
         </div>
-        <div className="absolute top=[50%] -translate-x-0 translate-y-[350%] right-2 text-2xl rounded-full p-2 text-white cursor-pointer">
+        <div className="absolute top-[50%] -translate-x-0 translate-y-[-20%] right-1 text-2xl rounded-full p-2 text-gray-300 cursor-pointer">
           <BsChevronCompactRight onClick={nextSlide} size="40" />
+        </div>
+          <div
+            className="flex flex-col bottom-4 items-center text-xs">
+              <div className="bg-white w-[365px] h-[94px] flex flex-col text-center justify-center p-4">
+                {`${slides[currentIndex].text}`}
+              </div>
+          </div>            
+        <div className="flex absolute justify-center bottom-4 items-center">
+          {slides.map((slide, slideIndex) => (
+            <div
+              key={slideIndex}
+              onClick={() => goToSlide(slideIndex)}
+              className="text-2xl cursor-pointer"
+            >
+              <RxDotFilled />
+            </div>
+          ))}
         </div>
       </div>
 
