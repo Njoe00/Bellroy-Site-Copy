@@ -328,10 +328,10 @@ export default function Home() {
           className="bg-cover w-[365px] h-[280px] duration-500 bg-no-repeat flex q"
         >
         </div>
-        <div className="absolute top-[50%] -translate-x-0 translate-y-[-10%]  left-2 text-2xl rounded-full p-2 text-gray-300 cursor-pointer">
+        <div className="absolute top-[50%] -translate-x-[-675px] translate-y-[-10%] left-2 text-2xl rounded-full p-2 text-gray-300 cursor-pointer">
           <BsChevronCompactLeft onClick={prevSlide} size="40" />
         </div>
-        <div className="absolute top-[50%] -translate-x-0 translate-y-[-20%] right-1 text-2xl rounded-full p-2 text-gray-300 cursor-pointer">
+        <div className="absolute top-[50%] -translate-x-[675px] translate-y-[-20%] right-1 text-2xl rounded-full p-2 text-gray-300 cursor-pointer">
           <BsChevronCompactRight onClick={nextSlide} size="40" />
         </div>
           <div
