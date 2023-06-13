@@ -48,25 +48,86 @@ export default function Home() {
     {
       text: "Bags",
     },
+
     {
       text: "Wallets",
     },
     {
       text: "Accessories",
     },
-    { 
-      text: "Tech" 
+    {
+      text: "Tech",
     },
-    { 
-      text: "Travel" 
+    {
+      text: "Travel",
     },
-    { 
-    text: "Collections" 
+    {
+      text: "Collections",
     },
-    { 
-    text: "About Us" 
+    {
+      text: "About Us",
     },
   ];
+
+  const headerSubSectionsContentBags = [
+    {
+      text: "Men's Bag's",
+      image: "/Men's_Bags.avif",
+    },
+    {
+      text: "Woman's Bags",
+      image: "/Womens_Bags.avif"
+    },
+    {
+      text: "Backpacks",
+      image: "/Backpacks.avif",
+    },
+    {
+      text: "Slings & Crossbody Bags",
+      image: "/Crossbody.avif",
+    },
+    {
+      text: "Totes & Shoulder Bags",
+      image: "/Totes.avif",
+    },
+    {
+      text: "Market & Cooler Bags",
+      image: "/nav-icon-cooler-bags.avif",
+    },
+    {
+      text: "Work Bags",
+      image: "/Workbags.avif",
+    },
+    {
+      text: "Travel Bags",
+      image: "/Travel_Bags.avif",
+    },
+  ];
+
+  const headerSubSectionsContentWallets = [
+    {
+      text: "Billfold's",
+      image: "/Billfolds.avif",
+    },
+    {
+      text: "Card Holders",
+      image: "/Card_Holders.avif"
+    },
+    {
+      text: "Zip Wallets",
+      image: "/Zip_Wallets.avif",
+    },
+    {
+      text: "Passport Holders",
+      image: "/Passport_Holders_.avif",
+    },
+    {
+      text: "RFID Protected",
+      image: "/RFID.avif",
+    },
+    
+  ];
+
 
   const [currentIndex, setCurrentIndex] = useState(1);
 
@@ -144,104 +205,21 @@ export default function Home() {
         leaveTo="opacity-100 -translate-y-36"
       >
         <ul className="absolute w-screen bg-white flex flex-row text-gray-500 justify-start pb-8 pl-32 text-sm">
-          <li className="flex items-center flex-col px-6">
-            <Image
-              src="/Men's_Bags.avif"
+
+          {headerSubSectionsContentBags.map((content, i) => (
+            <li className="flex items-center flex-col px-6">
+              <Image
+              src={content.image}
               width={75}
               height={75}
               alt="Mens Bags"
             />
-            <a href="#" className=" hover:text-orange-600">
-              Men's Bags
-            </a>
-          </li>
-          <li className="flex items-center flex-col px-6">
-            <Image
-              src="/Womens_Bags.avif"
-              width={75}
-              height={75}
-              alt="Mens Bags"
-            />
-            <a href="/#" className="hover:text-orange-600">
-              Woman's Bags
-            </a>
-          </li>
-          <li className="flex items-center flex-col px-6 ">
-            <Image
-              src="/Backpacks.avif"
-              width={75}
-              height={75}
-              alt="Mens Bags"
-            />
-            <a href="/#" className="hover:text-orange-600">
-              Backpacks
-            </a>
-          </li>
-          <li className="flex items-center flex-col px-6">
-            <Image
-              src="/Crossbody.avif"
-              width={75}
-              height={75}
-              alt="Mens Bags"
-            />
-            <a href="/#" className="hover:text-orange-600 text-center">
-              Slings & Crossbody <br />
-              Bags
-            </a>
-          </li>
-          <li className="flex items-center flex-col px-6">
-            <Image src="/Totes.avif" width={75} height={75} alt="Mens Bags" />
-            <a href="/#" className="hover:text-orange-600 text-center">
-              Totes & Shoulder <br />
-              Bags
-            </a>
-          </li>
-          <li className="flex items-center flex-col px-6">
-            <Image
-              src="/nav-icon-cooler-bags.avif"
-              width={75}
-              height={75}
-              alt="Mens Bags"
-            />
-            <a href="/#" className="hover:text-orange-600 text-center">
-              Market & Cooler <br />
-              Bags
-            </a>
-          </li>
-          <li className="flex items-center flex-col px-6">
-            <Image
-              src="/Workbags.avif"
-              width={75}
-              height={75}
-              alt="Mens Bags"
-            />
-            <a href="/#" className="hover:text-orange-600">
-              Work Bags
-            </a>
-          </li>
-          <li className="flex items-center flex-col px-6">
-            <Image
-              src="/Travel_Bags.avif"
-              width={75}
-              height={75}
-              alt="Mens Bags"
-            />
-            <a href="/#" className="hover:text-orange-600">
-              Duffel Bags
-            </a>
-          </li>
-          <li className="flex items-center flex-col px-6 space-y-8">
-            <Image
-              className="flex relative top-5"
-              src="/add.png"
-              width={40}
-              height={40}
-              alt="Mens Bags"
-            />
-            <a href="/#" className="hover:text-orange-600">
-              All Bags
-            </a>
-          </li>
+              <a href="#" className=" hover:text-orange-600">
+                {content.text}
+              </a>
+            </li>
+          ))}
+
         </ul>
       </Transition>
       <div className="h-screen bg-background-main">
