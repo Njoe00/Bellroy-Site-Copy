@@ -44,6 +44,30 @@ export default function Home() {
     },
   ];
 
+  const headerSubSections = [
+    {
+      text: "Bags",
+    },
+    {
+      text: "Wallets",
+    },
+    {
+      text: "Accessories",
+    },
+    { 
+      text: "Tech" 
+    },
+    { 
+      text: "Travel" 
+    },
+    { 
+    text: "Collections" 
+    },
+    { 
+    text: "About Us" 
+    },
+  ];
+
   const [currentIndex, setCurrentIndex] = useState(1);
 
   const prevSlide = () => {
@@ -85,24 +109,11 @@ export default function Home() {
             </button>
           </div>
         </div>
-        <a href="/#" className="hover:text-orange-600">
-          Wallets
-        </a>
-        <a href="/#" className="hover:text-orange-600">
-          Accessories
-        </a>
-        <a href="/#" className="hover:text-orange-600">
-          Tech
-        </a>
-        <a href="/#" className="hover:text-orange-600">
-          Travel
-        </a>
-        <a href="/#" className="hover:text-orange-600">
-          Collections
-        </a>
-        <a href="/#" className="hover:text-orange-600">
-          About Us
-        </a>
+        {headerSubSections.map((section, index) => (
+          <a href="/#" className="hover:text-orange-600">
+            {section.text}
+          </a>
+        ))}
         <div className="gap-2 font-normal space-x-4 text-xs flex justify-end text-gray-500 p-2">
           <a href="/#">Help</a>
           <a href="/#">Find In-Store</a>
@@ -328,7 +339,9 @@ export default function Home() {
         <div className="flex flex-row space-x-4 drop-shadow-lg">
           <div>
             <div
-              style={{ backgroundImage: `url(${slidesSetOne[currentIndex].url})` }}
+              style={{
+                backgroundImage: `url(${slidesSetOne[currentIndex].url})`,
+              }}
               className="bg-cover w-[365px] h-[280px] duration-500 bg-no-repeat flex q"
             ></div>
             <div className="flex flex-col bottom-4 items-center text-xs">
@@ -339,7 +352,9 @@ export default function Home() {
           </div>
           <div>
             <div
-              style={{ backgroundImage: `url(${slidesSlidesSetTwo[currentIndex].url})` }}
+              style={{
+                backgroundImage: `url(${slidesSlidesSetTwo[currentIndex].url})`,
+              }}
               className="bg-cover w-[365px] h-[280px] duration-500 bg-no-repeat flex q"
             ></div>
             <div className="flex flex-col bottom-4 items-center text-xs">
