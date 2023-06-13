@@ -48,7 +48,6 @@ export default function Home() {
     {
       text: "Bags",
     },
-
     {
       text: "Wallets",
     },
@@ -128,7 +127,6 @@ export default function Home() {
     
   ];
 
-
   const [currentIndex, setCurrentIndex] = useState(1);
 
   const prevSlide = () => {
@@ -162,19 +160,18 @@ export default function Home() {
         <div className="gap-2 font-normal space-x-14 items-center flex">
           <Image src="/../public/logo.png" width={120} height={1} alt="test" />
           <div className="dropdown relative w-max">
+            {headerSubSections.map((section, i) => (
             <button
               className="text-sm px-4 py-2.5 text-center inline-flex items-center hover:text-orange-600"
               onClick={handleDropDown}
             >
-              Bags
+              {section.text}
             </button>
-          </div>
-        </div>
-        {headerSubSections.map((section, index) => (
-          <a href="/#" className="hover:text-orange-600">
-            {section.text}
-          </a>
         ))}
+          </div>
+      </div>
+         
+       
         <div className="gap-2 font-normal space-x-4 text-xs flex justify-end text-gray-500 p-2">
           <a href="/#">Help</a>
           <a href="/#">Find In-Store</a>
@@ -206,7 +203,7 @@ export default function Home() {
       >
         <ul className="absolute w-screen bg-white flex flex-row text-gray-500 justify-start pb-8 pl-32 text-sm">
 
-          {headerSubSectionsContentBags.map((content, i) => (
+          {headerSubSectionsContentWallets.map((content, i) => (
             <li className="flex items-center flex-col px-6">
               <Image
               src={content.image}
