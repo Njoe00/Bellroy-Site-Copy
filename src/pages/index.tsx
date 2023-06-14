@@ -75,7 +75,7 @@ export default function Home() {
     },
     {
       text: "Woman's Bags",
-      image: "/Womens_Bags.avif"
+      image: "/Womens_Bags.avif",
     },
     {
       text: "Backpacks",
@@ -110,7 +110,7 @@ export default function Home() {
     },
     {
       text: "Card Holders",
-      image: "/Card_Holders.avif"
+      image: "/Card_Holders.avif",
     },
     {
       text: "Zip Wallets",
@@ -124,8 +124,23 @@ export default function Home() {
       text: "RFID Protected",
       image: "/RFID.avif",
     },
-    
   ];
+
+
+  const whyDoYouCarryContent = [
+    {
+      text: "Cards only",
+      image: "/icon-inactive-card-sleeve.jpg",
+    },
+    {
+      text: "Cards and bills",
+      image: "/icon-inactive-note-sleeve.jpg",
+    },
+    {
+      text: "Cards, bills and coins",
+      image: "/icon-inactive-folio.jpg",
+    }
+  ]
 
   const [currentIndex, setCurrentIndex] = useState(1);
 
@@ -161,17 +176,16 @@ export default function Home() {
           <Image src="/../public/logo.png" width={120} height={1} alt="test" />
           <div className="dropdown relative w-max">
             {headerSubSections.map((section, i) => (
-            <button
-              className="text-sm px-4 py-2.5 text-center inline-flex items-center hover:text-orange-600"
-              onClick={handleDropDown}
-            >
-              {section.text}
-            </button>
-        ))}
+              <button
+                className="text-sm px-4 py-2.5 text-center inline-flex items-center hover:text-orange-600"
+                onClick={handleDropDown}
+              >
+                {section.text}
+              </button>
+            ))}
           </div>
-      </div>
-         
-       
+        </div>
+
         <div className="gap-2 font-normal space-x-4 text-xs flex justify-end text-gray-500 p-2">
           <a href="/#">Help</a>
           <a href="/#">Find In-Store</a>
@@ -202,21 +216,19 @@ export default function Home() {
         leaveTo="opacity-100 -translate-y-36"
       >
         <ul className="absolute w-screen bg-white flex flex-row text-gray-500 justify-start pb-8 pl-32 text-sm">
-
           {headerSubSectionsContentWallets.map((content, i) => (
             <li className="flex items-center flex-col px-6">
               <Image
-              src={content.image}
-              width={75}
-              height={75}
-              alt="Mens Bags"
-            />
+                src={content.image}
+                width={75}
+                height={75}
+                alt="Mens Bags"
+              />
               <a href="#" className=" hover:text-orange-600">
                 {content.text}
               </a>
             </li>
           ))}
-
         </ul>
       </Transition>
       <div className="h-screen bg-background-main">
@@ -358,93 +370,41 @@ export default function Home() {
           ))}
         </div>
       </div>
-
-      {/* {slidePicture ? (
-        <div className="flex justify-center flex-row bg-gray-200 p-32 space-x-6">
-          <Transition
-            show={true}
-            className="relative flex divide-y divide-white-100 drop-shadow-lg z-0"
-            enter="transform transition ease-in-out duration-300"
-            enterFrom="opacity-100 -translate-x-36"
-            enterTo="opacity-100 translate-x-0"
-            leave="transform transition ease-in-out duration-300"
-            leaveFrom="opacity-100 translate-y-0"
-            leaveTo="opacity-100 -translate-x-36"
-          >
-            <div className="flex flex-col justify-center items-center bg-gray-200 ">
-              <Image
-                src="/slider-image01.jpg"
-                width={500}
-                height={500}
-                alt="Wallet Holder"
-              />
-              <p className="p-8 text-center w-full text-sm bg-white drop-shadow-lg">
-                Made from premium, environmentally certified leather,
-                <br />
-                that only gets better with age...
-              </p>
-            </div>
-            <div className="flex flex-col justify-center items-center bg-gray-200 ">
-              <Image
-                src="/slider-image02.jpg"
-                width={500}
-                height={500}
-                alt="Wallet Holder"
-              />
-              <p className="p-8 text-center w-full text-sm bg-white drop-shadow-lg">
-                and fewer layers of leather, to eliminate bulk from <br />
-                start...
-              </p>
-            </div>
-            <div
-              className="absolute text-7xl text-white cursor-pointer right-2 duration-500"
-              onClick={handleSlide}
-            >
-              <BsChevronCompactRight />
-            </div>
-          </Transition>
+      <div className="bg-white flex flex-col items-center p-40">
+        <div className="flex">
+          <a className="text-lg">Why do you carry in your wallet?</a>
         </div>
-      ) : (
-        <div className="flex justify-center flex-row bg-gray-200 p-32 space-x-6">
-          <div
-            className="absolute text-7xl p-2 left-5 text-white cursor-pointer duration-500"
-            onClick={handleSlide}
-          >
-            <BsChevronCompactLeft />
-          </div>
-          <div className="flex flex-col justify-center items-center bg-gray-200 ">
+        <div className="flex flex-row space-x-36 py-16">
+          {whyDoYouCarryContent.map((content, i) => (
             <Image
-              src="/slider-image03.jpg"
-              width={500}
-              height={500}
-              alt="Wallet Holder"
+              src={content.image}
+              height={100}
+              width={100}
+              alt="wallet"
             />
-            <p className="p-8 text-center w-full text-sm bg-white drop-shadow-lg">
-              their clever design features help keep them slim, even <br /> when
-              they're full…
-            </p>
-          </div>
-          <div className="flex flex-col justify-center items-center bg-gray-200 ">
-            <Image
-              src="/slider-image04.jpg"
-              width={500}
-              height={500}
-              alt="Wallet Holder"
-            />
-            <p className="p-8 text-center w-full text-sm bg-white drop-shadow-lg">
-              so they'll be with you from Day One to Day 1000, and <br />{" "}
-              beyond.
-            </p>
-          </div>
+          
+          ))}
+          {/* <Image
+            src="/icon-inactive-card-sleeve.jpg"
+            height={100}
+            width={100}
+            alt="wallet 1"
+          ></Image>
+          <Image
+            src="/icon-inactive-folio.jpg"
+            height={100}
+            width={100}
+            alt="wallet 1"
+          ></Image>
+          <Image
+            src="/icon-inactive-note-sleeve.jpg"
+            height={100}
+            width={100}
+            alt="wallet 1"
+          ></Image> */}
         </div>
-      )} */}
-
-      {/* <div className="absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
-        <BsChevronCompactRight />
-      </div> */}
-      {/* <div className="absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
-        <BsChevronCompactLeft />
-      </div> */}
+        <div></div>
+      </div>
     </header>
   );
 }
