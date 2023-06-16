@@ -9,6 +9,7 @@ export default function Home() {
   const [sliderValue, setSliderValue] = useState("0");
   const [isOpen, setIsOpen] = useState(false);
   const [slidePicture, setsliderPicture] = useState(false);
+  const [imagesToShow, setImagesToShow] = useState("");
 
   const handleSlide = () => {
     setsliderPicture(!slidePicture);
@@ -68,6 +69,20 @@ export default function Home() {
     },
   ];
 
+  const renderImage = (imagesToShow, whyDoYouCarryContent) => {
+
+
+    if (imagesToShow === "Cards only") {
+      return whyDoYouCarryContent[0].card;
+    } else if (imagesToShow === "Cards and bills") {
+      return whyDoYouCarryContent[1].cardBill;
+    } else if (imagesToShow === "Cards, bills and coins") {
+      return whyDoYouCarryContent[2].cardBillCoin;  
+    }
+  };
+
+
+
   const headerSubSectionsContentBags = [
     {
       text: "Men's Bag's",
@@ -126,21 +141,23 @@ export default function Home() {
     },
   ];
 
-
   const whyDoYouCarryContent = [
     {
       text: "Cards only",
       image: "/icon-inactive-card-sleeve.jpg",
+      card: "/icon-active-note-sleeve.jpg",
     },
     {
       text: "Cards and bills",
       image: "/icon-inactive-note-sleeve.jpg",
+      cardBill: "/icon-active-note-sleeve.jpg",
     },
     {
       text: "Cards, bills and coins",
       image: "/icon-inactive-folio.jpg",
-    }
-  ]
+      cardBillCoin: "/icon-active-note-sleeve.jpg",
+    },
+  ];
 
   const [currentIndex, setCurrentIndex] = useState(1);
 
@@ -374,36 +391,37 @@ export default function Home() {
         <div className="flex">
           <a className="text-lg">Why do you carry in your wallet?</a>
         </div>
-        <div className="flex flex-row space-x-36 py-16">
-          {whyDoYouCarryContent.map((content, i) => (
-            <Image
-              src={content.image}
-              height={100}
-              width={100}
-              alt="wallet"
-            />
-          
-          ))}
-          {/* <Image
-            src="/icon-inactive-card-sleeve.jpg"
-            height={100}
-            width={100}
-            alt="wallet 1"
-          ></Image>
-          <Image
-            src="/icon-inactive-folio.jpg"
-            height={100}
-            width={100}
-            alt="wallet 1"
-          ></Image>
-          <Image
-            src="/icon-inactive-note-sleeve.jpg"
-            height={100}
-            width={100}
-            alt="wallet 1"
-          ></Image> */}
-        </div>
         <div></div>
+        <div className="flex flex-row">
+          {whyDoYouCarryContent.map((content, i) => (
+            <div className="flex flex-col space-x-36 py-16 items-center justify-center">
+              <li className="flex items-center flex-col px-16">
+                {imagesToShow! ? (
+                  <Image
+                    src={content.image}
+                    width={75}
+                    height={75}
+                    alt="Mens Bags"
+                  />
+                ) : (
+                  <Image
+                    src={renderImage(imagesToShow, whyDoYouCarryContent)}
+                    width={75}
+                    height={75}
+                    alt="Men's Bags"
+                  />
+                )}
+                <button
+                  className=" hover:text-orange-600 text-sm"
+                  onClick={() => setImagesToShow(content.text)}
+                >
+                  {content.text}
+                </button>
+               
+              </li>
+            </div>
+          ))}
+        </div>
       </div>
     </header>
   );
