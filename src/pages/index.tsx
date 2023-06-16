@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Transition } from "@headlessui/react";
-import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
+import { BsChevronCompactLeft, BsChevronCompactRight, BsChevronCompactDown} from "react-icons/bs";
 import { RxDotFilled } from "react-icons/rx";
 
 export default function Home() {
@@ -27,12 +27,10 @@ export default function Home() {
     {
       url: "https://bellroy-cms-images.imgix.net/3954/slider-image01.jpg",
       text: "Made from premium, enviormentally certified leather, that only gets better with age...",
-      id: 1112,
     },
     {
       url: "https://bellroy-cms-images.imgix.net/4413/slider-image02.jpg",
       text: "and fewer of leather, to eliminate bulk from the start...",
-      id: 1113,
     },
   ];
 
@@ -40,96 +38,69 @@ export default function Home() {
     {
       url: "https://bellroy-cms-images.imgix.net/4414/slider-image03.jpg",
       text: "their clever design features help keep them slim, even when they're full…",
-      id: 1114,
     },
     {
       url: "https://bellroy-cms-images.imgix.net/4425/slider-image04.jpg",
       text: "so they'll be with you from Day One to Day 1000, and beyond.",
-      id: 1115,
     },
   ];
 
   const headerSubSections = [
     {
       text: "Bags",
-      id: 111,
     },
     {
       text: "Wallets",
-      id: 222,
     },
     {
       text: "Accessories",
-      id: 333,
     },
     {
       text: "Tech",
-      id: 444,
     },
     {
       text: "Travel",
-      id: 555,
     },
     {
       text: "Collections",
-      id: 666,
     },
     {
       text: "About Us",
-      id: 777,
     },
   ];
-
-  const renderImage = (imagesToShow, whyDoYouCarryContent) => {
-    if (imagesToShow === "Cards only") {
-      return whyDoYouCarryContent[0].card;
-    } else if (imagesToShow === "Cards and bills") {
-      return whyDoYouCarryContent[1].cardBill;
-    } else if (imagesToShow === "Cards, bills and coins") {
-      return whyDoYouCarryContent[2].cardBillCoin;
-    }
-  };
 
   const headerSubSectionsContentBags = [
     {
       text: "Men's Bag's",
       image: "/Men's_Bags.avif",
-      id: 1010,
     },
     {
       text: "Woman's Bags",
       image: "/Womens_Bags.avif",
-      id: 1011,
     },
     {
       text: "Backpacks",
       image: "/Backpacks.avif",
-      id: 1012,
     },
     {
       text: "Slings & Crossbody Bags",
       image: "/Crossbody.avif",
-      id: 1013,
     },
     {
       text: "Totes & Shoulder Bags",
       image: "/Totes.avif",
-      id: 1014,
     },
     {
       text: "Market & Cooler Bags",
       image: "/nav-icon-cooler-bags.avif",
-      id: 1015,
     },
     {
       text: "Work Bags",
       image: "/Workbags.avif",
-      id: 1016,
     },
     {
       text: "Travel Bags",
       image: "/Travel_Bags.avif",
-      id: 1017,
     },
   ];
 
@@ -137,51 +108,40 @@ export default function Home() {
     {
       text: "Billfold's",
       image: "/Billfolds.avif",
-      id: 101,
     },
     {
       text: "Card Holders",
       image: "/Card_Holders.avif",
-      id: 111,
     },
     {
       text: "Zip Wallets",
       image: "/Zip_Wallets.avif",
-      id: 121,
     },
     {
       text: "Passport Holders",
       image: "/Passport_Holders_.avif",
-      id: 131,
     },
     {
       text: "RFID Protected",
       image: "/RFID.avif",
-      id: 141,
     },
   ];
 
   const whyDoYouCarryContent = [
     {
       text: "Cards only",
-      image: "/icon-inactive-card-sleeve.jpg",
-      card: "/icon-active-note-sleeve.jpg",
-      id: 12341,
-      id2: 12411,
+      inactiveImage: "/icon-inactive-card-sleeve.jpg",
+      activeImage: "/icon-active-note-sleeve.jpg",
     },
     {
       text: "Cards and bills",
-      image: "/icon-inactive-note-sleeve.jpg",
-      cardBill: "/icon-active-note-sleeve.jpg",
-      id: 12342,
-      id2: 12412,
+      inactiveImage: "/icon-inactive-card-sleeve.jpg",
+      activeImage: "/icon-active-note-sleeve.jpg",
     },
     {
       text: "Cards, bills and coins",
-      image: "/icon-inactive-folio.jpg",
-      cardBillCoin: "/icon-active-note-sleeve.jpg",
-      id: 12343,
-      id2: 12413,
+      inactiveImage: "/icon-inactive-folio.jpg",
+      activeImage: "/icon-active-note-sleeve.jpg",
     },
   ];
 
@@ -213,11 +173,10 @@ export default function Home() {
       <span className="place-content-end p-1 text-xs right-6 absolute text-gray-500 font-normal">
         Free shipping available 🇨🇦
       </span>
-
       <div className="bg-white p-5 flex relative gap-2 font-normal space-x-10 text-sm items-center h-28 z-10">
         <div className="gap-2 font-normal space-x-14 items-center flex">
           <Image
-            src="/../public/logo.png"
+            src="/public/logo.png"
             width={120}
             height={120}
             alt="test"
@@ -228,7 +187,7 @@ export default function Home() {
               <button
                 className="text-sm px-4 py-2.5 text-center inline-flex items-center hover:text-orange-600"
                 onClick={handleDropDown}
-                key={section.id}
+                key={i}
               >
                 {section.text}
               </button>
@@ -280,16 +239,15 @@ export default function Home() {
       >
         <ul className="absolute w-screen bg-white flex flex-row text-gray-500 justify-start pb-8 pl-32 text-sm">
           {headerSubSectionsContentWallets.map((content, i) => (
-            <li className="flex items-center flex-col px-6">
+            <li className="flex items-center flex-col px-6" key={i}>
               <Image
                 src={content.image}
                 width={75}
                 height={75}
                 alt="Mens Bags"
-                key={i}
                 style={{ height: "100%", width: "auto" }}
               />
-              <a href="#" className=" hover:text-orange-600" key={content.id}>
+              <a href="#" className=" hover:text-orange-600">
                 {content.text}
               </a>
             </li>
@@ -440,11 +398,11 @@ export default function Home() {
         <div className="flex absolute justify-center bottom-4 items-center">
           {slidesSetOne.map((slide, slideIndex) => (
             <div
-              key={slide.id}
+              key={slideIndex}
               onClick={() => goToSlide(slideIndex)}
               className="text-2xl cursor-pointer"
             >
-              <RxDotFilled key={slideIndex} />
+              <RxDotFilled />
             </div>
           ))}
         </div>
@@ -456,35 +414,35 @@ export default function Home() {
         <div></div>
         <div className="flex flex-row">
           {whyDoYouCarryContent.map((content, i) => (
-            <div className="flex flex-col space-x-36 py-16 items-center justify-center">
-              <li className="flex items-center flex-col px-16">
-                {imagesToShow ? (
+            <div
+              className="flex flex-col space-x-36 py-16 items-center justify-center"
+              key={i}
+            >
+              <div
+                className="flex items-center flex-col px-16 group cursor-pointer"
+                onClick={() => setImagesToShow(content.text)}
+              >
+                {imagesToShow === content.text ? (
                   <Image
-                    src={content.image}
+                    src={content.activeImage}
                     width={75}
                     height={75}
                     alt="Mens Bags"
-                    key={content.id}
                     style={{ height: "100%", width: "auto" }}
                   />
                 ) : (
                   <Image
-                    src={renderImage(imagesToShow, whyDoYouCarryContent)}
+                    src={content.inactiveImage}
                     width={75}
                     height={75}
                     alt="Men's Bags"
-                    key={content.id2}
                     style={{ height: "100%", width: "auto" }}
                   />
                 )}
-                <button
-                  className=" hover:text-orange-600 text-sm"
-                  onClick={() => setImagesToShow(content.text)}
-                  key={i}
-                >
+                <div className="group-hover:text-orange-600 text-sm">
                   {content.text}
-                </button>
-              </li>
+                </div>
+              </div>
             </div>
           ))}
         </div>
