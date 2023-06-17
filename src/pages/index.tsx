@@ -2,7 +2,11 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import { useEffect, useState } from "react";
 import { Transition } from "@headlessui/react";
-import { BsChevronCompactLeft, BsChevronCompactRight, BsChevronCompactDown} from "react-icons/bs";
+import {
+  BsChevronCompactLeft,
+  BsChevronCompactRight,
+  BsChevronCompactDown,
+} from "react-icons/bs";
 import { RxDotFilled } from "react-icons/rx";
 
 export default function Home() {
@@ -359,7 +363,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="relative flex flex-col py-28 justify-center bg-gray-100 items-center">
+      <div className="relative flex flex-col py-28 justify-center bg-gray-100 items-center z-40">
         <div className="flex flex-row space-x-4 drop-shadow-lg">
           <div>
             <div
@@ -407,11 +411,11 @@ export default function Home() {
           ))}
         </div>
       </div>
+
       <div className="bg-white flex flex-col items-center p-40">
         <div className="flex">
           <a className="text-lg">Why do you carry in your wallet?</a>
         </div>
-        <div></div>
         <div className="flex flex-row">
           {whyDoYouCarryContent.map((content, i) => (
             <div
@@ -424,16 +428,16 @@ export default function Home() {
               >
                 {imagesToShow === content.text ? (
                   <>
-                  <Image
-                    src={content.activeImage}
-                    width={96}
-                    height={71}
-                    alt="Mens Bags"
-                    style={{ height: "100%", width: "auto" }}
-                  />
-                  <div className="absolute group-hover:text-orange-600 text-2xl flex justify-center translate-y-32">
-                    <BsChevronCompactDown />
-                  </div>
+                    <Image
+                      src={content.activeImage}
+                      width={96}
+                      height={71}
+                      alt="Mens Bags"
+                      style={{ height: "100%", width: "auto" }}
+                    />
+                    <div className="absolute group-hover:text-orange-600 text-2xl flex justify-center translate-y-32">
+                      <BsChevronCompactDown />
+                    </div>
                   </>
                 ) : (
                   <Image
@@ -450,6 +454,17 @@ export default function Home() {
               </div>
             </div>
           ))}
+        </div>
+        <div className="flex flex-row justify-center">
+          <div className="bg-gray-200 flex flex-col px-16 py-32">
+            <Image src="/0.avif" height={300} width={300} alt="test" />
+            <div></div>
+            <div className="flex flex-col items-center flex-wrap">
+              <div>Card Sleeve</div>
+              <div>$69</div>
+              <button>Shop</button>
+            </div>
+          </div>
         </div>
       </div>
     </header>
