@@ -423,6 +423,7 @@ export default function Home() {
                 onClick={() => setImagesToShow(content.text)}
               >
                 {imagesToShow === content.text ? (
+                  <>
                   <Image
                     src={content.activeImage}
                     width={75}
@@ -430,6 +431,10 @@ export default function Home() {
                     alt="Mens Bags"
                     style={{ height: "100%", width: "auto" }}
                   />
+                  <div className=" group-hover:text-orange-600 text-2xl flex justify-center translate-y-20">
+                    <BsChevronCompactDown />
+                  </div>
+                  </>
                 ) : (
                   <Image
                     src={content.inactiveImage}
