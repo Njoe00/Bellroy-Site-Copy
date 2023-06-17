@@ -131,7 +131,7 @@ export default function Home() {
     {
       text: "Cards only",
       inactiveImage: "/icon-inactive-card-sleeve.jpg",
-      activeImage: "/icon-active-note-sleeve.jpg",
+      activeImage: "/icon-active-card-sleeve.avif",
     },
     {
       text: "Cards and bills",
@@ -141,7 +141,7 @@ export default function Home() {
     {
       text: "Cards, bills and coins",
       inactiveImage: "/icon-inactive-folio.jpg",
-      activeImage: "/icon-active-note-sleeve.jpg",
+      activeImage: "/icon-active-folio.avif",
     },
   ];
 
@@ -415,36 +415,36 @@ export default function Home() {
         <div className="flex flex-row">
           {whyDoYouCarryContent.map((content, i) => (
             <div
-              className="flex flex-col space-x-36 py-16 items-center justify-center"
+              className="flex flex-col space-x-36 py-14 items-center justify-center"
               key={i}
             >
               <div
-                className="flex items-center flex-col px-16 group cursor-pointer"
+                className="flex items-center flex-col px-24 group cursor-pointer"
                 onClick={() => setImagesToShow(content.text)}
               >
                 {imagesToShow === content.text ? (
                   <>
                   <Image
                     src={content.activeImage}
-                    width={75}
-                    height={75}
+                    width={96}
+                    height={71}
                     alt="Mens Bags"
                     style={{ height: "100%", width: "auto" }}
                   />
-                  <div className=" group-hover:text-orange-600 text-2xl flex justify-center translate-y-20">
+                  <div className="absolute group-hover:text-orange-600 text-2xl flex justify-center translate-y-32">
                     <BsChevronCompactDown />
                   </div>
                   </>
                 ) : (
                   <Image
                     src={content.inactiveImage}
-                    width={75}
-                    height={75}
+                    width={96}
+                    height={71}
                     alt="Men's Bags"
                     style={{ height: "100%", width: "auto" }}
                   />
                 )}
-                <div className="group-hover:text-orange-600 text-sm">
+                <div className="group-hover:text-orange-600 text-sm translate-y-4 text-gray-400">
                   {content.text}
                 </div>
               </div>
