@@ -461,8 +461,12 @@ export default function Home() {
             <div></div>
             <div className="flex flex-col items-center flex-wrap">
               <div>Card Sleeve</div>
-              <div>$69</div>
-              <button>Shop</button>
+              <div>C$69</div>
+              <button
+                className=" hover:bg-orange-500 hover:text-white hover:border-white tracking-wider text-sm font-normal border rounded border-black text- px-4 py-2 "
+              >
+                SHOP NOW
+              </button>
             </div>
           </div>
         </div>
