@@ -149,6 +149,14 @@ export default function Home() {
     },
   ];
 
+  const cardsOnlyProduct = [
+    {
+      name: "Card Sleeve",
+      price: "C$69",
+      image: "0.avif",
+    },
+  ];
+
   const [currentIndex, setCurrentIndex] = useState(1);
 
   const prevSlide = () => {
@@ -455,16 +463,17 @@ export default function Home() {
             </div>
           ))}
         </div>
-        <div className="flex flex-row justify-center">
+        <div className=" group table flex-col relative  justify-center">
+          <button className="invisible group-hover:visible absolute top-0 right-0 py-[4px] px-[14px] flex-col text-[12px] bg-gray-300">
+            CLOSE X
+          </button>
           <div className="bg-gray-200 flex flex-col px-16 py-32">
             <Image src="/0.avif" height={300} width={300} alt="test" />
             <div></div>
-            <div className="flex flex-col items-center flex-wrap">
-              <div>Card Sleeve</div>
-              <div>C$69</div>
-              <button
-                className=" hover:bg-orange-500 hover:text-white hover:border-white tracking-wider text-sm font-normal border rounded border-black text- px-4 py-2 "
-              >
+            <div className="relative flex flex-col items-center flex-wrap top-24 font-normal">
+              <div className="text-sm">Card Sleeve</div>
+              <div className="text-sm">C$69</div>
+              <button className="relative hover:bg-orange-500 hover:text-white hover:border-white tracking-wider text-sm font-normal border rounded border-black text- px-4 py-2 top-6 ">
                 SHOP NOW
               </button>
             </div>
