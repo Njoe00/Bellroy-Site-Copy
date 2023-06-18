@@ -491,13 +491,13 @@ export default function Home() {
             </div>
           ))}
         </div>
-        <div className="group flex flex-row flex-wrap justify-center">
+        <div className="flex flex-row flex-wrap justify-center">
           {cardsOnlyProduct.map((content, i) => (
-            <div className="group table flex-col relative  justify-center border-4 border-white">
-              <button className="invisible group-hover:visible absolute top-0 right-0 py-[4px] px-[14px] flex-col text-[12px] bg-gray-300">
+            <div className="group table flex-col relative justify-center border-4 border-white">
+              <button className="invisible group-hover:visible absolute top-0 right-0 py-[4px] px-[14px] flex-col text-[12px] bg-gray-300 z-50">
                 CLOSE X
               </button>
-              <div className="bg-gray-100 flex flex-col w-[413.33px] h-[508px] items-center relative">
+              <div className="bg-gray-100 flex flex-col w-[413.33px] h-[508px] items-center relative z-0">
                 <div className="top-10 relative">
                   <Image
                     className=""
