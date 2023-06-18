@@ -153,7 +153,35 @@ export default function Home() {
     {
       name: "Card Sleeve",
       price: "C$69",
-      image: "0.avif",
+      image: "/0.avif",
+    },
+    {
+      name: "Card Sleeve",
+      price: "C$69",
+      image: "/1.avif",
+      edition: "Carryology Essentials Edition",
+    },
+    {
+      name: "Flip Case",
+      price: "C$69",
+      image: "/2.avif",
+      edition: "Second Edition",
+    },
+    {
+      name: "Card Pocket",
+      price: "C$85",
+      image: "/3.avif",
+    },
+    {
+      name: "Phone Case - 3 Card",
+      price: "C$99",
+      image: "/4.avif",
+    },
+    {
+      name: "Card Sleeve",
+      price: "C$95",
+      image: "/5.avif",
+      edition: "MIRUM Edition",
     },
   ];
 
@@ -463,24 +491,36 @@ export default function Home() {
             </div>
           ))}
         </div>
-        <div className=" group table flex-col relative  justify-center">
-          <button className="invisible group-hover:visible absolute top-0 right-0 py-[4px] px-[14px] flex-col text-[12px] bg-gray-300">
-            CLOSE X
-          </button>
-          <div className="bg-gray-100 flex flex-col px-16 py-32">
-            <Image src="/0.avif" height={300} width={300} alt="test" />
-            <div></div>
-            <div className="relative flex flex-col items-center flex-wrap top-24 font-[440]">
-              <div className="text-sm flex flex-row space-x-2">
-                <div>Card Sleeve</div>
-                <div className="text-gray-500">Second Edition</div>
-              </div>
-              <div className="text-sm">C$69</div>
-              <button className="relative hover:bg-orange-500 hover:text-white hover:border-orange-500 tracking-wider text-sm font-normal border rounded border-black text- px-5 py-2 top-6 duration-200 ">
-                SHOP NOW
+        <div className="group flex flex-row flex-wrap justify-center">
+          {cardsOnlyProduct.map((content, i) => (
+            <div className="group table flex-col relative  justify-center border-4 border-white">
+              <button className="invisible group-hover:visible absolute top-0 right-0 py-[4px] px-[14px] flex-col text-[12px] bg-gray-300">
+                CLOSE X
               </button>
+              <div className="bg-gray-100 flex flex-col w-[413.33px] h-[508px] items-center relative">
+                <div className="top-10 relative">
+                  <Image
+                    className=""
+                    src={content.image}
+                    height={300}
+                    width={300}
+                    alt="test"
+                  />
+                  <div></div>
+                  <div className="relative flex flex-col items-center flex-wrap top-24 font-[440]">
+                    <div className="text-sm flex flex-row space-x-2">
+                      <div>{content.name}</div>
+                      <div className="text-gray-500">{content.edition}</div>
+                    </div>
+                    <div className="text-sm">{content.price}</div>
+                    <button className="relative hover:bg-orange-500 hover:text-white hover:border-orange-500 tracking-wider text-sm font-normal border rounded border-black text- px-5 py-2 top-6 duration-200 ">
+                      SHOP NOW
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </header>
