@@ -152,33 +152,39 @@ export default function Home() {
   const cardsOnlyProduct = [
     {
       name: "Card Sleeve",
+      colours: ["bg-black"],
       price: "C$69",
       image: "/0.avif",
     },
     {
       name: "Card Sleeve",
+      colours: ["bg-black"],
       price: "C$69",
       image: "/1.avif",
       edition: "Carryology Essentials Edition",
     },
     {
       name: "Flip Case",
+      colours: ["bg-black"],
       price: "C$69",
       image: "/2.avif",
       edition: "Second Edition",
     },
     {
       name: "Card Pocket",
+      colours: ["bg-black"],
       price: "C$85",
       image: "/3.avif",
     },
     {
       name: "Phone Case - 3 Card",
+      colours: ["bg-black"],
       price: "C$99",
       image: "/4.avif",
     },
     {
       name: "Card Sleeve",
+      colours: ["bg-black"],
       price: "C$95",
       image: "/5.avif",
       edition: "MIRUM Edition",
@@ -506,8 +512,19 @@ export default function Home() {
                     width={300}
                     alt="test"
                   />
-                  <div></div>
-                  <div className="relative flex flex-col items-center flex-wrap top-24 font-[440]">
+                  <div className="p-2 flex flex-row justify-center space-x-2">
+                    {cardsOnlyProduct.map((content, i) => {
+                      const [key, colorArray] = Object.entries(content)[1];
+                      return colorArray.map((colorClass, id) => (
+                        <button
+                          key={`${i}-${id}`} 
+                          className={`w-4 h-4 rounded-full 
+                          ${colorClass}`}
+                        />
+                      ));
+                      })}
+                  </div>
+                  <div className="relative flex flex-col items-center flex-wrap top-20 font-[440]">
                     <div className="text-sm flex flex-row space-x-2">
                       <div>{content.name}</div>
                       <div className="text-gray-500">{content.edition}</div>
