@@ -188,7 +188,7 @@ export default function Home() {
       <div className="bg-white p-5 flex relative gap-2 font-normal space-x-10 text-sm items-center h-28 z-10">
         <div className="gap-2 font-normal space-x-14 items-center flex">
           <Image
-            src="/public/logo.png"
+            src="/logo.png"
             width={120}
             height={120}
             alt="test"
@@ -467,13 +467,16 @@ export default function Home() {
           <button className="invisible group-hover:visible absolute top-0 right-0 py-[4px] px-[14px] flex-col text-[12px] bg-gray-300">
             CLOSE X
           </button>
-          <div className="bg-gray-200 flex flex-col px-16 py-32">
+          <div className="bg-gray-100 flex flex-col px-16 py-32">
             <Image src="/0.avif" height={300} width={300} alt="test" />
             <div></div>
-            <div className="relative flex flex-col items-center flex-wrap top-24 font-normal">
-              <div className="text-sm">Card Sleeve</div>
+            <div className="relative flex flex-col items-center flex-wrap top-24 font-[440]">
+              <div className="text-sm flex flex-row space-x-2">
+                <div>Card Sleeve</div>
+                <div className="text-gray-500">Second Edition</div>
+              </div>
               <div className="text-sm">C$69</div>
-              <button className="relative hover:bg-orange-500 hover:text-white hover:border-white tracking-wider text-sm font-normal border rounded border-black text- px-4 py-2 top-6 ">
+              <button className="relative hover:bg-orange-500 hover:text-white hover:border-orange-500 tracking-wider text-sm font-normal border rounded border-black text- px-5 py-2 top-6 duration-200 ">
                 SHOP NOW
               </button>
             </div>
