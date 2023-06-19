@@ -152,7 +152,7 @@ export default function Home() {
   const cardsOnlyProduct = [
     {
       name: "Card Sleeve",
-      colours: ["bg-black"],
+      colours: ["bg-black", "bg-blue-200"],
       price: "C$69",
       image: "/0.avif",
     },
@@ -499,7 +499,10 @@ export default function Home() {
         </div>
         <div className="flex flex-row flex-wrap justify-center">
           {cardsOnlyProduct.map((content, i) => (
-            <div className="bg-gray-100 group flex flex-col relative justify-center border-4 border-white">
+            <div
+              key={i}
+              className="bg-gray-100 group flex flex-col relative justify-center border-4 border-white"
+            >
               <button className="invisible group-hover:visible absolute top-0 right-0 py-1 px-3.5 flex-col text-xs bg-gray-300">
                 CLOSE X
               </button>
@@ -512,22 +515,30 @@ export default function Home() {
                     width={300}
                     alt="test"
                   />
-                  <div className="p-2 flex flex-row justify-center space-x-2">
-                    {cardsOnlyProduct.map((content, i) => {
-                      const [key, colorArray] = Object.entries(content)[1];
-                      return colorArray.map((colorClass, id) => (
-                        <button
-                          key={`${i}-${id}`} 
-                          className={`w-4 h-4 rounded-full 
-                          ${colorClass}`}
-                        />
-                      ));
-                      })}
+                  <div className="p-2 flex flex-row justify-center space-x-2 ">
+                    {content.colours.map((c, i) => (
+
+                       <button className={`${c} h-4 w-4 rounded-full`} />
+                    )
+                      // const colorArray = content.colours
+                      // return (
+                      //   <div className="flex w-auto h-auto space-x-2">
+                      //     {colorArray.map((colorClass, id) => (
+                      //       <button
+                      //         className={`w-4 h-4 rounded-full
+                      //       ${colorClass}`}
+                      //       />
+                      //     ))}
+                      //   </div>
+                      // );
+                    )}
                   </div>
                   <div className="relative flex flex-col items-center flex-wrap top-20 font-[440]">
-                    <div className="text-sm flex flex-row space-x-2">
+                    <div className="text-sm flex flex-row space-x-2 place-content-center">
                       <div>{content.name}</div>
-                      <div className="text-gray-500">{content.edition}</div>
+                      <div className="text-gray-500 content-center flex">
+                        {content.edition}
+                      </div>
                     </div>
                     <div className="text-sm">{content.price}</div>
                     <button className="relative hover:bg-orange-500 hover:text-white hover:border-orange-500 tracking-wider text-sm font-normal border rounded border-black text- px-5 py-2 top-6 duration-200 ">
