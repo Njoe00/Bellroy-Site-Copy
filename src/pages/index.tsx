@@ -509,7 +509,6 @@ export default function Home() {
               <div className="flex flex-col w-[413.33px] h-[508px] items-center relative">
                 <div className="top-10 relative">
                   <Image
-                    className=""
                     src={content.image}
                     height={300}
                     width={300}
@@ -517,21 +516,10 @@ export default function Home() {
                   />
                   <div className="p-2 flex flex-row justify-center space-x-2 ">
                     {content.colours.map((c, i) => (
-
-                       <button className={`${c} h-4 w-4 rounded-full`} />
-                    )
-                      // const colorArray = content.colours
-                      // return (
-                      //   <div className="flex w-auto h-auto space-x-2">
-                      //     {colorArray.map((colorClass, id) => (
-                      //       <button
-                      //         className={`w-4 h-4 rounded-full
-                      //       ${colorClass}`}
-                      //       />
-                      //     ))}
-                      //   </div>
-                      // );
-                    )}
+                      <button
+                        className={`${c} h-4 w-4 rounded-full outline-1 outline-none focus:outline-current outline-offset-2`}
+                      />
+                    ))}
                   </div>
                   <div className="relative flex flex-col items-center flex-wrap top-20 font-[440]">
                     <div className="text-sm flex flex-row space-x-2 place-content-center">
