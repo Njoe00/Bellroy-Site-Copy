@@ -335,8 +335,7 @@ export default function Home() {
         </div>
         <div className="flex flex-row flex-wrap justify-center">
           {cardsOnlyProduct.map((content, i) => {
-            const [selectedColour, setSelectedColour] = useState("white");
-            const [activeButton, setActiveButton ] = useState(0);
+            const [selectedColour, setSelectedColour] = useState("");
             return (
               <div
               key={i}
@@ -359,11 +358,10 @@ export default function Home() {
                         return (
                           <button
                             onClick={() => {
-                              setActiveButton(colour)
                               setSelectedColour(colour);
                             }}
                             key={index}
-                            className={`bg-${colour} h-4 w-4 rounded-full outline-1 outline outline-offset-2 ${activeButton === 0 ? "outline-white" : outlineColour }`
+                            className={`bg-${colour} h-4 w-4 rounded-full outline-1 outline outline-offset-2 ${selectedColour !== colour ? "outline-none" : outlineColour }`
                             }
                           />
                         );
