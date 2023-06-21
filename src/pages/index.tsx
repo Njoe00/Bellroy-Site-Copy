@@ -27,170 +27,6 @@ export default function Home() {
     setCurrentIndex(slideIndex);
   };
 
-  const slidesSetOne = [
-    {
-      url: "https://bellroy-cms-images.imgix.net/3954/slider-image01.jpg",
-      text: "Made from premium, enviormentally certified leather, that only gets better with age...",
-    },
-    {
-      url: "https://bellroy-cms-images.imgix.net/4413/slider-image02.jpg",
-      text: "and fewer of leather, to eliminate bulk from the start...",
-    },
-  ];
-
-  const slidesSlidesSetTwo = [
-    {
-      url: "https://bellroy-cms-images.imgix.net/4414/slider-image03.jpg",
-      text: "their clever design features help keep them slim, even when they're full…",
-    },
-    {
-      url: "https://bellroy-cms-images.imgix.net/4425/slider-image04.jpg",
-      text: "so they'll be with you from Day One to Day 1000, and beyond.",
-    },
-  ];
-
-  const headerSubSections = [
-    {
-      text: "Bags",
-    },
-    {
-      text: "Wallets",
-    },
-    {
-      text: "Accessories",
-    },
-    {
-      text: "Tech",
-    },
-    {
-      text: "Travel",
-    },
-    {
-      text: "Collections",
-    },
-    {
-      text: "About Us",
-    },
-  ];
-
-  const headerSubSectionsContentBags = [
-    {
-      text: "Men's Bag's",
-      image: "/Men's_Bags.avif",
-    },
-    {
-      text: "Woman's Bags",
-      image: "/Womens_Bags.avif",
-    },
-    {
-      text: "Backpacks",
-      image: "/Backpacks.avif",
-    },
-    {
-      text: "Slings & Crossbody Bags",
-      image: "/Crossbody.avif",
-    },
-    {
-      text: "Totes & Shoulder Bags",
-      image: "/Totes.avif",
-    },
-    {
-      text: "Market & Cooler Bags",
-      image: "/nav-icon-cooler-bags.avif",
-    },
-    {
-      text: "Work Bags",
-      image: "/Workbags.avif",
-    },
-    {
-      text: "Travel Bags",
-      image: "/Travel_Bags.avif",
-    },
-  ];
-
-  const headerSubSectionsContentWallets = [
-    {
-      text: "Billfold's",
-      image: "/Billfolds.avif",
-    },
-    {
-      text: "Card Holders",
-      image: "/Card_Holders.avif",
-    },
-    {
-      text: "Zip Wallets",
-      image: "/Zip_Wallets.avif",
-    },
-    {
-      text: "Passport Holders",
-      image: "/Passport_Holders_.avif",
-    },
-    {
-      text: "RFID Protected",
-      image: "/RFID.avif",
-    },
-  ];
-
-  const whyDoYouCarryContent = [
-    {
-      text: "Cards only",
-      inactiveImage: "/icon-inactive-card-sleeve.jpg",
-      activeImage: "/icon-active-card-sleeve.avif",
-    },
-    {
-      text: "Cards and bills",
-      inactiveImage: "/icon-inactive-card-sleeve.jpg",
-      activeImage: "/icon-active-note-sleeve.jpg",
-    },
-    {
-      text: "Cards, bills and coins",
-      inactiveImage: "/icon-inactive-folio.jpg",
-      activeImage: "/icon-active-folio.avif",
-    },
-  ];
-
-  const cardsOnlyProduct = [
-    {
-      name: "Card Sleeve",
-      colours: ["bg-black", "bg-blue-200"],
-      price: "C$69",
-      image: "/0.avif",
-    },
-    {
-      name: "Card Sleeve",
-      colours: ["bg-black"],
-      price: "C$69",
-      image: "/1.avif",
-      edition: "Carryology Essentials Edition",
-    },
-    {
-      name: "Flip Case",
-      colours: ["bg-black"],
-      price: "C$69",
-      image: "/2.avif",
-      edition: "Second Edition",
-    },
-    {
-      name: "Card Pocket",
-      colours: ["bg-black"],
-      price: "C$85",
-      image: "/3.avif",
-    },
-    {
-      name: "Phone Case - 3 Card",
-      colours: ["bg-black"],
-      price: "C$99",
-      image: "/4.avif",
-    },
-    {
-      name: "Card Sleeve",
-      colours: ["bg-black"],
-      price: "C$95",
-      image: "/5.avif",
-      edition: "MIRUM Edition",
-    },
-  ];
-
   const [currentIndex, setCurrentIndex] = useState(1);
 
   const prevSlide = () => {
@@ -498,47 +334,224 @@ export default function Home() {
           ))}
         </div>
         <div className="flex flex-row flex-wrap justify-center">
-          {cardsOnlyProduct.map((content, i) => (
-            <div
+          {cardsOnlyProduct.map((content, i) => {
+            const [selectedColour, setSelectedColour] = useState("white");
+            const [activeButton, setActiveButton ] = useState(0);
+            return (
+              <div
               key={i}
               className="bg-gray-100 group flex flex-col relative justify-center border-4 border-white"
-            >
-              <button className="invisible group-hover:visible absolute top-0 right-0 py-1 px-3.5 flex-col text-xs bg-gray-300">
-                CLOSE X
-              </button>
-              <div className="flex flex-col w-[413.33px] h-[508px] items-center relative">
-                <div className="top-10 relative">
-                  <Image
-                    src={content.image}
-                    height={300}
-                    width={300}
-                    alt="test"
-                  />
-                  <div className="p-2 flex flex-row justify-center space-x-2 ">
-                    {content.colours.map((c, i) => (
-                      <button
-                        className={`${c} h-4 w-4 rounded-full outline-1 outline-none focus:outline-current outline-offset-2`}
+              >
+                <button className="invisible group-hover:visible absolute top-0 right-0 py-1 px-3.5 flex-col text-xs bg-gray-300">
+                  CLOSE X
+                </button>
+                <div className="flex flex-col w-[413.33px] h-[508px] items-center relative">
+                  <div className="top-10 relative">
+                    <Image
+                      src={content.image}
+                      height={300}
+                      width={300}
+                      alt="test"
                       />
-                    ))}
-                  </div>
-                  <div className="relative flex flex-col items-center flex-wrap top-20 font-[440]">
-                    <div className="text-sm flex flex-row space-x-2 place-content-center">
-                      <div>{content.name}</div>
-                      <div className="text-gray-500 content-center flex">
-                        {content.edition}
-                      </div>
+                    <div className="p-2 flex flex-row justify-center space-x-2 ">
+                      {content.colours.map((colour, index) => {
+                        const outlineColour = `outline-${selectedColour}`
+                        return (
+                          <button
+                            onClick={() => {
+                              setActiveButton(colour)
+                              setSelectedColour(colour);
+                            }}
+                            key={index}
+                            className={`bg-${colour} h-4 w-4 rounded-full outline-1 outline outline-offset-2 ${activeButton === 0 ? "outline-white" : outlineColour }`
+                            }
+                          />
+                        );
+                      })}
                     </div>
-                    <div className="text-sm">{content.price}</div>
-                    <button className="relative hover:bg-orange-500 hover:text-white hover:border-orange-500 tracking-wider text-sm font-normal border rounded border-black text- px-5 py-2 top-6 duration-200 ">
-                      SHOP NOW
-                    </button>
+                    <div className="relative flex flex-col items-center flex-wrap top-20 font-[440]">
+                      <div className="text-sm flex flex-row space-x-2 place-content-center">
+                        <div>{content.name}</div>
+                        <div className="text-gray-500 content-center flex">
+                          {content.edition}
+                        </div>
+                      </div>
+                      <div className="text-sm">{content.price}</div>
+                      <button className="relative hover:bg-orange-500 hover:text-white hover:border-orange-500 tracking-wider text-sm font-normal border rounded border-black text- px-5 py-2 top-6 duration-200 ">
+                        SHOP NOW
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </header>
   );
 }
+
+const slidesSetOne = [
+  {
+    url: "https://bellroy-cms-images.imgix.net/3954/slider-image01.jpg",
+    text: "Made from premium, enviormentally certified leather, that only gets better with age...",
+  },
+  {
+    url: "https://bellroy-cms-images.imgix.net/4413/slider-image02.jpg",
+    text: "and fewer of leather, to eliminate bulk from the start...",
+  },
+];
+
+const slidesSlidesSetTwo = [
+  {
+    url: "https://bellroy-cms-images.imgix.net/4414/slider-image03.jpg",
+    text: "their clever design features help keep them slim, even when they're full…",
+  },
+  {
+    url: "https://bellroy-cms-images.imgix.net/4425/slider-image04.jpg",
+    text: "so they'll be with you from Day One to Day 1000, and beyond.",
+  },
+];
+
+const headerSubSections = [
+  {
+    text: "Bags",
+  },
+  {
+    text: "Wallets",
+  },
+  {
+    text: "Accessories",
+  },
+  {
+    text: "Tech",
+  },
+  {
+    text: "Travel",
+  },
+  {
+    text: "Collections",
+  },
+  {
+    text: "About Us",
+  },
+];
+
+const headerSubSectionsContentBags = [
+  {
+    text: "Men's Bag's",
+    image: "/Men's_Bags.avif",
+  },
+  {
+    text: "Woman's Bags",
+    image: "/Womens_Bags.avif",
+  },
+  {
+    text: "Backpacks",
+    image: "/Backpacks.avif",
+  },
+  {
+    text: "Slings & Crossbody Bags",
+    image: "/Crossbody.avif",
+  },
+  {
+    text: "Totes & Shoulder Bags",
+    image: "/Totes.avif",
+  },
+  {
+    text: "Market & Cooler Bags",
+    image: "/nav-icon-cooler-bags.avif",
+  },
+  {
+    text: "Work Bags",
+    image: "/Workbags.avif",
+  },
+  {
+    text: "Travel Bags",
+    image: "/Travel_Bags.avif",
+  },
+];
+
+const headerSubSectionsContentWallets = [
+  {
+    text: "Billfold's",
+    image: "/Billfolds.avif",
+  },
+  {
+    text: "Card Holders",
+    image: "/Card_Holders.avif",
+  },
+  {
+    text: "Zip Wallets",
+    image: "/Zip_Wallets.avif",
+  },
+  {
+    text: "Passport Holders",
+    image: "/Passport_Holders_.avif",
+  },
+  {
+    text: "RFID Protected",
+    image: "/RFID.avif",
+  },
+];
+
+const whyDoYouCarryContent = [
+  {
+    text: "Cards only",
+    inactiveImage: "/icon-inactive-card-sleeve.jpg",
+    activeImage: "/icon-active-card-sleeve.avif",
+  },
+  {
+    text: "Cards and bills",
+    inactiveImage: "/icon-inactive-card-sleeve.jpg",
+    activeImage: "/icon-active-note-sleeve.jpg",
+  },
+  {
+    text: "Cards, bills and coins",
+    inactiveImage: "/icon-inactive-folio.jpg",
+    activeImage: "/icon-active-folio.avif",
+  },
+];
+
+const cardsOnlyProduct = [
+  {
+    name: "Card Sleeve",
+    colours: ["black", "blue-200"],
+    price: "C$69",
+    image: "/0.avif",
+  },
+  {
+    name: "Card Sleeve",
+    colours: ["black"],
+    price: "C$69",
+    image: "/1.avif",
+    edition: "Carryology Essentials Edition",
+  },
+  {
+    name: "Flip Case",
+    colours: ["black"],
+    price: "C$69",
+    image: "/2.avif",
+    edition: "Second Edition",
+  },
+  {
+    name: "Card Pocket",
+    colours: ["black"],
+    price: "C$85",
+    image: "/3.avif",
+  },
+  {
+    name: "Phone Case - 3 Card",
+    colours: ["black"],
+    price: "C$99",
+    image: "/4.avif",
+  },
+  {
+    name: "Card Sleeve",
+    colours: ["black"],
+    price: "C$95",
+    image: "/5.avif",
+    edition: "MIRUM Edition",
+  },
+];
