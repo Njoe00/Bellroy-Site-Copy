@@ -335,7 +335,7 @@ export default function Home() {
         </div>
         <div className="flex flex-row flex-wrap justify-center">
           {cardsOnlyProduct.map((content, i) => {
-            const [selectedColour, setSelectedColour] = useState("");
+            const [selectedColour, setSelectedColour] = useState("black");
             return (
               <div
               key={i}
@@ -355,13 +355,14 @@ export default function Home() {
                     <div className="p-2 flex flex-row justify-center space-x-2 ">
                       {content.colours.map((colour, index) => {
                         const outlineColour = `outline-${selectedColour}`
+                        const bgColour = `bg-${colour}`
                         return (
                           <button
                             onClick={() => {
                               setSelectedColour(colour);
                             }}
                             key={index}
-                            className={`bg-${colour} h-4 w-4 rounded-full outline-1 outline outline-offset-2 ${selectedColour !== colour ? "outline-none" : outlineColour }`
+                            className={`${bgColour} h-4 w-4 rounded-full outline-1 outline outline-offset-2 ${selectedColour !== colour ? "outline-none" : outlineColour }`
                             }
                           />
                         );
@@ -515,13 +516,13 @@ const whyDoYouCarryContent = [
 const cardsOnlyProduct = [
   {
     name: "Card Sleeve",
-    colours: ["black", "blue-200"],
+    colours: ["black", "card-sleeve-ocean", "card-sleeve-gray", "card-sleeve-teal", "card-sleeve-hazel"],
     price: "C$69",
     image: "/0.avif",
   },
   {
     name: "Card Sleeve",
-    colours: ["black"],
+    colours: ["black" ,"white"],
     price: "C$69",
     image: "/1.avif",
     edition: "Carryology Essentials Edition",

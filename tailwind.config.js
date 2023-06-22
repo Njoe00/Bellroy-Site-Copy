@@ -17,6 +17,10 @@ module.exports = {
       },
       colors: {
         "background-main": "#A3CBCC",
+        "card-sleeve-gray": "#424242",
+        "card-sleeve-ocean": "#3D4665",
+        "card-sleeve-teal": "#188F91",
+        "card-sleeve-hazel": "#9A644D",
       },
     },
   },
