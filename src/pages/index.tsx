@@ -347,7 +347,7 @@ export default function Home() {
                 <div className="flex flex-col w-[413.33px] h-[508px] items-center relative">
                   <div className="top-10 relative">
                     <Image
-                      src={content.image}
+                      src={content.image[i]}
                       height={300}
                       width={300}
                       alt="test"
@@ -518,39 +518,39 @@ const cardsOnlyProduct = [
     name: "Card Sleeve",
     colours: ["black", "card-sleeve-ocean", "card-sleeve-gray", "card-sleeve-teal", "card-sleeve-hazel"],
     price: "C$69",
-    image: "/0.avif",
+    image: ["/1.avif","/0.avif"]
   },
   {
     name: "Card Sleeve",
     colours: ["black" ,"white"],
     price: "C$69",
-    image: "/1.avif",
+    image: ["/1.avif"],
     edition: "Carryology Essentials Edition",
   },
   {
     name: "Flip Case",
     colours: ["black"],
     price: "C$69",
-    image: "/2.avif",
+    image: ["/2.avif"],
     edition: "Second Edition",
   },
   {
     name: "Card Pocket",
     colours: ["black"],
     price: "C$85",
-    image: "/3.avif",
+    image: ["/3.avif"],
   },
   {
     name: "Phone Case - 3 Card",
     colours: ["black"],
     price: "C$99",
-    image: "/4.avif",
+    image: ["/4.avif"],
   },
   {
     name: "Card Sleeve",
     colours: ["black"],
     price: "C$95",
-    image: "/5.avif",
+    image: ["/5.avif"],
     edition: "MIRUM Edition",
   },
 ];
