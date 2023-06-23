@@ -19,8 +19,14 @@ export default function Home() {
     setsliderPicture(!slidePicture);
   };
 
-  const handleCardImage = (image) => {
-    setCardImage(image)
+  const changeCard = (imagesToShow) => {
+    if (imagesToShow === "Cards only") {
+      return cardsOnlyProduct;
+    } else if (imagesToShow === "Cards and bills") {
+      return cardsAndBillsProduct;
+    } else if (imagesToShow === "Cards, bills and coins") {
+      return cardsBillsAndCoinsProduct;
+    }
   };
 
   const handleDropDown = () => {
@@ -338,9 +344,9 @@ export default function Home() {
           ))}
         </div>
         <div className="flex flex-row flex-wrap justify-center">
-          {cardsOnlyProduct.map((content, i) => {
+          {changeCard(imagesToShow).map((content, i) => {
             const [selectedColour, setSelectedColour] = useState("black");
-            const [cardImage, setCardImage] = useState("/0.avif");
+            const [cardImage, setCardImage] = useState(`${content.image[0]}`);
             return (
               <div
                 key={i}
@@ -355,7 +361,8 @@ export default function Home() {
                       src={cardImage}
                       height={300}
                       width={300}
-                      alt="test"
+                      alt="alt"
+                      style={{ height: "auto", width: "auto" }}
                     />
                     <div className="p-2 flex flex-row justify-center space-x-2 ">
                       {content.colours.map((colour, index) => {
@@ -367,7 +374,6 @@ export default function Home() {
                               setSelectedColour(colour);
                               setCardImage(content.image[index]);
                             }}
-                            
                             key={index}
                             className={`${bgColour} h-4 w-4 rounded-full outline-1 outline outline-offset-2 ${
                               selectedColour !== colour
@@ -534,7 +540,93 @@ const cardsOnlyProduct = [
       "card-sleeve-hazel",
     ],
     price: "C$69",
-    image: ["/1.avif", "/0.avif"],
+    image: ["/1.avif", "/0.avif", "/7.avif", "/8.avif", "/9.avif"],
+  },
+  {
+    name: "Card Sleeve",
+    colours: ["black", "white"],
+    price: "C$69",
+    image: ["/1.avif"],
+    edition: "Carryology Essentials Edition",
+  },
+  {
+    name: "Flip Case",
+    colours: ["black"],
+    price: "C$69",
+    image: ["/2.avif"],
+    edition: "Second Edition",
+  },
+  {
+    name: "Card Pocket",
+    colours: ["black"],
+    price: "C$85",
+    image: ["/3.avif"],
+  },
+  {
+    name: "Phone Case - 3 Card",
+    colours: ["black"],
+    price: "C$99",
+    image: ["/4.avif"],
+  },
+  {
+    name: "Card Sleeve",
+    colours: ["black"],
+    price: "C$95",
+    image: ["/5.avif"],
+    edition: "MIRUM Edition",
+  },
+];
+
+const cardsAndBillsProduct = [
+  {
+    name: "Apex Slim Sleeve",
+    colours: ["black", "card-sleeve-gray", "card-sleeve-ocean"],
+    price: "C$165",
+    image: ["/CB-0.avif", "/CB-1.avif", "/CB-2.avif"],
+    edition: "RFID safe",
+  },
+  {
+    name: "Card Sleeve",
+    colours: ["black", "white"],
+    price: "C$69",
+    image: ["/1.avif"],
+    edition: "Carryology Essentials Edition",
+  },
+  {
+    name: "Flip Case",
+    colours: ["black"],
+    price: "C$69",
+    image: ["/2.avif"],
+    edition: "Second Edition",
+  },
+  {
+    name: "Card Pocket",
+    colours: ["black"],
+    price: "C$85",
+    image: ["/3.avif"],
+  },
+  {
+    name: "Phone Case - 3 Card",
+    colours: ["black"],
+    price: "C$99",
+    image: ["/4.avif"],
+  },
+  {
+    name: "Card Sleeve",
+    colours: ["black"],
+    price: "C$95",
+    image: ["/5.avif"],
+    edition: "MIRUM Edition",
+  },
+];
+
+const cardsBillsAndCoinsProduct = [
+  {
+    name: "Apex Slim Sleeve",
+    colours: ["black", "card-sleeve-gray"],
+    price: "C$69",
+    image: ["/CB-0", "/CB-1", "/CB-2"],
+    edition: "RFID safe",
   },
   {
     name: "Card Sleeve",
