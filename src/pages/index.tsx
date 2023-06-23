@@ -19,6 +19,10 @@ export default function Home() {
     setsliderPicture(!slidePicture);
   };
 
+  const handleCardImage = (image) => {
+    setCardImage(image)
+  };
+
   const handleDropDown = () => {
     setIsOpen(!isOpen);
   };
@@ -336,10 +340,11 @@ export default function Home() {
         <div className="flex flex-row flex-wrap justify-center">
           {cardsOnlyProduct.map((content, i) => {
             const [selectedColour, setSelectedColour] = useState("black");
+            const [cardImage, setCardImage] = useState("/0.avif");
             return (
               <div
-              key={i}
-              className="bg-gray-100 group flex flex-col relative justify-center border-4 border-white"
+                key={i}
+                className="bg-gray-100 group flex flex-col relative justify-center border-4 border-white"
               >
                 <button className="invisible group-hover:visible absolute top-0 right-0 py-1 px-3.5 flex-col text-xs bg-gray-300">
                   CLOSE X
@@ -347,23 +352,28 @@ export default function Home() {
                 <div className="flex flex-col w-[413.33px] h-[508px] items-center relative">
                   <div className="top-10 relative">
                     <Image
-                      src={content.image[i]}
+                      src={cardImage}
                       height={300}
                       width={300}
                       alt="test"
-                      />
+                    />
                     <div className="p-2 flex flex-row justify-center space-x-2 ">
                       {content.colours.map((colour, index) => {
-                        const outlineColour = `outline-${selectedColour}`
-                        const bgColour = `bg-${colour}`
+                        const outlineColour = `outline-${selectedColour}`;
+                        const bgColour = `bg-${colour}`;
                         return (
                           <button
                             onClick={() => {
                               setSelectedColour(colour);
+                              setCardImage(content.image[index]);
                             }}
+                            
                             key={index}
-                            className={`${bgColour} h-4 w-4 rounded-full outline-1 outline outline-offset-2 ${selectedColour !== colour ? "outline-none" : outlineColour }`
-                            }
+                            className={`${bgColour} h-4 w-4 rounded-full outline-1 outline outline-offset-2 ${
+                              selectedColour !== colour
+                                ? "outline-none"
+                                : outlineColour
+                            }`}
                           />
                         );
                       })}
@@ -516,13 +526,19 @@ const whyDoYouCarryContent = [
 const cardsOnlyProduct = [
   {
     name: "Card Sleeve",
-    colours: ["black", "card-sleeve-ocean", "card-sleeve-gray", "card-sleeve-teal", "card-sleeve-hazel"],
+    colours: [
+      "black",
+      "card-sleeve-ocean",
+      "card-sleeve-gray",
+      "card-sleeve-teal",
+      "card-sleeve-hazel",
+    ],
     price: "C$69",
-    image: ["/1.avif","/0.avif"]
+    image: ["/1.avif", "/0.avif"],
   },
   {
     name: "Card Sleeve",
-    colours: ["black" ,"white"],
+    colours: ["black", "white"],
     price: "C$69",
     image: ["/1.avif"],
     edition: "Carryology Essentials Edition",
