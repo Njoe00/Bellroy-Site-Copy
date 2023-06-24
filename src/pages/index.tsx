@@ -347,23 +347,34 @@ export default function Home() {
           {changeCard(imagesToShow).map((content, i) => {
             const [selectedColour, setSelectedColour] = useState("black");
             const [cardImage, setCardImage] = useState(`${content.image[0]}`);
-            const [buttonStatus, setButtonStatus] = useState(false);
+            const [buttonStatus, setButtonStatus] = useState(true);
+            const handleButtonStatus = () => {
+              setButtonStatus(!buttonStatus);
+            };
+
             return (
               <div
                 key={i}
                 className="bg-gray-100 group flex flex-col relative justify-center border-4 border-white"
               >
-                <button className="invisible group-hover:visible absolute top-0 right-0 py-1 px-3.5 flex-col text-xs bg-gray-300">
-                  CLOSE X
-                </button>
+                {buttonStatus ? (
+                  <button
+                    className="group-hover:visible absolute top-0 right-0 py-1 px-3.5 flex-col text-xs bg-gray-300 z-20"
+                    onClick={handleButtonStatus}
+                  >
+                    SHOW MORE X
+                  </button>
+                ) : (
+                  <button
+                    className=" group-hover:visible absolute top-0 right-0 py-1 px-3.5 flex-col text-xs bg-gray-300 z-20"
+                    onClick={handleButtonStatus}
+                  >
+                    CLOSE X
+                  </button>
+                )}
                 <div className="flex flex-col w-[413.33px] h-[508px] items-center relative">
                   <div className="top-10 relative">
-                    <Image
-                      src={cardImage}
-                      height={300}
-                      width={300}
-                      alt="alt"
-                    />
+                    <Image src={cardImage} height={300} width={300} alt="alt" />
                     <div className="p-2 flex flex-row justify-center space-x-2 ">
                       {content.colours.map((colour, index) => {
                         const outlineColour = `outline-${selectedColour}`;
@@ -392,7 +403,7 @@ export default function Home() {
                         </div>
                       </div>
                       <div className="text-sm">{content.price}</div>
-                      <button className="relative hover:bg-orange-500 hover:text-white hover:border-orange-500 tracking-wider text-sm font-normal border rounded border-black text- px-5 py-2 top-6 duration-200 ">
+                      <button className="relative hover:bg-orange-500 hover:text-white hover:border-orange-500 tracking-wider text-sm font-normal border rounded border-black text- px-5 py-2 top-6 duration-200">
                         SHOP NOW
                       </button>
                     </div>
@@ -540,7 +551,7 @@ const cardsOnlyProduct = [
       "card-sleeve-hazel",
     ],
     price: "C$69",
-    image: ["/1.avif", "/0.avif", "/7.avif", "/8.avif", "/9.avif", ],
+    image: ["/1.avif", "/0.avif", "/7.avif", "/8.avif", "/9.avif"],
   },
   {
     name: "Card Sleeve",
@@ -594,9 +605,23 @@ const cardsAndBillsProduct = [
   },
   {
     name: "Slim Sleeve",
-    colours: ["black", "card-sleeve-gray", "card-sleeve-ocean", "card-sleeve-teal", "wallet-chocolate", "card-sleeve-hazel"],
+    colours: [
+      "black",
+      "card-sleeve-gray",
+      "card-sleeve-ocean",
+      "card-sleeve-teal",
+      "wallet-chocolate",
+      "card-sleeve-hazel",
+    ],
     price: "C$99",
-    image: ["/CB-4.avif", "/CB-6.avif", "/CB-7.avif", "/CB-8.avif", "/CB-10.avif", "/CB-11.avif"],
+    image: [
+      "/CB-4.avif",
+      "/CB-6.avif",
+      "/CB-7.avif",
+      "/CB-8.avif",
+      "/CB-10.avif",
+      "/CB-11.avif",
+    ],
   },
   {
     name: "Minimalist Set",
