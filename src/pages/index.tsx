@@ -358,19 +358,36 @@ export default function Home() {
                 className="bg-gray-100 group flex flex-col relative justify-center border-4 border-white"
               >
                 {buttonStatus ? (
-                  <button
-                    className="group-hover:visible absolute top-0 right-0 py-1 px-3.5 flex-col text-xs bg-gray-300 z-20"
-                    onClick={handleButtonStatus}
-                  >
-                    SHOW MORE X
-                  </button>
+                  <div className="flex flex-row">
+                    <button
+                      className="group-hover:visible flex flex-row absolute top-0 right-0 py-1 px-3.5 text-xs bg-gray-300 z-20 "
+                      onClick={handleButtonStatus}
+                    >
+                      SHOW MORE
+                      <Image
+                        src="/icons8-plus-50.png"
+                        alt="X"
+                        width={14}
+                        height={14}
+                      />
+                    </button>
+                  </div>
                 ) : (
-                  <button
-                    className=" group-hover:visible absolute top-0 right-0 py-1 px-3.5 flex-col text-xs bg-gray-300 z-20"
-                    onClick={handleButtonStatus}
-                  >
-                    CLOSE X
-                  </button>
+                  <div className="flex flex-row">
+                    <button
+                      className="group-hover:visible flex flex-row absolute top-0 right-0 py-1 px-3.5 text-xs bg-gray-300 z-20 "
+                      onClick={handleButtonStatus}
+                    >
+                      CLOSE
+                      <Image
+                        className="rotate-45"
+                        src="/icons8-plus-50.png"
+                        alt="X"
+                        width={14}
+                        height={14}
+                      />
+                    </button>
+                  </div>
                 )}
                 <div className="flex flex-col w-[413.33px] h-[508px] items-center relative">
                   <div className="top-10 relative">
