@@ -21,6 +21,7 @@ module.exports = {
         "card-sleeve-ocean": "#3D4665",
         "card-sleeve-teal": "#188F91",
         "card-sleeve-hazel": "#9A644D",
+        "wallet-chocolate" : "#562F0B",
       },
     },
   },

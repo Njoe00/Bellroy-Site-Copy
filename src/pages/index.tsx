@@ -347,6 +347,7 @@ export default function Home() {
           {changeCard(imagesToShow).map((content, i) => {
             const [selectedColour, setSelectedColour] = useState("black");
             const [cardImage, setCardImage] = useState(`${content.image[0]}`);
+            const [buttonStatus, setButtonStatus] = useState(false);
             return (
               <div
                 key={i}
@@ -362,7 +363,6 @@ export default function Home() {
                       height={300}
                       width={300}
                       alt="alt"
-                      style={{ height: "auto", width: "auto" }}
                     />
                     <div className="p-2 flex flex-row justify-center space-x-2 ">
                       {content.colours.map((colour, index) => {
@@ -540,7 +540,7 @@ const cardsOnlyProduct = [
       "card-sleeve-hazel",
     ],
     price: "C$69",
-    image: ["/1.avif", "/0.avif", "/7.avif", "/8.avif", "/9.avif"],
+    image: ["/1.avif", "/0.avif", "/7.avif", "/8.avif", "/9.avif", ],
   },
   {
     name: "Card Sleeve",
@@ -587,35 +587,36 @@ const cardsAndBillsProduct = [
   },
   {
     name: "Card Sleeve",
-    colours: ["black", "white"],
+    colours: ["black"],
     price: "C$69",
-    image: ["/1.avif"],
+    image: ["/CB-3.avif"],
     edition: "Carryology Essentials Edition",
   },
   {
-    name: "Flip Case",
-    colours: ["black"],
-    price: "C$69",
-    image: ["/2.avif"],
-    edition: "Second Edition",
-  },
-  {
-    name: "Card Pocket",
-    colours: ["black"],
-    price: "C$85",
-    image: ["/3.avif"],
-  },
-  {
-    name: "Phone Case - 3 Card",
-    colours: ["black"],
+    name: "Slim Sleeve",
+    colours: ["black", "card-sleeve-gray", "card-sleeve-ocean", "card-sleeve-teal", "wallet-chocolate", "card-sleeve-hazel"],
     price: "C$99",
-    image: ["/4.avif"],
+    image: ["/CB-4.avif", "/CB-6.avif", "/CB-7.avif", "/CB-8.avif", "/CB-10.avif", "/CB-11.avif"],
   },
   {
-    name: "Card Sleeve",
+    name: "Minimalist Set",
     colours: ["black"],
-    price: "C$95",
-    image: ["/5.avif"],
+    price: "C$109 - $C129",
+    image: ["/CB-16.avif"],
+    edition: "Valued at C$144 - C$164",
+  },
+  {
+    name: "Slim Sleeve",
+    colours: ["black", "card-sleeve-hazel", "wallet-chocolate"],
+    price: "C$145",
+    image: ["/CB-12.avif", "/CB-13.avif", "/CB-14.avif"],
+    edition: "Premium EditionRFID safe",
+  },
+  {
+    name: "Slim Sleeve",
+    colours: ["black"],
+    price: "C$125",
+    image: ["/CB-15.avif"],
     edition: "MIRUM Edition",
   },
 ];
