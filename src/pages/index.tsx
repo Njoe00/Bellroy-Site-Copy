@@ -352,6 +352,10 @@ export default function Home() {
               setButtonStatus(!buttonStatus);
             };
 
+            useEffect(() => {
+              setCardImage("")
+            },[content.image[i]])
+
             return (
               <div
                 key={i}
@@ -362,10 +366,10 @@ export default function Home() {
                     show={!buttonStatus}
                     className=""
                     enter="transform transition ease-in-out duration-300"
-                    enterFrom="opacity-100 -translate-x-0"
+                    enterFrom="opacity-0 -translate-x-0"
                     enterTo="opacity-100 translate-x-0"
                     leave="transform transition ease-in-out duration-300"
-                    leaveFrom="opacity-100 translate-x-0"
+                    leaveFrom="opacity-0 translate-x-0"
                     leaveTo="opacity-100 translate-x-0"
                   >
                     <button
@@ -387,10 +391,10 @@ export default function Home() {
                     show={buttonStatus}
                     className=""
                     enter="transform transition ease-in-out duration-300"
-                    enterFrom="opacity-100 -translate-x-0"
+                    enterFrom="opacity-0 -translate-x-0"
                     enterTo="opacity-100 translate-x-0"
                     leave="transform transition ease-in-out duration-300"
-                    leaveFrom="opacity-100 translate-x-0"
+                    leaveFrom="opacity-0 translate-x-0"
                     leaveTo="opacity-100 translate-x-0"
                   >
                     <button
@@ -412,7 +416,7 @@ export default function Home() {
 
                 <div className="flex flex-col w-[413.33px] h-[508px] items-center relative">
                   <div className="top-10 relative">
-                    <Image src={cardImage} height={300} width={300} alt="alt" />
+                    <Image src={`${cardImage || content.image[0]}`}  height={300} width={300} alt="alt" />
                     <div className="p-2 flex flex-row justify-center space-x-2 ">
                       {content.colours.map((colour, index) => {
                         const outlineColour = `outline-${selectedColour}`;
@@ -593,7 +597,7 @@ const cardsOnlyProduct = [
   },
   {
     name: "Card Sleeve",
-    colours: ["black", "white"],
+    colours: ["black"],
     price: "C$69",
     image: ["/1.avif"],
     edition: "Carryology Essentials Edition",
@@ -637,7 +641,7 @@ const cardsAndBillsProduct = [
   {
     name: "Card Sleeve",
     colours: ["black"],
-    price: "C$69",
+    price: "C$99",
     image: ["/CB-3.avif"],
     edition: "Carryology Essentials Edition",
   },
@@ -689,7 +693,7 @@ const cardsBillsAndCoinsProduct = [
     name: "Apex Slim Sleeve",
     colours: ["black", "card-sleeve-gray"],
     price: "C$69",
-    image: ["/CB-0", "/CB-1", "/CB-2"],
+    image: ["/CB-0.avif", "/CB-1.avif", "/CB-2.avif"],
     edition: "RFID safe",
   },
   {
