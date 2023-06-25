@@ -105,7 +105,7 @@ export default function Home() {
               alt="mail"
               width={20}
               height={20}
-              style={{ height: "100%", width: "auto" }}
+              style={{ height: "22px", width: "20px" }}
             />
           </span>
           <span className="flex items-center">
@@ -114,7 +114,7 @@ export default function Home() {
               alt="mail"
               width={22}
               height={20}
-              style={{ height: "100%", width: "100%" }}
+              style={{ height: "22px", width: "20px" }}
             />
           </span>
         </div>
@@ -360,31 +360,34 @@ export default function Home() {
                 {buttonStatus ? (
                   <div className="flex flex-row">
                     <button
-                      className="group-hover:visible flex flex-row absolute top-0 right-0 py-1 px-3.5 text-xs bg-gray-300 z-20 "
+                      className="group-hover:visible flex flex-row absolute top-0 right-0 py-1 px-2 text-xs bg-gray-300 z-20 "
                       onClick={handleButtonStatus}
                     >
                       SHOW MORE
                       <Image
+                        className="flex relative left-1"
                         src="/icons8-plus-50.png"
                         alt="X"
                         width={14}
                         height={14}
+                        style={{ height: "15px", width: "15px" }}
                       />
                     </button>
                   </div>
                 ) : (
                   <div className="flex flex-row">
                     <button
-                      className="group-hover:visible flex flex-row absolute top-0 right-0 py-1 px-3.5 text-xs bg-gray-300 z-20 "
+                      className="group-hover:visible flex flex-row absolute top-0 right-0 py-1 px-2 text-xs bg-gray-300 z-20"
                       onClick={handleButtonStatus}
                     >
                       CLOSE
                       <Image
-                        className="rotate-45"
+                        className="rotate-45 flex relative left-1"
                         src="/icons8-plus-50.png"
                         alt="X"
                         width={14}
                         height={14}
+                        quality={100}
                       />
                     </button>
                   </div>
