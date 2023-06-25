@@ -357,8 +357,17 @@ export default function Home() {
                 key={i}
                 className="bg-gray-100 group flex flex-col relative justify-center border-4 border-white"
               >
-                {buttonStatus ? (
-                  <div className="flex flex-row">
+                <div className="z-30">
+                  <Transition
+                    show={!buttonStatus}
+                    className=""
+                    enter="transform transition ease-in-out duration-300"
+                    enterFrom="opacity-100 -translate-x-0"
+                    enterTo="opacity-100 translate-x-0"
+                    leave="transform transition ease-in-out duration-300"
+                    leaveFrom="opacity-100 translate-x-0"
+                    leaveTo="opacity-100 translate-x-0"
+                  >
                     <button
                       className="group-hover:visible flex flex-row absolute top-0 right-0 py-1 px-2 text-xs bg-gray-300 z-20 "
                       onClick={handleButtonStatus}
@@ -373,9 +382,17 @@ export default function Home() {
                         style={{ height: "15px", width: "15px" }}
                       />
                     </button>
-                  </div>
-                ) : (
-                  <div className="flex flex-row">
+                  </Transition>
+                  <Transition
+                    show={buttonStatus}
+                    className=""
+                    enter="transform transition ease-in-out duration-300"
+                    enterFrom="opacity-100 -translate-x-0"
+                    enterTo="opacity-100 translate-x-0"
+                    leave="transform transition ease-in-out duration-300"
+                    leaveFrom="opacity-100 translate-x-0"
+                    leaveTo="opacity-100 translate-x-0"
+                  >
                     <button
                       className="group-hover:visible flex flex-row absolute top-0 right-0 py-1 px-2 text-xs bg-gray-300 z-20"
                       onClick={handleButtonStatus}
@@ -390,8 +407,9 @@ export default function Home() {
                         quality={100}
                       />
                     </button>
-                  </div>
-                )}
+                  </Transition>
+                </div>
+
                 <div className="flex flex-col w-[413.33px] h-[508px] items-center relative">
                   <div className="top-10 relative">
                     <Image src={cardImage} height={300} width={300} alt="alt" />
