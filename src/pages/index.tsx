@@ -8,6 +8,19 @@ import {
   BsChevronCompactDown,
 } from "react-icons/bs";
 import { RxDotFilled } from "react-icons/rx";
+import { product_card } from "product_card";
+
+import {
+  slidesSetOne,
+  slidesSetTwo,
+  headerSubSections,
+  headerSubSectionsContentWallets,
+  headerSubSectionsContentBags,
+  whyDoYouCarryContent,
+  cardsOnlyProduct,
+  cardsAndBillsProduct,
+  cardsBillsAndCoinsProduct,
+} from "./data";
 
 export default function Home() {
   const [sliderValue, setSliderValue] = useState("0");
@@ -353,8 +366,8 @@ export default function Home() {
             };
 
             useEffect(() => {
-              setCardImage("")
-            },[content.image[i]])
+              setCardImage("");
+            }, [content.image[i]]);
 
             return (
               <div
@@ -416,7 +429,12 @@ export default function Home() {
 
                 <div className="flex flex-col w-[413.33px] h-[508px] items-center relative">
                   <div className="top-10 relative">
-                    <Image src={`${cardImage || content.image[0]}`}  height={300} width={300} alt="alt" />
+                    <Image
+                      src={cardImage || content.image[0]}
+                      height={300}
+                      width={300}
+                      alt=""
+                    />
                     <div className="p-2 flex flex-row justify-center space-x-2 ">
                       {content.colours.map((colour, index) => {
                         const outlineColour = `outline-${selectedColour}`;
@@ -593,39 +611,45 @@ const cardsOnlyProduct = [
       "card-sleeve-hazel",
     ],
     price: "C$69",
-    image: ["/1.avif", "/0.avif", "/7.avif", "/8.avif", "/9.avif"],
+    image: [
+      "/card-Sleeves/card-Sleeve_Black.avif",
+      "/card-Sleeves/card-Sleeve_Ocean.avif",
+      "/card-Sleeves/card-Sleeve_Gray.avif",
+      "/card-Sleeves/card-Sleeve_Teal.avif",
+      "/card-Sleeves/card-Sleeve_Hazel.avif",
+    ],
   },
   {
     name: "Card Sleeve",
     colours: ["black"],
     price: "C$69",
-    image: ["/1.avif"],
+    image: ["/card-Sleeves/card-Sleeve-Black_Ash.avif"],
     edition: "Carryology Essentials Edition",
   },
   {
     name: "Flip Case",
     colours: ["black"],
     price: "C$69",
-    image: ["/2.avif"],
+    image: ["/card-Sleeves/flip-Case_Terracotta.avif"],
     edition: "Second Edition",
   },
   {
     name: "Card Pocket",
     colours: ["black"],
     price: "C$85",
-    image: ["/3.avif"],
+    image: ["/card-Sleeves/card-Pocket-Ranger_Green.avif"],
   },
   {
     name: "Phone Case - 3 Card",
     colours: ["black"],
     price: "C$99",
-    image: ["/4.avif"],
+    image: ["/card-Sleeves/phone-Case_Black.avif"],
   },
   {
     name: "Card Sleeve",
     colours: ["black"],
     price: "C$95",
-    image: ["/5.avif"],
+    image: ["/card-Sleeves/card-Sleeve_Mirum_Black.avif"],
     edition: "MIRUM Edition",
   },
 ];
@@ -635,7 +659,11 @@ const cardsAndBillsProduct = [
     name: "Apex Slim Sleeve",
     colours: ["black", "card-sleeve-gray", "card-sleeve-ocean"],
     price: "C$165",
-    image: ["/CB-0.avif", "/CB-1.avif", "/CB-2.avif"],
+    image: [
+      "/wallets-coins/apex-Slim-Sleeve_Raven.avif",
+      "/CB-1.avif",
+      "/CB-2.avif",
+    ],
     edition: "RFID safe",
   },
   {
@@ -669,7 +697,7 @@ const cardsAndBillsProduct = [
     name: "Minimalist Set",
     colours: ["black"],
     price: "C$109 - $C129",
-    image: ["/CB-16.avif"],
+    image: ["/wallets-coins/CB-16.avif"],
     edition: "Valued at C$144 - C$164",
   },
   {
