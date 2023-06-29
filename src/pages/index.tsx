@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Transition } from "@headlessui/react";
 import {
   BsChevronCompactLeft,
@@ -33,15 +33,15 @@ export default function Home() {
     setsliderPicture(!slidePicture);
   };
 
-    useEffect(() => {
+  useEffect(() => {
     if (imagesToShow === "Cards only") {
-      setWalletDataSet(cardsOnlyProduct)
+      setWalletDataSet(cardsOnlyProduct);
     } else if (imagesToShow === "Cards and bills") {
-      setWalletDataSet(cardsAndBillsProduct)
+      setWalletDataSet(cardsAndBillsProduct);
     } else if (imagesToShow === "Cards, bills and coins") {
-      setWalletDataSet(cardsBillsAndCoinsProduct)
+      setWalletDataSet(cardsBillsAndCoinsProduct);
     }
-  }, [imagesToShow])
+  }, [imagesToShow]);
 
   const handleDropDown = () => {
     setIsOpen(!isOpen);
@@ -73,8 +73,6 @@ export default function Home() {
   } else {
     textValue = `${sliderValue} Cards`;
   }
-
-  const isActive = imagesToShow === content.text;
 
   return (
     <header className="bg-white z-100">
@@ -321,39 +319,44 @@ export default function Home() {
           <a className="text-lg">Why do you carry in your wallet?</a>
         </div>
         <div className="flex flex-row">
-          {whyDoYouCarryContent.map((content, i) => (
-            <div
-              className="flex flex-col space-x-36 py-14 items-center justify-center"
-              key={i}
-            >
+          {whyDoYouCarryContent.map((content, i) => {
+            const isActive = imagesToShow === content.text;
+            return (
               <div
-                className="flex items-center flex-col px-24 group cursor-pointer"
-                onClick={() => setImagesToShow(content.text)}
+                className="flex flex-col space-x-36 py-14 items-center justify-center"
+                key={i}
               >
-                {isActive && (
-                  <>
-                    <Image
-                      src={isActive? content.activeImage: content.inactiveImage}
-                      width={96}
-                      height={71}
-                      alt="Mens Bags"
-                      style={{ height: "100%", width: "auto" }}
-                    />
-                    <div className="absolute group-hover:text-orange-600 text-2xl flex justify-center translate-y-32">
-                      <BsChevronCompactDown />
-                    </div>
-                  </>
-                )}
-                <div className="group-hover:text-orange-600 text-sm translate-y-4 text-gray-400">
-                  {content.text}
+                <div
+                  className="flex items-center flex-col px-24 group cursor-pointer"
+                  onClick={() => setImagesToShow(content.text)}
+                >
+                  {isActive && (
+                    <>
+                      <Image
+                        src={
+                          isActive ? content.activeImage : content.inactiveImage
+                        }
+                        width={96}
+                        height={71}
+                        alt="Mens Bags"
+                        style={{ height: "100%", width: "auto" }}
+                      />
+                      <div className="absolute group-hover:text-orange-600 text-2xl flex justify-center translate-y-32">
+                        <BsChevronCompactDown />
+                      </div>
+                    </>
+                  )}
+                  <div className="group-hover:text-orange-600 text-sm translate-y-4 text-gray-400">
+                    {content.text}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
         <div className="flex flex-row flex-wrap justify-center">
           {walletDataSet.map((content, index) => {
-            return <ProductCard content={content} index={index} />
+            return <ProductCard key={index} content={content} index={index} />;
           })}
         </div>
       </div>

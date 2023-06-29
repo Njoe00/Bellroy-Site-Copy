@@ -1,23 +1,25 @@
-import { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Transition } from "@headlessui/react";
 import Image from "next/image";
-import {
-  cardsAndBillsProduct,
-  cardsOnlyProduct,
-  cardsBillsAndCoinsProduct,
-} from "./data";
 
-
-export default function ProductCard({content, index}: {content: any, index: number}) {
+export default function ProductCard({
+  content,
+  index,
+}: {
+  content: any;
+  index: number;
+}) {
   const [selectedColour, setSelectedColour] = useState("black");
   const [cardImage, setCardImage] = useState(content.image[0]);
   const [isCardFlipped, setIsCardFlipped] = useState(true);
-  
+
+  useEffect(() => {
+    setCardImage(content.image[0]);
+  }, [content]);
+
   const toggleIsFlippedCard = () => {
     setIsCardFlipped(!isCardFlipped);
   };
-
-  console.log(cardImage, index);
 
   return (
     <div
@@ -79,12 +81,7 @@ export default function ProductCard({content, index}: {content: any, index: numb
 
       <div className="flex flex-col w-[413.33px] h-[508px] items-center relative">
         <div className="top-10 relative">
-          <Image
-            src={cardImage}
-            height={300}
-            width={300}
-            alt="cardImage"
-          />
+          <Image src={cardImage} height={300} width={300} alt="cardImage" />
           <div className="p-2 flex flex-row justify-center space-x-2 ">
             {content.colours.map((colour, index) => {
               const outlineColour = `outline-${selectedColour}`;
@@ -97,9 +94,7 @@ export default function ProductCard({content, index}: {content: any, index: numb
                   }}
                   key={index}
                   className={`${bgColour} h-4 w-4 rounded-full outline-1 outline outline-offset-2 ${
-                    selectedColour !== colour
-                      ? "outline-none"
-                      : outlineColour
+                    selectedColour !== colour ? "outline-none" : outlineColour
                   }`}
                 />
               );
