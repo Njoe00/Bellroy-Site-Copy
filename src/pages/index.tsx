@@ -8,7 +8,7 @@ import {
   BsChevronCompactDown,
 } from "react-icons/bs";
 import { RxDotFilled } from "react-icons/rx";
-import ProductCard from "./ProductCard.tsx";
+import ProductCard from "./ProductCard";
 
 // import {
 //   slidesSetOne,
@@ -31,7 +31,7 @@ export default function Home() {
 
   const handleSlide = () => {
     setsliderPicture(!slidePicture);
-  };
+  };  
 
   useEffect(() => {
     if (imagesToShow === "Cards only") {
