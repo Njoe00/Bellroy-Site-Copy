@@ -9,7 +9,7 @@ import {
 } from "react-icons/bs";
 import { RxDotFilled } from "react-icons/rx";
 import ProductCard from "./ProductCard";
-
+import Header from "/.header";
 // import {
 //   slidesSetOne,
 //   slidesSetTwo,
@@ -31,7 +31,7 @@ export default function Home() {
 
   const handleSlide = () => {
     setsliderPicture(!slidePicture);
-  };  
+  };
 
   useEffect(() => {
     if (imagesToShow === "Cards only") {
@@ -79,7 +79,8 @@ export default function Home() {
       <span className="place-content-end p-1 text-xs right-6 absolute text-gray-500 font-normal">
         Free shipping available 🇨🇦
       </span>
-      <div className="bg-white p-5 flex relative gap-2 font-normal space-x-10 text-sm items-center h-28 z-10">
+      <Header />
+      {/* <div className="bg-white p-5 flex relative gap-2 font-normal space-x-10 text-sm items-center h-28 z-10">
         <div className="gap-2 font-normal space-x-14 items-center flex">
           <Image
             src="/logo.png"
@@ -159,7 +160,7 @@ export default function Home() {
             </li>
           ))}
         </ul>
-      </Transition>
+      </Transition> */}
       <div className="h-screen bg-background-main">
         <h1 className="font-serif flex text-white text-8xl p-16 justify-center">
           Slim Your Wallet
@@ -330,22 +331,17 @@ export default function Home() {
                   className="flex items-center flex-col px-24 group cursor-pointer"
                   onClick={() => setImagesToShow(content.text)}
                 >
-                  {isActive && (
-                    <>
-                      <Image
-                        src={
-                          isActive ? content.activeImage : content.inactiveImage
-                        }
-                        width={96}
-                        height={71}
-                        alt="Mens Bags"
-                        style={{ height: "100%", width: "auto" }}
-                      />
-                      <div className="absolute group-hover:text-orange-600 text-2xl flex justify-center translate-y-32">
-                        <BsChevronCompactDown />
-                      </div>
-                    </>
-                  )}
+                  <Image
+                    src={isActive ? content.activeImage : content.inactiveImage}
+                    width={96}
+                    height={71}
+                    alt="Mens Bags"
+                    style={{ height: "100%", width: "auto" }}
+                  />
+                  <div className="absolute group-hover:text-orange-600 text-2xl flex justify-center translate-y-32">
+                    <BsChevronCompactDown />
+                  </div>
+
                   <div className="group-hover:text-orange-600 text-sm translate-y-4 text-gray-400">
                     {content.text}
                   </div>
@@ -604,18 +600,46 @@ const cardsAndBillsProduct = [
 
 const cardsBillsAndCoinsProduct = [
   {
-    name: "Apex Slim Sleeve",
-    colours: ["black", "card-sleeve-gray"],
-    price: "C$69",
-    image: ["/CB-0.avif", "/CB-1.avif", "/CB-2.avif"],
+    name: "Folio Mini",
+    colours: [
+      "black",
+      "card-sleeve-gray",
+      "card-sleeve-teal",
+      "note-sleeve-hazelnut",
+    ],
+    price: "C$115",
+    image: [
+      "/card-Bills-Coins/folio-Mini_Black.avif",
+      "/card-Bills-Coins/folio-Mini_Gray.avif",
+      "/card-Bills-Coins/folio-Mini_Teal.avif",
+      "/card-Bills-Coins/folio-Mini_Hazel.avif",
+    ],
     edition: "RFID safe",
   },
   {
-    name: "Card Sleeve",
-    colours: ["black", "white"],
-    price: "C$69",
-    image: ["/1.avif"],
-    edition: "Carryology Essentials Edition",
+    name: "Note Sleeve",
+    colours: [
+      "black",
+      "card-sleeve-gray",
+      "card-sleeve-ocean",
+      "card-sleeve-teal",
+      "note-sleeve-ranger-green",
+      "note-sleeve-java",
+      "note-sleeve-cocoa",
+      "note-sleeve-terracotta",
+    ],
+    price: "C$115",
+    image: [
+      "/card-Bills-Coins/note-Sleeve_Black.avif",
+      "/card-Bills-Coins/note-Sleeve_Gray.avif",
+      "/card-Bills-Coins/note-Sleeve_Ocean.avif",
+      "/card-Bills-Coins/note-Sleeve_Teal.avif",
+      "/card-Bills-Coins/note-Sleeve_Ranger-Green.avif",
+      "/card-Bills-Coins/note-Sleeve_Cocoa.avif",
+      "/card-Bills-Coins/note-Sleeve_Java.avif",
+      "/card-Bills-Coins/note-Sleeve_Terracotta",
+    ],
+    edition: "RFID safe",
   },
   {
     name: "Flip Case",
