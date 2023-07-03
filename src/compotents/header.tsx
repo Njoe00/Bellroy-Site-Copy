@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Transition } from "@headlessui/react";
 import Image from "next/image";
 
-import { headerSubSections, headerSubSectionsContentWallets } from "./data";
+import { headerSubSections, headerSubSectionsContentWallets } from "../pages/data";
 
 export default function Header({
   content,
