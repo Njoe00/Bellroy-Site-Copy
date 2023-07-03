@@ -9,7 +9,7 @@ import {
 } from "react-icons/bs";
 import { RxDotFilled } from "react-icons/rx";
 import ProductCard from "./ProductCard";
-import Header from "/.header";
+import Header from "./header";
 // import {
 //   slidesSetOne,
 //   slidesSetTwo,
@@ -351,9 +351,9 @@ export default function Home() {
           })}
         </div>
         <div className="flex flex-row flex-wrap justify-center">
-          {walletDataSet.map((content, index) => {
-            return <ProductCard key={index} content={content} index={index} />;
-          })}
+          {walletDataSet.map((content, index) => (
+             <ProductCard key={index} content={content} index={index} />
+          ))}
         </div>
       </div>
     </header>
