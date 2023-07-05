@@ -1,26 +1,14 @@
 import Image from "next/image";
-import { Inter } from "next/font/google";
 import React, { useEffect, useState } from "react";
-import { Transition } from "@headlessui/react";
 import {
   BsChevronCompactLeft,
   BsChevronCompactRight,
   BsChevronCompactDown,
 } from "react-icons/bs";
 import { RxDotFilled } from "react-icons/rx";
-import ProductCard from "../compotents/ProductCard";
-import Header from "../compotents/header";
-// import {
-//   slidesSetOne,
-//   slidesSetTwo,
-//   headerSubSections,
-//   headerSubSectionsContentWallets,
-//   headerSubSectionsContentBags,
-//   whyDoYouCarryContent,
-//   cardsOnlyProduct,
-//   cardsAndBillsProduct,
-//   cardsBillsAndCoinsProduct,
-// } from "./data";
+import ProductCard from "../components/ProductCard";
+import Header from "../components/header";
+
 
 export default function Home() {
   const [sliderValue, setSliderValue] = useState("0");

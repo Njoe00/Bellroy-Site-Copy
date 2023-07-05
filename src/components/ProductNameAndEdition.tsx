@@ -1,6 +1,18 @@
 import React, { useEffect, useState } from "react";
 
-export default function ProudctNameAndEdition({ content }: { content: any }) {
+interface product {
+  price: number;
+  name: string;
+}
+
+
+
+export default function ProudctNameAndEdition({
+  content,
+  
+}: {
+  content: object
+}) {
 
 
   return (

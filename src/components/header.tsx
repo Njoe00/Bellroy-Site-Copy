@@ -9,7 +9,7 @@ export default function Header({
   index,
 }: {
   content: any;
-  index: number;
+  index: any;
 }) {
   const [isOpen, setIsOpen] = useState(false);
 
