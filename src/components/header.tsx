@@ -2,14 +2,10 @@ import React, { useEffect, useState } from "react";
 import { Transition } from "@headlessui/react";
 import Image from "next/image";
 
-import { headerSubSectionsContentWallets } from "../pages/data";
-
 export default function Header({
-  content,
   index,
 }: {
-  content: any;
-  index: any;
+  index: string;
 }) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -82,7 +78,7 @@ export default function Header({
               </a>
             </li>
           ))}
-        </ul>
+c        </ul>
       </Transition>
     </div>
   );
@@ -95,7 +91,7 @@ const headerIcons = [
 ];
 
 
-export const headerSubSections = [
+const headerSubSections = [
   {
     text: "Bags",
   },
@@ -116,5 +112,64 @@ export const headerSubSections = [
   },
   {
     text: "About Us",
+  },
+];
+
+const headerSubSectionsContentBags = [
+  {
+    text: "Men's Bag's",
+    image: "/Men's_Bags.avif",
+  },
+  {
+    text: "Woman's Bags",
+    image: "/Womens_Bags.avif",
+  },
+  {
+    text: "Backpacks",
+    image: "/Backpacks.avif",
+  },
+  {
+    text: "Slings & Crossbody Bags",
+    image: "/Crossbody.avif",
+  },
+  {
+    text: "Totes & Shoulder Bags",
+    image: "/Totes.avif",
+  },
+  {
+    text: "Market & Cooler Bags",
+    image: "/nav-icon-cooler-bags.avif",
+  },
+  {
+    text: "Work Bags",
+    image: "/Workbags.avif",
+  },
+  {
+    text: "Travel Bags",
+    image: "/Travel_Bags.avif",
+  },
+];
+
+
+export const headerSubSectionsContentWallets = [
+  {
+    text: "Billfold's",
+    image: "/Billfolds.avif",
+  },
+  {
+    text: "Card Holders",
+    image: "/Card_Holders.avif",
+  },
+  {
+    text: "Zip Wallets",
+    image: "/Zip_Wallets.avif",
+  },
+  {
+    text: "Passport Holders",
+    image: "/Passport_Holders_.avif",
+  },
+  {
+    text: "RFID Protected",
+    image: "/RFID.avif",
   },
 ];

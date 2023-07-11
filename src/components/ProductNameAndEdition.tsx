@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 
-interface product {
+type Content = {
   price: number;
   name: string;
+  edition: string;
 }
 
 export default function ProudctNameAndEdition({
   content,
 }: {
-  content: object;
+  content: Content;
 }) {
   return (
     <div className="relative flex flex-col items-center flex-wrap top-20 font-[440]">
