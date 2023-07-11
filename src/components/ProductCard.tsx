@@ -2,20 +2,19 @@ import React, { useEffect, useState } from "react";
 import { Transition } from "@headlessui/react";
 import Image from "next/image";
 import ProudctNameAndEdition from "./ProductNameAndEdition";
+import ProdctColourButton from "./ProductColourButtons";
 
 type Content = {
   colours: string[];
   image: string[];
   index: number;
-}
+};
 
 export default function ProductCard({
   content,
-  image,
-  index
+  index,
 }: {
   content: Content;
-  image: string;
   index: number;
 }) {
   const [selectedColour, setSelectedColour] = useState("black");
@@ -92,24 +91,11 @@ export default function ProductCard({
         <div className="flex flex-col w-[413.33px] h-[508px] items-center relative">
           <div className="top-10 relative">
             <Image src={cardImage} height={300} width={300} alt="cardImage" />
-            <div className="p-2 flex flex-row justify-center space-x-2 ">
-              {content.colours.map((colour, index) => {
-                const outlineColour = `outline-${selectedColour}`;
-                const bgColour = `bg-${colour}`;
-                return (
-                  <button
-                    onClick={() => {
-                      setSelectedColour(colour);
-                      setCardImage(content.image[index]);
-                    }}
-                    key={index}
-                    className={`${bgColour}  h-4 w-4 rounded-full outline-1 outline outline-offset-2 ${
-                      selectedColour !== colour ? "outline-none" : outlineColour
-                    }`}
-                  />
-                );
-              })}
-            </div>
+              <ProdctColourButton
+                content={content}
+                colour={content.colours}
+                index={index}
+              />
             <ProudctNameAndEdition content={content} />
           </div>
         </div>
