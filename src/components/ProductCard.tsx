@@ -3,11 +3,19 @@ import { Transition } from "@headlessui/react";
 import Image from "next/image";
 import ProudctNameAndEdition from "./ProductNameAndEdition";
 
+type Content = {
+  colours: string[];
+  image: string[];
+  index: number;
+}
+
 export default function ProductCard({
   content,
-  index,
+  image,
+  index
 }: {
-  content: object;
+  content: Content;
+  image: string;
   index: number;
 }) {
   const [selectedColour, setSelectedColour] = useState("black");
