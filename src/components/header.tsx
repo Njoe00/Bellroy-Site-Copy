@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Transition } from "@headlessui/react";
 import Image from "next/image";
 
-import { headerSubSections, headerSubSectionsContentWallets } from "../pages/data";
+import { headerSubSectionsContentWallets } from "../pages/data";
 
 export default function Header({
   content,
@@ -92,4 +92,29 @@ const headerIcons = [
   "/header/email.png",
   "/header/magnifying-glass.png",
   "/header/trolley.png",
+];
+
+
+export const headerSubSections = [
+  {
+    text: "Bags",
+  },
+  {
+    text: "Wallets",
+  },
+  {
+    text: "Accessories",
+  },
+  {
+    text: "Tech",
+  },
+  {
+    text: "Travel",
+  },
+  {
+    text: "Collections",
+  },
+  {
+    text: "About Us",
+  },
 ];

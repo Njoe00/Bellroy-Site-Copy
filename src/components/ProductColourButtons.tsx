@@ -12,7 +12,7 @@ export default function ProdctColourButton({
   index
 }: {
   content: Content;
-  colour: string;
+  colour: string[];
   index: number;
 }) {
   const [selectedColour, setSelectedColour] = useState("black");
