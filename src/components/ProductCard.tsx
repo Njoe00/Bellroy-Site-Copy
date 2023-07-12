@@ -21,6 +21,7 @@ export default function ProductCard({
   const [cardImage, setCardImage] = useState(content.image[0]);
   const [isCardFlipped, setIsCardFlipped] = useState(true);
 
+
   useEffect(() => {
     setCardImage(content.image[0]);
   }, [content]);
@@ -95,6 +96,9 @@ export default function ProductCard({
                 content={content}
                 colour={content.colours}
                 index={index}
+                selectedColour={selectedColour}
+                setSelectedColour={setSelectedColour}
+                setCardImage={setCardImage}
               />
             <ProudctNameAndEdition content={content} />
           </div>

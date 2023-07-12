@@ -8,15 +8,15 @@ type Content = {
 
 export default function ProdctColourButton({
   content,
-  colour,
-  index
+  selectedColour,
+  setSelectedColour,
+  setCardImage,
 }: {
   content: Content;
-  colour: string[];
-  index: number;
+  selectedColour: string;
+  setSelectedColour: (val: string) => void;
+  setCardImage: (val: string) => void;
 }) {
-  const [selectedColour, setSelectedColour] = useState("black");
-  const [cardImage, setCardImage] = useState(content.image[0]);
 
   return (
     <div className="p-2 flex flex-row justify-center space-x-2 ">
@@ -30,7 +30,7 @@ export default function ProdctColourButton({
               setCardImage(content.image[index]);
             }}
             key={index}
-            className={`${bgColour} bg-card-sleeve-  h-4 w-4 rounded-full outline-1 outline outline-offset-2 ${
+            className={`${bgColour} h-4 w-4 rounded-full outline-1 outline outline-offset-2 ${
               selectedColour !== colour ? "outline-none" : outlineColour
             }`}
           />
