@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 
 type Content = {
-  price: number;
+  colours: string[];
+  image: string[];
+  index: number;
   name: string;
-  edition: string;
-}
+  edition?: string;
+  price: string;
+};
 
 export default function ProudctNameAndEdition({
   content,

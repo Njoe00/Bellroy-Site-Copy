@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 type Content = {
   colours: string[];
@@ -6,13 +6,15 @@ type Content = {
   image: string[];
 };
 
-export default function ProdctColourButton({
+export default function ProductColourButton({
   content,
+  index,
   selectedColour,
   setSelectedColour,
   setCardImage,
 }: {
   content: Content;
+  index: number;
   selectedColour: string;
   setSelectedColour: (val: string) => void;
   setCardImage: (val: string) => void;

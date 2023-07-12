@@ -2,12 +2,15 @@ import React, { useEffect, useState } from "react";
 import { Transition } from "@headlessui/react";
 import Image from "next/image";
 import ProudctNameAndEdition from "./ProductNameAndEdition";
-import ProdctColourButton from "./ProductColourButtons";
+import ProductColourButton from "./ProductColourButton";
 
 type Content = {
   colours: string[];
   image: string[];
   index: number;
+  name: string;
+  edition?: string;
+  price: string;
 };
 
 export default function ProductCard({
@@ -92,9 +95,8 @@ export default function ProductCard({
         <div className="flex flex-col w-[413.33px] h-[508px] items-center relative">
           <div className="top-10 relative">
             <Image src={cardImage} height={300} width={300} alt="cardImage" />
-              <ProdctColourButton
+              <ProductColourButton
                 content={content}
-                colour={content.colours}
                 index={index}
                 selectedColour={selectedColour}
                 setSelectedColour={setSelectedColour}
