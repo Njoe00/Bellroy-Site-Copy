@@ -7,6 +7,7 @@ import ProductColourButton from "./ProductColourButton";
 type Content = {
   colours: string[];
   image: string[];
+  imageAlt?: string;
   index: number;
   name: string;
   edition?: string;
@@ -50,7 +51,10 @@ export default function ProductCard({
           >
             <button
               className="group-hover:visible flex flex-row absolute top-0 right-0 py-1 px-2 text-xs bg-gray-300 z-20 "
-              onClick={toggleIsFlippedCard}
+              onClick={() => {
+                setIsCardFlipped(!isCardFlipped);
+                setCardImage(content.image[0]);
+              }}
             >
               CLOSE
               <Image
@@ -75,7 +79,10 @@ export default function ProductCard({
           >
             <button
               className="group-hover:visible invisible flex flex-row absolute top-0 right-0 py-1 px-2 text-xs bg-gray-300 z-20"
-              onClick={toggleIsFlippedCard}
+              onClick={() => {
+                setIsCardFlipped(!isCardFlipped);
+                setCardImage(content.imageAlt[0]);
+              }}
             >
               SHOW MORE
               <Image
