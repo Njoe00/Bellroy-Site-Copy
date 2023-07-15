@@ -7,7 +7,7 @@ import {
 } from "react-icons/bs";
 import { RxDotFilled } from "react-icons/rx";
 import ProductCard from "../components/ProductCard";
-import Header from "../components/header";
+import Header from "../components/Header";
 
 
 export default function Home() {
