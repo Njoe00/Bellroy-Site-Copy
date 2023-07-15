@@ -15,10 +15,8 @@ type Content = {
 
 export default function ProductCard({
   content,
-  index,
 }: {
   content: Content;
-  index: number;
 }) {
   const [selectedColour, setSelectedColour] = useState("black");
   const [cardImage, setCardImage] = useState(content.image[0]);
@@ -36,7 +34,7 @@ export default function ProductCard({
   return (
     <div className="flex flex-row flex-wrap justify-center">
       <div
-        key={index}
+        key={content.index}
         className="bg-gray-100 group flex flex-col relative justify-center border-4 border-white"
       >
         <div className="z-30">
@@ -97,7 +95,7 @@ export default function ProductCard({
             <Image src={cardImage} height={300} width={300} alt="cardImage" />
               <ProductColourButton
                 content={content}
-                index={index}
+                index={content.index}
                 selectedColour={selectedColour}
                 setSelectedColour={setSelectedColour}
                 setCardImage={setCardImage}
