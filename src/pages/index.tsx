@@ -38,6 +38,9 @@ export default function Home() {
       <SliderImage />
 
       <div className="bg-white flex flex-col items-center p-40">
+      <h1 className="text-xl flex absolute h-40 w-auto">
+        What do you carry in your wallet?
+      </h1>
         <WalletTypeButtons
           imagesToShow={imagesToShow}
           setImagesToShow={setImagesToShow}

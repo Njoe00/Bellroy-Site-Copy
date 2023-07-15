@@ -13,6 +13,7 @@ export default function WalletTypeButtons({
 }) {
   return (
     <div className="flex flex-row">
+      
       {whyDoYouCarryContent.map((content, i) => {
         const isActive = imagesToShow === content.text;
         return (
