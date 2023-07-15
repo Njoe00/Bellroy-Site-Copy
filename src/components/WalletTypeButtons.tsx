@@ -1,25 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Image from "next/image";
 import { BsChevronCompactDown } from "react-icons/bs";
-
 
 export default function WalletTypeButtons({
   imagesToShow,
   setImagesToShow,
-  
 }: {
   imagesToShow: string;
   setImagesToShow: (val: string) => void;
 }) {
   return (
     <div className="flex flex-row">
-      
-      {whyDoYouCarryContent.map((content, i) => {
+      {whyDoYouCarryContent.map((content, index) => {
         const isActive = imagesToShow === content.text;
         return (
           <div
             className="flex flex-col space-x-36 py-14 items-center justify-center"
-            key={i}
+            key={index}
           >
             <div
               className="flex items-center flex-col px-24 group cursor-pointer"
