@@ -21,11 +21,11 @@ export default function Header() {
             style={{ height: "100%", width: "auto" }}
           />
           <div className="dropdown relative w-max">
-            {headerSubSections.map((section, i) => (
+            {headerSubSections.map((section, index) => (
               <button
                 className="text-sm px-4 py-2.5 text-center inline-flex items-center hover:text-orange-600"
                 onClick={handleDropDown}
-                key={i}
+                key={index}
               >
                 {section.text}
               </button>
@@ -44,6 +44,7 @@ export default function Header() {
                 width={17}
                 height={17}
                 style={{ height: "100%", width: "auto" }}
+                key={index}
               />
             </span>
           ))}
@@ -68,6 +69,7 @@ export default function Header() {
                 height={75}
                 alt="Mens Bags"
                 style={{ height: "100%", width: "auto" }}
+                key={index}
               />
               <a href="#" className=" hover:text-orange-600">
                 {content.text}
