@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { content } from "./ProductCard";
-
-
+import  { Content } from "./ProductCard";
 
 export default function ProudctNameAndEdition({
   content,
 }: {
-  content: content;
+  content: Content;
 }) {
   return (
     <div className="relative flex flex-col items-center flex-wrap top-20 font-[440]">

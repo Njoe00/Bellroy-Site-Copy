@@ -4,7 +4,7 @@ import Image from "next/image";
 import ProudctNameAndEdition from "./ProductNameAndEdition";
 import ProductColourButton from "./ProductColourButton";
 
-type Content = {
+export type Content = {
   colours: string[];
   image: string[];
   index: number;
