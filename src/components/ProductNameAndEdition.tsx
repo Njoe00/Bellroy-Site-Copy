@@ -1,18 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { content } from "./ProductCard";
 
-type Content = {
-  colours: string[];
-  image: string[];
-  index: number;
-  name: string;
-  edition?: string;
-  price: string;
-};
+
 
 export default function ProudctNameAndEdition({
   content,
 }: {
-  content: Content;
+  content: content;
 }) {
   return (
     <div className="relative flex flex-col items-center flex-wrap top-20 font-[440]">

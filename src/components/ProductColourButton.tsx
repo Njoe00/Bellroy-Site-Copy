@@ -1,19 +1,18 @@
 import React from "react";
 
-type Content = {
+type content = {
   colours: string[];
-  index: number;
   image: string[];
-};
+  index: number;
+}
 
 export default function ProductColourButton({
   content,
-  index,
   selectedColour,
   setSelectedColour,
   setCardImage,
 }: {
-  content: Content;
+  content: content;
   index: number;
   selectedColour: string;
   setSelectedColour: (val: string) => void;
