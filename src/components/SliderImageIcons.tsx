@@ -1,15 +1,13 @@
 import React from "react";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
-import  { prevSlide, nextSlide } from "./SliderImage"
 
 export default function SliderImageIcons({
-
   prevSlide,
   nextSlide,
 }: {
   
-  prevSlide: prevSlide;
-  nextSlide: nextSlide;
+  prevSlide: () => void;
+  nextSlide: () => void;
 }) {
   return (
     <>

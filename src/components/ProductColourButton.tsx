@@ -1,30 +1,23 @@
 import React from "react";
 
-type content = {
+type Content = {
   colours: string[];
   image: string[];
-  index: number;
 }
 
-type colourButtons = [
-  setSelectedColour: (val: string) => void,
-  setCardImage: (val: string) => void,
-  selectedColour: string,
-]
-
+type ProductColourButtonProps = {
+  content: Content;
+  selectedColour: string;
+  setSelectedColour: React.Dispatch<React.SetStateAction<string>>;
+  setCardImage: React.Dispatch<React.SetStateAction<string>>;
+}
+ 
 export default function ProductColourButton({
   content,
   selectedColour,
   setSelectedColour,
   setCardImage,
-}: {
-  content: content;
-  index: number;
-  selectedColour: colourButtons[2];
-  setSelectedColour: colourButtons[0];
-  setCardImage: colourButtons[1];
-}) {
-
+}: ProductColourButtonProps) {
   return (
     <div className="p-2 flex flex-row justify-center space-x-2 ">
     {content.colours.map((colour, index) => {

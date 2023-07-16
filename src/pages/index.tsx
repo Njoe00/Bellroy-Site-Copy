@@ -35,7 +35,7 @@ export default function Home() {
     setIsOpen(!isOpen);
   };
 
-  const goToSlide = (slideIndex) => {
+  const goToSlide = (slideIndex: number) => {
     setCurrentIndex(slideIndex);
   };
 
@@ -260,7 +260,7 @@ export default function Home() {
         </div>
         <div className="flex flex-row flex-wrap justify-center">
           {walletDataSet.map((content, index) => (
-            <ProductCard key={index} content={content} index={index} />
+            <ProductCard key={index} content={content} />
           ))}
         </div>
       </div>

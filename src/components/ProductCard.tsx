@@ -7,11 +7,11 @@ import ProductColourButton from "./ProductColourButton";
 export type Content = {
   colours: string[];
   image: string[];
-  index: number;
   name: string;
   edition?: string;
   price: string;
 };
+
 
 export default function ProductCard({
   content,
@@ -34,7 +34,6 @@ export default function ProductCard({
   return (
     <div className="flex flex-row flex-wrap justify-center">
       <div
-        key={content.index}
         className="bg-gray-100 group flex flex-col relative justify-center border-4 border-white"
       >
         <div className="z-30">
@@ -95,7 +94,6 @@ export default function ProductCard({
             <Image src={cardImage} height={300} width={300} alt="cardImage" />
               <ProductColourButton
                 content={content}
-                index={content.index}
                 selectedColour={selectedColour}
                 setSelectedColour={setSelectedColour}
                 setCardImage={setCardImage}
