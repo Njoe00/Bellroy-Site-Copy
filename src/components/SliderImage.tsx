@@ -24,7 +24,6 @@ export default function SliderImage() {
   return (
     <div className="relative flex flex-col py-28 justify-center bg-gray-100 items-center z-40">
       <div className="flex flex-row space-x-4 drop-shadow-lg">
-        <div>
           <div
             style={{
               backgroundImage: `url(${slidesSetOne[currentIndex].url})`,
@@ -35,7 +34,6 @@ export default function SliderImage() {
             <div className="bg-white w-[365px] h-[94px] flex flex-col text-center justify-center p-4">
               {`${slidesSetOne[currentIndex].text}`}
             </div>
-          </div>
         </div>
         <div>
           <div
