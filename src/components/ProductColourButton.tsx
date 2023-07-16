@@ -6,6 +6,12 @@ type content = {
   index: number;
 }
 
+type colourButtons = [
+  setSelectedColour: (val: string) => void,
+  setCardImage: (val: string) => void,
+  selectedColour: string,
+]
+
 export default function ProductColourButton({
   content,
   selectedColour,
@@ -14,9 +20,9 @@ export default function ProductColourButton({
 }: {
   content: content;
   index: number;
-  selectedColour: string;
-  setSelectedColour: (val: string) => void;
-  setCardImage: (val: string) => void;
+  selectedColour: colourButtons[2];
+  setSelectedColour: colourButtons[0];
+  setCardImage: colourButtons[1];
 }) {
 
   return (
