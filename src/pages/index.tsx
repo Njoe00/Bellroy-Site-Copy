@@ -8,6 +8,7 @@ import {
   BsChevronCompactDown,
 } from "react-icons/bs";
 import { RxDotFilled } from "react-icons/rx";
+import QuotesContainer from "@/components/QuotesContainer";
 
 export default function Home() {
   const [sliderValue, setSliderValue] = useState("0");
@@ -456,6 +457,7 @@ export default function Home() {
           })}
         </div>
       </div>
+      <QuotesContainer />
     </header>
   );
 }
