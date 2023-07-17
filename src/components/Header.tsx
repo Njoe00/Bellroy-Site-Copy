@@ -2,11 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Transition } from "@headlessui/react";
 import Image from "next/image";
 
-export default function Header({
-  index,
-}: {
-  index: string;
-}) {
+export default function Header(){
+ 
   const [isOpen, setIsOpen] = useState(false);
 
   const handleDropDown = () => {
@@ -25,11 +22,11 @@ export default function Header({
             style={{ height: "100%", width: "auto" }}
           />
           <div className="dropdown relative w-max">
-            {headerSubSections.map((section, i) => (
+            {headerSubSections.map((section, index) => (
               <button
                 className="text-sm px-4 py-2.5 text-center inline-flex items-center hover:text-orange-600"
                 onClick={handleDropDown}
-                key={i}
+                key={index}
               >
                 {section.text}
               </button>
@@ -40,14 +37,15 @@ export default function Header({
         <div className="gap-2 font-normal space-x-4 text-xs flex justify-end text-gray-500 p-2">
           <a href="/#">Help</a>
           <a href="/#">Find In-Store</a>
-          {headerIcons.map((images, index) => (
+          {headerIcons.map((image, index) => (
             <span className="flex justify-items-center">
               <Image
-                src={images}
+                src={image}
                 alt="mail"
                 width={17}
                 height={17}
                 style={{ height: "100%", width: "auto" }}
+                key={index}
               />
             </span>
           ))}

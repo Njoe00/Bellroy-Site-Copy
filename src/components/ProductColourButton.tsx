@@ -1,28 +1,21 @@
 import React from "react";
+import { Content } from "./ProductCard";
 
-type Content = {
-  colours: string[];
-  index: number;
-  image: string[];
+type ProductColourButtonProps = {
+  content: Content;
+  selectedColour: string;
+  setSelectedColour: React.Dispatch<React.SetStateAction<string>>;
+  setCardImage: React.Dispatch<React.SetStateAction<string>>;
 };
-
 export default function ProductColourButton({
   content,
-  index,
   selectedColour,
   setSelectedColour,
   setCardImage,
-}: {
-  content: Content;
-  index: number;
-  selectedColour: string;
-  setSelectedColour: (val: string) => void;
-  setCardImage: (val: string) => void;
-}) {
-
+}: ProductColourButtonProps) {
   return (
     <div className="p-2 flex flex-row justify-center space-x-2 ">
-    {content.colours.map((colour, index) => {
+      {content.colours.map((colour, index) => {
         const outlineColour = `outline-${selectedColour}`;
         const bgColour = `bg-${colour}`;
         return (

@@ -1,13 +1,5 @@
 import React, { useEffect, useState } from "react";
-
-type Content = {
-  colours: string[];
-  image: string[];
-  index: number;
-  name: string;
-  edition?: string;
-  price: string;
-};
+import { Content } from "./ProductCard";
 
 export default function ProudctNameAndEdition({
   content,

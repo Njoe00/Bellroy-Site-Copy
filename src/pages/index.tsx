@@ -52,7 +52,6 @@ export default function Home() {
               key={index}
               content={content}
               image={content.image}
-              index={index}
               imageAlt={content.imageAlt}
             />
           ))}

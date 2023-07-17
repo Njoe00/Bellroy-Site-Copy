@@ -4,21 +4,22 @@ import Image from "next/image";
 import ProudctNameAndEdition from "./ProductNameAndEdition";
 import ProductColourButton from "./ProductColourButton";
 
-type Content = {
+export type Content = {
   colours: string[];
   image: string[];
-  imageAlt?: string;
+  imageAlt: string;
   index: number;
   name: string;
   edition?: string;
+  price: string;
 };
 
 export default function ProductCard({
   content,
-  index,
+  key
 }: {
+  key: number;
   content: Content;
-  index: number;
 }) {
   const [selectedColour, setSelectedColour] = useState("black");
   const [cardImage, setCardImage] = useState(content.image[0]);
@@ -28,14 +29,10 @@ export default function ProductCard({
     setCardImage(content.image[0]);
   }, [content]);
 
-  const toggleIsFlippedCard = () => {
-    setIsCardFlipped(!isCardFlipped);
-  };
-
   return (
     <div className="flex flex-row flex-wrap justify-center">
       <div
-        key={index}
+        key={key}
         className="bg-gray-100 group flex flex-col relative justify-center border-4 border-white"
       >
         <div className="z-30">
@@ -102,12 +99,11 @@ export default function ProductCard({
             <Image src={cardImage} height={300} width={300} alt="cardImage" />
             <ProductColourButton
               content={content}
-              index={index}
               selectedColour={selectedColour}
               setSelectedColour={setSelectedColour}
               setCardImage={setCardImage}
             />
-            <ProudctNameAndEdition content={content} name={content.name} />
+            <ProudctNameAndEdition content={content} />
           </div>
         </div>
       </div>
