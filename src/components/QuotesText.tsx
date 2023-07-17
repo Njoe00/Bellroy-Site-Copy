@@ -1,30 +1,23 @@
 import React from "react";
 
-type quotes = [
-  {
-    title: string;
-    quote: string;
-  }
-];
+type Quotes = {
+  title: string;
+  quote: string;
+}[];
 
-type SetState = [
-  setQuotesText: (value: string) => void,
-  setButtonHighLighted: (value: number) => void
-];
+type QuoteTextProps = {
+  Quotes: Quotes;
+  buttonHighlighted: number;
+  setQuotesText: React.Dispatch<React.SetStateAction<string>>;
+  setButtonHighLighted: React.Dispatch<React.SetStateAction<number>>;
+};
 
 export default function QuotesText({
   Quotes,
   buttonHighlighted,
   setQuotesText,
   setButtonHighLighted,
-  index,
-}: {
-  Quotes: quotes;
-  buttonHighLighted: number;
-  setQuotesText: SetState[0];
-  setButtonHighLighted: SetState[1];
-  index: number;
-}) {
+}: QuoteTextProps) {
   return (
     <div className="flex-row flex space-x-6">
       {Quotes.map((text, index) => {
