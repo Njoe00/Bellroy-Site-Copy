@@ -3,7 +3,8 @@ import QuotesText from "./QuotesText";
 
 export default function QuotesContainer() {
   const [quotesText, setQuotesText] = useState("hi");
-  const [buttonHighlighted, setButtonHighLighted] = useState(0);
+  const [buttonHighlighted, setButtonHighLighted] = useState(true);
+
 
   return (
     <div className="bg-background-quotes flex justify-center p-20">
@@ -37,7 +38,7 @@ const Quotes = [
       "Bellroy is on a mission to slim down the way you carry your everyday essentials, by making it functional yet elegant.",
   },
   {
-    title: "THE HUFFINGTON POST",
+    title: "HICONSUMPTION",
     quote: "“Honestly, these wallets are near perfect.”",
   },
 ];

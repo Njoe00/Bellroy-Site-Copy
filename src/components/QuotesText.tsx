@@ -9,7 +9,7 @@ type QuoteTextProps = {
   Quotes: Quotes;
   buttonHighlighted: number;
   setQuotesText: React.Dispatch<React.SetStateAction<string>>;
-  setButtonHighLighted: React.Dispatch<React.SetStateAction<number>>;
+  setButtonHighLighted: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 export default function QuotesText({
@@ -18,6 +18,11 @@ export default function QuotesText({
   setQuotesText,
   setButtonHighLighted,
 }: QuoteTextProps) {
+
+  const handleHighlightedButtons = () => {
+    setButtonHighLighted(!buttonHighlighted)
+  }
+
   return (
     <div className="flex-row flex space-x-6">
       {Quotes.map((text, index) => {
@@ -32,7 +37,7 @@ export default function QuotesText({
               key={index}
               onClick={() => {
                 setQuotesText(text.quote);
-                setButtonHighLighted(index);
+                handleHighlightedButtons
               }}
             >
               {text.title}
