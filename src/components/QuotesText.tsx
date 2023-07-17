@@ -7,9 +7,9 @@ type Quotes = {
 
 type QuoteTextProps = {
   Quotes: Quotes;
-  buttonHighlighted: boolean;
+  buttonHighlighted: number;
   setQuotesText: React.Dispatch<React.SetStateAction<string | string>>;
-  setButtonHighLighted: React.Dispatch<React.SetStateAction<boolean>>;
+  setButtonHighLighted: React.Dispatch<React.SetStateAction<number>>;
 };
 
 export default function QuotesText({
@@ -18,29 +18,29 @@ export default function QuotesText({
   setQuotesText,
   setButtonHighLighted,
 }: QuoteTextProps) {
-  const handleHighlightedButtons = () => {
-    setButtonHighLighted(!buttonHighlighted);
+  const handleHighlightedButtons = (index: number) => {
+    setButtonHighLighted(index);
   };
 
   return (
-    <div className="flex-row flex space-x-6">
+    <div className="flex-row flex space-x-6 items-center">
       {Quotes.map((text, index) => {
         return (
           <>
-            <div
+            <span
               className={
-                buttonHighlighted
-                  ? "hover:text-white text-white text-xl"
-                  : "text-gray-400 hover:text-white text-xl"
+                buttonHighlighted === index
+                  ? "hover:text-white text-white text-xl border-b-2 inline-block p-12"
+                  : "text-gray-400 border-gray-400 hover:text-white hover:border-white border-b-2 text-xl inline-block p-12"
               }
               key={index}
               onClick={() => {
                 setQuotesText(text.quote);
-                handleHighlightedButtons();
+                handleHighlightedButtons(index);
               }}
             >
-              {text.title}
-            </div>
+              <div className="inline-block">{text.title}</div>
+            </span>
           </>
         );
       })}
