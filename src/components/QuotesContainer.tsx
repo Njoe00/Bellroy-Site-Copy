@@ -16,7 +16,7 @@ export default function QuotesContainer() {
           buttonHighlighted={buttonHighlighted}
           setButtonHighLighted={setButtonHighLighted}
         />
-        <div className="flex flex-col items-center text-center py-20 text-2xl w-9/12">{quotesText}</div>
+        <div className="flex flex-col items-center text-center py-20 text-2xl ">{quotesText}</div>
       </div>
     </div>
   );
