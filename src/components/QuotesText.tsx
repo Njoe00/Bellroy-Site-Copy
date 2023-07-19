@@ -23,15 +23,15 @@ export default function QuotesText({
   };
 
   return (
-    <div className="flex-row flex space-x-6 items-center">
+    <div className="flex-row flex -space-x-2 items-center line-block">
       {Quotes.map((text, index) => {
         return (
           <>
             <span
               className={
                 buttonHighlighted === index
-                  ? "hover:text-white text-white text-xl border-b-2 inline-block p-12"
-                  : "text-gray-400 border-gray-400 hover:text-white hover:border-white border-b-2 text-xl inline-block p-12"
+                  ? "hover:text-white text-white text-xl border-b-2 inline-block py-12 px-20"
+                  : "text-gray-400 border-gray-400 hover:text-white hover:border-white border-b-2 text-xl inline-block py-12 px-20"
               }
               key={index}
               onClick={() => {
