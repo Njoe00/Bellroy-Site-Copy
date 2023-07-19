@@ -43,7 +43,7 @@ export default function QuotesText({
                 handleHighlightedButtons(index);
               }}
             >
-              <div className="inline-block item-center">
+              <div className="inline-block item-center"> 
               <Image  className="flex"src={text.title} alt="text" height={text.imageDimensions[1]} width={text.imageDimensions[0]} />
               </div>
             </span>
