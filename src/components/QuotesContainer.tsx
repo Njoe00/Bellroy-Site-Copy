@@ -16,7 +16,7 @@ export default function QuotesContainer() {
           buttonHighlighted={buttonHighlighted}
           setButtonHighLighted={setButtonHighLighted}
         />
-        <div className="flex flex-col items-center text-center py-20 text-2xl">
+        <div className="flex flex-col items-center text-center py-20 text-2xl space-y-10">
           <Image
             className="flex"
             src="/quote-icon-white.png"

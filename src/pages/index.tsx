@@ -301,7 +301,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="bg-white flex flex-col items-center p-40">
+      <div className="bg-white flex flex-col items-center p-40 -mb-36">
         <div className="flex">
           <a className="text-lg">Why do you carry in your wallet?</a>
         </div>
