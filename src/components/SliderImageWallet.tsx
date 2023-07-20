@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
-export default function siliderImageWallet() {
+export default function SliderImageWallet() {
   const [sliderValue, setSliderValue] = useState("0");
 
   let textValue;
@@ -14,9 +14,9 @@ export default function siliderImageWallet() {
   }
 
   return (
-    <div className="block mr-auto ml-auto w-28">
+    <div className="flex mr-auto items-center flex-col ml-auto">
       <div>
-        <p className="flex text-base p-0 font-bold justify-center bg-background-main">
+        <p className="flex flex-row text-base font-bold bg-background-main">
           Move the slider to compare wallets
         </p>
       </div>
@@ -25,25 +25,26 @@ export default function siliderImageWallet() {
           type="range"
           className="w-full"
           min="0"
-          max="9"
+          max={sliderImage.length
+            - 1}
           step="1"
           value={sliderValue}
           onChange={(event) => {
             setSliderValue(event.target.value);
           }}
         />
-        <ul className="flex justify-between w-full px-2.5">
+        <ul className="flex justify-center w-full px-2.5">
           <li className="flex justify-center relative">
-            <span className="absolute">
-              {textValue}
-              <Image
-                src="/syw-compare.avif"
-                width={600}
-                height={1700}
-                quality={100}
-                alt="alt"
-                key="4"
-              />
+            <span className="flex">
+                  {textValue}
+                  <Image
+                    src={sliderImage[sliderValue]}
+                    width={600}
+                    height={1700}
+                    quality={100}
+                    alt="alt"
+                    
+                  />
             </span>
           </li>
         </ul>
@@ -51,3 +52,20 @@ export default function siliderImageWallet() {
     </div>
   );
 }
+
+const sliderImage = [
+  "/sliderwallet1.png",
+  "/sliderwallet2.png",
+  "/sliderwallet3.png",
+  "/sliderwallet4.png",
+  "/sliderwallet5.png",
+  "/sliderwallet6.png",
+  "/sliderwallet7.png",
+  "/sliderwallet8.png",
+  "/sliderwallet9.png",
+  "/sliderwallet10.png",
+  "/sliderwallet11.png",
+  "/sliderwallet12.png",
+  "/sliderwallet13.png",
+
+];
