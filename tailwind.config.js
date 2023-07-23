@@ -26,6 +26,8 @@ module.exports = {
         "note-sleeve-hazelnut": "#99654D",
         "note-sleeve-cocoa": "#894405",
         "note-sleeve-terracotta": "#BC7049",
+        "slider-colour-full": "#357176",
+        "slider-colur-empty": "#d1e1e4",
       },
     },
   },
