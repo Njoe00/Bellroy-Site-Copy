@@ -36,7 +36,6 @@ export const sliderImage = [
   "/sliderwallet2.png",
   "/sliderwallet3.png",
   "/sliderwallet4.png",
-  "/sliderwallet5.png",
   "/sliderwallet6.png",
   "/sliderwallet7.png",
   "/sliderwallet8.png",
