@@ -18,32 +18,46 @@ export default function WalletImageSlider({
     textValue = `${sliderValue} Cards`;
   }
 
+  const WidthCalculation = {
+    width: `w-[${(sliderValue / sliderImage.length) * 100}%]`,
+  };
+
   return (
-    <div className="flex flex-col justify-center w-1/2 z-20 absolute bottom-0">
-      <div className="relative z-10">
+    <div className="flex flex-col justify-center w-1/2 z-40 absolute bottom-0">
+      <div className="relative">
+        <div
+          className={`absolute bg-slider-colour-full h-2 z-40`}
+          style={{
+            width: `${(sliderValue / (sliderImage.length)) * 100}%`,
+          }}
+        ></div>
         <input
           type="range"
-          className="w-full
-          appearance-none h-2 outline-none bg-slider-colur-empty -z-40"
+          className="w-full absolute
+          appearance-none h-2 outline-none bg-slider-colour-empty z-10"
           min={0}
           max={sliderImage.length - 1}
           step={1}
           value={sliderValue}
           onChange={(event) => {
             setSliderValue(event.target.value);
-        }}
+          }}
         />
-        <div className="flex absolute top-0 flex-row justify-between w-full -z-10">
+        <div className="flex absolute bottom-1 flex-row justify-between w-full z-30">
           {sliderImage.map((image, index) => (
             <div
               key={index}
-              className="flex z-10 h-8 w-[2px] border-0 bg-slider-colur-empty"
+              className="flex h-8 w-[2px] border-0 bg-slider-colour-empty"
             ></div>
           ))}
         </div>
-      </div>
-      <style>
-        {`
+        <li className="flex justify-center relative">
+          <span className="flex flex-col w-auto items-center z-10">
+            {textValue}
+          </span>
+        </li>
+        <style>
+          {`
           input[type="range"]::-webkit-slider-thumb {
             -webkit-appearance: none;
             appearance: none;
@@ -52,15 +66,11 @@ export default function WalletImageSlider({
             width: 32px;
             border-radius: 2px;
             box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1); 
-            z-index: 40;
+            z-index: 100;
                     }
         `}
-      </style>
-      <li className="flex justify-center relative">
-        <span className="flex flex-col w-auto items-center z-10">
-          {textValue}
-        </span>
-      </li>
+        </style>
+      </div>
     </div>
   );
 }
