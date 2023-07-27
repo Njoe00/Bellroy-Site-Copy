@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import WalletImageSlider from "./WalletImageSlider";
+import SliderButton from "./SliderButton";
 
 export default function SliderImageWallet() {
   const [sliderValue, setSliderValue] = useState(0);
@@ -26,6 +27,10 @@ export default function SliderImageWallet() {
           sliderValue={sliderValue}
           setSliderValue={setSliderValue}
         />
+        {/* <SliderButton
+          sliderValue={sliderValue}
+          setSliderValue={setSliderValue}
+        /> */}
       </div>
     </div>
   );
