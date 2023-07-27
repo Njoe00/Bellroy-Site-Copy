@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Transition } from "@headlessui/react";
+import React, { useEffect, useState } from "react";
 import {
   BsChevronCompactLeft,
   BsChevronCompactRight,
@@ -8,32 +9,35 @@ import {
 } from "react-icons/bs";
 import { RxDotFilled } from "react-icons/rx";
 import QuotesContainer from "@/components/QuotesContainer";
+import ProductCard from "../components/ProductCard";
+import Header from "../components/Header";
 
 export default function Home() {
   const [sliderValue, setSliderValue] = useState("0");
   const [isOpen, setIsOpen] = useState(false);
   const [slidePicture, setsliderPicture] = useState(false);
   const [imagesToShow, setImagesToShow] = useState("Cards only");
+  const [walletDataSet, setWalletDataSet] = useState(cardsOnlyProduct);
 
   const handleSlide = () => {
     setsliderPicture(!slidePicture);
   };
 
-  const changeCard = (imagesToShow) => {
+  useEffect(() => {
     if (imagesToShow === "Cards only") {
-      return cardsOnlyProduct;
+      setWalletDataSet(cardsOnlyProduct);
     } else if (imagesToShow === "Cards and bills") {
-      return cardsAndBillsProduct;
+      setWalletDataSet(cardsAndBillsProduct);
     } else if (imagesToShow === "Cards, bills and coins") {
-      return cardsBillsAndCoinsProduct;
+      setWalletDataSet(cardsBillsAndCoinsProduct);
     }
-  };
+  }, [imagesToShow]);
 
   const handleDropDown = () => {
     setIsOpen(!isOpen);
   };
 
-  const goToSlide = (slideIndex) => {
+  const goToSlide = (slideIndex: number) => {
     setCurrentIndex(slideIndex);
   };
 
@@ -65,87 +69,8 @@ export default function Home() {
       <span className="place-content-end p-1 text-xs right-6 absolute text-gray-500 font-normal">
         Free shipping available 🇨🇦
       </span>
-      <div className="bg-white p-5 flex relative gap-2 font-normal space-x-10 text-sm items-center h-28 z-10">
-        <div className="gap-2 font-normal space-x-14 items-center flex">
-          <Image
-            src="/logo.png"
-            width={120}
-            height={120}
-            alt="test"
-            style={{ height: "100%", width: "auto" }}
-          />
-          <div className="dropdown relative w-max">
-            {headerSubSections.map((section, i) => (
-              <button
-                className="text-sm px-4 py-2.5 text-center inline-flex items-center hover:text-orange-600"
-                onClick={handleDropDown}
-                key={i}
-              >
-                {section.text}
-              </button>
-            ))}
-          </div>
-        </div>
+      <Header />
 
-        <div className="gap-2 font-normal space-x-4 text-xs flex justify-end text-gray-500 p-2">
-          <a href="/#">Help</a>
-          <a href="/#">Find In-Store</a>
-          <span className="flex justify-items-center">
-            <Image
-              src="/email.png"
-              alt="mail"
-              width={20}
-              height={20}
-              style={{ height: "100%", width: "auto" }}
-            />
-          </span>
-          <span>
-            <Image
-              src="/magnifying-glass.png"
-              alt="mail"
-              width={20}
-              height={20}
-              style={{ height: "22px", width: "20px" }}
-            />
-          </span>
-          <span className="flex items-center">
-            <Image
-              src="/trolley.png"
-              alt="mail"
-              width={22}
-              height={20}
-              style={{ height: "22px", width: "20px" }}
-            />
-          </span>
-        </div>
-      </div>
-      <Transition
-        show={isOpen}
-        className="relative flex divide-y divide-white-100 drop-shadow-lg z-0"
-        enter="transform transition ease-in-out duration-300"
-        enterFrom="opacity-100 -translate-y-36"
-        enterTo="opacity-100 translate-y-0"
-        leave="transform transition ease-in-out duration-300"
-        leaveFrom="opacity-100 translate-y-0"
-        leaveTo="opacity-100 -translate-y-36"
-      >
-        <ul className="absolute w-screen bg-white flex flex-row text-gray-500 justify-start pb-8 pl-32 text-sm">
-          {headerSubSectionsContentWallets.map((content, i) => (
-            <li className="flex items-center flex-col px-6" key={i}>
-              <Image
-                src={content.image}
-                width={75}
-                height={75}
-                alt="Mens Bags"
-                style={{ height: "100%", width: "auto" }}
-              />
-              <a href="#" className=" hover:text-orange-600">
-                {content.text}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </Transition>
       <div className="h-screen bg-background-main">
         <h1 className="font-serif flex text-white text-8xl p-16 justify-center">
           Slim Your Wallet
@@ -305,155 +230,40 @@ export default function Home() {
           <a className="text-lg">Why do you carry in your wallet?</a>
         </div>
         <div className="flex flex-row">
-          {whyDoYouCarryContent.map((content, i) => (
-            <div
-              className="flex flex-col space-x-36 py-14 items-center justify-center"
-              key={i}
-            >
-              <div
-                className="flex items-center flex-col px-24 group cursor-pointer"
-                onClick={() => setImagesToShow(content.text)}
-              >
-                {imagesToShow === content.text ? (
-                  <>
-                    <Image
-                      src={content.activeImage}
-                      width={96}
-                      height={71}
-                      alt="Mens Bags"
-                      style={{ height: "100%", width: "auto" }}
-                    />
-                    <div className="absolute group-hover:text-orange-600 text-2xl flex justify-center translate-y-32">
-                      <BsChevronCompactDown />
-                    </div>
-                  </>
-                ) : (
-                  <Image
-                    src={content.inactiveImage}
-                    width={96}
-                    height={71}
-                    alt="Men's Bags"
-                    style={{ height: "100%", width: "auto" }}
-                  />
-                )}
-                <div className="group-hover:text-orange-600 text-sm translate-y-4 text-gray-400">
-                  {content.text}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-        <div className="flex flex-row flex-wrap justify-center">
-          {changeCard(imagesToShow).map((content, i) => {
-            const [selectedColour, setSelectedColour] = useState("black");
-            const [cardImage, setCardImage] = useState(`${content.image[0]}`);
-            const [buttonStatus, setButtonStatus] = useState(true);
-            const handleButtonStatus = () => {
-              setButtonStatus(!buttonStatus);
-            };
-
-            useEffect(() => {
-              setCardImage("")
-            },[content.image[i]])
-
+          {whyDoYouCarryContent.map((content, i) => {
+            const isActive = imagesToShow === content.text;
             return (
               <div
+                className="flex flex-col space-x-36 py-14 items-center justify-center"
                 key={i}
-                className="bg-gray-100 group flex flex-col relative justify-center border-4 border-white"
               >
-                <div className="z-30">
-                  <Transition
-                    show={!buttonStatus}
-                    className=""
-                    enter="transform transition ease-in-out duration-300"
-                    enterFrom="opacity-0 -translate-x-0"
-                    enterTo="opacity-100 translate-x-0"
-                    leave="transform transition ease-in-out duration-300"
-                    leaveFrom="opacity-0 translate-x-0"
-                    leaveTo="opacity-100 translate-x-0"
-                  >
-                    <button
-                      className="group-hover:visible flex flex-row absolute top-0 right-0 py-1 px-2 text-xs bg-gray-300 z-20 "
-                      onClick={handleButtonStatus}
-                    >
-                      SHOW MORE
-                      <Image
-                        className="flex relative left-1"
-                        src="/icons8-plus-50.png"
-                        alt="X"
-                        width={14}
-                        height={14}
-                        style={{ height: "15px", width: "15px" }}
-                      />
-                    </button>
-                  </Transition>
-                  <Transition
-                    show={buttonStatus}
-                    className=""
-                    enter="transform transition ease-in-out duration-300"
-                    enterFrom="opacity-0 -translate-x-0"
-                    enterTo="opacity-100 translate-x-0"
-                    leave="transform transition ease-in-out duration-300"
-                    leaveFrom="opacity-0 translate-x-0"
-                    leaveTo="opacity-100 translate-x-0"
-                  >
-                    <button
-                      className="group-hover:visible flex flex-row absolute top-0 right-0 py-1 px-2 text-xs bg-gray-300 z-20"
-                      onClick={handleButtonStatus}
-                    >
-                      CLOSE
-                      <Image
-                        className="rotate-45 flex relative left-1"
-                        src="/icons8-plus-50.png"
-                        alt="X"
-                        width={14}
-                        height={14}
-                        quality={100}
-                      />
-                    </button>
-                  </Transition>
-                </div>
+                <div
+                  className="flex items-center flex-col px-24 group cursor-pointer"
+                  onClick={() => setImagesToShow(content.text)}
+                >
+                  <Image
+                    src={isActive ? content.activeImage : content.inactiveImage}
+                    width={96}
+                    height={71}
+                    alt="Mens Bags"
+                    style={{ height: "100%", width: "auto" }}
+                  />
+                  <div className="absolute group-hover:text-orange-600 text-2xl flex justify-center translate-y-32">
+                    <BsChevronCompactDown />
+                  </div>
 
-                <div className="flex flex-col w-[413.33px] h-[508px] items-center relative">
-                  <div className="top-10 relative">
-                    <Image src={`${cardImage || content.image[0]}`}  height={300} width={300} alt="alt" />
-                    <div className="p-2 flex flex-row justify-center space-x-2 ">
-                      {content.colours.map((colour, index) => {
-                        const outlineColour = `outline-${selectedColour}`;
-                        const bgColour = `bg-${colour}`;
-                        return (
-                          <button
-                            onClick={() => {
-                              setSelectedColour(colour);
-                              setCardImage(content.image[index]);
-                            }}
-                            key={index}
-                            className={`${bgColour} h-4 w-4 rounded-full outline-1 outline outline-offset-2 ${
-                              selectedColour !== colour
-                                ? "outline-none"
-                                : outlineColour
-                            }`}
-                          />
-                        );
-                      })}
-                    </div>
-                    <div className="relative flex flex-col items-center flex-wrap top-20 font-[440]">
-                      <div className="text-sm flex flex-row space-x-2 place-content-center">
-                        <div>{content.name}</div>
-                        <div className="text-gray-500 content-center flex">
-                          {content.edition}
-                        </div>
-                      </div>
-                      <div className="text-sm">{content.price}</div>
-                      <button className="relative hover:bg-orange-500 hover:text-white hover:border-orange-500 tracking-wider text-sm font-normal border rounded border-black text- px-5 py-2 top-6 duration-200">
-                        SHOP NOW
-                      </button>
-                    </div>
+                  <div className="group-hover:text-orange-600 text-sm translate-y-4 text-gray-400">
+                    {content.text}
                   </div>
                 </div>
               </div>
             );
           })}
+        </div>
+        <div className="flex flex-row flex-wrap justify-center">
+          {walletDataSet.map((content, index) => (
+            <ProductCard key={index} content={content} />
+          ))}
         </div>
       </div>
       <QuotesContainer />
@@ -594,39 +404,45 @@ const cardsOnlyProduct = [
       "card-sleeve-hazel",
     ],
     price: "C$69",
-    image: ["/1.avif", "/0.avif", "/7.avif", "/8.avif", "/9.avif"],
+    image: [
+      "/card-Sleeves/card-Sleeve_Black.avif",
+      "/card-Sleeves/card-Sleeve_Ocean.avif",
+      "/card-Sleeves/card-Sleeve_Gray.avif",
+      "/card-Sleeves/card-Sleeve_Teal.avif",
+      "/card-Sleeves/card-Sleeve_Hazel.avif",
+    ],
   },
   {
     name: "Card Sleeve",
     colours: ["black"],
     price: "C$69",
-    image: ["/1.avif"],
+    image: ["/card-Sleeves/card-Sleeve-Black_Ash.avif"],
     edition: "Carryology Essentials Edition",
   },
   {
     name: "Flip Case",
     colours: ["black"],
     price: "C$69",
-    image: ["/2.avif"],
+    image: ["/card-Sleeves/flip-Case_Terracotta.avif"],
     edition: "Second Edition",
   },
   {
     name: "Card Pocket",
     colours: ["black"],
     price: "C$85",
-    image: ["/3.avif"],
+    image: ["/card-Sleeves/card-Pocket-Ranger_Green.avif"],
   },
   {
     name: "Phone Case - 3 Card",
     colours: ["black"],
     price: "C$99",
-    image: ["/4.avif"],
+    image: ["/card-Sleeves/phone-Case_Black.avif"],
   },
   {
     name: "Card Sleeve",
     colours: ["black"],
     price: "C$95",
-    image: ["/5.avif"],
+    image: ["/card-Sleeves/card-Sleeve_Mirum_Black.avif"],
     edition: "MIRUM Edition",
   },
 ];
@@ -636,7 +452,11 @@ const cardsAndBillsProduct = [
     name: "Apex Slim Sleeve",
     colours: ["black", "card-sleeve-gray", "card-sleeve-ocean"],
     price: "C$165",
-    image: ["/CB-0.avif", "/CB-1.avif", "/CB-2.avif"],
+    image: [
+      "/wallets-coins/apex-Slim-Sleeve_Raven.avif",
+      "/CB-1.avif",
+      "/CB-2.avif",
+    ],
     edition: "RFID safe",
   },
   {
@@ -670,7 +490,7 @@ const cardsAndBillsProduct = [
     name: "Minimalist Set",
     colours: ["black"],
     price: "C$109 - $C129",
-    image: ["/CB-16.avif"],
+    image: ["/wallets-coins/CB-16.avif"],
     edition: "Valued at C$144 - C$164",
   },
   {
@@ -691,18 +511,46 @@ const cardsAndBillsProduct = [
 
 const cardsBillsAndCoinsProduct = [
   {
-    name: "Apex Slim Sleeve",
-    colours: ["black", "card-sleeve-gray"],
-    price: "C$69",
-    image: ["/CB-0.avif", "/CB-1.avif", "/CB-2.avif"],
+    name: "Folio Mini",
+    colours: [
+      "black",
+      "card-sleeve-gray",
+      "card-sleeve-teal",
+      "note-sleeve-hazelnut",
+    ],
+    price: "C$115",
+    image: [
+      "/card-Bills-Coins/folio-Mini_Black.avif",
+      "/card-Bills-Coins/folio-Mini_Gray.avif",
+      "/card-Bills-Coins/folio-Mini_Teal.avif",
+      "/card-Bills-Coins/folio-Mini_Hazel.avif",
+    ],
     edition: "RFID safe",
   },
   {
-    name: "Card Sleeve",
-    colours: ["black", "white"],
-    price: "C$69",
-    image: ["/1.avif"],
-    edition: "Carryology Essentials Edition",
+    name: "Note Sleeve",
+    colours: [
+      "black",
+      "card-sleeve-gray",
+      "card-sleeve-ocean",
+      "card-sleeve-teal",
+      "note-sleeve-ranger-green",
+      "note-sleeve-java",
+      "note-sleeve-cocoa",
+      "note-sleeve-terracotta",
+    ],
+    price: "C$115",
+    image: [
+      "/card-Bills-Coins/note-Sleeve_Black.avif",
+      "/card-Bills-Coins/note-Sleeve_Gray.avif",
+      "/card-Bills-Coins/note-Sleeve_Ocean.avif",
+      "/card-Bills-Coins/note-Sleeve_Teal.avif",
+      "/card-Bills-Coins/note-Sleeve_Ranger-Green.avif",
+      "/card-Bills-Coins/note-Sleeve_Cocoa.avif",
+      "/card-Bills-Coins/note-Sleeve_Java.avif",
+      "/card-Bills-Coins/note-Sleeve_Terracotta",
+    ],
+    edition: "RFID safe",
   },
   {
     name: "Flip Case",
