@@ -10,18 +10,19 @@ export default function WalletImageSlider({
   sliderValue,
   setSliderValue,
 }: SliderImageWalletProps) {
- 
-
   return (
     <div className="flex flex-col justify-center w-1/2 z-40 absolute bottom-0">
       <div className="relative">
-      <div
+        <div
           className={`absolute bg-slider-colour-full h-2 z-40`}
           style={{
             width: `${(sliderValue / (sliderImage.length - 1)) * 100}%`,
           }}
         ></div>
-        <SliderButton sliderValue={sliderValue} setSliderValue={setSliderValue} />
+        <SliderButton
+          sliderValue={sliderValue}
+          setSliderValue={setSliderValue}
+        />
         <input
           type="range"
           className="w-full absolute
@@ -38,7 +39,11 @@ export default function WalletImageSlider({
           {sliderImage.map((image, index) => (
             <div
               key={index}
-              className="flex h-8 w-[2px] border-0 bg-slider-colour-empty"
+              className={
+                sliderValue >= index
+                  ? "flex h-8 w-[2px] border-0 bg-slider-colour-full"
+                  : "flex h-8 w-[2px] border-0 bg-slider-colour-empty"
+              }
             ></div>
           ))}
         </div>

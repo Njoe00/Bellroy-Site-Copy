@@ -16,7 +16,7 @@ export default function SliderImageWallet() {
       <div className="flex flex-col justify-center items-center space-y-2 p-2 w-80">
         <div className="w-[1980px] flex bg-cover h-[730px] z-0 overflow-hidden">
           <Image
-            src={sliderImage[10]}
+            src={sliderImage[sliderValue]}
             width={1980}
             height={800}
             quality={100}
