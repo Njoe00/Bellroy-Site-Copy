@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Inter } from "next/font/google";
 import { useEffect, useState } from "react";
 import { Transition } from "@headlessui/react";
 import {
