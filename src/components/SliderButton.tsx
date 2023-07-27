@@ -49,7 +49,6 @@ export default function WalletImageSlider({
               width: 32px;
               border-radius: 2px;
               box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1); 
-              z-index: 100;
                       }
           `}
         </style>
