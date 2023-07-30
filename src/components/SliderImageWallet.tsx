@@ -27,10 +27,6 @@ export default function SliderImageWallet() {
           sliderValue={sliderValue}
           setSliderValue={setSliderValue}
         />
-        {/* <SliderButton
-          sliderValue={sliderValue}
-          setSliderValue={setSliderValue}
-        /> */}
       </div>
     </div>
   );

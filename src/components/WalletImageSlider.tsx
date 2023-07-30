@@ -10,6 +10,12 @@ export default function WalletImageSlider({
   sliderValue,
   setSliderValue,
 }: SliderImageWalletProps) {
+  const SliderValueEqualsIndex = (index: number) => {
+    if (sliderValue >= index) {
+      return true;
+    }
+    return false;
+  };
   return (
     <div className="flex flex-col justify-center w-1/2 z-40 absolute bottom-0">
       <div className="relative">
@@ -19,10 +25,6 @@ export default function WalletImageSlider({
             width: `${(sliderValue / (sliderImage.length - 1)) * 100}%`,
           }}
         ></div>
-        <SliderButton
-          sliderValue={sliderValue}
-          setSliderValue={setSliderValue}
-        />
         <input
           type="range"
           className="w-full absolute
@@ -31,22 +33,24 @@ export default function WalletImageSlider({
           max={sliderImage.length - 1}
           step={1}
           value={sliderValue}
-          onChange={(event) => {
-            setSliderValue(event.target.value);
-          }}
+          onChange={setSliderValue}
         />
         <div className="flex absolute -bottom-6 flex-row justify-between w-full z-30">
           {sliderImage.map((image, index) => (
             <div
               key={index}
-              className={
-                sliderValue >= index
-                  ? "flex h-8 w-[2px] border-0 bg-slider-colour-full"
-                  : "flex h-8 w-[2px] border-0 bg-slider-colour-empty"
-              }
-            ></div>
+              className={`flex h-8 w-[2px] border-0 ${
+                SliderValueEqualsIndex(index)
+                  ? `bg-slider-colour-full`
+                  : `bg-slider-colour-empty`
+              }`}
+            />
           ))}
         </div>
+        <SliderButton
+          sliderValue={sliderValue}
+          setSliderValue={setSliderValue}
+        />
         <style>
           {`
           input[type="range"]::-webkit-slider-thumb {
