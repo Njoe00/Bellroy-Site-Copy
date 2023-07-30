@@ -16,6 +16,11 @@ export default function WalletImageSlider({
     }
     return false;
   };
+
+  const handleEventChange = (event) => {
+    setSliderValue(event.target.value);
+  }
+
   return (
     <div className="flex flex-col justify-center w-1/2 z-40 absolute bottom-0">
       <div className="relative">
@@ -33,7 +38,7 @@ export default function WalletImageSlider({
           max={sliderImage.length - 1}
           step={1}
           value={sliderValue}
-          onChange={setSliderValue}
+          onChange={handleEventChange}
         />
         <div className="flex absolute -bottom-6 flex-row justify-between w-full z-30">
           {sliderImage.map((image, index) => (
@@ -50,6 +55,7 @@ export default function WalletImageSlider({
         <SliderButton
           sliderValue={sliderValue}
           setSliderValue={setSliderValue}
+          handleEventChange={handleEventChange}
         />
         <style>
           {`

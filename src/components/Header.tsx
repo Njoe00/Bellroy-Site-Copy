@@ -37,14 +37,14 @@ export default function Header() {
           <a href="/#">Help</a>
           <a href="/#">Find In-Store</a>
           {headerIcons.map((image, index) => (
-            <span className="flex justify-items-center">
+            <span className="flex justify-items-center" key={index}
+            >
               <Image
                 src={image}
                 alt="mail"
                 width={17}
                 height={17}
                 style={{ height: "100%", width: "auto" }}
-                key={index}
               />
             </span>
           ))}
@@ -69,7 +69,6 @@ export default function Header() {
                 height={75}
                 alt="Mens Bags"
                 style={{ height: "100%", width: "auto" }}
-                key={index}
               />
               <a href="#" className=" hover:text-orange-600">
                 {content.text}
