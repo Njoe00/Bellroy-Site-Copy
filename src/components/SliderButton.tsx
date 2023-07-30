@@ -3,11 +3,13 @@ import { sliderImage } from "./SliderImageWallet";
 type SliderImageWalletProps = {
   sliderValue: number;
   setSliderValue: React.Dispatch<React.SetStateAction<number>>;
+  handleEventChange: React.ChangeEventHandler<HTMLInputElement>;
 };
 
 export default function WalletImageSlider({
   sliderValue,
   setSliderValue,
+  handleEventChange,
 }: SliderImageWalletProps) {
   let textValue: string;
   if (sliderValue == 11) {
@@ -17,6 +19,7 @@ export default function WalletImageSlider({
   } else {
     textValue = `${sliderValue} Cards`;
   }
+
 
   return (
     <div className="flex flex-col justify-center w-full z-40 absolute bottom-0">
@@ -28,9 +31,7 @@ export default function WalletImageSlider({
           max={sliderImage.length - 1}
           step={1}
           value={sliderValue}
-          onChange={(event) => {
-            setSliderValue(event.target.value);
-          }}
+          onChange={handleEventChange}
         />
         <li className="flex w-full absolute text-center top-14 left-8">
           <span
