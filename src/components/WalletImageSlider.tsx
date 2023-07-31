@@ -34,6 +34,7 @@ export default function WalletImageSlider({
           type="range"
           className="w-full absolute
           appearance-none h-2 outline-none bg-slider-colour-empty z-10"
+          slider-thumb
           min={0}
           max={sliderImage.length - 1}
           step={1}
@@ -57,22 +58,7 @@ export default function WalletImageSlider({
           setSliderValue={setSliderValue}
           handleEventChange={handleEventChange}
         />
-        <style>
-          {`
-          input[type="range"]::-webkit-slider-thumb {
-            position: relative;
-            display: flex;
-            -webkit-appearance: none;
-            appearance: none;
-            background-color: white;
-            height: 38px;
-            width: 32px;
-            border-radius: 2px;
-            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1); 
-            z-index: 60;
-                    }
-        `}
-        </style>
+        
       </div>
     </div>
   );

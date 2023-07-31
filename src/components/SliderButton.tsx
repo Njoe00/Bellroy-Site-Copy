@@ -20,13 +20,12 @@ export default function WalletImageSlider({
     textValue = `${sliderValue} Cards`;
   }
 
-
   return (
     <div className="flex flex-col justify-center w-full z-40 absolute bottom-0">
       <div className="relative flex text-center">
         <input
           type="range"
-          className="w-full absolute appearance-none h-0 -bottom-2 outline-none z-10"
+          className="w-full absolute appearance-none h-0 -bottom-2 outline-none z-10 ::-webkit-slider-thumb"
           min={0}
           max={sliderImage.length - 1}
           step={1}
@@ -43,20 +42,6 @@ export default function WalletImageSlider({
             {textValue}
           </span>
         </li>
-        <style>
-          {`
-            input[type="range"]::-webkit-slider-thumb {
-              position: relative;
-              display: flex;
-              -webkit-appearance: none;
-              appearance: none;
-              height: 38px;
-              width: 32px;
-              border-radius: 2px;
-              box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1); 
-                      }
-          `}
-        </style>
       </div>
     </div>
   );
