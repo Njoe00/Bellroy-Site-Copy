@@ -3,19 +3,21 @@ import { sliderImage } from "./SliderImageWallet";
 type SliderImageWalletProps = {
   sliderValue: number;
   handleEventChange: React.ChangeEventHandler<HTMLInputElement>;
+  sliderValueRounder: (number: number) => number;
 };
 
 export default function WalletImageSlider({
   sliderValue,
   handleEventChange,
+  sliderValueRounder,
 }: SliderImageWalletProps) {
   let textValue: string;
-  if (sliderValue == 11) {
+  if (sliderValueRounder(sliderValue) == 11) {
     textValue = "Plus Cash";
-  } else if (sliderValue == 1) {
+  } else if (sliderValueRounder(sliderValue) == 1) {
     textValue = "1 Card";
   } else {
-    textValue = `${sliderValue} Cards`;
+    textValue = `${sliderValueRounder(sliderValue)} Cards`;
   }
 
   return (
@@ -26,7 +28,7 @@ export default function WalletImageSlider({
           className="w-full absolute appearance-none h-0 -bottom-2 outline-none z-10"
           min={0}
           max={sliderImage.length - 1}
-          step={1}
+          step={.1}
           value={sliderValue}
           onChange={handleEventChange}
         />
