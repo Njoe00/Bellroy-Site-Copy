@@ -11,15 +11,12 @@ export default function WalletImageSlider({
   setSliderValue,
 }: SliderImageWalletProps) {
   const SliderValueEqualsIndex = (index: number) => {
-    if (sliderValue >= index) {
-      return true;
-    }
-    return false;
+    if (sliderValue >= index) return true;
   };
 
   const handleEventChange = (event) => {
     setSliderValue(event.target.value);
-  }
+  };
 
   return (
     <div className="flex flex-col justify-center w-1/2 z-40 absolute bottom-0">
@@ -34,7 +31,6 @@ export default function WalletImageSlider({
           type="range"
           className="w-full absolute
           appearance-none h-2 outline-none bg-slider-colour-empty z-10"
-          slider-thumb
           min={0}
           max={sliderImage.length - 1}
           step={1}
@@ -45,20 +41,18 @@ export default function WalletImageSlider({
           {sliderImage.map((image, index) => (
             <div
               key={index}
-              className={`flex h-8 w-[2px] border-0 ${
+              className={`flex h-8 w-0.5 border-0 ${
                 SliderValueEqualsIndex(index)
-                  ? `bg-slider-colour-full`
-                  : `bg-slider-colour-empty`
+                  ? "bg-slider-colour-full"
+                  : "bg-slider-colour-empty"
               }`}
             />
           ))}
         </div>
         <SliderButton
           sliderValue={sliderValue}
-          setSliderValue={setSliderValue}
           handleEventChange={handleEventChange}
         />
-        
       </div>
     </div>
   );

@@ -2,13 +2,11 @@ import { sliderImage } from "./SliderImageWallet";
 
 type SliderImageWalletProps = {
   sliderValue: number;
-  setSliderValue: React.Dispatch<React.SetStateAction<number>>;
   handleEventChange: React.ChangeEventHandler<HTMLInputElement>;
 };
 
 export default function WalletImageSlider({
   sliderValue,
-  setSliderValue,
   handleEventChange,
 }: SliderImageWalletProps) {
   let textValue: string;
@@ -25,7 +23,7 @@ export default function WalletImageSlider({
       <div className="relative flex text-center">
         <input
           type="range"
-          className="w-full absolute appearance-none h-0 -bottom-2 outline-none z-10 ::-webkit-slider-thumb"
+          className="w-full absolute appearance-none h-0 -bottom-2 outline-none z-10"
           min={0}
           max={sliderImage.length - 1}
           step={1}
