@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import { Transition } from "@headlessui/react";
 import React, { useEffect, useState } from "react";
 import {
   BsChevronCompactLeft,
@@ -6,6 +8,7 @@ import {
   BsChevronCompactDown,
 } from "react-icons/bs";
 import { RxDotFilled } from "react-icons/rx";
+import QuotesContainer from "@/components/QuotesContainer";
 import ProductCard from "../components/ProductCard";
 import Header from "../components/Header";
 import SliderImageWallet from "@/components/SliderImageWallet";
@@ -196,7 +199,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="bg-white flex flex-col items-center p-40">
+      <div className="bg-white flex flex-col items-center p-40 -mb-36">
         <div className="flex">
           <a className="text-lg">Why do you carry in your wallet?</a>
         </div>
@@ -237,6 +240,7 @@ export default function Home() {
           ))}
         </div>
       </div>
+      <QuotesContainer />
     </header>
   );
 }
