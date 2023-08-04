@@ -4,17 +4,21 @@ type SliderImageWalletProps = {
   sliderValue: number;
   handleEventChange: React.ChangeEventHandler<HTMLInputElement>;
   sliderValueRounder: (number: number) => number;
+  filledWidthCalucation: () => string;
 };
 
 export default function WalletImageSlider({
   sliderValue,
   handleEventChange,
   sliderValueRounder,
+  filledWidthCalucation,
 }: SliderImageWalletProps) {
   let textValue: string;
-  if (sliderValueRounder(sliderValue) == 11) {
+  let maxValue = 11;
+  let minimumValue = 1;
+  if (sliderValueRounder(sliderValue) == maxValue) {
     textValue = "Plus Cash";
-  } else if (sliderValueRounder(sliderValue) == 1) {
+  } else if (sliderValueRounder(sliderValue) == minimumValue) {
     textValue = "1 Card";
   } else {
     textValue = `${sliderValueRounder(sliderValue)} Cards`;
@@ -28,7 +32,7 @@ export default function WalletImageSlider({
           className="w-full absolute appearance-none h-0 -bottom-2 outline-none z-10"
           min={0}
           max={sliderImage.length - 1}
-          step={.1}
+          step={0.01}
           value={sliderValue}
           onChange={handleEventChange}
         />
@@ -36,7 +40,7 @@ export default function WalletImageSlider({
           <span
             className="flex text-slider-colour-full font-bold text-end text-sm justify-end z-10"
             style={{
-              width: `${(sliderValue / (sliderImage.length - 1)) * 100}%`,
+              width: filledWidthCalucation(),
             }}
           >
             {textValue}

@@ -11,7 +11,7 @@ export default function Header() {
 
   return (
     <>
-      <div className="bg-white p-5 flex relative gap-2 font-normal space-x-10 text-sm items-center h-28 z-10">
+      <div className="bg-white p-5 flex relative gap-2 font-normal space-x-10 justify-between text-sm items-center h-28 z-10">
         <div className="gap-2 font-normal space-x-14 items-center flex">
           <Image
             src="/logo.png"
@@ -33,11 +33,11 @@ export default function Header() {
           </div>
         </div>
 
-        <div className="gap-2 font-normal space-x-4 text-xs flex justify-end text-gray-500 p-2">
+        <div className="gap-2 font-normal items-center space-x-4 text-xs flex text-gray-500 p-2">
           <a href="/#">Help</a>
           <a href="/#">Find In-Store</a>
           {headerIcons.map((image, index) => (
-            <span className="flex justify-items-center" key={index}
+            <span className="flex" key={index}
             >
               <Image
                 src={image}
