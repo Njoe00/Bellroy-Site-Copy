@@ -29,7 +29,6 @@ module.exports = {
         "slider-colour-full": "#357176",
         "slider-colour-empty": "#d1e1e4",
       },
-
     },
   },
 };

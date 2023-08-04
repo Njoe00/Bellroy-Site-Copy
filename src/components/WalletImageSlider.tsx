@@ -12,7 +12,7 @@ export default function WalletImageSlider({
   setSliderValue,
   sliderValueRounder,
 }: SliderImageWalletProps) {
-  const SliderValueEqualsIndex = (index: number) => {
+  const SliderValueIsEqualorGreaterThanIndex = (index: number) => {
     if (sliderValue >= index) return true;
   };
 
@@ -20,13 +20,17 @@ export default function WalletImageSlider({
     setSliderValue(event.target.value);
   };
 
+  const filledWidthCalucation = () => {
+    return `${(sliderValue / (sliderImage.length - 1)) * 100}%`;
+  };
+
   return (
     <div className="flex flex-col justify-center w-1/2 z-40 absolute bottom-0">
       <div className="relative">
         <div
-          className={`absolute bg-slider-colour-full h-2 z-40`}
+          className="absolute bg-slider-colour-full h-2 z-40 transition-colors ease-in-out delay-1000 "
           style={{
-            width: `${(sliderValue / (sliderImage.length - 1)) * 100}%`,
+            width: filledWidthCalucation()
           }}
         ></div>
         <input
@@ -35,7 +39,7 @@ export default function WalletImageSlider({
           appearance-none h-2 outline-none bg-slider-colour-empty z-10"
           min={0}
           max={sliderImage.length - 1}
-          step={0.1}
+          step={0.01}
           value={sliderValue}
           onChange={handleEventChange}
         />
@@ -44,8 +48,8 @@ export default function WalletImageSlider({
             <div
               key={index}
               className={`flex h-8 w-0.5 border-0 ${
-                SliderValueEqualsIndex(index)
-                  ? "bg-slider-colour-full"
+                SliderValueIsEqualorGreaterThanIndex(index)
+                  ? "transition-colors duration-400 ease-in-out delay-150 bg-slider-colour-full"
                   : "bg-slider-colour-empty"
               }`}
             />
@@ -55,6 +59,7 @@ export default function WalletImageSlider({
           sliderValue={sliderValue}
           handleEventChange={handleEventChange}
           sliderValueRounder={sliderValueRounder}
+          filledWidthCalucation={filledWidthCalucation}
         />
       </div>
     </div>
