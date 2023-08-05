@@ -34,16 +34,16 @@ export default function Header() {
         </div>
 
         <div className="gap-2 font-normal items-center space-x-4 text-xs flex text-gray-500 p-2">
-          <a href="/#">Help</a>
-          <a href="/#">Find In-Store</a>
+          <a className="hover:text-orange-400" href="/#">Help</a>
+          <a className="hover:text-orange-400" href="/#">Find In-Store</a>
           {headerIcons.map((image, index) => (
             <span className="flex" key={index}
             >
               <Image
                 src={image}
                 alt="mail"
-                width={17}
-                height={17}
+                width={10}
+                height={10}
                 style={{ height: "100%", width: "auto" }}
               />
             </span>

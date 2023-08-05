@@ -25,7 +25,7 @@ export default function WalletImageSlider({
   }
 
   return (
-    <div className="flex flex-col justify-center w-full z-40 absolute bottom-0">
+    <div className="flex-nowrap flex-col justify-center w-full float-left z-40 absolute bottom-0">
       <div className="relative flex text-center">
         <input
           type="range"
@@ -36,9 +36,9 @@ export default function WalletImageSlider({
           value={sliderValue}
           onChange={handleEventChange}
         />
-        <li className="flex w-full absolute text-center top-14 left-8">
+        <li className="flex flex-nowrap truncate w-full absolute text-center items-center top-14 left-6 flex-row">
           <span
-            className="flex text-slider-colour-full font-bold text-end text-sm justify-end z-10"
+            className="inline w-max text-slider-colour-full font-bold items-center text-end text-sm z-10"
             style={{
               width: filledWidthCalucation(),
             }}
