@@ -34,7 +34,7 @@ export default function Home() {
 
   return (
     <header className="bg-white z-100">
-      <span className="place-content-end p-1 text-xs right-6 absolute text-gray-500 font-normal">
+      <span className="place-content-end p-1 text-xs right-6 absolute text-gray-500 font-normal z-50">
         Free shipping available 🇨🇦
       </span>
       <Header />
