@@ -11,8 +11,8 @@ export default function Header() {
 
   return (
     <>
-      <div className="bg-white p-5 flex relative gap-2 font-normal space-x-10 justify-between text-sm items-center h-28 z-10">
-        <div className="gap-2 font-normal space-x-14 items-center flex">
+      <div className="bg-white p-5 flex relative gap-2 font-normal space-x-10 justify-between text-sm items-center h-[105px] z-10">
+        <div className="font-normal space-x-14 items-center flex">
           <Image
             src="/logo.png"
             width={120}
@@ -20,10 +20,10 @@ export default function Header() {
             alt="test"
             style={{ height: "100%", width: "auto" }}
           />
-          <div className="dropdown relative w-max">
+          <div className="relative w-max space-x-14 flex top-2">
             {headerSubSections.map((section, index) => (
               <button
-                className="text-sm px-4 py-2.5 text-center inline-flex items-center hover:text-orange-600"
+                className="text-sm py-2.5 text-center inline-flex items-center hover:text-orange-600"
                 onClick={handleDropDown}
                 key={index}
               >
@@ -33,7 +33,7 @@ export default function Header() {
           </div>
         </div>
 
-        <div className="gap-2 font-normal items-center space-x-4 text-xs flex text-gray-500 p-2">
+        <div className="font-normal items-center space-x-6 top-2 relative text-xs flex text-gray-500 p-2">
           <a className="hover:text-orange-400" href="/#">Help</a>
           <a className="hover:text-orange-400" href="/#">Find In-Store</a>
           {headerIcons.map((image, index) => (
@@ -42,8 +42,8 @@ export default function Header() {
               <Image
                 src={image}
                 alt="mail"
-                width={10}
-                height={10}
+                width={16}
+                height={16}
                 style={{ height: "100%", width: "auto" }}
               />
             </span>
