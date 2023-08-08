@@ -25,11 +25,7 @@ export default function WalletImageSlider({
   }
 
   return (
-<<<<<<< HEAD
     <div className="flex-nowrap flex-col justify-center w-full z-40 absolute bottom-0">
-=======
-    <div className="flex-nowrap flex-col justify-center w-full float-left z-40 absolute bottom-0">
->>>>>>> 2394f37 (adding styling to slider to stop text from moving when reaching zero width)
       <div className="relative flex text-center">
         <input
           type="range"
