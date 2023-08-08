@@ -20,9 +20,7 @@ export default function WalletImageSlider({
     setSliderValue(event.target.value);
   };
 
-  const filledWidthCalucation = () => {
-    return `${(sliderValue / (sliderImage.length - 1)) * 100}%`;
-  };
+  const filledWidthCalucation = `${(sliderValue / (sliderImage.length - 1)) * 100}%`;
 
   return (
     <div className="flex flex-col justify-center w-1/2 z-40 absolute bottom-0">
@@ -30,7 +28,7 @@ export default function WalletImageSlider({
         <div
           className="absolute bg-slider-colour-full h-2 z-40 transition-colors ease-in-out delay-1000 "
           style={{
-            width: filledWidthCalucation()
+            width: filledWidthCalucation
           }}
         ></div>
         <input

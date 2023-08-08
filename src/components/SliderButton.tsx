@@ -4,7 +4,7 @@ type SliderImageWalletProps = {
   sliderValue: number;
   handleEventChange: React.ChangeEventHandler<HTMLInputElement>;
   sliderValueRounder: (number: number) => number;
-  filledWidthCalucation: () => string;
+  filledWidthCalucation: string;
 };
 
 export default function WalletImageSlider({
@@ -40,7 +40,7 @@ export default function WalletImageSlider({
           <span
             className="inline w-max text-slider-colour-full font-bold items-center text-end text-sm z-10"
             style={{
-              width: filledWidthCalucation(),
+              width: filledWidthCalucation,
             }}
           >
             {textValue}
