@@ -37,8 +37,7 @@ export default function Header() {
           <a className="hover:text-orange-400" href="/#">Help</a>
           <a className="hover:text-orange-400" href="/#">Find In-Store</a>
           {headerIcons.map((image, index) => (
-            <span className="flex" key={index}
-            >
+            <span className="flex" key={index}>
               <Image
                 src={image}
                 alt="mail"
