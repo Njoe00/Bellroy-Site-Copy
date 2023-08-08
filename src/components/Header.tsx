@@ -37,8 +37,7 @@ export default function Header() {
           <a href="/#">Help</a>
           <a href="/#">Find In-Store</a>
           {headerIcons.map((image, index) => (
-            <span className="flex" key={index}
-            >
+            <span className="flex" key={index}>
               <Image
                 src={image}
                 alt="mail"
