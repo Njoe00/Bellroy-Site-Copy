@@ -33,7 +33,7 @@ export default function WalletImageSlider({
         ></div>
         <input
           type="range"
-          className="w-full absolute
+          className="absolute w-full
           appearance-none h-2 outline-none bg-slider-colour-empty z-10"
           min={0}
           max={sliderImage.length - 1}
