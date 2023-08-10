@@ -14,7 +14,7 @@ export default function NewsLetterSignUp() {
       </h2>
       <div className="w-[452px] h-10 justify-center items-center flex flex-row bg-white rounded-md drop-shadow-lg m-4">
         <input
-          className="w-[381.94px] h-8 flex text-sm outline-0 font-serif focus:ring-0 focus:border-none"
+          className="w-[381.94px] h-8 flex text-sm outline-0 font-serif  border-none focus:ring-0 focus:border-none"
           type="email"
           placeholder="Enter your email to register"
           onFocus={HandleButtonColour}
@@ -26,14 +26,14 @@ export default function NewsLetterSignUp() {
               buttonColour ? `bg-orange-600` : `bg-gray-300`
             }`}
           >
-            SUMBIT
+            SUBMIT
           </button>
         </div>
       </div>
       <div className="w-[452px] text-xs text-center text-gray-400">
         You are signing up to receive product updates and newsletters. By
         signing up, you are consenting to our
-        <span className="px-1 whitespace-normal cursor-pointer text-orange-600 underline">
+        <span className="px-1 cursor-pointer text-orange-600 underline">
           privacy policy
         </span>
         but you can opt out at any time.
