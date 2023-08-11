@@ -2,13 +2,19 @@ import react from "react";
 
 export default function SiteMapFooter() {
   return (
-    <div className="bg-background-site-footer-colour w-full h-[400px] flex flex-col">
+    <div className="bg-background-site-footer-colour w-full h-[400px] flex flex-row justify-center">
       {sectionTitle.map((title, index) => (
-        <div className="flex flex-col text-white" key={index}>
+        <ul
+          className="flex-column break-normal whitespace-pre text-white table-caption"
+          key={index}
+        >
+          {title}
           {subSection.map((section, index) => (
-            <div className="flex flex-start flex-col">{section[title]}</div>
+            <li className="flex whitespace-pre-wrap w-56 h-6">
+              {section[title]}
+            </li>
           ))}
-        </div>
+        </ul>
       ))}
     </div>
   );
