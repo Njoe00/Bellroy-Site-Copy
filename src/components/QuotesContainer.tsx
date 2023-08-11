@@ -6,11 +6,11 @@ export default function QuotesContainer() {
   const [quotesText, setQuotesText] = useState(quotes[0].quote);
 
   return (
-    <div className="bg-background-quotes flex justify-center p-20">
-      <div className="flex items-center justify-center flex-col text-gray-200 font-serif">
-        <h1 className="text-2xl flex py-6">Don't just take our word for it</h1>
+    <div className="flex justify-center bg-background-quotes p-20">
+      <div className="flex flex-col items-center justify-center font-serif text-gray-200">
+        <h1 className="flex py-6 text-2xl">Don't just take our word for it</h1>
         <QuotesText quotes={quotes} setQuotesText={setQuotesText} />
-        <div className="flex flex-col items-center text-center py-20 text-2xl space-y-10">
+        <div className="flex flex-col items-center space-y-10 py-20 text-center text-2xl">
           <Image
             className="flex"
             src="/quote-icon-white.png"

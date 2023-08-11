@@ -19,7 +19,7 @@ export default function ProductColourButton({
   setCardImage,
 }: ProductColourButtonProps) {
   return (
-    <div className="p-2 flex flex-row justify-center space-x-2 ">
+    <div className="flex-row justify-center flex space-x-2 p-2 ">
       {content.colours.map((colour, index) => {
         const outlineColour = `outline-${selectedColour}`;
         const bgColour = `bg-${colour}`;
@@ -30,7 +30,7 @@ export default function ProductColourButton({
               setCardImage(content.image[index]);
             }}
             key={index}
-            className={`${bgColour} h-4 w-4 rounded-full outline-1 outline outline-offset-2 ${
+            className={`${bgColour} h-4 w-4 rounded-full outline outline-1 outline-offset-2 ${
               selectedColour !== colour ? "outline-none" : outlineColour
             }`}
           />

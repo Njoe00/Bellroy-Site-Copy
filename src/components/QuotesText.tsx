@@ -21,15 +21,15 @@ export default function QuotesText({ quotes, setQuotesText }: QuoteTextProps) {
   const [buttonHighlighted, setButtonHighLighted] = useState(0);
 
   return (
-    <div className="flex-row flex items-center line-block">
+    <div className="line-block flex flex-row items-center">
       {quotes.map((text, index) => {
         return (
           <div>
             <span
               className={
                 buttonHighlighted === index
-                  ? "hover:text-white text-white text-center text-xl border-b-2 inline-block py-10 px-[10px] w-[280px] h-[132px]"
-                  : "text-gray-400 border-gray-400 text-center hover:border-white border-b-2 text-xl inline-block py-10 px-[10px] w-[280px] h-[132px]"
+                  ? "inline-block h-[132px] w-[280px] border-b-2 px-[10px] py-10 text-center text-xl text-white hover:text-white"
+                  : "inline-block h-[132px] w-[280px] border-b-2 border-gray-400 px-[10px] py-10 text-center text-xl text-gray-400 hover:border-white"
               }
               key={index}
               onClick={() => {
@@ -37,7 +37,7 @@ export default function QuotesText({ quotes, setQuotesText }: QuoteTextProps) {
                 handleHighlightedButtons(index);
               }}
             >
-              <div className="inline-block item-center">
+              <div className="item-center inline-block">
                 <Image
                   className="flex"
                   src={text.title}

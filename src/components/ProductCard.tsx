@@ -27,7 +27,7 @@ export default function ProductCard({ content }: { content: Content }) {
 
   return (
     <div className="flex flex-row flex-wrap justify-center">
-      <div className="bg-gray-100 group flex flex-col relative justify-center border-4 border-white">
+      <div className="group relative flex flex-col justify-center border-4 border-white bg-gray-100">
         <div className="z-30">
           <Transition
             show={!isCardFlipped}
@@ -40,12 +40,12 @@ export default function ProductCard({ content }: { content: Content }) {
             leaveTo="opacity-100 translate-x-0"
           >
             <button
-              className="group-hover:visible flex flex-row absolute top-0 right-0 py-1 px-2 text-xs bg-gray-300 z-20 "
+              className="absolute right-0 top-0 z-20 flex flex-row bg-gray-300 px-2 py-1 text-xs group-hover:visible "
               onClick={toggleIsFlippedCard}
             >
               SHOW MORE
               <Image
-                className="flex relative left-1"
+                className="relative left-1 flex"
                 src="/icons8-plus-50.png"
                 alt="X"
                 width={14}
@@ -65,12 +65,12 @@ export default function ProductCard({ content }: { content: Content }) {
             leaveTo="opacity-100 translate-x-0"
           >
             <button
-              className="group-hover:visible flex flex-row absolute top-0 right-0 py-1 px-2 text-xs bg-gray-300 z-20"
+              className="absolute right-0 top-0 z-20 flex flex-row bg-gray-300 px-2 py-1 text-xs group-hover:visible"
               onClick={toggleIsFlippedCard}
             >
               CLOSE
               <Image
-                className="rotate-45 flex relative left-1"
+                className="relative left-1 flex rotate-45"
                 src="/icons8-plus-50.png"
                 alt="X"
                 width={14}
@@ -81,8 +81,8 @@ export default function ProductCard({ content }: { content: Content }) {
           </Transition>
         </div>
 
-        <div className="flex flex-col w-[413.33px] h-[508px] items-center relative">
-          <div className="top-10 relative">
+        <div className="relative flex h-[508px] w-[413.33px] flex-col items-center">
+          <div className="relative top-10">
             <Image src={cardImage} height={300} width={300} alt="cardImage" />
             <ProductColourButton
               content={content}

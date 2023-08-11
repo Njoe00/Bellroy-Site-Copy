@@ -2,11 +2,11 @@ import Image from "next/image";
 
 export default function PaymentsContainer() {
   return (
-    <div className="bg-background-payments-colour flex items-center flex-col px-2.5 py-7 font-normal w-full">
-      <div className="text-black flex justify-center text-2xl font-serif mb-7">
+    <div className="flex w-full flex-col items-center bg-background-payments-colour px-2.5 py-7 font-normal">
+      <div className="mb-7 flex justify-center font-serif text-2xl text-black">
         Safe, easy payment options
       </div>
-      <div className="flex justify-center flex-row items-center space-x-24">
+      <div className="flex flex-row items-center justify-center space-x-24">
         {PaymentIcons.map((icon, index) => (
           <Image
             className="flex items-center"

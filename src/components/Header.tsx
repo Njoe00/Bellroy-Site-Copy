@@ -11,8 +11,8 @@ export default function Header() {
 
   return (
     <>
-      <div className="bg-white p-5 flex relative gap-2 font-normal space-x-10 justify-between text-sm items-center h-[105px] z-10">
-        <div className="font-normal space-x-14 items-center flex">
+      <div className="relative z-10 flex h-[105px] items-center justify-between gap-2 space-x-10 bg-white p-5 text-sm font-normal">
+        <div className="flex items-center space-x-14 font-normal">
           <Image
             src="/logo.png"
             width={120}
@@ -20,10 +20,10 @@ export default function Header() {
             alt="test"
             style={{ height: "100%", width: "auto" }}
           />
-          <div className="relative w-max space-x-14 flex top-2">
+          <div className="relative top-2 flex w-max space-x-14">
             {headerSubSections.map((section, index) => (
               <button
-                className="text-sm py-2.5 text-center inline-flex items-center hover:text-orange-600"
+                className="inline-flex items-center py-2.5 text-center text-sm hover:text-orange-600"
                 onClick={handleDropDown}
                 key={index}
               >
@@ -33,9 +33,13 @@ export default function Header() {
           </div>
         </div>
 
-        <div className="gap-2 font-normal items-center space-x-4 text-xs flex text-gray-500 p-2">
-          <a className="hover:text-orange-400" href="/#">Help</a>
-          <a className="hover:text-orange-400" href="/#">Find In-Store</a>
+        <div className="flex items-center gap-2 space-x-4 p-2 text-xs font-normal text-gray-500">
+          <a className="hover:text-orange-400" href="/#">
+            Help
+          </a>
+          <a className="hover:text-orange-400" href="/#">
+            Find In-Store
+          </a>
           {headerIcons.map((image, index) => (
             <span className="flex" key={index}>
               <Image
@@ -51,7 +55,7 @@ export default function Header() {
       </div>
       <Transition
         show={isOpen}
-        className="relative flex divide-y divide-white-100 drop-shadow-lg z-0"
+        className="divide-white-100 relative z-0 flex divide-y drop-shadow-lg"
         enter="transform transition ease-in-out duration-300"
         enterFrom="opacity-100 -translate-y-36"
         enterTo="opacity-100 translate-y-0"
@@ -59,9 +63,9 @@ export default function Header() {
         leaveFrom="opacity-100 translate-y-0"
         leaveTo="opacity-100 -translate-y-36"
       >
-        <ul className="absolute w-screen bg-white flex flex-row text-gray-500 justify-start pb-8 pl-32 text-sm">
+        <ul className="absolute flex w-screen flex-row justify-start bg-white pb-8 pl-32 text-sm text-gray-500">
           {headerSubSectionsContentWallets.map((content, index) => (
-            <li className="flex items-center flex-col px-6" key={index}>
+            <li className="flex flex-col items-center px-6" key={index}>
               <Image
                 src={content.image}
                 width={75}

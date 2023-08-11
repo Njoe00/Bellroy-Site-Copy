@@ -2,8 +2,8 @@ import Image from "next/image";
 
 export default function BannerText() {
   return (
-    <div className="bg-gray-200 flex justify-evenly py-8 p-8">
-      <div className="flex pl-4 space-x-28">
+    <div className="flex justify-evenly bg-gray-200 p-8 py-8">
+      <div className="flex space-x-28 pl-4">
         {imageTemplate.map((content, index) => (
           <div className="flex items-center">
             <Image
@@ -14,7 +14,7 @@ export default function BannerText() {
               style={{ height: "100%", width: "auto" }}
               key={index}
             />
-            <span className="text-base text-background-main pl-4">
+            <span className="pl-4 text-base text-background-main">
               {content.text}
             </span>
           </div>

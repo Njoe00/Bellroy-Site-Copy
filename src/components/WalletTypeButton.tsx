@@ -28,11 +28,11 @@ export default function WalletTypeButton({
 
   return (
     <div
-      className="flex flex-col space-x-36 py-14 items-center justify-center"
+      className="flex flex-col items-center justify-center space-x-36 py-14"
       key={index}
     >
       <div
-        className="flex items-center flex-col px-24 group cursor-pointer"
+        className="group flex cursor-pointer flex-col items-center px-24"
         onClick={() => setImagesToShow(content.text)}
       >
         <Image
@@ -42,11 +42,11 @@ export default function WalletTypeButton({
           alt="Mens Bags"
           style={{ height: "100%", width: "auto" }}
         />
-        <div className="absolute group-hover:text-orange-600 text-2xl flex justify-center translate-y-32">
+        <div className="absolute flex translate-y-32 justify-center text-2xl group-hover:text-orange-600">
           <BsChevronCompactDown />
         </div>
 
-        <div className="group-hover:text-orange-600 text-sm translate-y-4 text-gray-400">
+        <div className="translate-y-4 text-sm text-gray-400 group-hover:text-orange-600">
           {content.text}
         </div>
       </div>

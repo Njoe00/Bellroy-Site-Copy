@@ -25,20 +25,20 @@ export default function WalletImageSlider({
   }
 
   return (
-    <div className="flex-nowrap flex-col justify-center w-full float-left z-40 absolute bottom-0">
+    <div className="absolute bottom-0 z-40 float-left w-full flex-col flex-nowrap justify-center">
       <div className="relative flex text-center">
         <input
           type="range"
-          className="w-full absolute appearance-none h-0 -bottom-2 outline-none z-10"
+          className="absolute -bottom-2 z-10 h-0 w-full appearance-none outline-none"
           min={0}
           max={sliderImage.length - 1}
           step={0.01}
           value={sliderValue}
           onChange={handleEventChange}
         />
-        <li className="flex flex-nowrap truncate w-full absolute text-center items-center top-14 left-6 flex-row">
+        <li className="absolute left-6 top-14 flex w-full flex-row flex-nowrap items-center truncate text-center">
           <span
-            className="inline w-max text-slider-colour-full font-bold items-center text-end text-sm z-10"
+            className="z-10 inline w-max items-center text-end text-sm font-bold text-slider-colour-full"
             style={{
               width: filledWidthCalucation,
             }}

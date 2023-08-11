@@ -20,34 +20,36 @@ export default function WalletImageSlider({
     setSliderValue(event.target.value);
   };
 
-  const filledWidthCalucation = `${(sliderValue / (sliderImage.length - 1)) * 100}%`;
+  const filledWidthCalucation = `${
+    (sliderValue / (sliderImage.length - 1)) * 100
+  }%`;
 
   return (
-    <div className="flex flex-col justify-center w-1/2 z-40 absolute bottom-0">
+    <div className="absolute bottom-0 z-40 flex w-1/2 flex-col justify-center ">
       <div className="relative">
         <div
-          className="absolute bg-slider-colour-full h-2 z-40 transition-colors ease-in-out delay-1000 "
+          className="absolute z-40 h-2 bg-slider-colour-full transition-colors delay-1000 ease-in-out "
           style={{
-            width: filledWidthCalucation
+            width: filledWidthCalucation,
           }}
         ></div>
         <input
           type="range"
-          className="absolute w-full
-          appearance-none h-2 outline-none bg-slider-colour-empty z-10"
+          className="absolute z-10
+          h-2 w-full appearance-none bg-slider-colour-empty outline-none"
           min={0}
           max={sliderImage.length - 1}
           step={0.01}
           value={sliderValue}
           onChange={handleEventChange}
         />
-        <div className="flex absolute -bottom-6 flex-row justify-between w-full z-30">
+        <div className="absolute -bottom-6 z-30 flex w-full flex-row justify-between">
           {sliderImage.map((image, index) => (
             <div
               key={index}
               className={`flex h-8 w-0.5 border-0 ${
                 SliderValueIsEqualorGreaterThanIndex(index)
-                  ? "transition-colors duration-400 ease-in-out delay-150 bg-slider-colour-full"
+                  ? "duration-400 bg-slider-colour-full transition-colors delay-150 ease-in-out"
                   : "bg-slider-colour-empty"
               }`}
             />

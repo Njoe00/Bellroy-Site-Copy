@@ -13,14 +13,14 @@ export default function SliderImageWallet() {
   };
 
   return (
-    <div className="bg-cover flex mr-auto items-center flex-col ml-auto">
+    <div className="ml-auto mr-auto flex flex-col items-center bg-cover">
       <div>
-        <p className="flex flex-row text-base font-bold bg-background-main">
+        <p className="flex flex-row bg-background-main text-base font-bold">
           Move the slider to compare wallets
         </p>
       </div>
-      <div className="flex flex-col justify-center items-center space-y-2 p-2 w-80">
-        <div className="w-[1980px] flex bg-cover h-[730px] z-0 overflow-hidden">
+      <div className="flex w-80 flex-col items-center justify-center space-y-2 p-2">
+        <div className="z-0 flex h-[730px] w-[1980px] overflow-hidden bg-cover">
           <Image
             src={sliderImage[sliderValueRounder(sliderValue)]}
             width={1980}
