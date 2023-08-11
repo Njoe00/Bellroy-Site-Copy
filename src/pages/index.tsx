@@ -13,6 +13,7 @@ import Header from "../components/Header";
 import SliderImageWallet from "@/components/SliderImageWallet";
 import PaymentsContainer from "../components/PaymentsContainer";
 import NewsLetterSignUp from "../components/NewsLetterSignUp";
+import SiteMapFooter from "@/components/SiteMapFooter";
 
 export default function Home() {
   const [sliderValue, setSliderValue] = useState("0");
@@ -78,7 +79,6 @@ export default function Home() {
           Slim Your Wallet
         </h1>
         <SliderImageWallet />
-        
       </div>
       <div className="bg-gray-200 flex justify-evenly py-8 p-8">
         <div className="flex items-center pl-4">
@@ -244,6 +244,7 @@ export default function Home() {
       <QuotesContainer />
       <PaymentsContainer />
       <NewsLetterSignUp />
+      <SiteMapFooter />
     </header>
   );
 }
