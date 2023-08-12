@@ -30,7 +30,7 @@ module.exports = {
         "slider-colour-empty": "#d1e1e4",
         "background-payments-colour": "#DCD9D9",
         "background-news-letter-colour": "#EFEAE5",
-        "background-site-footer-colour": "#222",
+        "background-site-footer-colour": "#222222",
       },
     },
   },
