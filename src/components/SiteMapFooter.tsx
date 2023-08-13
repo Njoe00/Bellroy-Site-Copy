@@ -1,5 +1,6 @@
 import react from "react";
 import SiteMapFooterTextContent from "./SiteMapFooterTextContent";
+import SocialMediaFooterIcons from "./SocialMediaFooterIcons";
 
 export default function SiteMapFooter() {
   return (
@@ -11,6 +12,7 @@ export default function SiteMapFooter() {
             <SiteMapFooterTextContent content={content.body} />
           </ul>
         ))}
+        <SocialMediaFooterIcons />
       </div>
     </div>
   );

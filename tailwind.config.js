@@ -6,6 +6,10 @@ module.exports = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   plugins: [require("flowbite/plugin")],
+  variants: {
+    fill: ["hover", "focus"],
+  },
+
   theme: {
     extend: {
       backgroundImage: {
