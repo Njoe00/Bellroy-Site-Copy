@@ -1,32 +1,32 @@
-import Image from "next/image";
-import FacebookFooterIcon from "public/Footer_Social_Media_Icons/facebook.svg";
+import React, { useState } from "react";
+import SocialMediaFooterIcon from "./SocialMediaFooterIcon";
 
-
-
-
+import { faFacebookF } from "@fortawesome/free-brands-svg-icons";
+import { faSquareInstagram } from "@fortawesome/free-brands-svg-icons";
+import { faYoutube } from "@fortawesome/free-brands-svg-icons";
+import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faPinterest } from "@fortawesome/free-brands-svg-icons";
+import { faTiktok } from "@fortawesome/free-brands-svg-icons";
+import { faWeixin } from "@fortawesome/free-brands-svg-icons";
 
 export default function SocialMediaFooterIcons() {
   return (
-    <div className="flex h-6">
+    <div className="flex h-6 space-x-4 items-center">
       {SocialMediaIcons.map((icon, index) => (
-        <Image
-          src={FacebookFooterIcon}
-          width={20}
-          height={20}
-          alt="image"
-          className="fill-orange-600"
-          key={index}
-        />
+        <div className=" text-current hover:stroke-orange-600 " key={index}>
+          <SocialMediaFooterIcon icon={icon} />
+        </div>
       ))}
     </div>
-    
   );
 }
 
 const SocialMediaIcons = [
-  "/Footer_Social_Media_Icons/icons8-instagram.svg",
-  "/Footer_Social_Media_Icons/icons8-facebook.svg",
-  "/Footer_Social_Media_Icons/icons8-pinterest.svg",
-  "/Footer_Social_Media_Icons/icons8-tiktok.svg",
-  "/Footer_Social_Media_Icons/facebook.svg",
+  faSquareInstagram,
+  faFacebookF,
+  faYoutube,
+  faLinkedin,
+  faPinterest,
+  faTiktok,
+  faWeixin,
 ];
