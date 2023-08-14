@@ -66,4 +66,20 @@ const footerContent = [
       "Lite Collection",
     ],
   },
+  {
+    title: "ABOUT",
+    body: [
+      "Our Story",
+      "Our Materials",
+      "Responsible Business",
+      "Ambassadors",
+      "Journal",
+      "Collaborations",
+      "Find In-Store",
+      "Affiliate Program",
+      "Corporate Gifting",
+      "Press",
+      "Careers",
+    ],
+  },
 ];
