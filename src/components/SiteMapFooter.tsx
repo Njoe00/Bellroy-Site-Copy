@@ -1,11 +1,12 @@
 import react from "react";
 import SiteMapFooterTextContent from "./SiteMapFooterTextContent";
 import SocialMediaFooterIcons from "./SocialMediaFooterIcons";
+import FooterGotQuestionsBanner from "@/components/FooterGotQuestionsBanner";
 
 export default function SiteMapFooter() {
   return (
     <div className="bg-background-site-footer-colour">
-      <div className="px-14 pb-5 gap-2 pt-6 font-sans w-full h-[400px] flex flex-row justify-center text-gray-400 font-[400]">
+      <div className="px-14 pb-5 gap-2 pt-6 font-sans w-full h-[430px] flex flex-row justify-center text-gray-400 font-[400]">
         {footerContent.map((content, index) => (
           <ul className="flex-column text-xs w-56 h-6" key={index}>
             {content.title}
@@ -14,6 +15,7 @@ export default function SiteMapFooter() {
         ))}
         <SocialMediaFooterIcons />
       </div>
+      <FooterGotQuestionsBanner />
     </div>
   );
 }
