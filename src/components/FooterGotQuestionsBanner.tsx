@@ -12,7 +12,7 @@ export default function FooterGotQuestionsBanner() {
         </div>
         <div className="text-gray-400 text-xs flex-row items-center flex pl-4 gap-1 w-full">
           Got a question? Contact{" "}
-          <span className="text-orange-600 cursor-pointer flex- wrap">
+          <span className="text-orange-600 cursor-pointer">
             support@bellroy.com
           </span>
           <div className="flex justify-end w-3/4">

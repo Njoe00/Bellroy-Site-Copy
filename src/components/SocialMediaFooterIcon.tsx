@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
 
-export default function SocialMediaFooterIcon({ icon }: { icon: any }) {
+export default function SocialMediaFooterIcon({
+  icon,
+}: {
+  icon: IconDefinition;
+}) {
   const [changeColourOnHover, SetchangeColourOnHover] = useState(false);
 
   return (
