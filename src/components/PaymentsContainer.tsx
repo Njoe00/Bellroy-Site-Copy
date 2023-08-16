@@ -9,7 +9,14 @@ export default function PayMentsContainer() {
       </div>
       <ul className="flex justify-center flex-row items-center">
         {PaymentIcons.map((icon, index) => (
-          <Image className="flex items-center m-10" src={icon.icon} height={icon.size[1]} width={icon.size[0]} alt="test" key={index} />
+          <Image
+            className="flex items-center m-10"
+            src={icon.icon}
+            height={icon.height}
+            width={icon.width}
+            alt="test"
+            key={index}
+          />
         ))}
       </ul>
     </div>
@@ -19,18 +26,22 @@ export default function PayMentsContainer() {
 const PaymentIcons = [
   {
     icon: "/payment-icons-visa.avif",
-    size: [64.63, 22],
+    width: 64.63,
+    height: 22,
   },
   {
     icon: "/payment-icons-mastercard-2.avif",
-    size: [51.42, 40],
+    width: 51.42,
+    height: 40,
   },
   {
     icon: "/payment-icons-paypal.avif",
-    size: [81.7, 22],
+    width: 81.7,
+    height: 22,
   },
   {
     icon: "/payment-icons-applepay.avif",
-    size: [51.69, 22],
+    width: 51.69,
+    height: 22,
   },
 ];
