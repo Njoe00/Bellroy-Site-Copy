@@ -11,6 +11,7 @@ import QuotesContainer from "@/components/QuotesContainer";
 import ProductCard from "../components/ProductCard";
 import Header from "../components/Header";
 import SliderImageWallet from "@/components/SliderImageWallet";
+import PaymentsContainer from "../components/PaymentsContainer";
 
 export default function Home() {
   const [sliderValue, setSliderValue] = useState("0");
@@ -240,6 +241,7 @@ export default function Home() {
         </div>
       </div>
       <QuotesContainer />
+      <PaymentsContainer />
     </header>
   );
 }
