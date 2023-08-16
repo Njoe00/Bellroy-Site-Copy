@@ -7,7 +7,7 @@ export default function SocialMediaFooterIcon({
 }: {
   icon: IconDefinition;
 }) {
-  const [changeColourOnHover, SetchangeColourOnHover] = useState(false);
+  const [isHovered, SetisHovered] = useState(false);
 
   return (
     <FontAwesomeIcon
@@ -15,9 +15,9 @@ export default function SocialMediaFooterIcon({
       icon={icon}
       width={20}
       height={20}
-      style={{ color: changeColourOnHover ? "#FF5A0B" : "#9a9a9a" }}
-      onMouseOver={() => SetchangeColourOnHover(true)}
-      onMouseOut={() => SetchangeColourOnHover(false)}
+      style={{ color: isHovered ? "#FF5A0B" : "#9a9a9a" }}
+      onMouseOver={() => SetisHovered(true)}
+      onMouseOut={() => SetisHovered(false)}
       size="xl"
     />
   );
