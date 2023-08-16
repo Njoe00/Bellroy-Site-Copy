@@ -1,7 +1,7 @@
 import react from "react";
 import Image from "next/image";
 
-export default function PayMentsContainer() {
+export default function PaymentsContainer() {
   return (
     <div className="bg-background-payments-colour flex items-center flex-col w-full">
       <div className="text-black flex justify-center text-2xl font-sans">
