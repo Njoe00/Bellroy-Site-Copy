@@ -7,7 +7,7 @@ export default function PayMentsContainer() {
       <div className="text-black flex justify-center text-2xl font-sans">
         Safe, easy payment options
       </div>
-      <ul className="flex justify-center flex-row items-center">
+      <div className="flex justify-center flex-row items-center">
         {PaymentIcons.map((icon, index) => (
           <Image
             className="flex items-center m-10"
@@ -18,7 +18,7 @@ export default function PayMentsContainer() {
             key={index}
           />
         ))}
-      </ul>
+      </div>
     </div>
   );
 }
