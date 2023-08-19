@@ -16,7 +16,7 @@ export type Content = {
 
 export default function ProductCard({
   content,
-  key
+  key,
 }: {
   key: number;
   content: Content;
@@ -29,6 +29,10 @@ export default function ProductCard({
     setCardImage(content.image[0]);
   }, [content]);
 
+  const changeIsCardFliped = () => {
+    setIsCardFlipped(!isCardFlipped);
+  };
+
   return (
     <div className="flex flex-row flex-wrap justify-center">
       <div
@@ -36,62 +40,47 @@ export default function ProductCard({
         className="bg-gray-100 group flex flex-col relative justify-center border-4 border-white"
       >
         <div className="z-30">
-          <Transition
-            show={!isCardFlipped}
-            className=""
-            enter="transform transition ease-in-out duration-300"
-            enterFrom="opacity-0 -translate-x-0"
-            enterTo="opacity-100 translate-x-0"
-            leave="transform transition ease-in-out duration-300"
-            leaveFrom="opacity-0 translate-x-0"
-            leaveTo="opacity-100 translate-x-0"
-          >
-            <button
-              className="group-hover:visible flex flex-row absolute top-0 right-0 py-1 px-2 text-xs bg-gray-300 z-20 "
-              onClick={() => {
-                setIsCardFlipped(!isCardFlipped);
-                setCardImage(content.image[0]);
-              }}
-            >
-              CLOSE
-              <Image
-                className="flex relative left-1"
-                src="/icons8-plus-50.png"
-                alt="X"
-                width={14}
-                height={14}
-                style={{ height: "15px", width: "15px" }}
-              />
-            </button>
-          </Transition>
-          <Transition
-            show={isCardFlipped}
-            className=""
-            enter="transform transition ease-in-out duration-300"
-            enterFrom="opacity-0 -translate-x-0"
-            enterTo="opacity-100 translate-x-0"
-            leave="transform transition ease-in-out duration-300"
-            leaveFrom="opacity-0 translate-x-0"
-            leaveTo="opacity-100 translate-x-0"
-          >
-            <button
-              className="group-hover:visible invisible flex flex-row absolute top-0 right-0 py-1 px-2 text-xs bg-gray-300 z-20"
-              onClick={() => {
-                setIsCardFlipped(!isCardFlipped);
-                setCardImage(content.imageAlt[0]);
-              }}
-            >
-              SHOW MORE
-              <Image
-                className="rotate-45 flex relative left-1"
-                src="/icons8-plus-50.png"
-                alt="X"
-                width={14}
-                height={14}
-                quality={100}
-              />
-            </button>
-          </Transition>
+          {isCardFlipped ? (
+            <div>
+              <button
+                className="group-hover:visible hover:scale-y-180 transform flex flex-row absolute top-0 right-0 py-1 px-2 text-xs bg-gray-300 z-20 "
+                onClick={() => {
+                  changeIsCardFliped();
+                  setCardImage(content.image[0]);
+                }}
+              >
+                CLOSE
+                <Image
+                  className="flex relative left-1"
+                  src="/icons8-plus-50.png"
+                  alt="X"
+                  width={14}
+                  height={14}
+                  style={{ height: "15px", width: "15px" }}
+                />
+              </button>
+            </div>
+          ) : (
+            <div>
+              <button
+                className="group-hover:visible invisible flex flex-row absolute top-0 right-0 py-1 px-2 text-xs bg-gray-300 z-20"
+                onClick={() => {
+                  changeIsCardFliped();
+                  setCardImage(content.imageAlt[0]);
+                }}
+              >
+                SHOW MORE
+                <Image
+                  className="rotate-45 flex relative left-1"
+                  src="/icons8-plus-50.png"
+                  alt="X"
+                  width={14}
+                  height={14}
+                  quality={100}
+                />
+              </button>
+            </div>
+          )}
         </div>
 
         <div className="flex flex-col w-[413.33px] h-[508px] items-center relative">

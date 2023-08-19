@@ -6,7 +6,7 @@ module.exports = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   plugins: [
-    require('flowbite/plugin')
+    require('flowbite/plugin', "tailwindcss-3d")
   ],
   theme: {
    
