@@ -20,15 +20,17 @@ export default function WalletImageSlider({
     setSliderValue(event.target.value);
   };
 
-  const filledWidthCalucation = `${(sliderValue / (sliderImage.length - 1)) * 100}%`;
+  const filledWidthCalucation = `${
+    (sliderValue / (sliderImage.length - 1)) * 100
+  }%`;
 
   return (
     <div className="flex flex-col justify-center w-1/2 z-40 absolute bottom-0">
       <div className="relative">
         <div
-          className="absolute bg-slider-colour-full h-2 z-40 transition-colors ease-in-out delay-1000 "
+          className="absolute bg-slider-colour-full h-2 z-40 transition-all	ease-in duration-200"
           style={{
-            width: filledWidthCalucation
+            width: filledWidthCalucation,
           }}
         ></div>
         <input
@@ -47,7 +49,7 @@ export default function WalletImageSlider({
               key={index}
               className={`flex h-8 w-0.5 border-0 ${
                 SliderValueIsEqualorGreaterThanIndex(index)
-                  ? "transition-colors duration-400 ease-in-out delay-150 bg-slider-colour-full"
+                  ? "transition-colors ease-in-out delay-150 bg-slider-colour-full"
                   : "bg-slider-colour-empty"
               }`}
             />

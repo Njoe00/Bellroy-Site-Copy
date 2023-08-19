@@ -5,14 +5,13 @@ export default function BannerText() {
     <div className="bg-gray-200 flex justify-evenly py-8 p-8">
       <div className="flex pl-4 space-x-28">
         {imageTemplate.map((content, index) => (
-          <div className="flex items-center">
+          <div className="flex items-center" key={index}>
             <Image
               src={content.image}
               alt="text"
               width={30}
               height={10}
               style={{ height: "100%", width: "auto" }}
-              key={index}
             />
             <span className="text-base text-background-main pl-4">
               {content.text}

@@ -3,6 +3,7 @@ import React, { useState } from "react";
 export default function NewsLetterSignUp() {
   const [buttonColour, setButtonColour] = useState(false);
 
+
   const isColoured = () => {
     setButtonColour(!buttonColour);
   };

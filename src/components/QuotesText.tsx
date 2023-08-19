@@ -24,14 +24,13 @@ export default function QuotesText({ quotes, setQuotesText }: QuoteTextProps) {
     <div className="flex-row flex items-center line-block">
       {quotes.map((text, index) => {
         return (
-          <div>
+          <div key={index}>
             <span
               className={
                 buttonHighlighted === index
                   ? "hover:text-white text-white text-center text-xl border-b-2 inline-block py-10 px-[10px] w-[280px] h-[132px]"
                   : "text-gray-400 border-gray-400 text-center hover:border-white border-b-2 text-xl inline-block py-10 px-[10px] w-[280px] h-[132px]"
               }
-              key={index}
               onClick={() => {
                 setQuotesText(text.quote);
                 handleHighlightedButtons(index);
