@@ -1,5 +1,6 @@
 import { sliderImage } from "./SliderImageWallet";
 import SliderButton from "./SliderButton";
+import React from "react";
 
 type SliderImageWalletProps = {
   sliderValue: number;

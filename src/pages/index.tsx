@@ -1,5 +1,5 @@
 import Image from "next/image";
-import react, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Transition } from "@headlessui/react";
 import {
   BsChevronCompactLeft,
