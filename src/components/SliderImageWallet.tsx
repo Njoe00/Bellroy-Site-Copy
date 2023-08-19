@@ -9,7 +9,7 @@ export default function SliderImageWallet() {
     if (sliderValue % 1 !== 0) {
       return Math.floor(sliderValue);
     }
-    return sliderValue
+    return sliderValue;
   };
 
   return (

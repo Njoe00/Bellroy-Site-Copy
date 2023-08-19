@@ -12,6 +12,8 @@ import ProductCard from "../components/ProductCard";
 import Header from "../components/Header";
 import SliderImageWallet from "@/components/SliderImageWallet";
 import PaymentsContainer from "../components/PaymentsContainer";
+import NewsLetterSignUp from "../components/NewsLetterSignUp";
+
 
 export default function Home() {
   const [sliderValue, setSliderValue] = useState("0");
@@ -242,6 +244,8 @@ export default function Home() {
       </div>
       <QuotesContainer />
       <PaymentsContainer />
+      <NewsLetterSignUp />
+
     </header>
   );
 }

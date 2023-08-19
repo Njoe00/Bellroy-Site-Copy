@@ -6,17 +6,17 @@ export default function BannerText() {
       <div className="flex pl-4 space-x-28">
         {imageTemplate.map((content, index) => (
           <div className="flex items-center">
-              <Image
-                src={content.image}
-                alt="text"
-                width={30}
-                height={10}
-                style={{ height: "100%", width: "auto" }}
-                key={index}
-              />
-              <span className="text-base text-background-main pl-4">
-                {content.text}
-              </span>
+            <Image
+              src={content.image}
+              alt="text"
+              width={30}
+              height={10}
+              style={{ height: "100%", width: "auto" }}
+              key={index}
+            />
+            <span className="text-base text-background-main pl-4">
+              {content.text}
+            </span>
           </div>
         ))}
       </div>
