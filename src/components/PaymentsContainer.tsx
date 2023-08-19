@@ -1,7 +1,6 @@
 import Image from "next/image";
 
 export default function PaymentsContainer() {
-
   return (
     <div className="bg-background-payments-colour flex items-center flex-col px-2.5 py-7 font-normal w-full">
       <div className="text-black flex justify-center text-2xl font-serif mb-7">
@@ -22,7 +21,7 @@ export default function PaymentsContainer() {
     </div>
   );
 }
-7;
+
 const PaymentIcons = [
   {
     icon: "/payment-icons-visa.avif",
