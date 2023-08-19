@@ -14,6 +14,7 @@ import SliderImageWallet from "@/components/SliderImageWallet";
 import PaymentsContainer from "../components/PaymentsContainer";
 import NewsLetterSignUp from "../components/NewsLetterSignUp";
 
+
 export default function Home() {
   const [sliderValue, setSliderValue] = useState("0");
   const [isOpen, setIsOpen] = useState(false);
@@ -244,6 +245,7 @@ export default function Home() {
       <QuotesContainer />
       <PaymentsContainer />
       <NewsLetterSignUp />
+
     </header>
   );
 }

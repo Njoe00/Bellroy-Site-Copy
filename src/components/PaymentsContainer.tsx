@@ -1,15 +1,17 @@
+
+import react from "react";
 import Image from "next/image";
 
 export default function PaymentsContainer() {
   return (
-    <div className="bg-background-payments-colour flex items-center flex-col px-2.5 py-7 font-normal w-full">
-      <div className="text-black flex justify-center text-2xl font-serif mb-7">
+    <div className="bg-background-payments-colour flex items-center flex-col w-full">
+      <div className="text-black flex justify-center text-2xl font-sans">
         Safe, easy payment options
       </div>
-      <div className="flex justify-center flex-row items-center space-x-24">
+      <div className="flex justify-center flex-row items-center">
         {PaymentIcons.map((icon, index) => (
           <Image
-            className="flex items-center"
+            className="flex items-center m-10"
             src={icon.icon}
             height={icon.height}
             width={icon.width}
@@ -21,7 +23,7 @@ export default function PaymentsContainer() {
     </div>
   );
 }
-7;
+        
 const PaymentIcons = [
   {
     icon: "/payment-icons-visa.avif",
