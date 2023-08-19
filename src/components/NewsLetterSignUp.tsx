@@ -3,7 +3,8 @@ import React, { useState } from "react";
 export default function NewsLetterSignUp() {
   const [buttonColour, setButtonColour] = useState(false);
 
-  const HandleButtonColour = () => {
+
+  const isColoured = () => {
     setButtonColour(!buttonColour);
   };
 
@@ -17,8 +18,8 @@ export default function NewsLetterSignUp() {
           className="w-[381.94px] h-8 flex text-sm outline-0 font-serif  border-none focus:ring-0 focus:border-none"
           type="email"
           placeholder="Enter your email to register"
-          onFocus={HandleButtonColour}
-          onBlur={HandleButtonColour}
+          onFocus={isColoured}
+          onBlur={isColoured}
         />
         <div className="flex justify-end items-center">
           <button

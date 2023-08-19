@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import  { Content } from "./ProductCard";
+import { Content } from "./ProductCard";
 
 export default function ProudctNameAndEdition({
   content,

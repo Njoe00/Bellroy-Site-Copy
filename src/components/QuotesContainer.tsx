@@ -9,10 +9,7 @@ export default function QuotesContainer() {
     <div className="bg-background-quotes flex justify-center p-20">
       <div className="flex items-center justify-center flex-col text-gray-200 font-serif">
         <h1 className="text-2xl flex py-6">Don't just take our word for it</h1>
-        <QuotesText
-          quotes={quotes}
-          setQuotesText={setQuotesText}
-        />
+        <QuotesText quotes={quotes} setQuotesText={setQuotesText} />
         <div className="flex flex-col items-center text-center py-20 text-2xl space-y-10">
           <Image
             className="flex"

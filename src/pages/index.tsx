@@ -15,6 +15,7 @@ import PaymentsContainer from "../components/PaymentsContainer";
 import NewsLetterSignUp from "../components/NewsLetterSignUp";
 import SiteMapFooter from "@/components/SiteMapFooter";
 
+
 export default function Home() {
   const [sliderValue, setSliderValue] = useState("0");
   const [isOpen, setIsOpen] = useState(false);

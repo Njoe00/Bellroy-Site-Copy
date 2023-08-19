@@ -12,16 +12,10 @@ export type Content = {
   price: string;
 };
 
-
-export default function ProductCard({
-  content,
-}: {
-  content: Content;
-}) {
+export default function ProductCard({ content }: { content: Content }) {
   const [selectedColour, setSelectedColour] = useState("black");
   const [cardImage, setCardImage] = useState(content.image[0]);
   const [isCardFlipped, setIsCardFlipped] = useState(true);
-
 
   useEffect(() => {
     setCardImage(content.image[0]);
@@ -33,9 +27,7 @@ export default function ProductCard({
 
   return (
     <div className="flex flex-row flex-wrap justify-center">
-      <div
-        className="bg-gray-100 group flex flex-col relative justify-center border-4 border-white"
-      >
+      <div className="bg-gray-100 group flex flex-col relative justify-center border-4 border-white">
         <div className="z-30">
           <Transition
             show={!isCardFlipped}
@@ -92,12 +84,12 @@ export default function ProductCard({
         <div className="flex flex-col w-[413.33px] h-[508px] items-center relative">
           <div className="top-10 relative">
             <Image src={cardImage} height={300} width={300} alt="cardImage" />
-              <ProductColourButton
-                content={content}
-                selectedColour={selectedColour}
-                setSelectedColour={setSelectedColour}
-                setCardImage={setCardImage}
-              />
+            <ProductColourButton
+              content={content}
+              selectedColour={selectedColour}
+              setSelectedColour={setSelectedColour}
+              setCardImage={setCardImage}
+            />
             <ProudctNameAndEdition content={content} />
           </div>
         </div>

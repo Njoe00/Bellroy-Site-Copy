@@ -35,6 +35,8 @@ module.exports = {
         "background-payments-colour": "#DCD9D9",
         "background-news-letter-colour": "#EFEAE5",
         "background-site-footer-colour": "#222222",
+        "background-payments-colour" : "#DCD9D9",
+        "background-news-letter-colour" : "#EFEAE5",
       },
     },
   },
