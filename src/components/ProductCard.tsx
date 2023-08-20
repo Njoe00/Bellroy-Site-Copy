@@ -25,15 +25,16 @@ export default function ProductCard({
   const [selectedColour, setSelectedColour] = useState("black");
   const [cardImage, setCardImage] = useState(content.image[0]);
   const [isCardFlipped, setIsCardFlipped] = useState(true);
-  const [showImage, setShowImage] = useState(false);
+  const [opacity, setOpacity] = useState(0);
 
-  useEffect(() => {
-    setCardImage(content.image[0]);
-  }, [content]);
+  const changeImage = (newImage: string) => {
+    setOpacity(0);
 
-  const timeout = setTimeout(() => {
-    setShowImage(true);
-  }, 3000);
+    setTimeout(() => {
+      setCardImage(newImage);
+      setOpacity(100);
+    }, 350);
+  };
 
   const changeIsCardFliped = () => {
     setIsCardFlipped(!isCardFlipped);
@@ -52,8 +53,7 @@ export default function ProductCard({
                 className="group-hover:visible hover:scale-y-180 transform flex flex-row absolute top-0 right-0 py-1 px-2 text-xs bg-gray-300 z-20 "
                 onClick={() => {
                   changeIsCardFliped();
-                  setCardImage(content.image[0]);
-                  timeout;
+                  changeImage(content.image[0]);
                 }}
               >
                 CLOSE
@@ -73,8 +73,7 @@ export default function ProductCard({
                 className="group-hover:visible invisible flex flex-row absolute top-0 right-0 py-1 px-2 text-xs bg-gray-300 z-20"
                 onClick={() => {
                   changeIsCardFliped();
-                  setCardImage(content.imageAlt[0]);
-                  timeout;
+                  changeImage(content.imageAlt[0]);
                 }}
               >
                 SHOW MORE
@@ -94,26 +93,26 @@ export default function ProductCard({
         <div className="flex flex-col w-[413.33px] h-[508px] items-center relative">
           <div className="top-10 relative">
             {isCardFlipped ? (
-              <div className="[transform:rotateY(180deg)] ease-in-out [transform-style-:preserve-3d] [backface-visblity:hidden] transition-all duration-500">
-                {showImage && (
-                  <Image
-                    src={cardImage}
-                    height={300}
-                    width={300}
-                    alt="cardImage"
-                  />
-                )}
+              <div className="[transform:rotateY(180deg)] ease-in-out [transform-style-:preserve-3d] [backface-visblity:hidden] transition-all duration-1000">
+                <Image
+                  className={`transition-all ease-in duration-300 opacity-${opacity}`}
+                  src={cardImage}
+                  height={300}
+                  width={300}
+                  alt="cardImage"
+                  style={{ opacity: opacity / 100 }}
+                />
               </div>
             ) : (
-              <div className="[transform:-rotateY(180deg)] ease-in-out [transform-style-:preserve-3d] [backface-visblity:hidden] transition-all duration-500">
-                {showImage && (
-                  <Image
-                    src={cardImage}
-                    height={300}
-                    width={300}
-                    alt="cardImage"
-                  />
-                )}
+              <div className="[transform:-rotateY(180deg)] ease-in-out [transform-style-:preserve-3d] [backface-visblity:hidden] transition-all duration-1000">
+                <Image
+                  className={`transition-all ease-in-out duration-300 opacity-${opacity}`}
+                  src={cardImage}
+                  height={300}
+                  width={300}
+                  alt="cardImage"
+                  style={{ opacity: opacity / 100 }}
+                />
               </div>
             )}
 
