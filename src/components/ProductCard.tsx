@@ -25,7 +25,7 @@ export default function ProductCard({
   const [selectedColour, setSelectedColour] = useState("black");
   const [cardImage, setCardImage] = useState(content.image[0]);
   const [isCardFlipped, setIsCardFlipped] = useState(true);
-  const [opacity, setOpacity] = useState(0);
+  const [opacity, setOpacity] = useState(100);
 
   const changeImage = (newImage: string) => {
     setOpacity(0);
