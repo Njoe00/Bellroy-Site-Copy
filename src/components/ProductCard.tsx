@@ -3,6 +3,7 @@ import { Transition } from "@headlessui/react";
 import Image from "next/image";
 import ProudctNameAndEdition from "./ProductNameAndEdition";
 import ProductColourButton from "./ProductColourButton";
+import { time } from "console";
 
 export type Content = {
   colours: string[];
@@ -24,10 +25,15 @@ export default function ProductCard({
   const [selectedColour, setSelectedColour] = useState("black");
   const [cardImage, setCardImage] = useState(content.image[0]);
   const [isCardFlipped, setIsCardFlipped] = useState(true);
+  const [showImage, setShowImage] = useState(false);
 
   useEffect(() => {
     setCardImage(content.image[0]);
   }, [content]);
+
+  const timeout = setTimeout(() => {
+    setShowImage(true);
+  }, 3000);
 
   const changeIsCardFliped = () => {
     setIsCardFlipped(!isCardFlipped);
@@ -47,6 +53,7 @@ export default function ProductCard({
                 onClick={() => {
                   changeIsCardFliped();
                   setCardImage(content.image[0]);
+                  timeout;
                 }}
               >
                 CLOSE
@@ -67,6 +74,7 @@ export default function ProductCard({
                 onClick={() => {
                   changeIsCardFliped();
                   setCardImage(content.imageAlt[0]);
+                  timeout;
                 }}
               >
                 SHOW MORE
@@ -85,7 +93,30 @@ export default function ProductCard({
 
         <div className="flex flex-col w-[413.33px] h-[508px] items-center relative">
           <div className="top-10 relative">
-            <Image src={cardImage} height={300} width={300} alt="cardImage" />
+            {isCardFlipped ? (
+              <div className="[transform:rotateY(180deg)] ease-in-out [transform-style-:preserve-3d] [backface-visblity:hidden] transition-all duration-500">
+                {showImage && (
+                  <Image
+                    src={cardImage}
+                    height={300}
+                    width={300}
+                    alt="cardImage"
+                  />
+                )}
+              </div>
+            ) : (
+              <div className="[transform:-rotateY(180deg)] ease-in-out [transform-style-:preserve-3d] [backface-visblity:hidden] transition-all duration-500">
+                {showImage && (
+                  <Image
+                    src={cardImage}
+                    height={300}
+                    width={300}
+                    alt="cardImage"
+                  />
+                )}
+              </div>
+            )}
+
             <ProductColourButton
               content={content}
               selectedColour={selectedColour}
