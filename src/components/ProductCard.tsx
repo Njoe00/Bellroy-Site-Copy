@@ -21,6 +21,7 @@ export default function ProductCard({
   key: number;
   content: Content;
 }) {
+
   const [selectedColour, setSelectedColour] = useState("black");
   const [cardImage, setCardImage] = useState(content.image[0]);
   const [isCardFlipped, setIsCardFlipped] = useState(true);
@@ -34,6 +35,7 @@ export default function ProductCard({
       setOpacity(100);
     }, 350);
   };
+
 
   const changeIsCardFliped = () => {
     setIsCardFlipped(!isCardFlipped);
@@ -51,6 +53,7 @@ export default function ProductCard({
           changeImage={changeImage}
           content={content}
         />
+       </div>
 
         <div className="flex flex-col w-[413.33px] h-[508px] items-center relative bg-gray-100">
           <div className="top-10 relative">

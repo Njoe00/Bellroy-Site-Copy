@@ -5,7 +5,11 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  plugins: [require("flowbite/plugin", "tailwindcss-3d"), { legacy: true }],
+  plugins: [require("flowbite/plugin")],
+  variants: {
+    fill: ["hover", "focus"],
+  },
+
   theme: {
     extend: {
       display: ["group-hover"],
@@ -15,6 +19,7 @@ module.exports = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
+        "background-quotes": "#829C9B",
         "background-main": "#A3CBCC",
         "card-sleeve-gray": "#424242",
         "card-sleeve-ocean": "#3D4665",
@@ -26,6 +31,13 @@ module.exports = {
         "note-sleeve-hazelnut": "#99654D",
         "note-sleeve-cocoa": "#894405",
         "note-sleeve-terracotta": "#BC7049",
+        "slider-colour-full": "#357176",
+        "slider-colour-empty": "#d1e1e4",
+        "background-payments-colour": "#DCD9D9",
+        "background-news-letter-colour": "#EFEAE5",
+        "background-site-footer-colour": "#222222",
+        "background-payments-colour" : "#DCD9D9",
+        "background-news-letter-colour" : "#EFEAE5",
       },
     },
   },

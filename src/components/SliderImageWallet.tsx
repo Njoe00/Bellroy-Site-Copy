@@ -1,53 +1,55 @@
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import WalletImageSlider from "./WalletImageSlider";
 
-export default function siliderImageWallet() {
-  const [sliderValue, setSliderValue] = useState("0");
+export default function SliderImageWallet() {
+  const [sliderValue, setSliderValue] = useState(0);
 
-  let textValue;
-  if (sliderValue === "9") {
-    textValue = "Plus Cash";
-  } else if (sliderValue === "1") {
-    textValue = "1 Card";
-  } else {
-    textValue = `${sliderValue} Cards`;
-  }
+  const sliderValueRounder = (sliderValue: number) => {
+    if (sliderValue % 1 !== 0) {
+      return Math.floor(sliderValue);
+    }
+    return sliderValue;
+  };
 
   return (
-    <div className="block mr-auto ml-auto w-28">
+    <div className="bg-cover flex mr-auto items-center flex-col ml-auto">
       <div>
-        <p className="flex text-base p-0 font-bold justify-center bg-background-main">
+        <p className="flex flex-row text-base font-bold bg-background-main">
           Move the slider to compare wallets
         </p>
       </div>
-      <div className="flex flex-col space-y-2 p-2 w-80">
-        <input
-          type="range"
-          className="w-full"
-          min="0"
-          max="9"
-          step="1"
-          value={sliderValue}
-          onChange={(event) => {
-            setSliderValue(event.target.value);
-          }}
+      <div className="flex flex-col justify-center items-center space-y-2 p-2 w-80">
+        <div className="w-[1980px] flex bg-cover h-[730px] z-0 overflow-hidden">
+          <Image
+            src={sliderImage[sliderValueRounder(sliderValue)]}
+            width={1980}
+            height={800}
+            quality={100}
+            alt="alt"
+            style={{ width: 1980, height: 800 }}
+          />
+        </div>
+        <WalletImageSlider
+          sliderValueRounder={sliderValueRounder}
+          sliderValue={sliderValue}
+          setSliderValue={setSliderValue}
         />
-        <ul className="flex justify-between w-full px-2.5">
-          <li className="flex justify-center relative">
-            <span className="absolute">
-              {textValue}
-              <Image
-                src="/syw-compare.avif"
-                width={600}
-                height={1700}
-                quality={100}
-                alt="alt"
-                key="4"
-              />
-            </span>
-          </li>
-        </ul>
       </div>
     </div>
   );
 }
+
+export const sliderImage = [
+  "/sliderwallet1.png",
+  "/sliderwallet2.png",
+  "/sliderwallet3.png",
+  "/sliderwallet4.png",
+  "/sliderwallet6.png",
+  "/sliderwallet7.png",
+  "/sliderwallet8.png",
+  "/sliderwallet9.png",
+  "/sliderwallet10.png",
+  "/sliderwallet11.png",
+  "/sliderwallet12.png",
+];
