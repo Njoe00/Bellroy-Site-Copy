@@ -1,5 +1,5 @@
-import Image from "next/image";
 import React, { useEffect, useState } from "react";
+<<<<<<< HEAD
 import { Transition } from "@headlessui/react";
 import {
   BsChevronCompactLeft,
@@ -18,6 +18,14 @@ import SiteMapFooter from "@/components/SiteMapFooter";
 import WalletTypeButtons from "@/components/WalletTypeButtons";
 import BannerText from "@/components/BannerText";
 
+=======
+import ProductCard from "../components/ProductCard";
+import Header from "../components/Header";
+import VideoPlayerAndText from "@/components/VideoPlayerAndText";
+import BannerText from "@/components/BannerText";
+import SliderImage from "@/components/SliderImage";
+import WalletTypeButtons from "@/components/WalletTypeButtons";
+>>>>>>> 6b92451 (adding alt images to product card and updating card buttons to show both images)
 
 export default function Home() {
   const [walletDataSet, setWalletDataSet] = useState(cardsOnlyProduct);
@@ -33,6 +41,7 @@ export default function Home() {
     }
   }, [imagesToShow]);
 
+<<<<<<< HEAD
   const handleDropDown = () => {
     setIsOpen(!isOpen);
   };
@@ -64,6 +73,8 @@ export default function Home() {
     textValue = `${sliderValue} Cards`;
   }
 
+=======
+>>>>>>> 6b92451 (adding alt images to product card and updating card buttons to show both images)
   return (
     <header className="bg-white z-100">
       <span className="place-content-end p-1 text-xs right-6 absolute text-gray-500 font-normal z-50">
@@ -77,6 +88,7 @@ export default function Home() {
         </h1>
         <SliderImageWallet />
       </div>
+<<<<<<< HEAD
       <div className="bg-gray-200 flex justify-evenly py-8 p-8">
         <div className="flex items-center pl-4">
           <div>
@@ -184,14 +196,20 @@ export default function Home() {
           <BsChevronCompactRight onClick={nextSlide} size="40" />
         </div>
 
+=======
+
+>>>>>>> 6b92451 (adding alt images to product card and updating card buttons to show both images)
       <BannerText />
       <VideoPlayerAndText />
       <SliderImage />
 
       <div className="bg-white flex flex-col items-center p-40">
+<<<<<<< HEAD
         <h1 className="text-xl flex absolute h-40 w-auto">
           What do you carry in your wallet?
         </h1>
+=======
+>>>>>>> 6b92451 (adding alt images to product card and updating card buttons to show both images)
         <WalletTypeButtons
           imagesToShow={imagesToShow}
           setImagesToShow={setImagesToShow}
@@ -199,7 +217,17 @@ export default function Home() {
 
         <div className="flex flex-row flex-wrap justify-center">
           {walletDataSet.map((content, index) => (
+<<<<<<< HEAD
             <ProductCard key={index} content={content} />
+=======
+            <ProductCard
+              key={index}
+              content={content}
+              image={content.image}
+              index={index}
+              imageAlt={content.imageAlt}
+            />
+>>>>>>> 6b92451 (adding alt images to product card and updating card buttons to show both images)
           ))}
         </div>
       </div>
@@ -229,20 +257,32 @@ const cardsOnlyProduct = [
       "/card-Sleeves/card-Sleeve_Teal.avif",
       "/card-Sleeves/card-Sleeve_Hazel.avif",
     ],
+<<<<<<< HEAD
     showMoreImage: [
+=======
+    imageAlt: [
+>>>>>>> 6b92451 (adding alt images to product card and updating card buttons to show both images)
       "/card-Sleeves/card-Sleeve-Black_Alt.avif",
       "/card-Sleeves/card-Sleeve_Ocean_Alt.avif",
       "/card-Sleeves/card-Sleeve_Gray_Alt.avif",
       "/card-Sleeves/card-Sleeve_Teal_Alt.avif",
       "/card-Sleeves/card-Sleeve_Hazel_Alt.avif",
+<<<<<<< HEAD
     ],
+=======
+    ]
+>>>>>>> 6b92451 (adding alt images to product card and updating card buttons to show both images)
   },
   {
     name: "Card Sleeve",
     colours: ["black"],
     price: "C$69",
     image: ["/card-Sleeves/card-Sleeve-Black_Ash.avif"],
+<<<<<<< HEAD
     showMoreImage: ["/card-Sleeves/card-Sleeve-Black_Ash_Alt.avif"],
+=======
+    imageAlt: ["/card-Sleeves/card-Sleeve-Black_Ash_Alt.avif"],
+>>>>>>> 6b92451 (adding alt images to product card and updating card buttons to show both images)
     edition: "Carryology Essentials Edition",
   },
   {
@@ -250,7 +290,11 @@ const cardsOnlyProduct = [
     colours: ["black"],
     price: "C$69",
     image: ["/card-Sleeves/flip-Case_Terracotta.avif"],
+<<<<<<< HEAD
     showMoreImage: ["/card-Sleeves/flip-Case_Terracotta_Alt.avif"],
+=======
+    imageAlt: ["/card-Sleeves/flip-Case_Terracotta_Alt.avif"],
+>>>>>>> 6b92451 (adding alt images to product card and updating card buttons to show both images)
     edition: "Second Edition",
   },
   {
@@ -258,21 +302,33 @@ const cardsOnlyProduct = [
     colours: ["black"],
     price: "C$85",
     image: ["/card-Sleeves/card-Pocket-Ranger_Green.avif"],
+<<<<<<< HEAD
     showMoreImage: ["/card-Sleeves/card-Pocket-Ranger_Green_Alt.avif"],
+=======
+    imageAlt: ["/card-Sleeves/card-Pocket-Ranger_Green_Alt.avif"],
+>>>>>>> 6b92451 (adding alt images to product card and updating card buttons to show both images)
   },
   {
     name: "Phone Case - 3 Card",
     colours: ["black"],
     price: "C$99",
     image: ["/card-Sleeves/phone-Case_Black.avif"],
+<<<<<<< HEAD
     showMoreImage: ["/card-Sleeves/phone-Case_Black_Alt.avif"],
+=======
+    imageAlt: ["/card-Sleeves/phone-Case_Black_Alt.avif"],
+>>>>>>> 6b92451 (adding alt images to product card and updating card buttons to show both images)
   },
   {
     name: "Card Sleeve",
     colours: ["black"],
     price: "C$95",
     image: ["/card-Sleeves/card-Sleeve_Mirum_Black.avif"],
+<<<<<<< HEAD
     showMoreImage: ["/card-Sleeves/card-Sleeve_Mirum_Black_Alt.avif"],
+=======
+    imageAlt: ["/card-Sleeves/card-Sleeve_Mirum_Black_Alt.avif"],
+>>>>>>> 6b92451 (adding alt images to product card and updating card buttons to show both images)
     edition: "MIRUM Edition",
   },
 ];
@@ -287,7 +343,11 @@ const cardsAndBillsProduct = [
       "/CB-1.avif",
       "/CB-2.avif",
     ],
+<<<<<<< HEAD
     showMoreImage: [],
+=======
+    imageAlt: [],
+>>>>>>> 6b92451 (adding alt images to product card and updating card buttons to show both images)
     edition: "RFID safe",
   },
   {
@@ -295,7 +355,11 @@ const cardsAndBillsProduct = [
     colours: ["black"],
     price: "C$99",
     image: ["/CB-3.avif"],
+<<<<<<< HEAD
     showMoreImage: [],
+=======
+    imageAlt: [],
+>>>>>>> 6b92451 (adding alt images to product card and updating card buttons to show both images)
     edition: "Carryology Essentials Edition",
   },
   {
@@ -317,14 +381,22 @@ const cardsAndBillsProduct = [
       "/CB-10.avif",
       "/CB-11.avif",
     ],
+<<<<<<< HEAD
     showMoreImage: [],
+=======
+    imageAlt: [],
+>>>>>>> 6b92451 (adding alt images to product card and updating card buttons to show both images)
   },
   {
     name: "Minimalist Set",
     colours: ["black"],
     price: "C$109 - $C129",
     image: ["/wallets-coins/CB-16.avif"],
+<<<<<<< HEAD
     showMoreImage: [],
+=======
+    imageAlt: [],
+>>>>>>> 6b92451 (adding alt images to product card and updating card buttons to show both images)
     edition: "Valued at C$144 - C$164",
   },
   {
@@ -332,7 +404,11 @@ const cardsAndBillsProduct = [
     colours: ["black", "card-sleeve-hazel", "wallet-chocolate"],
     price: "C$145",
     image: ["/CB-12.avif", "/CB-13.avif", "/CB-14.avif"],
+<<<<<<< HEAD
     showMoreImage: [],
+=======
+    imageAlt: [],
+>>>>>>> 6b92451 (adding alt images to product card and updating card buttons to show both images)
     edition: "Premium EditionRFID safe",
   },
   {
@@ -340,7 +416,11 @@ const cardsAndBillsProduct = [
     colours: ["black"],
     price: "C$125",
     image: ["/CB-15.avif"],
+<<<<<<< HEAD
     showMoreImage: [],
+=======
+    imageAlt: [],
+>>>>>>> 6b92451 (adding alt images to product card and updating card buttons to show both images)
     edition: "MIRUM Edition",
   },
 ];
@@ -361,7 +441,11 @@ const cardsBillsAndCoinsProduct = [
       "/card-Bills-Coins/folio-Mini_Teal.avif",
       "/card-Bills-Coins/folio-Mini_Hazel.avif",
     ],
+<<<<<<< HEAD
     howMoreImage: [],
+=======
+    imageAlt: [],
+>>>>>>> 6b92451 (adding alt images to product card and updating card buttons to show both images)
     edition: "RFID safe",
   },
   {
@@ -387,7 +471,11 @@ const cardsBillsAndCoinsProduct = [
       "/card-Bills-Coins/note-Sleeve_Java.avif",
       "/card-Bills-Coins/note-Sleeve_Terracotta",
     ],
+<<<<<<< HEAD
     showMoreImage: [],
+=======
+    imageAlt: [],
+>>>>>>> 6b92451 (adding alt images to product card and updating card buttons to show both images)
     edition: "RFID safe",
   },
   {
@@ -395,7 +483,11 @@ const cardsBillsAndCoinsProduct = [
     colours: ["black"],
     price: "C$69",
     image: ["/card-Sleeves/flip-case_Terracotta.avif"],
+<<<<<<< HEAD
     showMoreImage: ["/card-Sleeves/flip-Case_Terracotta_Alt.avif"],
+=======
+    imageAlt: ["/card-Sleeves/flip-Case_Terracotta_Alt.avif"],
+>>>>>>> 6b92451 (adding alt images to product card and updating card buttons to show both images)
     edition: "Second Edition",
   },
   {
@@ -403,21 +495,33 @@ const cardsBillsAndCoinsProduct = [
     colours: ["note-sleeve-ranger-green"],
     price: "C$85",
     image: ["/card-Sleeves/card-Pocket-Ranger_Green.avif"],
+<<<<<<< HEAD
     showMoreImage: ["/card-Sleeves/card-Pocket-Ranger_Green_Alt.avif"],
+=======
+    imageAlt: ["/card-Sleeves/card-Pocket-Ranger_Green_Alt.avif"],
+>>>>>>> 6b92451 (adding alt images to product card and updating card buttons to show both images)
   },
   {
     name: "Phone Case - 3 Card",
     colours: ["black"],
     price: "C$99",
     image: ["/phone-Case_Phone.avif"],
+<<<<<<< HEAD
     showMoreImage: ["/phone-Case_Black_Alt.avif"],
+=======
+    imageAlt: ["/phone-Case_Black_Alt.avif"],
+>>>>>>> 6b92451 (adding alt images to product card and updating card buttons to show both images)
   },
   {
     name: "Card Sleeve",
     colours: ["black"],
     price: "C$95",
     image: ["/card-Sleeves/card-Sleeve_Mirum.avif"],
+<<<<<<< HEAD
     showMoreImage: ["/card-Sleeves/card-Sleeve_Mirum_Alt.avif"],
+=======
+    imageAlt: ["/card-Sleeves/card-Sleeve_Mirum_Alt.avif"],
+>>>>>>> 6b92451 (adding alt images to product card and updating card buttons to show both images)
     edition: "MIRUM Edition",
   },
 ];
