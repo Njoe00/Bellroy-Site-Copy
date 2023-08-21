@@ -4,7 +4,7 @@ import SliderButton from "./SliderButton";
 
 type SliderImageWalletProps = {
   sliderValue: number;
-  setSliderValue: React.Dispatch<React.SetStateAction<number | string>>;
+  setSliderValue: React.Dispatch<React.SetStateAction<number>>;
   sliderValueRounder: (number: number) => number;
 };
 
@@ -17,7 +17,7 @@ export default function WalletImageSlider({
     if (sliderValue >= index) return true;
   };
 
-  const handleEventChange = (event: ChangeEvent<HTMLInputElement>) => {
+  const handleEventChange = (event: ChangeEvent<number | any>) => {
     setSliderValue(event.target.value);
   };
 
