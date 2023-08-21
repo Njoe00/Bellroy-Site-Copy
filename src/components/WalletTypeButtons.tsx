@@ -15,6 +15,7 @@ export default function WalletTypeButtons({
           setImagesToShow={setImagesToShow}
           imagesToShow={imagesToShow}
           index={index}
+          key={index}
           content={content}
         />
       ))}
