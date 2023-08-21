@@ -187,40 +187,19 @@ export default function Home() {
       <BannerText />
       <VideoPlayerAndText />
       <SliderImage />
-      <div className="bg-white flex flex-col items-center p-40 -mb-36">
-        <div className="flex">
-          <a className="text-lg">Why do you carry in your wallet?</a>
-        </div>
-        <div className="flex flex-row">
-          {whyDoYouCarryContent.map((content, i) => {
-            const isActive = imagesToShow === content.text;
-            return (
-              <div
-                className="flex flex-col space-x-36 py-14 items-center justify-center"
-                key={i}
-              >
-                <div
-                  className="flex items-center flex-col px-24 group cursor-pointer"
-                  onClick={() => setImagesToShow(content.text)}
-                >
-                  <Image
-                    src={isActive ? content.activeImage : content.inactiveImage}
-                    width={96}
-                    height={71}
-                    alt="Mens Bags"
-                    style={{ height: "100%", width: "auto" }}
-                  />
-                  <div className="absolute group-hover:text-orange-600 text-2xl flex justify-center translate-y-32">
-                    <BsChevronCompactDown />
-                  </div>
+
+      <div className="bg-white flex flex-col items-center p-40">
+        <h1 className="text-xl flex absolute h-40 w-auto">
+          What do you carry in your wallet?
+        </h1>
+        <WalletTypeButtons
+          imagesToShow={imagesToShow}
+          setImagesToShow={setImagesToShow}
+        />
+
         <div className="flex flex-row flex-wrap justify-center">
           {walletDataSet.map((content, index) => (
-            <ProductCard
-              key={index}
-              content={content}
-              image={content.image}
-              imageAlt={content.imageAlt}
-            />
+            <ProductCard key={index} content={content} />
           ))}
         </div>
       </div>
@@ -250,20 +229,20 @@ const cardsOnlyProduct = [
       "/card-Sleeves/card-Sleeve_Teal.avif",
       "/card-Sleeves/card-Sleeve_Hazel.avif",
     ],
-    imageAlt: [
+    showMoreImage: [
       "/card-Sleeves/card-Sleeve-Black_Alt.avif",
       "/card-Sleeves/card-Sleeve_Ocean_Alt.avif",
       "/card-Sleeves/card-Sleeve_Gray_Alt.avif",
       "/card-Sleeves/card-Sleeve_Teal_Alt.avif",
       "/card-Sleeves/card-Sleeve_Hazel_Alt.avif",
-    ]
+    ],
   },
   {
     name: "Card Sleeve",
     colours: ["black"],
     price: "C$69",
     image: ["/card-Sleeves/card-Sleeve-Black_Ash.avif"],
-    imageAlt: ["/card-Sleeves/card-Sleeve-Black_Ash_Alt.avif"],
+    showMoreImage: ["/card-Sleeves/card-Sleeve-Black_Ash_Alt.avif"],
     edition: "Carryology Essentials Edition",
   },
   {
@@ -271,7 +250,7 @@ const cardsOnlyProduct = [
     colours: ["black"],
     price: "C$69",
     image: ["/card-Sleeves/flip-Case_Terracotta.avif"],
-    imageAlt: ["/card-Sleeves/flip-Case_Terracotta_Alt.avif"],
+    showMoreImage: ["/card-Sleeves/flip-Case_Terracotta_Alt.avif"],
     edition: "Second Edition",
   },
   {
@@ -279,21 +258,21 @@ const cardsOnlyProduct = [
     colours: ["black"],
     price: "C$85",
     image: ["/card-Sleeves/card-Pocket-Ranger_Green.avif"],
-    imageAlt: ["/card-Sleeves/card-Pocket-Ranger_Green_Alt.avif"],
+    showMoreImage: ["/card-Sleeves/card-Pocket-Ranger_Green_Alt.avif"],
   },
   {
     name: "Phone Case - 3 Card",
     colours: ["black"],
     price: "C$99",
     image: ["/card-Sleeves/phone-Case_Black.avif"],
-    imageAlt: ["/card-Sleeves/phone-Case_Black_Alt.avif"],
+    showMoreImage: ["/card-Sleeves/phone-Case_Black_Alt.avif"],
   },
   {
     name: "Card Sleeve",
     colours: ["black"],
     price: "C$95",
     image: ["/card-Sleeves/card-Sleeve_Mirum_Black.avif"],
-    imageAlt: ["/card-Sleeves/card-Sleeve_Mirum_Black_Alt.avif"],
+    showMoreImage: ["/card-Sleeves/card-Sleeve_Mirum_Black_Alt.avif"],
     edition: "MIRUM Edition",
   },
 ];
@@ -308,7 +287,7 @@ const cardsAndBillsProduct = [
       "/CB-1.avif",
       "/CB-2.avif",
     ],
-    imageAlt: [],
+    showMoreImage: [],
     edition: "RFID safe",
   },
   {
@@ -316,7 +295,7 @@ const cardsAndBillsProduct = [
     colours: ["black"],
     price: "C$99",
     image: ["/CB-3.avif"],
-    imageAlt: [],
+    showMoreImage: [],
     edition: "Carryology Essentials Edition",
   },
   {
@@ -338,14 +317,14 @@ const cardsAndBillsProduct = [
       "/CB-10.avif",
       "/CB-11.avif",
     ],
-    imageAlt: [],
+    showMoreImage: [],
   },
   {
     name: "Minimalist Set",
     colours: ["black"],
     price: "C$109 - $C129",
     image: ["/wallets-coins/CB-16.avif"],
-    imageAlt: [],
+    showMoreImage: [],
     edition: "Valued at C$144 - C$164",
   },
   {
@@ -353,7 +332,7 @@ const cardsAndBillsProduct = [
     colours: ["black", "card-sleeve-hazel", "wallet-chocolate"],
     price: "C$145",
     image: ["/CB-12.avif", "/CB-13.avif", "/CB-14.avif"],
-    imageAlt: [],
+    showMoreImage: [],
     edition: "Premium EditionRFID safe",
   },
   {
@@ -361,7 +340,7 @@ const cardsAndBillsProduct = [
     colours: ["black"],
     price: "C$125",
     image: ["/CB-15.avif"],
-    imageAlt: [],
+    showMoreImage: [],
     edition: "MIRUM Edition",
   },
 ];
@@ -382,7 +361,7 @@ const cardsBillsAndCoinsProduct = [
       "/card-Bills-Coins/folio-Mini_Teal.avif",
       "/card-Bills-Coins/folio-Mini_Hazel.avif",
     ],
-    imageAlt: [],
+    howMoreImage: [],
     edition: "RFID safe",
   },
   {
@@ -408,7 +387,7 @@ const cardsBillsAndCoinsProduct = [
       "/card-Bills-Coins/note-Sleeve_Java.avif",
       "/card-Bills-Coins/note-Sleeve_Terracotta",
     ],
-    imageAlt: [],
+    showMoreImage: [],
     edition: "RFID safe",
   },
   {
@@ -416,7 +395,7 @@ const cardsBillsAndCoinsProduct = [
     colours: ["black"],
     price: "C$69",
     image: ["/card-Sleeves/flip-case_Terracotta.avif"],
-    imageAlt: ["/card-Sleeves/flip-Case_Terracotta_Alt.avif"],
+    showMoreImage: ["/card-Sleeves/flip-Case_Terracotta_Alt.avif"],
     edition: "Second Edition",
   },
   {
@@ -424,21 +403,21 @@ const cardsBillsAndCoinsProduct = [
     colours: ["note-sleeve-ranger-green"],
     price: "C$85",
     image: ["/card-Sleeves/card-Pocket-Ranger_Green.avif"],
-    imageAlt: ["/card-Sleeves/card-Pocket-Ranger_Green_Alt.avif"],
+    showMoreImage: ["/card-Sleeves/card-Pocket-Ranger_Green_Alt.avif"],
   },
   {
     name: "Phone Case - 3 Card",
     colours: ["black"],
     price: "C$99",
     image: ["/phone-Case_Phone.avif"],
-    imageAlt: ["/phone-Case_Black_Alt.avif"],
+    showMoreImage: ["/phone-Case_Black_Alt.avif"],
   },
   {
     name: "Card Sleeve",
     colours: ["black"],
     price: "C$95",
     image: ["/card-Sleeves/card-Sleeve_Mirum.avif"],
-    imageAlt: ["/card-Sleeves/card-Sleeve_Mirum_Alt.avif"],
+    showMoreImage: ["/card-Sleeves/card-Sleeve_Mirum_Alt.avif"],
     edition: "MIRUM Edition",
   },
 ];
