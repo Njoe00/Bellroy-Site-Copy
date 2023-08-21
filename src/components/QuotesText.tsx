@@ -4,14 +4,12 @@ import Image from "next/image";
 type quotes = {
   title: string;
   quote: string;
-  imageDimensions: [number, number];
+  imageDimensions: number[];
 }[];
 
 type QuoteTextProps = {
   quotes: quotes;
-  buttonHighlighted: number;
-  setQuotesText: React.Dispatch<React.SetStateAction<string | string>>;
-  setButtonHighLighted: React.Dispatch<React.SetStateAction<number>>;
+  setQuotesText: React.Dispatch<React.SetStateAction<string>>;
 };
 
 export default function QuotesText({ quotes, setQuotesText }: QuoteTextProps) {
