@@ -1,6 +1,5 @@
 import React from "react";
 import { Content } from "./ProductCard";
-// import "./ProductColourButton.css";
 
 type ProductColourButtonProps = {
   content: Content;
@@ -18,11 +17,6 @@ export default function ProductColourButton({
     <div className="p-2 flex flex-row justify-center space-x-2 ">
       {content.colours.map((colour, index) => {
         const outlineColour = `outline-${selectedColour}`;
-        const bgColour = `bg-${colour}`;
-
-        const buttonStyles = {
-          backgroundColor: colour,
-        };
 
         return (
           <button
