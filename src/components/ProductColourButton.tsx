@@ -1,5 +1,6 @@
 import React from "react";
 import { Content } from "./ProductCard";
+// import "./ProductColourButton.css";
 
 type ProductColourButtonProps = {
   content: Content;
@@ -18,6 +19,11 @@ export default function ProductColourButton({
       {content.colours.map((colour, index) => {
         const outlineColour = `outline-${selectedColour}`;
         const bgColour = `bg-${colour}`;
+
+        const buttonStyles = {
+          backgroundColor: colour,
+        };
+
         return (
           <button
             onClick={() => {
@@ -25,9 +31,12 @@ export default function ProductColourButton({
               setCardImage(content.image[index]);
             }}
             key={index}
-            className={`${bgColour} h-4 w-4 rounded-full outline-1 outline outline-offset-2 ${
-              selectedColour !== colour ? "outline-none" : outlineColour
+            className={`${colour} h-4 w-4 rounded-full ${
+              selectedColour === colour
+                ? `${outlineColour} outline-1 outline outline-offset-2`
+                : `outline-none`
             }`}
+            style={{ backgroundColor: colour }}
           />
         );
       })}

@@ -38,9 +38,9 @@ export default function Home() {
       <SliderImage />
 
       <div className="bg-white flex flex-col items-center p-40">
-      <h1 className="text-xl flex absolute h-40 w-auto">
-        What do you carry in your wallet?
-      </h1>
+        <h1 className="text-xl flex absolute h-40 w-auto">
+          What do you carry in your wallet?
+        </h1>
         <WalletTypeButtons
           imagesToShow={imagesToShow}
           setImagesToShow={setImagesToShow}
@@ -66,10 +66,10 @@ const cardsOnlyProduct = [
     name: "Card Sleeve",
     colours: [
       "black",
-      "card-sleeve-ocean",
-      "card-sleeve-gray",
-      "card-sleeve-teal",
-      "card-sleeve-hazel",
+      "bg-card-sleeve-ocean",
+      "bg-card-sleeve-gray",
+      "bg-card-sleeve-teal",
+      "bg-card-sleeve-hazel",
     ],
     price: "C$69",
     image: [
@@ -85,7 +85,7 @@ const cardsOnlyProduct = [
       "/card-Sleeves/card-Sleeve_Gray_Alt.avif",
       "/card-Sleeves/card-Sleeve_Teal_Alt.avif",
       "/card-Sleeves/card-Sleeve_Hazel_Alt.avif",
-    ]
+    ],
   },
   {
     name: "Card Sleeve",

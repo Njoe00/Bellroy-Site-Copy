@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 
 type Content = {
-  imageAlt: string;
+  imageAlt: string | undefined;
   image: string[];
 };
 
