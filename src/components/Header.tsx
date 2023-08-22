@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Transition } from "@headlessui/react";
 import Image from "next/image";
 
-export default function Header() {
+export default function Header({ index }: { index: string }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleDropDown = () => {
