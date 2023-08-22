@@ -8,11 +8,6 @@ type ProductColourButtonProps = {
   setCardImage: React.Dispatch<React.SetStateAction<string>>;
 };
 
-type Content = {
-  colours: string[];
-  image: string[];
-};
-
 export default function ProductColourButton({
   content,
   selectedColour,

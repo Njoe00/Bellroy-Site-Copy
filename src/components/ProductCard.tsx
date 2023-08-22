@@ -39,11 +39,8 @@ export default function ProductCard({
   };
 
   return (
-    <div className="flex flex-row flex-wrap justify-center">
-      <div
-        key={key}
-        className="group bg-gray-100 flex flex-col relative justify-center border-4 border-white"
-      >
+    <div className="group flex flex-col flex-wrap justify-center border-4 bg-gray-100 border-white">
+      <div key={key} className="flex flex-row relative justify-center">
         <ProductCardShowMoreButton
           isCardFlipped={isCardFlipped}
           changeIsCardFlipped={changeIsCardFlipped}
@@ -51,7 +48,6 @@ export default function ProductCard({
           content={content}
         />
       </div>
-
       <div className="flex flex-col w-[413.33px] h-[508px] items-center relative bg-gray-100">
         <div className="top-10 relative">
           <div
