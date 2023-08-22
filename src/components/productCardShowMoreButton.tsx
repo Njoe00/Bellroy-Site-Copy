@@ -32,9 +32,7 @@ export default function productCardShowMoreButton({
       >
         {isCardFlipped ? "CLOSE" : "SHOW MORE"}
         <Image
-          className={`${
-            isCardFlipped ? "" : "rotate-45"
-          }rotate-45 flex relative left-1`}
+          className={`${isCardFlipped ? "" : "rotate-45"} flex relative left-1`}
           src="/icons8-plus-50.png"
           alt="X"
           width={14}
