@@ -7,7 +7,7 @@ import ProductCardShowMoreButton from "./productCardShowMoreButton";
 export type Content = {
   colours: string[];
   image: string[];
-  showMoreImage: string[];
+  showMoreImage: string;
   name: string;
   edition?: string;
   price: string;
@@ -39,7 +39,7 @@ export default function ProductCard({
   };
 
   return (
-    <div className="group flex flex-col flex-wrap justify-center border-4 bg-gray-100 border-white">
+    <div className=" group flex flex-col flex-wrap justify-center border-4 bg-gray-100 border-white">
       <div key={key} className="flex flex-row relative justify-center">
         <ProductCardShowMoreButton
           isCardFlipped={isCardFlipped}
