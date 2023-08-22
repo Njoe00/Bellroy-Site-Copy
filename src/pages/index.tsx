@@ -152,7 +152,7 @@ const cardsAndBillsProduct = [
     colours: ["black"],
     price: "C$99",
     image: ["/CB-3.avif"],
-    imageAlt: [],
+    showMoreImage: [],
     edition: "Carryology Essentials Edition",
   },
   {
@@ -181,7 +181,7 @@ const cardsAndBillsProduct = [
     colours: ["black"],
     price: "C$109 - $C129",
     image: ["/wallets-coins/CB-16.avif"],
-    imageAlt: [],
+    showMoreImage: [],
     edition: "Valued at C$144 - C$164",
   },
   {
