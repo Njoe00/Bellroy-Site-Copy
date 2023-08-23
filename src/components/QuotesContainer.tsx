@@ -28,8 +28,7 @@ export default function QuotesContainer() {
 const quotes = [
   {
     title: "/logo-gear-patrol-white.png",
-    quote:
-      "“Bellroy can take a backbreaker of a wallet and make it smaller than a deck of cards.”",
+    quote: `“Bellroy can take a backbreaker of a wallet and make it smaller than a deck of cards.”`,
     imageDimensions: [164.44, 30],
   },
   {
@@ -45,7 +44,7 @@ const quotes = [
   },
   {
     title: "/logo-HiConsumption_white.avif",
-    quote: "“Honestly, these wallets are near perfect.”",
+    quote: `“Honestly, these wallets are near perfect.”`,
     imageDimensions: [192.77, 30],
   },
 ];
