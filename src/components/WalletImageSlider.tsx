@@ -17,10 +17,10 @@ export default function WalletImageSlider({
     if (sliderValue >= index) return true;
   };
 
-  const handleEventChange = (event: any) => {
-    setSliderValue(event.target.value);
+  const handleEventChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    let ChangeEventTargetValue = Number(event.target.value);
+    setSliderValue(ChangeEventTargetValue);
   };
-
   const filledWidthCalucation = `${
     (sliderValue / (sliderImage.length - 1)) * 100
   }%`;
