@@ -17,7 +17,8 @@ export default function productCardShowMoreButton({
   changeImage: (newImage: string) => void;
   changeIsCardFlipped: () => void;
 }) {
-  const FrontProductImage = content.image[0];
+  const frontProductImage = content.image[0];
+  const backProductImage = content.showMoreImage[0];
   return (
     <div className="z-50">
       <button
@@ -25,8 +26,8 @@ export default function productCardShowMoreButton({
         onClick={() => {
           changeIsCardFlipped();
           isCardFlipped
-            ? changeImage(content.showMoreImage[0])
-            : changeImage(FrontProductImage);
+            ? changeImage(backProductImage)
+            : changeImage(frontProductImage);
         }}
       >
         {isCardFlipped ? "SHOW MORE" : "CLOSE"}

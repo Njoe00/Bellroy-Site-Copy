@@ -13,13 +13,7 @@ export type Content = {
   price: string;
 };
 
-export default function ProductCard({
-  content,
-  key,
-}: {
-  key: number;
-  content: Content;
-}) {
+export default function ProductCard({ content }: { content: Content }) {
   const [selectedColour, setSelectedColour] = useState("black");
   const [cardImage, setCardImage] = useState(content.image[0]);
   const [isCardFlipped, setIsCardFlipped] = useState(true);
@@ -39,10 +33,7 @@ export default function ProductCard({
   };
 
   return (
-    <div
-      key={key}
-      className=" group flex flex-col flex-wrap justify-center border-4 bg-gray-100 border-white"
-    >
+    <div className=" group flex flex-col flex-wrap justify-center border-4 bg-gray-100 border-white">
       <div className="flex flex-row relative justify-center">
         <ProductCardShowMoreButton
           isCardFlipped={isCardFlipped}
