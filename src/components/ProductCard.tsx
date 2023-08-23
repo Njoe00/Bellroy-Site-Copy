@@ -10,7 +10,6 @@ export type Content = {
   showMoreImage: string;
   name: string;
   edition?: string;
-  price: string;
 };
 
 export default function ProductCard({
