@@ -1,11 +1,4 @@
-import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import {
-  BsChevronCompactLeft,
-  BsChevronCompactRight,
-  BsChevronCompactDown,
-} from "react-icons/bs";
-import { RxDotFilled } from "react-icons/rx";
 import QuotesContainer from "@/components/QuotesContainer";
 import ProductCard from "../components/ProductCard";
 import Header from "../components/Header";
@@ -19,22 +12,6 @@ import WalletTypeButtons from "@/components/WalletTypeButtons";
 export default function Home() {
   const [walletDataSet, setWalletDataSet] = useState(cardsOnlyProduct);
   const [imagesToShow, setImagesToShow] = useState("Cards only");
-
-  useEffect(() => {
-    if (imagesToShow === "Cards only") {
-      setWalletDataSet(cardsOnlyProduct);
-    } else if (imagesToShow === "Cards and bills") {
-      setWalletDataSet(cardsAndBillsProduct);
-    } else if (imagesToShow === "Cards, bills and coins") {
-      setWalletDataSet(cardsBillsAndCoinsProduct);
-    }
-  }, [imagesToShow]);
-
-  const goToSlide = (slideIndex: number) => {
-    setCurrentIndex(slideIndex);
-  };
-
-  const [currentIndex, setCurrentIndex] = useState(1);
 
   return (
     <header className="bg-white z-100">
@@ -76,8 +53,8 @@ export default function Home() {
           <a className="text-lg">Why do you carry in your wallet?</a>
         </div>
         <WalletTypeButtons
-          setImagesToShow={setImagesToShow}
           imagesToShow={imagesToShow}
+          setImagesToShow={setImagesToShow}
         />
         <div className="flex flex-row flex-wrap justify-center">
           {walletDataSet.map((content, index) => (
@@ -132,6 +109,7 @@ const cardsOnlyProduct = [
     colours: ["black"],
     price: "C$69",
     image: ["/card-Sleeves/flip-Case_Terracotta.avif"],
+    showMoreImage: ["/card-Sleeves/flip-Case_Terracotta_Alt.avif"],
     edition: "Second Edition",
   },
   {
