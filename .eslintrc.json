@@ -10,5 +10,9 @@
     "sourceType": "module"
   },
   "plugins": ["@typescript-eslint", "react"],
+<<<<<<< HEAD
   "rules": {}
+=======
+  "rules": { "react/no-unescaped-entities": 0 }
+>>>>>>> 48467ce (Feature/vercel depolyment (#12))
 }

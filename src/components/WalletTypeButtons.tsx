@@ -16,6 +16,7 @@ export default function WalletTypeButtons({
           imagesToShow={imagesToShow}
           index={index}
           content={content}
+          key={index}
         />
       ))}
     </div>
