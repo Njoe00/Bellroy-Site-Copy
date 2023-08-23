@@ -39,8 +39,11 @@ export default function ProductCard({
   };
 
   return (
-    <div className=" group flex flex-col flex-wrap justify-center border-4 bg-gray-100 border-white">
-      <div key={key} className="flex flex-row relative justify-center">
+    <div
+      key={key}
+      className=" group flex flex-col flex-wrap justify-center border-4 bg-gray-100 border-white"
+    >
+      <div className="flex flex-row relative justify-center">
         <ProductCardShowMoreButton
           isCardFlipped={isCardFlipped}
           changeIsCardFlipped={changeIsCardFlipped}

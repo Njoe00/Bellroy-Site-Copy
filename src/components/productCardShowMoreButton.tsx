@@ -17,6 +17,7 @@ export default function productCardShowMoreButton({
   changeImage: (newImage: string) => void;
   changeIsCardFlipped: () => void;
 }) {
+  const FrontProductImage = content.image[0];
   return (
     <div className="z-50">
       <button
@@ -25,8 +26,8 @@ export default function productCardShowMoreButton({
           changeIsCardFlipped();
           {
             isCardFlipped
-              ? changeImage(content.image[0])
-              : changeImage(content.showMoreImage[0]);
+              ? changeImage(content.showMoreImage[0])
+              : changeImage(FrontProductImage);
           }
         }}
       >

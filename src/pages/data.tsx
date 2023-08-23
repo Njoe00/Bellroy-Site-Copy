@@ -20,7 +20,6 @@ const slidesSlidesSetTwo = [
   },
 ];
 
-
 export const whyDoYouCarryContent = [
   {
     text: "Cards only",
@@ -135,7 +134,7 @@ export const cardsAndBillsProduct = [
   {
     name: "Minimalist Set",
     colours: ["black"],
-    price: "C$109 - $C129",
+    price: "C$109 - C$129",
     image: ["/wallets-coins/CB-16.avif"],
     edition: "Valued at C$144 - C$164",
   },
