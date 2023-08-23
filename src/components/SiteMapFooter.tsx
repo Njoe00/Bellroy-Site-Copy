@@ -1,4 +1,4 @@
-import react from "react";
+import React from "react";
 import SiteMapFooterTextContent from "./SiteMapFooterTextContent";
 import SocialMediaFooterIcons from "./SocialMediaFooterIcons";
 import FooterGotQuestionsBanner from "@/components/FooterGotQuestionsBanner";

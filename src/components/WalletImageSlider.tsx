@@ -1,3 +1,4 @@
+import React from "react";
 import { sliderImage } from "./SliderImageWallet";
 import SliderButton from "./SliderButton";
 
@@ -16,10 +17,10 @@ export default function WalletImageSlider({
     if (sliderValue >= index) return true;
   };
 
-  const handleEventChange = (event) => {
-    setSliderValue(event.target.value);
+  const handleEventChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const parsedEventTargetValue = Number(event.target.value);
+    setSliderValue(parsedEventTargetValue);
   };
-
   const filledWidthCalucation = `${
     (sliderValue / (sliderImage.length - 1)) * 100
   }%`;

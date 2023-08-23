@@ -1,6 +1,5 @@
 import Image from "next/image";
-import { useEffect, useState } from "react";
-import { Transition } from "@headlessui/react";
+import React, { useEffect, useState } from "react";
 import {
   BsChevronCompactLeft,
   BsChevronCompactRight,
@@ -14,7 +13,7 @@ import SliderImageWallet from "@/components/SliderImageWallet";
 import PaymentsContainer from "../components/PaymentsContainer";
 import NewsLetterSignUp from "../components/NewsLetterSignUp";
 import SiteMapFooter from "@/components/SiteMapFooter";
-
+import WalletTypeButtons from "@/components/WalletTypeButtons";
 
 export default function Home() {
   const [sliderValue, setSliderValue] = useState("0");
@@ -205,37 +204,10 @@ export default function Home() {
         <div className="flex">
           <a className="text-lg">Why do you carry in your wallet?</a>
         </div>
-        <div className="flex flex-row">
-          {whyDoYouCarryContent.map((content, i) => {
-            const isActive = imagesToShow === content.text;
-            return (
-              <div
-                className="flex flex-col space-x-36 py-14 items-center justify-center"
-                key={i}
-              >
-                <div
-                  className="flex items-center flex-col px-24 group cursor-pointer"
-                  onClick={() => setImagesToShow(content.text)}
-                >
-                  <Image
-                    src={isActive ? content.activeImage : content.inactiveImage}
-                    width={96}
-                    height={71}
-                    alt="Mens Bags"
-                    style={{ height: "100%", width: "auto" }}
-                  />
-                  <div className="absolute group-hover:text-orange-600 text-2xl flex justify-center translate-y-32">
-                    <BsChevronCompactDown />
-                  </div>
-
-                  <div className="group-hover:text-orange-600 text-sm translate-y-4 text-gray-400">
-                    {content.text}
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+        <WalletTypeButtons
+          setImagesToShow={setImagesToShow}
+          imagesToShow={imagesToShow}
+        />
         <div className="flex flex-row flex-wrap justify-center">
           {walletDataSet.map((content, index) => (
             <ProductCard key={index} content={content} />

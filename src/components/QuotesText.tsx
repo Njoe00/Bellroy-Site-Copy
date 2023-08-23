@@ -1,17 +1,15 @@
 import React, { useState } from "react";
 import Image from "next/image";
 
-type quotes = {
+type QuotesObjProps = {
   title: string;
   quote: string;
-  imageDimensions: [number, number];
+  imageDimensions: number[];
 }[];
 
 type QuoteTextProps = {
-  quotes: quotes;
-  buttonHighlighted: number;
-  setQuotesText: React.Dispatch<React.SetStateAction<string | string>>;
-  setButtonHighLighted: React.Dispatch<React.SetStateAction<number>>;
+  quotes: QuotesObjProps;
+  setQuotesText: React.Dispatch<React.SetStateAction<string>>;
 };
 
 export default function QuotesText({ quotes, setQuotesText }: QuoteTextProps) {
