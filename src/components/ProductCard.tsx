@@ -7,10 +7,10 @@ import ProductCardShowMoreButton from "./productCardShowMoreButton";
 export type Content = {
   colours: string[];
   image: string[];
-  showMoreImage: string;
+  showMoreImage: string[];
   name: string;
   edition?: string;
-  price: number[];
+  price: string;
 };
 
 export default function ProductCard({
