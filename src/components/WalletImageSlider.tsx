@@ -1,3 +1,4 @@
+import React from "react";
 import { sliderImage } from "./SliderImageWallet";
 import SliderButton from "./SliderButton";
 
@@ -16,7 +17,7 @@ export default function WalletImageSlider({
     if (sliderValue >= index) return true;
   };
 
-  const handleEventChange = (event) => {
+  const handleEventChange = (event: any) => {
     setSliderValue(event.target.value);
   };
 

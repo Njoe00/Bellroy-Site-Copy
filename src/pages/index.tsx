@@ -1,6 +1,5 @@
 import Image from "next/image";
-import { useEffect, useState } from "react";
-import { Transition } from "@headlessui/react";
+import React, { useEffect, useState } from "react";
 import {
   BsChevronCompactLeft,
   BsChevronCompactRight,
@@ -14,7 +13,6 @@ import SliderImageWallet from "@/components/SliderImageWallet";
 import PaymentsContainer from "../components/PaymentsContainer";
 import NewsLetterSignUp from "../components/NewsLetterSignUp";
 import SiteMapFooter from "@/components/SiteMapFooter";
-
 
 export default function Home() {
   const [sliderValue, setSliderValue] = useState("0");
