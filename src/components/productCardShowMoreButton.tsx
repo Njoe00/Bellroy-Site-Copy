@@ -24,11 +24,9 @@ export default function productCardShowMoreButton({
         className="group-hover:visible invisible flex flex-row absolute top-0 right-0 py-1 px-2 text-xs bg-gray-300"
         onClick={() => {
           changeIsCardFlipped();
-          {
-            isCardFlipped
-              ? changeImage(content.showMoreImage[0])
-              : changeImage(FrontProductImage);
-          }
+          isCardFlipped
+            ? changeImage(content.showMoreImage[0])
+            : changeImage(FrontProductImage);
         }}
       >
         {isCardFlipped ? "SHOW MORE" : "CLOSE"}
