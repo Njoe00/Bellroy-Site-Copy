@@ -1,4 +1,11 @@
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
+import {
+  BsChevronCompactLeft,
+  BsChevronCompactRight,
+  BsChevronCompactDown,
+} from "react-icons/bs";
+import { RxDotFilled } from "react-icons/rx";
 import QuotesContainer from "@/components/QuotesContainer";
 import ProductCard from "../components/ProductCard";
 import Header from "../components/Header";
