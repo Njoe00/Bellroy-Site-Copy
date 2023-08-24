@@ -1,22 +1,24 @@
 import React from "react";
 import Image from "next/image";
 
-type ProdudctCardImageProps = {
+type ContentProps = {
   showMoreImage: string[];
   image: string[];
+};
+
+type ProductCardProps = {
+  content: ContentProps;
+  isCardFlipped: boolean;
+  changeImage: (newImage: string) => void;
+  toggleIsFlippedCard: () => void;
 };
 
 export default function productCardShowMoreButton({
   content,
   isCardFlipped,
   changeImage,
-  changeIsCardFlipped,
-}: {
-  content: ProdudctCardImageProps;
-  isCardFlipped: boolean;
-  changeImage: (newImage: string) => void;
-  changeIsCardFlipped: () => void;
-}) {
+  toggleIsFlippedCard,
+}: ProductCardProps) {
   const frontProductImage = content.image[0];
   const backProductImage = content.showMoreImage[0];
   return (
@@ -24,10 +26,11 @@ export default function productCardShowMoreButton({
       <button
         className="group-hover:visible invisible flex flex-row absolute top-0 right-0 py-1 px-2 text-xs bg-gray-300"
         onClick={() => {
-          changeIsCardFlipped();
-          isCardFlipped
-            ? changeImage(backProductImage)
-            : changeImage(frontProductImage);
+          toggleIsFlippedCard();
+          const cardToFlipTo = isCardFlipped
+            ? backProductImage
+            : frontProductImage;
+          changeImage(cardToFlipTo);
         }}
       >
         {isCardFlipped ? "SHOW MORE" : "CLOSE"}

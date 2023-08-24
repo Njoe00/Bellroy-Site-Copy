@@ -28,7 +28,7 @@ export default function ProductCard({ content }: { content: Content }) {
     }, 350);
   };
 
-  const changeIsCardFlipped = () => {
+  const toggleIsFlippedCard = () => {
     setIsCardFlipped(!isCardFlipped);
   };
 
@@ -37,7 +37,7 @@ export default function ProductCard({ content }: { content: Content }) {
       <div className="flex flex-row relative justify-center">
         <ProductCardShowMoreButton
           isCardFlipped={isCardFlipped}
-          changeIsCardFlipped={changeIsCardFlipped}
+          toggleIsFlippedCard={toggleIsFlippedCard}
           changeImage={changeImage}
           content={content}
         />
@@ -52,12 +52,12 @@ export default function ProductCard({ content }: { content: Content }) {
             } ease-in-out [transform-style-:preserve-3d] [backface-visblity:hidden] transition-all duration-1000`}
           >
             <Image
-              className={`transition-all ease-in-out duration-300`}
+              className="transition-all ease-in-out duration-300"
               src={cardImage}
               height={300}
               width={300}
               alt="cardImage"
-              style={{ opacity: opacity / 1 }}
+              style={{ opacity: opacity }}
             />
           </div>
 

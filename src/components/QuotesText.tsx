@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import Image from "next/image";
 
-type QuotesObjProps = {
+type Quotes = {
   title: string;
   quote: string;
   imageDimensions: number[];
 }[];
 
 type QuoteTextProps = {
-  quotes: QuotesObjProps;
+  quotes: Quotes;
   setQuotesText: React.Dispatch<React.SetStateAction<string>>;
 };
 
