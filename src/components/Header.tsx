@@ -34,8 +34,12 @@ export default function Header() {
         </div>
 
         <div className="gap-2 font-normal items-center space-x-4 text-xs flex text-gray-500 p-2">
-          <a className="hover:text-orange-400" href="/#">Help</a>
-          <a className="hover:text-orange-400" href="/#">Find In-Store</a>
+          <a className="hover:text-orange-400" href="/#">
+            Help
+          </a>
+          <a className="hover:text-orange-400" href="/#">
+            Find In-Store
+          </a>
           {headerIcons.map((image, index) => (
             <span className="flex" key={index}>
               <Image
@@ -113,57 +117,57 @@ const headerSubSections = [
 const headerSubSectionsContentBags = [
   {
     text: "Men's Bag's",
-    image: "/Men's_Bags.avif",
+    image: "/header/Men's_Bags.avif",
   },
   {
     text: "Woman's Bags",
-    image: "/Womens_Bags.avif",
+    image: "/header/Womens_Bags.avif",
   },
   {
     text: "Backpacks",
-    image: "/Backpacks.avif",
+    image: "/header/Backpacks.avif",
   },
   {
     text: "Slings & Crossbody Bags",
-    image: "/Crossbody.avif",
+    image: "/header/Crossbody.avif",
   },
   {
     text: "Totes & Shoulder Bags",
-    image: "/Totes.avif",
+    image: "/header/Totes.avif",
   },
   {
     text: "Market & Cooler Bags",
-    image: "/nav-icon-cooler-bags.avif",
+    image: "/header/nav-icon-cooler-bags.avif",
   },
   {
     text: "Work Bags",
-    image: "/Workbags.avif",
+    image: "/header/Workbags.avif",
   },
   {
     text: "Travel Bags",
-    image: "/Travel_Bags.avif",
+    image: "/header/Travel_Bags.avif",
   },
 ];
 
 export const headerSubSectionsContentWallets = [
   {
     text: "Billfold's",
-    image: "/Billfolds.avif",
+    image: "/header/Billfolds.avif",
   },
   {
     text: "Card Holders",
-    image: "/Card_Holders.avif",
+    image: "/header/Card_Holders.avif",
   },
   {
     text: "Zip Wallets",
-    image: "/Zip_Wallets.avif",
+    image: "/header/Zip_Wallets.avif",
   },
   {
     text: "Passport Holders",
-    image: "/Passport_Holders_.avif",
+    image: "/header/Passport_Holders_.avif",
   },
   {
     text: "RFID Protected",
-    image: "/RFID.avif",
+    image: "/header/RFID.avif",
   },
 ];
