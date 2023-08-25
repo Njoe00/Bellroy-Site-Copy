@@ -47,7 +47,7 @@ export default function WalletTypeButton({
             <BsChevronCompactDown />
           </div>
         ) : (
-          <div className="absolute group-hover:text-orange-600 text-2xl flex justify-center translate-y-32"></div>
+          <div></div>
         )}
 
         <div className="group-hover:text-orange-600 text-sm translate-y-4 text-gray-400">
