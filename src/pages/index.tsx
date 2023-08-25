@@ -74,7 +74,7 @@ export default function Home() {
       </span>
       <Header />
 
-      <div className="flex flex-col relative bg-background-main">
+      <div className="flex flex-col bg-background-main">
         <h1 className="font-serif flex text-white text-7xl px-10 pt-10 pb-4 justify-center">
           Slim Your Wallet
         </h1>
