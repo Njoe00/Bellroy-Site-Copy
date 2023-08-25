@@ -10,7 +10,7 @@ type Content = {
 
 type ImagesState = [
   imagesToShow: string,
-  setImagesToShow: (val: string) => void
+  setImagesToShow: (val: string) => void,
 ];
 
 export default function WalletTypeButton({
@@ -40,7 +40,7 @@ export default function WalletTypeButton({
           width={96}
           height={71}
           alt="Mens Bags"
-          style={{ height: "100%", width: "auto" }}
+          style={{ height: 96, width: 71 }}
         />
         <div className="absolute group-hover:text-orange-600 text-2xl flex justify-center translate-y-32">
           <BsChevronCompactDown />
