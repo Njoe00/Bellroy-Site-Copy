@@ -75,7 +75,7 @@ export default function Home() {
       <Header />
 
       <div className="h-screen flex flex-col bg-background-main">
-        <h1 className="font-serif flex text-white text-8xl p-16 justify-center">
+        <h1 className="font-serif flex text-white text-7xl px-10 pt-10 pb-4 justify-center">
           Slim Your Wallet
         </h1>
         <SliderImageWallet />

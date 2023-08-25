@@ -13,21 +13,21 @@ export default function SliderImageWallet() {
   };
 
   return (
-    <div className="bg-cover flex mr-auto items-center flex-col ml-auto">
+    <div className="bg-cover w-full flex mr-auto items-center flex-col ml-auto">
       <div>
-        <p className="flex flex-row text-base font-bold bg-background-main">
+        <p className="flex flex-row text-base font-normal bg-background-main">
           Move the slider to compare wallets
         </p>
       </div>
       <div className="flex flex-col justify-center items-center space-y-2 p-2 w-80">
-        <div className="w-[1980px] flex bg-cover h-[730px] z-0 overflow-hidden">
+        <div className="w-[1905px] flex bg-cover z-0 overflow-hidden">
           <Image
             src={sliderImage[sliderValueRounder(sliderValue)]}
             width={1980}
             height={800}
             quality={100}
             alt="alt"
-            style={{ width: 1980, height: 800 }}
+            style={{ width: 1905, height: 500 }}
           />
         </div>
         <WalletImageSlider
