@@ -68,10 +68,10 @@ export default function Header() {
             <li className="flex items-center flex-col px-6" key={index}>
               <Image
                 src={content.image}
-                width={75}
-                height={75}
+                width={84}
+                height={84}
                 alt="Mens Bags"
-                style={{ height: "100%", width: "auto" }}
+                style={{ height: 84, width: 84 }}
               />
               <a href="#" className=" hover:text-orange-600">
                 {content.text}
