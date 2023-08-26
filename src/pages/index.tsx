@@ -67,6 +67,12 @@ export default function Home() {
     textValue = `${sliderValue} Cards`;
   }
 
+  const dotFilledStyling = {
+    borderRadius: "50%", // Optional: If you want a circular border
+    outlineoffset: "2px",
+    outline: "1px",
+  };
+
   return (
     <header className="bg-white z-100">
       <span className="place-content-end p-1 text-xs right-6 absolute text-gray-500 font-normal z-50">
@@ -187,14 +193,14 @@ export default function Home() {
           <BsChevronCompactRight onClick={nextSlide} size="40" />
         </div>
 
-        <div className="flex absolute justify-center bottom-4 items-center">
+        <div className="flex absolute space-x-2 justify-center bottom-4 items-center">
           {slidesSetOne.map((slide, slideIndex) => (
             <div
               key={slideIndex}
               onClick={() => goToSlide(slideIndex)}
-              className="text-2xl cursor-pointer"
+              className="text-2xl cursor-pointer flex-row flex"
             >
-              <RxDotFilled />
+              <a className="h-4 w-4 rounded-full outline-1 outline outline-offset-2 bg-black"></a>
             </div>
           ))}
         </div>
