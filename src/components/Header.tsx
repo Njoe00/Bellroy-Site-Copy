@@ -9,6 +9,14 @@ export default function Header() {
     setIsOpen(!isOpen);
   };
 
+  const handleMouseEnter = () => {
+    setIsOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsOpen(false);
+  };
+
   return (
     <>
       <div className="bg-white p-5 flex relative gap-2 font-normal space-x-10 justify-between text-sm items-center h-[105px] z-10">
@@ -23,6 +31,8 @@ export default function Header() {
           <div className="relative w-max space-x-14 flex top-2">
             {headerSubSections.map((section, index) => (
               <button
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
                 className="text-sm py-2.5 text-center inline-flex items-center hover:text-orange-600"
                 onClick={handleDropDown}
                 key={index}
