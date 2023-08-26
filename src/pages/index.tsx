@@ -5,7 +5,7 @@ import {
   BsChevronCompactRight,
   BsChevronCompactDown,
 } from "react-icons/bs";
-import { RxDotFilled } from "react-icons/rx";
+
 import QuotesContainer from "@/components/QuotesContainer";
 import ProductCard from "../components/ProductCard";
 import Header from "../components/Header";
@@ -67,12 +67,6 @@ export default function Home() {
     textValue = `${sliderValue} Cards`;
   }
 
-  const dotFilledStyling = {
-    borderRadius: "50%", // Optional: If you want a circular border
-    outlineoffset: "2px",
-    outline: "1px",
-  };
-
   return (
     <header className="bg-white z-100">
       <span className="place-content-end p-1 text-xs right-6 absolute text-gray-500 font-normal z-50">
@@ -86,7 +80,10 @@ export default function Home() {
         </h1>
         <SliderImageWallet />
       </div>
-      <div className="bg-gray-200 flex justify-evenly py-8 p-8">
+      <div
+        id="video-player"
+        className=" scroll-smooth bg-gray-200 flex justify-evenly py-8 p-8"
+      >
         <div className="flex items-center pl-4">
           <div>
             <Image
@@ -137,7 +134,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex m-11 justify-center">
+      <div className="flex m-11 justify-center scroll-smooth">
         <div className="flex relative">
           <iframe
             width="814px"

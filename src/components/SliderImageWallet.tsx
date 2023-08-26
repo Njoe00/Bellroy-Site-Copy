@@ -42,12 +42,15 @@ export default function SliderImageWallet() {
           />
         </div>
       </div>
-      <div className="cursor-pointer flex-col items-center pb-8 flex">
+      <a
+        href="#video-player"
+        className="scroll-smooth cursor-pointer flex-col items-center pb-8 flex"
+      >
         <div className=" text-center px-10 pt-10 text-white text-sm ">
           Discover how we do it
         </div>
         <BsChevronCompactDown size="30" color="white" />
-      </div>
+      </a>
     </div>
   );
 }
