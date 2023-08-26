@@ -44,7 +44,7 @@ export default function SliderImageWallet() {
       </div>
       <a
         href="#video-player"
-        className="cursor-pointer flex-col items-center pb-6 flex"
+        className="cursor-pointer flex-col items-center pb-2 flex"
       >
         <div className=" text-center px-10 pt-10 text-white text-sm ">
           Discover how we do it

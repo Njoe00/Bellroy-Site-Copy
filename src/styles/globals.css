@@ -39,8 +39,3 @@ input[type="range"]::-webkit-slider-thumb {
   -webkit-transition: 0.2s;
   transition: opacity 0.2s;
 }
-@layer base {
-  html {
-    @apply scroll-smooth;
-  }
-}
