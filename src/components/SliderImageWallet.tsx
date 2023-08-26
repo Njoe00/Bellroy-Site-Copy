@@ -22,13 +22,13 @@ export default function SliderImageWallet() {
           Move the slider to compare wallets
         </p>
       </div>
-      <div className="flex flex-col   items-center w-80 z-10">
+      <div className="flex flex-col items-center w-80 z-10 bg-background-main">
         <div className="w-[1905px]">
           <Image
             className=""
             src={sliderImage[sliderValueRounder(sliderValue)]}
             width={1905}
-            height={800}
+            height={500}
             quality={100}
             alt="alt"
             style={{ width: 1905, height: 500 }}
@@ -44,7 +44,7 @@ export default function SliderImageWallet() {
       </div>
       <a
         href="#video-player"
-        className="scroll-smooth cursor-pointer flex-col items-center pb-8 flex"
+        className="cursor-pointer flex-col items-center pb-6 flex"
       >
         <div className=" text-center px-10 pt-10 text-white text-sm ">
           Discover how we do it

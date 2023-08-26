@@ -82,7 +82,7 @@ export default function Home() {
       </div>
       <div
         id="video-player"
-        className=" scroll-smooth bg-gray-200 flex justify-evenly py-8 p-8"
+        className="bg-gray-200 flex justify-evenly py-8 p-8"
       >
         <div className="flex items-center pl-4">
           <div>
@@ -134,7 +134,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex m-11 justify-center scroll-smooth">
+      <div className="flex m-11 justify-center">
         <div className="flex relative">
           <iframe
             width="814px"
