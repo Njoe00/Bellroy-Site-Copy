@@ -14,9 +14,9 @@ export default function Header() {
     } else if (headerContent === "Wallets") {
       setHeaderSection(WalletsContent);
     } else if (headerContent === "Accessories") {
-      setHeaderSection(headerSubSectionsContentBags);
+      setHeaderSection(AccessoriesContent);
     } else if (headerContent === "Tech") {
-      setHeaderSection(headerSubSectionsContentBags);
+      setHeaderSection(TechContent);
     } else if (headerContent === "Travel") {
       setHeaderSection(headerSubSectionsContentBags);
     } else if (headerContent === "Collections") {
@@ -113,7 +113,7 @@ export default function Header() {
                 alt="Mens Bags"
                 style={{ height: "100%", width: "auto" }}
               />
-              <a href="#" className=" hover:text-orange-600">
+              <a href="#" className=" hover:text-orange-600 overflow-auto">
                 {content.text}
               </a>
             </li>
@@ -246,4 +246,33 @@ export const WalletsContent = [
     text: "RFID Protected",
     image: "/RFID.avif",
   },
+];
+
+const AccessoriesContent = [
+  {
+    text: "iPhone Cases",
+    image: "/iPhone_Cases.avif",
+  },
+  {
+    text: "Pixel Cases",
+    image: "/Pixel_Cases.avif",
+  },
+  {
+    text: "Samsung Cases",
+    image: "/Quartz-Nav-Icon.avif",
+  },
+  { text: "Phone Wallets", image: "/nav-icon-phone-wallets.avif" },
+];
+
+const TechContent = [
+  { text: "Pouches", image: "/nav-icon-pouches.avif" },
+  {
+    text: "Laptop & Tablet Sleeves",
+    image: "",
+  },
+  { text: "Key Holders", image: "" },
+  { text: "Folio", image: "" },
+  { text: "Apple Watch Brands", image: "" },
+  { text: "AirPods Cases", image: "" },
+  { text: "AirTag Cases", image: "" },
 ];
