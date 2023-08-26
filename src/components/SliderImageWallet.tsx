@@ -13,8 +13,6 @@ export default function SliderImageWallet() {
     return sliderValue;
   };
 
-  const chervonStyling = { colour: "white", size: "20px" };
-
   return (
     <div className="bg-cover w-full flex mr-auto items-center flex-col ml-auto bg-background-main">
       <div>
