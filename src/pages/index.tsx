@@ -200,7 +200,13 @@ export default function Home() {
               onClick={() => goToSlide(slideIndex)}
               className="text-2xl cursor-pointer flex-row flex"
             >
-              <a className="h-4 w-4 rounded-full outline-1 outline outline-offset-2 bg-black"></a>
+              <a
+                className={`h-3 w-3 rounded-full outline-1 outline ${
+                  currentIndex === slideIndex
+                    ? "outline-gray-400 bg-gray-400"
+                    : "outline-gray-400"
+                }`}
+              ></a>
             </div>
           ))}
         </div>
