@@ -198,10 +198,8 @@ export default function Home() {
               className="text-2xl cursor-pointer flex-row flex"
             >
               <a
-                className={`h-3 w-3 rounded-full outline-1 outline ${
-                  currentIndex === slideIndex
-                    ? "outline-gray-400 bg-gray-400"
-                    : "outline-gray-400"
+                className={`h-3 w-3 outline-gray-400 rounded-full outline-1 outline ${
+                  currentIndex === slideIndex ? " bg-gray-400" : "bg-white"
                 }`}
               ></a>
             </div>

@@ -19,7 +19,7 @@ export default function ProductColourButton({
   setCardImage,
 }: ProductColourButtonProps) {
   return (
-    <div className="p-2 flex flex-row justify-center space-x-2 ">
+    <div className="static p-2 flex flex-row justify-center space-x-2 ">
       {content.colours.map((colour, index) => {
         const outlineColour = `outline-${selectedColour}`;
         const bgColour = `bg-${colour}`;

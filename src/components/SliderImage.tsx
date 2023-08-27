@@ -55,7 +55,7 @@ export default function SliderImage() {
             key={slideIndex}
             onClick={() => goToSlide(slideIndex)}
             className="text-2xl cursor-pointer"
-          ></div>
+          />
         ))}
       </div>
     </div>

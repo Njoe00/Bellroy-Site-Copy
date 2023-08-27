@@ -25,6 +25,9 @@ export default function WalletTypeButton({
   setImagesToShow: ImagesState[1];
 }) {
   const isActive = imagesToShow === content.text;
+  const handleWalletTypeButtonColour = isActive
+    ? "text-orange-600"
+    : "text-black";
 
   return (
     <div
@@ -44,16 +47,12 @@ export default function WalletTypeButton({
         />
 
         <div
-          className={`absolute group-hover:text-orange-600 text-2xl flex justify-center translate-y-32 ${
-            isActive ? `text-orange-600` : `text-black`
-          }`}
+          className={`absolutegroup-hover:text-orange-600 text-2xl flex justify-center translate-y-32 ${handleWalletTypeButtonColour}`}
         >
           <BsChevronCompactDown />
         </div>
         <div
-          className={`group-hover:text-orange-600 text-sm translate-y-4 ${
-            isActive ? "text-orange-600" : "text-gray-400"
-          } `}
+          className={`group-hover:text-orange-600 text-sm translate-y-4 ${handleWalletTypeButtonColour}`}
         >
           {content.text}
         </div>
