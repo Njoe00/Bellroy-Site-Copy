@@ -24,28 +24,28 @@ export default function Header() {
     }
   }, [headersection]);
 
-  const changeHeaderContent = (section: string) => {
+  const handleDropDownContent = (section: string) => {
     setHeaderSection(section);
   };
 
-  const handleDropDown = () => {
+  const toggleHeader = () => {
     setIsOpen(!isOpen);
   };
 
-  const handleMouseEnter = () => {
+  const openHeaderOnMouseEnter = () => {
     setIsOpen(true);
   };
 
-  const handleMouseLeave = () => {
+  const closeHeaderOnMouseLeave = () => {
     setTimeout(() => {
       setIsOpen(false);
-    }, 1500);
+    }, 500);
   };
 
   return (
     <div
       onMouseLeave={() => {
-        handleMouseLeave();
+        closeHeaderOnMouseLeave();
       }}
     >
       <div className="bg-white p-5 flex relative gap-2 font-normal space-x-10 justify-between text-sm items-center h-[105px] z-10">
@@ -61,16 +61,13 @@ export default function Header() {
             {headerSubSections.map((section, index) => (
               <button
                 onMouseEnter={() => {
-                  handleMouseEnter();
-                  changeHeaderContent(section.text);
-                }}
-                onMouseLeave={() => {
-                  changeHeaderContent(section.text);
+                  openHeaderOnMouseEnter();
+                  handleDropDownContent(section.text);
                 }}
                 className="text-sm py-2.5 text-center inline-flex items-center hover:text-orange-600"
                 onClick={() => {
-                  changeHeaderContent(section.text);
-                  handleDropDown();
+                  handleDropDownContent(section.text);
+                  toggleHeader();
                 }}
                 key={index}
               >
@@ -110,9 +107,9 @@ export default function Header() {
         leaveFrom="opacity-100 translate-y-0"
         leaveTo="opacity-100 -translate-y-36"
       >
-        <ul className="absolute w-screen bg-white flex flex-row text-gray-500 justify-start pb-8 pl-32 text-sm">
+        <ul className="absolute w-screen bg-white flex flex-row text-gray-500 justify-start pb-6 pl-32 text-sm">
           {headerContent.map((content, index) => (
-            <li className="flex items-center flex-col px-2" key={index}>
+            <li className="flex items-center flex-col px-1" key={index}>
               <Image
                 className="rounded-md"
                 src={content.image}
