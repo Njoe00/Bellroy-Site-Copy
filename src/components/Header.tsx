@@ -106,7 +106,7 @@ export default function Header() {
       >
         <ul className="absolute w-screen bg-white flex flex-row text-gray-500 justify-start pb-8 pl-32 text-sm">
           {headersection.map((content, index) => (
-            <li className="flex items-center flex-col px-6" key={index}>
+            <li className="flex items-center flex-col px-2" key={index}>
               <Image
                 className="rounded-md"
                 src={content.image}
@@ -115,7 +115,10 @@ export default function Header() {
                 alt="Mens Bags"
                 style={{ height: content.height, width: content.width }}
               />
-              <a href="#" className=" hover:text-orange-600 overflow-auto">
+              <a
+                href="#"
+                className="break-normal w-32 text-center hover:text-orange-600 overflow-auto"
+              >
                 {content.text}
               </a>
             </li>
