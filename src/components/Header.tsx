@@ -91,7 +91,7 @@ export default function Header() {
                 alt="mail"
                 width={10}
                 height={10}
-                style={{ height: "100%", width: "auto" }}
+                style={{ height: "100%", width: "100%" }}
               />
             </span>
           ))}
@@ -107,7 +107,7 @@ export default function Header() {
         leaveFrom="opacity-100 translate-y-0"
         leaveTo="opacity-100 -translate-y-36"
       >
-        <ul className="absolute w-screen bg-white flex flex-row text-gray-500 justify-start pb-6 pl-32 text-sm">
+        <ul className="absolute w-screen bg-white flex flex-row text-gray-500 justify-start h-[130px] pl-32 text-sm">
           {headerContent.map((content, index) => (
             <li className="flex items-center flex-col px-1" key={index}>
               <Image

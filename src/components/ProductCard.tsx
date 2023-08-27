@@ -50,7 +50,7 @@ export default function ProductCard({ content }: { content: Content }) {
                 alt="X"
                 width={14}
                 height={14}
-                style={{ height: "15px", width: "15px" }}
+                style={{ height: "14px", width: "14px" }}
               />
             </button>
           </Transition>
