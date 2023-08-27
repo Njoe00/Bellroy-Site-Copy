@@ -108,11 +108,12 @@ export default function Header() {
           {headersection.map((content, index) => (
             <li className="flex items-center flex-col px-6" key={index}>
               <Image
+                className="rounded-md"
                 src={content.image}
-                width={75}
-                height={75}
+                width={Number(content.width)}
+                height={Number(content.height)}
                 alt="Mens Bags"
-                style={{ height: "74", width: "74" }}
+                style={{ height: content.height, width: content.width }}
               />
               <a href="#" className=" hover:text-orange-600 overflow-auto">
                 {content.text}
@@ -156,35 +157,56 @@ const BagsContent = [
   {
     text: "Men's Bag's",
     image: "/header/Men's_Bags.avif",
+    width: "74",
+    height: "74",
   },
   {
     text: "Woman's Bags",
     image: "/header/Womens_Bags.avif",
+    width: "74",
+    height: "74",
   },
-  { text: "Backpacks", image: "/header/Backpacks.avif" },
+  {
+    text: "Backpacks",
+    image: "/header/Backpacks.avif",
+    width: "74",
+    height: "74",
+  },
   {
     text: "Slings & Crossbody Bags",
     image: "/header/Crossbody.avif",
+    width: "74",
+    height: "74",
   },
   {
     text: "Slings & Crossbody Bags",
     image: "/header/Crossbody.avif",
+    width: "74",
+    height: "74",
   },
   {
     text: "Totes & Shoulder Bags",
     image: "/header/Totes.avif",
+    width: "74",
+    height: "74",
   },
   {
     text: "Market & Cooler Bags",
     image: "/header/nav-icon-cooler-bags.avif",
+    width: "74",
+    height: "74",
   },
   {
     text: "Work Bags",
     image: "/header/Workbags.avif",
+    width: "74",
+    height: "74",
   },
   {
     text: "Travel Bags",
     image: "/header/Travel_Bags.avif",
+    width: "74",
+    height: "74",
   },
 ];
 
@@ -192,34 +214,50 @@ const headerSubSectionsContentBags = [
   {
     text: "Men's Bag's",
     image: "/Men's_Bags.avif",
+    width: "74",
+    height: "74",
   },
   {
     text: "Woman's Bags",
     image: "/Womens_Bags.avif",
+    width: "74",
+    height: "74",
   },
   {
     text: "Backpacks",
     image: "/Backpacks.avif",
+    width: "74",
+    height: "74",
   },
   {
     text: "Slings & Crossbody Bags",
     image: "/Crossbody.avif",
+    width: "74",
+    height: "74",
   },
   {
     text: "Totes & Shoulder Bags",
     image: "/Totes.avif",
+    width: "74",
+    height: "74",
   },
   {
     text: "Market & Cooler Bags",
     image: "/nav-icon-cooler-bags.avif",
+    width: "74",
+    height: "74",
   },
   {
     text: "Work Bags",
     image: "/Workbags.avif",
+    width: "74",
+    height: "74",
   },
   {
     text: "Travel Bags",
     image: "/Travel_Bags.avif",
+    width: "74",
+    height: "74",
   },
 ];
 
@@ -227,22 +265,32 @@ export const WalletsContent = [
   {
     text: "Billfold's",
     image: "/Billfolds.avif",
+    width: "74",
+    height: "74",
   },
   {
     text: "Card Holders",
     image: "/Card_Holders.avif",
+    width: "74",
+    height: "74",
   },
   {
     text: "Zip Wallets",
     image: "/Zip_Wallets.avif",
+    width: "74",
+    height: "74",
   },
   {
     text: "Passport Holders",
     image: "/Passport_Holders_.avif",
+    width: "74",
+    height: "74",
   },
   {
     text: "RFID Protected",
     image: "/RFID.avif",
+    width: "74",
+    height: "74",
   },
 ];
 
@@ -250,64 +298,116 @@ const AccessoriesContent = [
   {
     text: "iPhone Cases",
     image: "/iPhone_Cases.avif",
+    width: "74",
+    height: "74",
   },
   {
     text: "Pixel Cases",
     image: "/Pixel_Cases.avif",
+    width: "74",
+    height: "74",
   },
   {
     text: "Samsung Cases",
     image: "/Quartz-Nav-Icon.avif",
+    width: "74",
+    height: "74",
   },
-  { text: "Phone Wallets", image: "/nav-icon-phone-wallets.avif" },
+  {
+    text: "Phone Wallets",
+    image: "/nav-icon-phone-wallets.avif",
+    width: "74",
+    height: "74",
+  },
 ];
 
 const TechContent = [
-  { text: "Pouches", image: "/nav-icon-pouches.avif" },
+  {
+    text: "Pouches",
+    image: "/nav-icon-pouches.avif",
+    width: "74",
+    height: "74",
+  },
   {
     text: "Laptop & Tablet Sleeves",
     image: "/Laptop_Cases.avif",
+    width: "74",
+    height: "74",
   },
-  { text: "Key Holders", image: "/Key_Covers.avif" },
-  { text: "Folio", image: "/Folios.avif" },
-  { text: "Apple Watch Brands", image: "/Apple_Watch.avif" },
-  { text: "AirPods Cases", image: "/Airpod_Cases.avif" },
-  { text: "AirTag Cases", image: "/AirTags.avif" },
+  { text: "Key Holders", image: "/Key_Covers.avif", width: "74", height: "74" },
+  { text: "Folio", image: "/Folios.avif", width: "74", height: "74" },
+  {
+    text: "Apple Watch Brands",
+    image: "/Apple_Watch.avif",
+    width: "74",
+    height: "74",
+  },
+  {
+    text: "AirPods Cases",
+    image: "/Airpod_Cases.avif",
+    width: "74",
+    height: "74",
+  },
+  { text: "AirTag Cases", image: "/AirTags.avif", width: "74", height: "74" },
 ];
 
 const TravelContent = [
-  { text: "Travel Bags", image: "/Travel_Bags.avif" },
+  {
+    text: "Travel Bags",
+    image: "/Travel_Bags.avif",
+    width: "74",
+    height: "74",
+  },
   {
     text: "Passport Holders",
     image: "/header/Passport_Holders_.avif",
+    width: "74",
+    height: "74",
   },
-  { text: "RFID Protected", image: "/header/RFID.avif" },
-  { text: "Toiletry Bags", image: "/Folios.avif" },
+  {
+    text: "RFID Protected",
+    image: "/header/RFID.avif",
+    width: "74",
+    height: "74",
+  },
+  { text: "Toiletry Bags", image: "/Folios.avif", width: "74", height: "74" },
 ];
 
 const AboutUsContent = [
   {
     text: "Our Story",
     image: "/nav-icon-out-story.avif",
+    width: "120",
+    height: "84",
   },
   {
     text: "Our Materials",
     image: "/nav-icon-our-materials.avif",
+    width: "120",
+    height: "84",
   },
   {
     text: "Responible Business",
     image: "/nav-icon-responsible-business.avif",
+    width: "120",
+    height: "84",
   },
   {
     text: "The Jounrnal",
     image: "/nav-icon-the-journal.avif",
+    width: "120",
+    height: "84",
   },
   {
     text: "Ambassador",
     image: "/nav-icon-ambassadors.avif",
+    width: "120",
+    height: "84",
   },
   {
     text: "Shipping & Delivery",
-    image: "/nav-icon-ambassadors.avif",
+    image: "/nav-icon-shipping-delivery.avif",
+    width: "120",
+    height: "84",
   },
 ];
