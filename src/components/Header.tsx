@@ -18,11 +18,9 @@ export default function Header() {
     } else if (headerContent === "Tech") {
       setHeaderSection(TechContent);
     } else if (headerContent === "Travel") {
-      setHeaderSection(headerSubSectionsContentBags);
-    } else if (headerContent === "Collections") {
-      setHeaderSection(headerSubSectionsContentBags);
-    } else if (headerContent === "About us") {
-      setHeaderSection(headerSubSectionsContentBags);
+      setHeaderSection(TravelContent);
+    } else if (headerContent === "About Us") {
+      setHeaderSection(AboutUsContent);
     }
   }, [headerContent]);
 
@@ -61,7 +59,6 @@ export default function Header() {
                   changeHeaderContent(section.text);
                 }}
                 onMouseLeave={() => {
-                  handleMouseLeave();
                   changeHeaderContent(section.text);
                 }}
                 className="text-sm py-2.5 text-center inline-flex items-center hover:text-orange-600"
@@ -78,8 +75,12 @@ export default function Header() {
         </div>
 
         <div className="gap-2 font-normal items-center space-x-4 text-xs flex text-gray-500 p-2">
-          <a className="hover:text-orange-400" href="/#">Help</a>
-          <a className="hover:text-orange-400" href="/#">Find In-Store</a>
+          <a className="hover:text-orange-400" href="/#">
+            Help
+          </a>
+          <a className="hover:text-orange-400" href="/#">
+            Find In-Store
+          </a>
           {headerIcons.map((image, index) => (
             <span className="flex" key={index}>
               <Image
@@ -111,7 +112,7 @@ export default function Header() {
                 width={75}
                 height={75}
                 alt="Mens Bags"
-                style={{ height: "100%", width: "auto" }}
+                style={{ height: "74", width: "74" }}
               />
               <a href="#" className=" hover:text-orange-600 overflow-auto">
                 {content.text}
@@ -145,9 +146,6 @@ const headerSubSections = [
   },
   {
     text: "Travel",
-  },
-  {
-    text: "Collections",
   },
   {
     text: "About Us",
@@ -268,11 +266,48 @@ const TechContent = [
   { text: "Pouches", image: "/nav-icon-pouches.avif" },
   {
     text: "Laptop & Tablet Sleeves",
-    image: "",
+    image: "/Laptop_Cases.avif",
   },
-  { text: "Key Holders", image: "" },
-  { text: "Folio", image: "" },
-  { text: "Apple Watch Brands", image: "" },
-  { text: "AirPods Cases", image: "" },
-  { text: "AirTag Cases", image: "" },
+  { text: "Key Holders", image: "/Key_Covers.avif" },
+  { text: "Folio", image: "/Folios.avif" },
+  { text: "Apple Watch Brands", image: "/Apple_Watch.avif" },
+  { text: "AirPods Cases", image: "/Airpod_Cases.avif" },
+  { text: "AirTag Cases", image: "/AirTags.avif" },
+];
+
+const TravelContent = [
+  { text: "Travel Bags", image: "/Travel_Bags.avif" },
+  {
+    text: "Passport Holders",
+    image: "/header/Passport_Holders_.avif",
+  },
+  { text: "RFID Protected", image: "/header/RFID.avif" },
+  { text: "Toiletry Bags", image: "/Folios.avif" },
+];
+
+const AboutUsContent = [
+  {
+    text: "Our Story",
+    image: "/nav-icon-out-story.avif",
+  },
+  {
+    text: "Our Materials",
+    image: "/nav-icon-our-materials.avif",
+  },
+  {
+    text: "Responible Business",
+    image: "/nav-icon-responsible-business.avif",
+  },
+  {
+    text: "The Jounrnal",
+    image: "/nav-icon-the-journal.avif",
+  },
+  {
+    text: "Ambassador",
+    image: "/nav-icon-ambassadors.avif",
+  },
+  {
+    text: "Shipping & Delivery",
+    image: "/nav-icon-ambassadors.avif",
+  },
 ];
