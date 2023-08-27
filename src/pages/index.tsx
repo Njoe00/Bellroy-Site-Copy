@@ -199,7 +199,7 @@ export default function Home() {
             >
               <a
                 className={`h-3 w-3 outline-gray-400 rounded-full outline-1 outline ${
-                  currentIndex === slideIndex ? " bg-gray-400" : "bg-white"
+                  currentIndex === slideIndex ? " bg-gray-400" : ""
                 }`}
               ></a>
             </div>

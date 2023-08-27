@@ -85,7 +85,7 @@ export default function ProductCard({ content }: { content: Content }) {
           <div className="pt-10 absolute">
             <Image
               src={cardImage}
-              height={300}
+              height={250}
               width={300}
               alt="cardImage"
               className="text-center"

@@ -60,10 +60,6 @@ export default function Header() {
                   handleMouseEnter();
                   changeHeaderContent(section.text);
                 }}
-                onMouseLeave={() => {
-                  handleMouseLeave();
-                  changeHeaderContent(section.text);
-                }}
                 className="text-sm py-2.5 text-center inline-flex items-center hover:text-orange-600"
                 onClick={() => {
                   changeHeaderContent(section.text);
@@ -86,13 +82,7 @@ export default function Header() {
           </a>
           {headerIcons.map((image, index) => (
             <span className="flex" key={index}>
-              <Image
-                src={image}
-                alt="mail"
-                width={10}
-                height={10}
-                style={{ height: "100%", width: "auto" }}
-              />
+              <Image src={image} alt="mail" width={16} height={16} />
             </span>
           ))}
         </div>
@@ -115,7 +105,6 @@ export default function Header() {
                 width={84}
                 height={84}
                 alt="Mens Bags"
-                style={{ height: 84, width: 84 }}
               />
               <a href="#" className=" hover:text-orange-600 overflow-auto">
                 {content.text}
