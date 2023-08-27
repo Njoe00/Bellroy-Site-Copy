@@ -5,27 +5,27 @@ import Image from "next/image";
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const [headerContent, setHeaderContent] = useState("Wallets");
-  const [headersection, setHeaderSection] = useState(WalletsContent);
+  const [headerContent, setHeaderContent] = useState(WalletsContent);
+  const [headersection, setHeaderSection] = useState("Wallets");
 
   useEffect(() => {
-    if (headerContent === "Bags") {
-      setHeaderSection(BagsContent);
-    } else if (headerContent === "Wallets") {
-      setHeaderSection(WalletsContent);
-    } else if (headerContent === "Accessories") {
-      setHeaderSection(AccessoriesContent);
-    } else if (headerContent === "Tech") {
-      setHeaderSection(TechContent);
-    } else if (headerContent === "Travel") {
-      setHeaderSection(TravelContent);
-    } else if (headerContent === "About Us") {
-      setHeaderSection(AboutUsContent);
+    if (headersection === "Bags") {
+      setHeaderContent(BagsContent);
+    } else if (headersection === "Wallets") {
+      setHeaderContent(WalletsContent);
+    } else if (headersection === "Accessories") {
+      setHeaderContent(AccessoriesContent);
+    } else if (headersection === "Tech") {
+      setHeaderContent(TechContent);
+    } else if (headersection === "Travel") {
+      setHeaderContent(TravelContent);
+    } else if (headersection === "About Us") {
+      setHeaderContent(AboutUsContent);
     }
-  }, [headerContent]);
+  }, [headersection]);
 
   const changeHeaderContent = (section: string) => {
-    setHeaderContent(section);
+    setHeaderSection(section);
   };
 
   const handleDropDown = () => {
@@ -37,12 +37,19 @@ export default function Header() {
   };
 
   const handleMouseLeave = () => {
-    setIsOpen(false);
+    setTimeout(() => {
+      setIsOpen(false);
+    }, 1500);
   };
 
   return (
     <>
-      <div className="bg-white p-5 flex relative gap-2 font-normal space-x-10 justify-between text-sm items-center h-[105px] z-10">
+      <div
+        className="bg-white p-5 flex relative gap-2 font-normal space-x-10 justify-between text-sm items-center h-[105px] z-10"
+        onMouseLeave={() => {
+          handleMouseLeave();
+        }}
+      >
         <div className="font-normal space-x-14 items-center flex">
           <Image
             src="/logo.png"
@@ -105,7 +112,7 @@ export default function Header() {
         leaveTo="opacity-100 -translate-y-36"
       >
         <ul className="absolute w-screen bg-white flex flex-row text-gray-500 justify-start pb-8 pl-32 text-sm">
-          {headersection.map((content, index) => (
+          {headerContent.map((content, index) => (
             <li className="flex items-center flex-col px-2" key={index}>
               <Image
                 className="rounded-md"
