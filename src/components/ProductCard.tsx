@@ -7,7 +7,7 @@ import ProductCardShowMoreButton from "./productCardShowMoreButton";
 export type Content = {
   colours: string[];
   image: string[];
-  showMoreImage: string[];
+  backOfCardImage: string[];
   name: string;
   edition?: string;
   price: string;
@@ -57,7 +57,7 @@ export default function ProductCard({ content }: { content: Content }) {
               height={300}
               width={300}
               alt="cardImage"
-              style={{ opacity: opacity }}
+              style={{ opacity }}
             />
           </div>
 
