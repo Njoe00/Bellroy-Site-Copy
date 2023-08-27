@@ -43,13 +43,12 @@ export default function Header() {
   };
 
   return (
-    <>
-      <div
-        className="bg-white p-5 flex relative gap-2 font-normal space-x-10 justify-between text-sm items-center h-[105px] z-10"
-        onMouseLeave={() => {
-          handleMouseLeave();
-        }}
-      >
+    <div
+      onMouseLeave={() => {
+        handleMouseLeave();
+      }}
+    >
+      <div className="bg-white p-5 flex relative gap-2 font-normal space-x-10 justify-between text-sm items-center h-[105px] z-10">
         <div className="font-normal space-x-14 items-center flex">
           <Image
             src="/logo.png"
@@ -132,7 +131,7 @@ export default function Header() {
           ))}
         </ul>
       </Transition>
-    </>
+    </div>
   );
 }
 
