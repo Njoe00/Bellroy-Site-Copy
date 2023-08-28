@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 
 type ContentProps = {
-  showMoreImage: string[];
+  backOfCardImage?: string[];
   image: string[];
 };
 
@@ -20,7 +20,7 @@ export default function productCardShowMoreButton({
   toggleIsFlippedCard,
 }: ProductCardProps) {
   const frontProductImage = content.image[0];
-  const backProductImage = content.showMoreImage[0];
+  const backProductImage = content.backOfCardImage[0];
   return (
     <div className="z-50">
       <button
