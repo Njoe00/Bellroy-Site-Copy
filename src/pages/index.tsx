@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
 import Image from "next/image";
+import React, { useEffect, useState } from "react";
 import {
   BsChevronCompactLeft,
   BsChevronCompactRight,
@@ -9,7 +9,6 @@ import { RxDotFilled } from "react-icons/rx";
 import QuotesContainer from "@/components/QuotesContainer";
 import ProductCard from "../components/ProductCard";
 import Header from "../components/Header";
-import VideoPlayerAndText from "@/components/VideoPlayerAndText";
 import SliderImageWallet from "@/components/SliderImageWallet";
 import PaymentsContainer from "../components/PaymentsContainer";
 import NewsLetterSignUp from "../components/NewsLetterSignUp";
@@ -17,8 +16,56 @@ import SiteMapFooter from "@/components/SiteMapFooter";
 import WalletTypeButtons from "@/components/WalletTypeButtons";
 
 export default function Home() {
-  const [walletDataSet, setWalletDataSet] = useState(cardsOnlyProduct);
+  const [sliderValue, setSliderValue] = useState("0");
+  const [isOpen, setIsOpen] = useState(false);
+  const [slidePicture, setsliderPicture] = useState(false);
   const [imagesToShow, setImagesToShow] = useState("Cards only");
+  const [walletDataSet, setWalletDataSet] = useState(cardsOnlyProduct);
+
+  const handleSlide = () => {
+    setsliderPicture(!slidePicture);
+  };
+
+  useEffect(() => {
+    if (imagesToShow === "Cards only") {
+      setWalletDataSet(cardsOnlyProduct);
+    } else if (imagesToShow === "Cards and bills") {
+      setWalletDataSet(cardsAndBillsProduct);
+    } else if (imagesToShow === "Cards, bills and coins") {
+      setWalletDataSet(cardsBillsAndCoinsProduct);
+    }
+  }, [imagesToShow]);
+
+  const handleDropDown = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const goToSlide = (slideIndex: number) => {
+    setCurrentIndex(slideIndex);
+  };
+
+  const [currentIndex, setCurrentIndex] = useState(1);
+
+  const prevSlide = () => {
+    const isFirstSlide = currentIndex === 0;
+    const newIndex = isFirstSlide ? slidesSetOne.length - 1 : currentIndex - 1;
+    setCurrentIndex(newIndex);
+  };
+
+  const nextSlide = () => {
+    const isLastslide = currentIndex === slidesSetOne.length - 1;
+    const newIndex = isLastslide ? 0 : currentIndex + 1;
+    setCurrentIndex(newIndex);
+  };
+
+  let textValue;
+  if (sliderValue === "9") {
+    textValue = "Plus Cash";
+  } else if (sliderValue === "1") {
+    textValue = "1 Card";
+  } else {
+    textValue = `${sliderValue} Cards`;
+  }
 
   return (
     <header className="bg-white z-100">
@@ -33,19 +80,137 @@ export default function Home() {
         </h1>
         <SliderImageWallet />
       </div>
+      <div className="bg-gray-200 flex justify-evenly py-8 p-8">
+        <div className="flex items-center pl-4">
+          <div>
+            <Image
+              src="/check-mark.png"
+              alt="check-mark"
+              width={30}
+              height={10}
+              style={{ height: "100%", width: "auto" }}
+            />
+          </div>
+          <div>
+            <span className="text-base text-background-main pl-4">
+              3 year warranty
+            </span>
+          </div>
+        </div>
+        <div className="flex items-center -mx-96">
+          <div>
+            <Image
+              src="/leather.png"
+              alt="check-mark"
+              width={30}
+              height={10}
+              style={{ height: "100%", width: "auto" }}
+            />
+          </div>
+          <div>
+            <span className="text-base text-background-main pl-4">
+              Environmentally certified leather
+            </span>
+          </div>
+        </div>
+        <div className="flex items-center">
+          <div>
+            <Image
+              src="/trophy.png"
+              alt="check-mark"
+              width={30}
+              height={10}
+              style={{ height: "100%", width: "auto" }}
+            />
+          </div>
+          <div>
+            <span className="text-base text-background-main pl-4">
+              Award-winning service
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div className="flex m-11 justify-center">
+        <div className="flex relative">
+          <iframe
+            width="814px"
+            height="458px"
+            src="https://www.youtube-nocookie.com/embed/IvkAjZd8rjE?autoplay=1&loop=1&playlist=IvkAjZd8rjE&origin=bellroy.com&modestbranding=1&showinfo=0&rel=0&version=3&mute=1"
+          />
+        </div>
+        <div className="flex flex-col items-center text-center justify-center ml-14">
+          <h2 className="font-medium text-sm">
+            THE SAME CAPACITY, WITHOUT THE <br /> THE EXTRA BULK
+          </h2>
+          <p className="flex items-center py-2 text-sm">
+            <br />
+            Our wallets are designed to hold what you need, while <br /> keeping
+            your pockets trim and trailored.
+          </p>
+        </div>
+      </div>
+
+      <div className="relative flex flex-col py-28 justify-center bg-gray-100 items-center z-40">
+        <div className="flex flex-row space-x-4 drop-shadow-lg">
+          <div>
+            <div
+              style={{
+                backgroundImage: `url(${slidesSetOne[currentIndex].url})`,
+              }}
+              className="bg-cover w-[365px] h-[280px] duration-500 bg-no-repeat flex q"
+            ></div>
+            <div className="flex flex-col bottom-4 items-center text-xs">
+              <div className="bg-white w-[365px] h-[94px] flex flex-col text-center justify-center p-4">
+                {`${slidesSetOne[currentIndex].text}`}
+              </div>
+            </div>
+          </div>
+          <div>
+            <div
+              style={{
+                backgroundImage: `url(${slidesSlidesSetTwo[currentIndex].url})`,
+              }}
+              className="bg-cover w-[365px] h-[280px] duration-500 bg-no-repeat flex q"
+            ></div>
+            <div className="flex flex-col bottom-4 items-center text-xs">
+              <div className="bg-white w-[365px] h-[94px] flex flex-col text-center justify-center p-4">
+                {`${slidesSlidesSetTwo[currentIndex].text}`}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="absolute top-[50%] -translate-x-[-500px] translate-y-[-40%] left-2 text-2xl rounded-full p-2 text-gray-300 cursor-pointer">
+          <BsChevronCompactLeft onClick={prevSlide} size="40" />
+        </div>
+        <div className="absolute top-[50%] -translate-x-[500px] translate-y-[-60%] right-1 text-2xl rounded-full p-2 text-gray-300 cursor-pointer">
+          <BsChevronCompactRight onClick={nextSlide} size="40" />
+        </div>
+
+        <div className="flex absolute justify-center bottom-4 items-center">
+          {slidesSetOne.map((slide, slideIndex) => (
+            <div
+              key={slideIndex}
+              onClick={() => goToSlide(slideIndex)}
+              className="text-2xl cursor-pointer"
+            >
+              <RxDotFilled />
+            </div>
+          ))}
+        </div>
+      </div>
 
       <div className="bg-white flex flex-col items-center p-40 -mb-36">
-        <VideoPlayerAndText />
         <div className="flex">
           <a className="text-lg">Why do you carry in your wallet?</a>
         </div>
         <WalletTypeButtons
-          imagesToShow={imagesToShow}
           setImagesToShow={setImagesToShow}
+          imagesToShow={imagesToShow}
         />
         <div className="flex flex-row flex-wrap justify-center">
           {walletDataSet.map((content, index) => (
-            <ProductCard key={index} content={content} />
+            <ProductCard key={index} index={index} content={content} />
           ))}
         </div>
       </div>
@@ -56,6 +221,128 @@ export default function Home() {
     </header>
   );
 }
+
+const slidesSetOne = [
+  {
+    url: "https://bellroy-cms-images.imgix.net/3954/slider-image01.jpg",
+    text: "Made from premium, enviormentally certified leather, that only gets better with age...",
+  },
+  {
+    url: "https://bellroy-cms-images.imgix.net/4413/slider-image02.jpg",
+    text: "and fewer of leather, to eliminate bulk from the start...",
+  },
+];
+
+const slidesSlidesSetTwo = [
+  {
+    url: "https://bellroy-cms-images.imgix.net/4414/slider-image03.jpg",
+    text: "their clever design features help keep them slim, even when they're full…",
+  },
+  {
+    url: "https://bellroy-cms-images.imgix.net/4425/slider-image04.jpg",
+    text: "so they'll be with you from Day One to Day 1000, and beyond.",
+  },
+];
+
+const headerSubSections = [
+  {
+    text: "Bags",
+  },
+  {
+    text: "Wallets",
+  },
+  {
+    text: "Accessories",
+  },
+  {
+    text: "Tech",
+  },
+  {
+    text: "Travel",
+  },
+  {
+    text: "Collections",
+  },
+  {
+    text: "About Us",
+  },
+];
+
+const headerSubSectionsContentBags = [
+  {
+    text: "Men's Bag's",
+    image: "/Men's_Bags.avif",
+  },
+  {
+    text: "Woman's Bags",
+    image: "/Womens_Bags.avif",
+  },
+  {
+    text: "Backpacks",
+    image: "/Backpacks.avif",
+  },
+  {
+    text: "Slings & Crossbody Bags",
+    image: "/Crossbody.avif",
+  },
+  {
+    text: "Totes & Shoulder Bags",
+    image: "/Totes.avif",
+  },
+  {
+    text: "Market & Cooler Bags",
+    image: "/nav-icon-cooler-bags.avif",
+  },
+  {
+    text: "Work Bags",
+    image: "/Workbags.avif",
+  },
+  {
+    text: "Travel Bags",
+    image: "/Travel_Bags.avif",
+  },
+];
+
+const headerSubSectionsContentWallets = [
+  {
+    text: "Billfold's",
+    image: "/Billfolds.avif",
+  },
+  {
+    text: "Card Holders",
+    image: "/Card_Holders.avif",
+  },
+  {
+    text: "Zip Wallets",
+    image: "/Zip_Wallets.avif",
+  },
+  {
+    text: "Passport Holders",
+    image: "/Passport_Holders_.avif",
+  },
+  {
+    text: "RFID Protected",
+    image: "/RFID.avif",
+  },
+];
+
+const whyDoYouCarryContent = [
+  {
+    text: "Cards only",
+    inactiveImage: "/icon-inactive-card-sleeve.jpg",
+    activeImage: "/icon-active-card-sleeve.avif",
+  },
+  {
+    text: "Cards and bills",
+    inactiveImage: "/icon-inactive-card-sleeve.jpg",
+    activeImage: "/icon-active-note-sleeve.jpg",
+  },
+  {
+    text: "Cards, bills and coins",
+    inactiveImage: "/icon-inactive-folio.jpg",
+    activeImage: "/icon-active-folio.avif",
+  },
+];
 
 const cardsOnlyProduct = [
   {
@@ -75,20 +362,12 @@ const cardsOnlyProduct = [
       "/card-Sleeves/card-Sleeve_Teal.avif",
       "/card-Sleeves/card-Sleeve_Hazel.avif",
     ],
-    backOfCardImage: [
-      "/card-Sleeves/card-Sleeve-Black_Alt.avif",
-      "/card-Sleeves/card-Sleeve_Ocean_Alt.avif",
-      "/card-Sleeves/card-Sleeve_Gray_Alt.avif",
-      "/card-Sleeves/card-Sleeve_Teal_Alt.avif",
-      "/card-Sleeves/card-Sleeve_Hazel_Alt.avif",
-    ],
   },
   {
     name: "Card Sleeve",
     colours: ["black"],
     price: "C$69",
     image: ["/card-Sleeves/card-Sleeve-Black_Ash.avif"],
-    backOfCardImage: ["/card-Sleeves/card-Sleeve-Black_Ash_Alt.avif"],
     edition: "Carryology Essentials Edition",
   },
   {
@@ -96,7 +375,6 @@ const cardsOnlyProduct = [
     colours: ["black"],
     price: "C$69",
     image: ["/card-Sleeves/flip-Case_Terracotta.avif"],
-    backOfCardImage: ["/card-Sleeves/flip-Case_Terracotta_Alt.avif"],
     edition: "Second Edition",
   },
   {
@@ -104,21 +382,18 @@ const cardsOnlyProduct = [
     colours: ["black"],
     price: "C$85",
     image: ["/card-Sleeves/card-Pocket-Ranger_Green.avif"],
-    backOfCardImage: ["/card-Sleeves/card-Pocket-Ranger_Green_Alt.avif"],
   },
   {
     name: "Phone Case - 3 Card",
     colours: ["black"],
     price: "C$99",
     image: ["/card-Sleeves/phone-Case_Black.avif"],
-    backOfCardImage: ["/card-Sleeves/phone-Case_Black_Alt.avif"],
   },
   {
     name: "Card Sleeve",
     colours: ["black"],
     price: "C$95",
     image: ["/card-Sleeves/card-Sleeve_Mirum_Black.avif"],
-    backOfCardImage: ["/card-Sleeves/card-Sleeve_Mirum_Black_Alt.avif"],
     edition: "MIRUM Edition",
   },
 ];
@@ -133,7 +408,6 @@ const cardsAndBillsProduct = [
       "/CB-1.avif",
       "/CB-2.avif",
     ],
-    backOfCardImage: [],
     edition: "RFID safe",
   },
   {
@@ -141,7 +415,6 @@ const cardsAndBillsProduct = [
     colours: ["black"],
     price: "C$99",
     image: ["/CB-3.avif"],
-    backOfCardImage: [],
     edition: "Carryology Essentials Edition",
   },
   {
@@ -163,14 +436,12 @@ const cardsAndBillsProduct = [
       "/CB-10.avif",
       "/CB-11.avif",
     ],
-    backOfCardImage: [],
   },
   {
     name: "Minimalist Set",
     colours: ["black"],
     price: "C$109 - $C129",
     image: ["/wallets-coins/CB-16.avif"],
-    backOfCardImage: [],
     edition: "Valued at C$144 - C$164",
   },
   {
@@ -178,7 +449,6 @@ const cardsAndBillsProduct = [
     colours: ["black", "card-sleeve-hazel", "wallet-chocolate"],
     price: "C$145",
     image: ["/CB-12.avif", "/CB-13.avif", "/CB-14.avif"],
-    backOfCardImage: [],
     edition: "Premium EditionRFID safe",
   },
   {
@@ -186,7 +456,6 @@ const cardsAndBillsProduct = [
     colours: ["black"],
     price: "C$125",
     image: ["/CB-15.avif"],
-    backOfCardImage: [],
     edition: "MIRUM Edition",
   },
 ];
@@ -207,7 +476,6 @@ const cardsBillsAndCoinsProduct = [
       "/card-Bills-Coins/folio-Mini_Teal.avif",
       "/card-Bills-Coins/folio-Mini_Hazel.avif",
     ],
-    backOfCardImage: [],
     edition: "RFID safe",
   },
   {
@@ -233,37 +501,32 @@ const cardsBillsAndCoinsProduct = [
       "/card-Bills-Coins/note-Sleeve_Java.avif",
       "/card-Bills-Coins/note-Sleeve_Terracotta",
     ],
-    backOfCardImage: [],
     edition: "RFID safe",
   },
   {
     name: "Flip Case",
     colours: ["black"],
     price: "C$69",
-    image: ["/card-Sleeves/flip-case_Terracotta.avif"],
-    backOfCardImage: ["/card-Sleeves/flip-Case_Terracotta_Alt.avif"],
+    image: ["/2.avif"],
     edition: "Second Edition",
   },
   {
     name: "Card Pocket",
-    colours: ["note-sleeve-ranger-green"],
+    colours: ["black"],
     price: "C$85",
-    image: ["/card-Sleeves/card-Pocket-Ranger_Green.avif"],
-    backOfCardImage: ["/card-Sleeves/card-Pocket-Ranger_Green_Alt.avif"],
+    image: ["/3.avif"],
   },
   {
     name: "Phone Case - 3 Card",
     colours: ["black"],
     price: "C$99",
-    image: ["/phone-Case_Phone.avif"],
-    backOfCardImage: ["/phone-Case_Black_Alt.avif"],
+    image: ["/4.avif"],
   },
   {
     name: "Card Sleeve",
     colours: ["black"],
     price: "C$95",
-    image: ["/card-Sleeves/card-Sleeve_Mirum.avif"],
-    backOfCardImage: ["/card-Sleeves/card-Sleeve_Mirum_Alt.avif"],
+    image: ["/5.avif"],
     edition: "MIRUM Edition",
   },
 ];
