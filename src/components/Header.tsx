@@ -108,24 +108,32 @@ export default function Header() {
         leaveTo="opacity-100 -translate-y-36"
       >
         <ul className="absolute w-screen bg-white flex flex-row text-gray-500 justify-start h-[130px] pl-32 text-sm">
-          {headerContent.map((content, index) => (
-            <li className="flex items-center flex-col px-1" key={index}>
-              <Image
-                className="rounded-md"
-                src={content.image}
-                width={Number(content.width)}
-                height={Number(content.height)}
-                alt="Mens Bags"
-                style={{ height: content.height, width: content.width }}
-              />
-              <a
-                href="#"
-                className="break-normal w-32 text-center hover:text-orange-600 overflow-auto"
+          {headerContent.map((content, index) => {
+            const headerIconsStyling = {
+              width: Number(content.width),
+              height: Number(content.height),
+            };
+            return (
+              <li
+                className="flex items-center flex-col px-1 max-w-fit max-h-fit w-auto h-auto"
+                key={index}
               >
-                {content.text}
-              </a>
-            </li>
-          ))}
+                <Image
+                  className={`rounded-md aspect-[${content.aspectRatio}]`}
+                  src={content.image}
+                  width={Number(content.width)}
+                  height={Number(content.height)}
+                  alt="Mens Bags"
+                />
+                <a
+                  href="#"
+                  className="break-normal w-32 text-center hover:text-orange-600 overflow-auto"
+                >
+                  {content.text}
+                </a>
+              </li>
+            );
+          })}
         </ul>
       </Transition>
     </div>
@@ -165,54 +173,63 @@ const BagsContent = [
     image: "/header/Men's_Bags.avif",
     width: "74",
     height: "74",
+    aspectRatio: "1/1",
   },
   {
     text: "Woman's Bags",
     image: "/header/Womens_Bags.avif",
     width: "74",
     height: "74",
+    aspectRatio: "1/1",
   },
   {
     text: "Backpacks",
     image: "/header/Backpacks.avif",
     width: "74",
     height: "74",
+    aspectRatio: "1/1",
   },
   {
     text: "Slings & Crossbody Bags",
     image: "/header/Crossbody.avif",
     width: "74",
     height: "74",
+    aspectRatio: "1/1",
   },
   {
     text: "Slings & Crossbody Bags",
     image: "/header/Crossbody.avif",
     width: "74",
     height: "74",
+    aspectRatio: "1/1",
   },
   {
     text: "Totes & Shoulder Bags",
     image: "/header/Totes.avif",
     width: "74",
     height: "74",
+    aspectRatio: "1/1",
   },
   {
     text: "Market & Cooler Bags",
     image: "/header/nav-icon-cooler-bags.avif",
     width: "74",
     height: "74",
+    aspectRatio: "1/1",
   },
   {
     text: "Work Bags",
     image: "/header/Workbags.avif",
     width: "74",
     height: "74",
+    aspectRatio: "1/1",
   },
   {
     text: "Travel Bags",
     image: "/header/Travel_Bags.avif",
     width: "74",
     height: "74",
+    aspectRatio: "1/1",
   },
 ];
 
@@ -222,48 +239,56 @@ const headerSubSectionsContentBags = [
     image: "/Men's_Bags.avif",
     width: "74",
     height: "74",
+    aspectRatio: "1/1",
   },
   {
     text: "Woman's Bags",
     image: "/Womens_Bags.avif",
     width: "74",
     height: "74",
+    aspectRatio: "1/1",
   },
   {
     text: "Backpacks",
     image: "/Backpacks.avif",
     width: "74",
     height: "74",
+    aspectRatio: "1/1",
   },
   {
     text: "Slings & Crossbody Bags",
     image: "/Crossbody.avif",
     width: "74",
     height: "74",
+    aspectRatio: "1/1",
   },
   {
     text: "Totes & Shoulder Bags",
     image: "/Totes.avif",
     width: "74",
     height: "74",
+    aspectRatio: "1/1",
   },
   {
     text: "Market & Cooler Bags",
     image: "/nav-icon-cooler-bags.avif",
     width: "74",
     height: "74",
+    aspectRatio: "1/1",
   },
   {
     text: "Work Bags",
     image: "/Workbags.avif",
     width: "74",
     height: "74",
+    aspectRatio: "1/1",
   },
   {
     text: "Travel Bags",
     image: "/Travel_Bags.avif",
     width: "74",
     height: "74",
+    aspectRatio: "1/1",
   },
 ];
 
@@ -273,30 +298,35 @@ export const WalletsContent = [
     image: "/Billfolds.avif",
     width: "74",
     height: "74",
+    aspectRatio: "1/1",
   },
   {
     text: "Card Holders",
     image: "/Card_Holders.avif",
     width: "74",
     height: "74",
+    aspectRatio: "1/1",
   },
   {
     text: "Zip Wallets",
     image: "/Zip_Wallets.avif",
     width: "74",
     height: "74",
+    aspectRatio: "1/1",
   },
   {
     text: "Passport Holders",
     image: "/Passport_Holders_.avif",
     width: "74",
     height: "74",
+    aspectRatio: "1/1",
   },
   {
     text: "RFID Protected",
     image: "/RFID.avif",
     width: "74",
     height: "74",
+    aspectRatio: "1/1",
   },
 ];
 
@@ -306,24 +336,28 @@ const AccessoriesContent = [
     image: "/iPhone_Cases.avif",
     width: "74",
     height: "74",
+    aspectRatio: "1/1",
   },
   {
     text: "Pixel Cases",
     image: "/Pixel_Cases.avif",
     width: "74",
     height: "74",
+    aspectRatio: "1/1",
   },
   {
     text: "Samsung Cases",
     image: "/Quartz-Nav-Icon.avif",
     width: "74",
     height: "74",
+    aspectRatio: "1/1",
   },
   {
     text: "Phone Wallets",
     image: "/nav-icon-phone-wallets.avif",
     width: "74",
     height: "74",
+    aspectRatio: "1/1",
   },
 ];
 
@@ -333,28 +367,51 @@ const TechContent = [
     image: "/nav-icon-pouches.avif",
     width: "74",
     height: "74",
+    aspectRatio: "1/1",
   },
   {
     text: "Laptop & Tablet Sleeves",
     image: "/Laptop_Cases.avif",
     width: "74",
     height: "74",
+    aspectRatio: "1/1",
   },
-  { text: "Key Holders", image: "/Key_Covers.avif", width: "74", height: "74" },
-  { text: "Folio", image: "/Folios.avif", width: "74", height: "74" },
+  {
+    text: "Key Holders",
+    image: "/Key_Covers.avif",
+    width: "74",
+    height: "74",
+    aspectRatio: "1/1",
+  },
+  {
+    text: "Folio",
+    image: "/Folios.avif",
+    width: "74",
+    height: "74",
+    aspectRatio: "1/1",
+  },
+
   {
     text: "Apple Watch Brands",
     image: "/Apple_Watch.avif",
     width: "74",
     height: "74",
+    aspectRatio: "1/1",
   },
   {
     text: "AirPods Cases",
     image: "/Airpod_Cases.avif",
     width: "74",
     height: "74",
+    aspectRatio: "1/1",
   },
-  { text: "AirTag Cases", image: "/AirTags.avif", width: "74", height: "74" },
+  {
+    text: "AirTag Cases",
+    image: "/AirTags.avif",
+    width: "74",
+    height: "74",
+    aspectRatio: "1/1",
+  },
 ];
 
 const TravelContent = [
@@ -363,20 +420,29 @@ const TravelContent = [
     image: "/Travel_Bags.avif",
     width: "74",
     height: "74",
+    aspectRatio: "1/1",
   },
   {
     text: "Passport Holders",
     image: "/header/Passport_Holders_.avif",
     width: "74",
     height: "74",
+    aspectRatio: "1/1",
   },
   {
     text: "RFID Protected",
     image: "/header/RFID.avif",
     width: "74",
     height: "74",
+    aspectRatio: "1/1",
   },
-  { text: "Toiletry Bags", image: "/Folios.avif", width: "74", height: "74" },
+  {
+    text: "Toiletry Bags",
+    image: "/Folios.avif",
+    width: "74",
+    height: "74",
+    aspectRatio: "1/1",
+  },
 ];
 
 const AboutUsContent = [
@@ -385,35 +451,41 @@ const AboutUsContent = [
     image: "/nav-icon-out-story.avif",
     width: "120",
     height: "84",
+    aspectRatio: "10/7",
   },
   {
     text: "Our Materials",
     image: "/nav-icon-our-materials.avif",
     width: "120",
     height: "84",
+    aspectRatio: "10/7",
   },
   {
     text: "Responible Business",
     image: "/nav-icon-responsible-business.avif",
     width: "120",
     height: "84",
+    aspectRatio: "10/7",
   },
   {
     text: "The Jounrnal",
     image: "/nav-icon-the-journal.avif",
     width: "120",
     height: "84",
+    aspectRatio: "10/7",
   },
   {
     text: "Ambassador",
     image: "/nav-icon-ambassadors.avif",
     width: "120",
     height: "84",
+    aspectRatio: "10/7",
   },
   {
     text: "Shipping & Delivery",
     image: "/nav-icon-shipping-delivery.avif",
     width: "120",
     height: "84",
+    aspectRatio: "10/7",
   },
 ];
