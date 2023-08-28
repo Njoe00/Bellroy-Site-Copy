@@ -4,7 +4,6 @@ import Image from "next/image";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
-
   const [headerContent, setHeaderContent] = useState(WalletsContent);
   const [headersection, setHeaderSection] = useState("Wallets");
 
@@ -109,10 +108,6 @@ export default function Header() {
       >
         <ul className=" absolute w-screen bg-white flex flex-row text-gray-500 justify-start h-[130px] pl-32 text-sm">
           {headerContent.map((content, index) => {
-            const headerIconsStyling = {
-              width: Number(content.width),
-              height: Number(content.height),
-            };
             return (
               <li
                 className="hover:text-orange-600 cursor-pointer flex items-center flex-col px-1"
