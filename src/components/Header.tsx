@@ -107,7 +107,7 @@ export default function Header() {
         leaveFrom="opacity-100 translate-y-0"
         leaveTo="opacity-100 -translate-y-36"
       >
-        <ul className="absolute w-screen bg-white flex flex-row text-gray-500 justify-start h-[130px] pl-32 text-sm">
+        <ul className=" absolute w-screen bg-white flex flex-row text-gray-500 justify-start h-[130px] pl-32 text-sm">
           {headerContent.map((content, index) => {
             const headerIconsStyling = {
               width: Number(content.width),
@@ -115,7 +115,7 @@ export default function Header() {
             };
             return (
               <li
-                className="flex items-center flex-col px-1 max-w-fit max-h-fit w-auto h-auto"
+                className="hover:text-orange-600 cursor-pointer flex items-center flex-col px-1"
                 key={index}
               >
                 <Image
@@ -127,7 +127,7 @@ export default function Header() {
                 />
                 <a
                   href="#"
-                  className="break-normal w-32 text-center hover:text-orange-600 overflow-auto"
+                  className="break-normal w-32 text-center overflow-auto"
                 >
                   {content.text}
                 </a>
