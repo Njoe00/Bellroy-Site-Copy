@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import SliderImageIcons from "./SliderImageIcons";
+import { RxDotFilled } from "react-icons/rx";
 
 export default function SliderImage() {
   const [currentIndex, setCurrentIndex] = useState(1);
