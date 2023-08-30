@@ -9,8 +9,14 @@ type ContentProps = {
 type ProductCardProps = {
   content: ContentProps;
   isCardFlipped: boolean;
-  changeImage: (newImage: string) => void;
+  changeImage: (newImage?: string) => void;
   toggleIsFlippedCard: () => void;
+};
+
+const backOfCardImageIsValid = (ContentProps: ContentProps) => {
+  if (ContentProps.backOfCardImage !== undefined) {
+    return ContentProps.backOfCardImage[0];
+  }
 };
 
 export default function productCardShowMoreButton({
@@ -20,7 +26,8 @@ export default function productCardShowMoreButton({
   toggleIsFlippedCard,
 }: ProductCardProps) {
   const frontProductImage = content.image[0];
-  const backProductImage = content.backOfCardImage[0];
+  const backProductImage = backOfCardImageIsValid(content);
+
   return (
     <div className="z-50">
       <button
