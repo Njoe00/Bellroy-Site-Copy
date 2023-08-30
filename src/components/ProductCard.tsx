@@ -15,11 +15,13 @@ export type Content = {
 
 export default function ProductCard({ content }: { content: Content }) {
   const [selectedColour, setSelectedColour] = useState("black");
-  const [cardImage, setCardImage] = useState(content.image[0]);
+  const [cardImage, setCardImage] = useState<string | undefined>(
+    content.image[0]
+  );
   const [isCardFlipped, setIsCardFlipped] = useState(true);
   const [opacity, setOpacity] = useState(1);
 
-  const changeImage = (newImage: string) => {
+  const changeImage = (newImage?: string) => {
     setOpacity(0);
 
     setTimeout(() => {
@@ -53,7 +55,7 @@ export default function ProductCard({ content }: { content: Content }) {
           >
             <Image
               className="transition-all ease-in-out duration-300"
-              src={cardImage}
+              src={cardImage!}
               height={300}
               width={300}
               alt="cardImage"

@@ -9,7 +9,7 @@ type ContentProps = {
 type ProductCardProps = {
   content: ContentProps;
   isCardFlipped: boolean;
-  changeImage: (newImage?: string) => void;
+  changeImage?: (newImage?: string) => void;
   toggleIsFlippedCard: () => void;
 };
 
@@ -34,7 +34,7 @@ export default function productCardShowMoreButton({
         className="group-hover:visible invisible flex flex-row absolute top-0 right-0 py-1 px-2 text-xs bg-gray-300"
         onClick={() => {
           toggleIsFlippedCard();
-          changeImage(isCardFlipped ? backProductImage : frontProductImage);
+          changeImage?.(isCardFlipped ? backProductImage : frontProductImage);
         }}
       >
         {isCardFlipped ? "SHOW MORE" : "CLOSE"}
