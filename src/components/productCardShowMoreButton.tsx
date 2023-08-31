@@ -9,8 +9,14 @@ type ContentProps = {
 type ProductCardProps = {
   content: ContentProps;
   isCardFlipped: boolean;
-  changeImage: (newImage: string) => void;
+  changeImage?: (newImage?: string) => void;
   toggleIsFlippedCard: () => void;
+};
+
+const backOfCardImageIsValid = (ContentProps: ContentProps) => {
+  if (ContentProps.backOfCardImage !== undefined) {
+    return ContentProps.backOfCardImage[0];
+  }
 };
 
 export default function productCardShowMoreButton({
@@ -20,14 +26,15 @@ export default function productCardShowMoreButton({
   toggleIsFlippedCard,
 }: ProductCardProps) {
   const frontProductImage = content.image[0];
-  const backProductImage = content.backOfCardImage[0];
+  const backProductImage = backOfCardImageIsValid(content);
+
   return (
     <div className="z-50">
       <button
         className="group-hover:visible invisible flex flex-row absolute top-0 right-0 py-1 px-2 text-xs bg-gray-300"
         onClick={() => {
           toggleIsFlippedCard();
-          changeImage(isCardFlipped ? backProductImage : frontProductImage);
+          changeImage?.(isCardFlipped ? backProductImage : frontProductImage);
         }}
       >
         {isCardFlipped ? "SHOW MORE" : "CLOSE"}
