@@ -1,16 +1,52 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Transition } from "@headlessui/react";
 import Image from "next/image";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [headerContent, setHeaderContent] = useState(WalletsContent);
+  const [headersection, setHeaderSection] = useState("Wallets");
 
-  const handleDropDown = () => {
+  useEffect(() => {
+    if (headersection === "Bags") {
+      setHeaderContent(BagsContent);
+    } else if (headersection === "Wallets") {
+      setHeaderContent(WalletsContent);
+    } else if (headersection === "Accessories") {
+      setHeaderContent(AccessoriesContent);
+    } else if (headersection === "Tech") {
+      setHeaderContent(TechContent);
+    } else if (headersection === "Travel") {
+      setHeaderContent(TravelContent);
+    } else if (headersection === "About Us") {
+      setHeaderContent(AboutUsContent);
+    }
+  }, [headersection]);
+
+  const handleDropDownContent = (section: string) => {
+    setHeaderSection(section);
+  };
+
+  const toggleHeader = () => {
     setIsOpen(!isOpen);
   };
 
+  const openHeaderOnMouseEnter = () => {
+    setIsOpen(true);
+  };
+
+  const closeHeaderOnMouseLeave = () => {
+    setTimeout(() => {
+      setIsOpen(false);
+    }, 500);
+  };
+
   return (
-    <>
+    <div
+      onMouseLeave={() => {
+        closeHeaderOnMouseLeave();
+      }}
+    >
       <div className="bg-white p-5 flex relative gap-2 font-normal space-x-10 justify-between text-sm items-center h-[105px] z-10">
         <div className="font-normal space-x-14 items-center flex">
           <Image
@@ -23,8 +59,15 @@ export default function Header() {
           <div className="relative w-max space-x-14 flex top-2">
             {headerSubSections.map((section, index) => (
               <button
+                onMouseEnter={() => {
+                  openHeaderOnMouseEnter();
+                  handleDropDownContent(section.text);
+                }}
                 className="text-sm py-2.5 text-center inline-flex items-center hover:text-orange-600"
-                onClick={handleDropDown}
+                onClick={() => {
+                  handleDropDownContent(section.text);
+                  toggleHeader();
+                }}
                 key={index}
               >
                 {section.text}
@@ -34,8 +77,12 @@ export default function Header() {
         </div>
 
         <div className="gap-2 font-normal items-center space-x-4 text-xs flex text-gray-500 p-2">
-          <a className="hover:text-orange-400" href="/#">Help</a>
-          <a className="hover:text-orange-400" href="/#">Find In-Store</a>
+          <a className="hover:text-orange-400" href="/#">
+            Help
+          </a>
+          <a className="hover:text-orange-400" href="/#">
+            Find In-Store
+          </a>
           {headerIcons.map((image, index) => (
             <span className="flex" key={index}>
               <Image
@@ -43,7 +90,7 @@ export default function Header() {
                 alt="mail"
                 width={10}
                 height={10}
-                style={{ height: "100%", width: "auto" }}
+                style={{ height: "100%", width: "100%" }}
               />
             </span>
           ))}
@@ -59,24 +106,32 @@ export default function Header() {
         leaveFrom="opacity-100 translate-y-0"
         leaveTo="opacity-100 -translate-y-36"
       >
-        <ul className="absolute w-screen bg-white flex flex-row text-gray-500 justify-start pb-8 pl-32 text-sm">
-          {headerSubSectionsContentWallets.map((content, index) => (
-            <li className="flex items-center flex-col px-6" key={index}>
-              <Image
-                src={content.image}
-                width={75}
-                height={75}
-                alt="Mens Bags"
-                style={{ height: "100%", width: "auto" }}
-              />
-              <a href="#" className=" hover:text-orange-600">
-                {content.text}
-              </a>
-            </li>
-          ))}
+        <ul className=" absolute w-screen bg-white flex flex-row text-gray-500 justify-start h-[130px] pl-32 text-sm">
+          {headerContent.map((content, index) => {
+            return (
+              <li
+                className="hover:text-orange-600 cursor-pointer flex items-center flex-col px-1"
+                key={index}
+              >
+                <Image
+                  className={`rounded-md aspect-[${content.aspectRatio}]`}
+                  src={content.image}
+                  width={Number(content.width)}
+                  height={Number(content.height)}
+                  alt="Mens Bags"
+                />
+                <a
+                  href="#"
+                  className="break-normal w-32 text-center overflow-auto"
+                >
+                  {content.text}
+                </a>
+              </li>
+            );
+          })}
         </ul>
       </Transition>
-    </>
+    </div>
   );
 }
 
@@ -103,10 +158,73 @@ const headerSubSections = [
     text: "Travel",
   },
   {
-    text: "Collections",
+    text: "About Us",
+  },
+];
+
+const BagsContent = [
+  {
+    text: "Men's Bag's",
+    image: "/header/Men's_Bags.avif",
+    width: "74",
+    height: "74",
+    aspectRatio: "1/1",
   },
   {
-    text: "About Us",
+    text: "Woman's Bags",
+    image: "/header/Womens_Bags.avif",
+    width: "74",
+    height: "74",
+    aspectRatio: "1/1",
+  },
+  {
+    text: "Backpacks",
+    image: "/header/Backpacks.avif",
+    width: "74",
+    height: "74",
+    aspectRatio: "1/1",
+  },
+  {
+    text: "Slings & Crossbody Bags",
+    image: "/header/Crossbody.avif",
+    width: "74",
+    height: "74",
+    aspectRatio: "1/1",
+  },
+  {
+    text: "Slings & Crossbody Bags",
+    image: "/header/Crossbody.avif",
+    width: "74",
+    height: "74",
+    aspectRatio: "1/1",
+  },
+  {
+    text: "Totes & Shoulder Bags",
+    image: "/header/Totes.avif",
+    width: "74",
+    height: "74",
+    aspectRatio: "1/1",
+  },
+  {
+    text: "Market & Cooler Bags",
+    image: "/header/nav-icon-cooler-bags.avif",
+    width: "74",
+    height: "74",
+    aspectRatio: "1/1",
+  },
+  {
+    text: "Work Bags",
+    image: "/header/Workbags.avif",
+    width: "74",
+    height: "74",
+    aspectRatio: "1/1",
+  },
+  {
+    text: "Travel Bags",
+    image: "/header/Travel_Bags.avif",
+    width: "74",
+    height: "74",
+    aspectRatio: "1/1",
   },
 ];
 
@@ -114,56 +232,255 @@ const headerSubSectionsContentBags = [
   {
     text: "Men's Bag's",
     image: "/Men's_Bags.avif",
+    width: "74",
+    height: "74",
+    aspectRatio: "1/1",
   },
   {
     text: "Woman's Bags",
     image: "/Womens_Bags.avif",
+    width: "74",
+    height: "74",
+    aspectRatio: "1/1",
   },
   {
     text: "Backpacks",
     image: "/Backpacks.avif",
+    width: "74",
+    height: "74",
+    aspectRatio: "1/1",
   },
   {
     text: "Slings & Crossbody Bags",
     image: "/Crossbody.avif",
+    width: "74",
+    height: "74",
+    aspectRatio: "1/1",
   },
   {
     text: "Totes & Shoulder Bags",
     image: "/Totes.avif",
+    width: "74",
+    height: "74",
+    aspectRatio: "1/1",
   },
   {
     text: "Market & Cooler Bags",
     image: "/nav-icon-cooler-bags.avif",
+    width: "74",
+    height: "74",
+    aspectRatio: "1/1",
   },
   {
     text: "Work Bags",
     image: "/Workbags.avif",
+    width: "74",
+    height: "74",
+    aspectRatio: "1/1",
   },
   {
     text: "Travel Bags",
     image: "/Travel_Bags.avif",
+    width: "74",
+    height: "74",
+    aspectRatio: "1/1",
   },
 ];
 
-export const headerSubSectionsContentWallets = [
+export const WalletsContent = [
   {
     text: "Billfold's",
     image: "/Billfolds.avif",
+    width: "74",
+    height: "74",
+    aspectRatio: "1/1",
   },
   {
     text: "Card Holders",
     image: "/Card_Holders.avif",
+    width: "74",
+    height: "74",
+    aspectRatio: "1/1",
   },
   {
     text: "Zip Wallets",
     image: "/Zip_Wallets.avif",
+    width: "74",
+    height: "74",
+    aspectRatio: "1/1",
   },
   {
     text: "Passport Holders",
     image: "/Passport_Holders_.avif",
+    width: "74",
+    height: "74",
+    aspectRatio: "1/1",
   },
   {
     text: "RFID Protected",
     image: "/RFID.avif",
+    width: "74",
+    height: "74",
+    aspectRatio: "1/1",
+  },
+];
+
+const AccessoriesContent = [
+  {
+    text: "iPhone Cases",
+    image: "/iPhone_Cases.avif",
+    width: "74",
+    height: "74",
+    aspectRatio: "1/1",
+  },
+  {
+    text: "Pixel Cases",
+    image: "/Pixel_Cases.avif",
+    width: "74",
+    height: "74",
+    aspectRatio: "1/1",
+  },
+  {
+    text: "Samsung Cases",
+    image: "/Quartz-Nav-Icon.avif",
+    width: "74",
+    height: "74",
+    aspectRatio: "1/1",
+  },
+  {
+    text: "Phone Wallets",
+    image: "/nav-icon-phone-wallets.avif",
+    width: "74",
+    height: "74",
+    aspectRatio: "1/1",
+  },
+];
+
+const TechContent = [
+  {
+    text: "Pouches",
+    image: "/nav-icon-pouches.avif",
+    width: "74",
+    height: "74",
+    aspectRatio: "1/1",
+  },
+  {
+    text: "Laptop & Tablet Sleeves",
+    image: "/Laptop_Cases.avif",
+    width: "74",
+    height: "74",
+    aspectRatio: "1/1",
+  },
+  {
+    text: "Key Holders",
+    image: "/Key_Covers.avif",
+    width: "74",
+    height: "74",
+    aspectRatio: "1/1",
+  },
+  {
+    text: "Folio",
+    image: "/Folios.avif",
+    width: "74",
+    height: "74",
+    aspectRatio: "1/1",
+  },
+
+  {
+    text: "Apple Watch Brands",
+    image: "/Apple_Watch.avif",
+    width: "74",
+    height: "74",
+    aspectRatio: "1/1",
+  },
+  {
+    text: "AirPods Cases",
+    image: "/Airpod_Cases.avif",
+    width: "74",
+    height: "74",
+    aspectRatio: "1/1",
+  },
+  {
+    text: "AirTag Cases",
+    image: "/AirTags.avif",
+    width: "74",
+    height: "74",
+    aspectRatio: "1/1",
+  },
+];
+
+const TravelContent = [
+  {
+    text: "Travel Bags",
+    image: "/Travel_Bags.avif",
+    width: "74",
+    height: "74",
+    aspectRatio: "1/1",
+  },
+  {
+    text: "Passport Holders",
+    image: "/header/Passport_Holders_.avif",
+    width: "74",
+    height: "74",
+    aspectRatio: "1/1",
+  },
+  {
+    text: "RFID Protected",
+    image: "/header/RFID.avif",
+    width: "74",
+    height: "74",
+    aspectRatio: "1/1",
+  },
+  {
+    text: "Toiletry Bags",
+    image: "/Folios.avif",
+    width: "74",
+    height: "74",
+    aspectRatio: "1/1",
+  },
+];
+
+const AboutUsContent = [
+  {
+    text: "Our Story",
+    image: "/nav-icon-out-story.avif",
+    width: "120",
+    height: "84",
+    aspectRatio: "10/7",
+  },
+  {
+    text: "Our Materials",
+    image: "/nav-icon-our-materials.avif",
+    width: "120",
+    height: "84",
+    aspectRatio: "10/7",
+  },
+  {
+    text: "Responible Business",
+    image: "/nav-icon-responsible-business.avif",
+    width: "120",
+    height: "84",
+    aspectRatio: "10/7",
+  },
+  {
+    text: "The Jounrnal",
+    image: "/nav-icon-the-journal.avif",
+    width: "120",
+    height: "84",
+    aspectRatio: "10/7",
+  },
+  {
+    text: "Ambassador",
+    image: "/nav-icon-ambassadors.avif",
+    width: "120",
+    height: "84",
+    aspectRatio: "10/7",
+  },
+  {
+    text: "Shipping & Delivery",
+    image: "/nav-icon-shipping-delivery.avif",
+    width: "120",
+    height: "84",
+    aspectRatio: "10/7",
   },
 ];
