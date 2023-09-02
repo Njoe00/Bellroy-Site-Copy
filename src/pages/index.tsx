@@ -5,7 +5,7 @@ import {
   BsChevronCompactRight,
   BsChevronCompactDown,
 } from "react-icons/bs";
-import { RxDotFilled } from "react-icons/rx";
+
 import QuotesContainer from "@/components/QuotesContainer";
 import ProductCard from "../components/ProductCard";
 import Header from "../components/Header";
@@ -74,13 +74,16 @@ export default function Home() {
       </span>
       <Header />
 
-      <div className="h-screen flex flex-col bg-background-main">
-        <h1 className="font-serif flex text-white text-8xl p-16 justify-center">
+      <div className="flex flex-col bg-background-main">
+        <h1 className="font-serif flex text-white text-7xl px-10 pt-10 pb-4 justify-center">
           Slim Your Wallet
         </h1>
         <SliderImageWallet />
       </div>
-      <div className="bg-gray-200 flex justify-evenly py-8 p-8">
+      <div
+        id="video-player"
+        className="bg-gray-200 flex justify-evenly py-8 p-8"
+      >
         <div className="flex items-center pl-4">
           <div>
             <Image
@@ -187,14 +190,18 @@ export default function Home() {
           <BsChevronCompactRight onClick={nextSlide} size="40" />
         </div>
 
-        <div className="flex absolute justify-center bottom-4 items-center">
+        <div className="flex absolute space-x-2 justify-center bottom-4 items-center">
           {slidesSetOne.map((slide, slideIndex) => (
             <div
               key={slideIndex}
               onClick={() => goToSlide(slideIndex)}
-              className="text-2xl cursor-pointer"
+              className="text-2xl cursor-pointer flex-row flex"
             >
-              <RxDotFilled />
+              <a
+                className={`h-3 w-3 outline-gray-400 rounded-full outline-1 outline ${
+                  currentIndex === slideIndex ? " bg-gray-400" : ""
+                }`}
+              ></a>
             </div>
           ))}
         </div>

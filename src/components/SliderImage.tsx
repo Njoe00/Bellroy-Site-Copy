@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import SliderImageIcons from "./SliderImageIcons";
-import { RxDotFilled } from "react-icons/rx";
 
 export default function SliderImage() {
   const [currentIndex, setCurrentIndex] = useState(1);
@@ -56,9 +55,7 @@ export default function SliderImage() {
             key={slideIndex}
             onClick={() => goToSlide(slideIndex)}
             className="text-2xl cursor-pointer"
-          >
-            <RxDotFilled />
-          </div>
+          />
         ))}
       </div>
     </div>

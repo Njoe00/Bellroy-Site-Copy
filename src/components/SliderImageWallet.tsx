@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import WalletImageSlider from "./WalletImageSlider";
+import { BsChevronCompactDown } from "react-icons/bs";
 
 export default function SliderImageWallet() {
   const [sliderValue, setSliderValue] = useState(0);
@@ -13,29 +14,41 @@ export default function SliderImageWallet() {
   };
 
   return (
-    <div className="bg-cover flex mr-auto items-center flex-col ml-auto">
+    <div className="bg-cover w-full flex mr-auto items-center flex-col ml-auto bg-background-main">
       <div>
-        <p className="flex flex-row text-base font-bold bg-background-main">
+        <p className="flex flex-row text-base font-normal">
           Move the slider to compare wallets
         </p>
       </div>
-      <div className="flex flex-col justify-center items-center space-y-2 p-2 w-80">
-        <div className="w-[1980px] flex bg-cover h-[730px] z-0 overflow-hidden">
+      <div className="flex flex-col items-center w-80 z-10 bg-background-main">
+        <div className="w-[1905px]">
           <Image
+            className=""
             src={sliderImage[sliderValueRounder(sliderValue)]}
-            width={1980}
-            height={800}
+            width={1905}
+            height={500}
             quality={100}
             alt="alt"
-            style={{ width: 1980, height: 800 }}
+            style={{ width: 1905, height: 500 }}
           />
         </div>
-        <WalletImageSlider
-          sliderValueRounder={sliderValueRounder}
-          sliderValue={sliderValue}
-          setSliderValue={setSliderValue}
-        />
+        <div className="flex justify-center top-4">
+          <WalletImageSlider
+            sliderValueRounder={sliderValueRounder}
+            sliderValue={sliderValue}
+            setSliderValue={setSliderValue}
+          />
+        </div>
       </div>
+      <a
+        href="#video-player"
+        className="cursor-pointer flex-col items-center pb-2 flex"
+      >
+        <div className=" text-center px-10 pt-10 text-white text-sm ">
+          Discover how we do it
+        </div>
+        <BsChevronCompactDown size="30" color="white" />
+      </a>
     </div>
   );
 }

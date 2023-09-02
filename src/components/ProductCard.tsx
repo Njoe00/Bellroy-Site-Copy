@@ -82,8 +82,15 @@ export default function ProductCard({ content }: { content: Content }) {
         </div>
 
         <div className="flex flex-col w-[413.33px] h-[508px] items-center relative">
-          <div className="top-10 relative">
-            <Image src={cardImage} height={300} width={300} alt="cardImage" />
+          <div className="pt-10 absolute">
+            <Image
+              src={cardImage}
+              height={250}
+              width={300}
+              alt="cardImage"
+              className="text-center"
+              style={{ height: 250, width: 300 }}
+            />
             <ProductColourButton
               content={content}
               selectedColour={selectedColour}

@@ -10,7 +10,7 @@ type Content = {
 
 type ImagesState = [
   imagesToShow: string,
-  setImagesToShow: (val: string) => void
+  setImagesToShow: (val: string) => void,
 ];
 
 export default function WalletTypeButton({
@@ -25,6 +25,9 @@ export default function WalletTypeButton({
   setImagesToShow: ImagesState[1];
 }) {
   const isActive = imagesToShow === content.text;
+  const handleWalletTypeButtonColour = isActive
+    ? "text-orange-600"
+    : "text-black";
 
   return (
     <div
@@ -37,16 +40,20 @@ export default function WalletTypeButton({
       >
         <Image
           src={isActive ? content.activeImage : content.inactiveImage}
-          width={96}
-          height={71}
+          width={120}
+          height={120}
           alt="Mens Bags"
-          style={{ height: "100%", width: "auto" }}
+          style={{ height: 100, width: 115 }}
         />
-        <div className="absolute group-hover:text-orange-600 text-2xl flex justify-center translate-y-32">
+
+        <div
+          className={`absolutegroup-hover:text-orange-600 text-2xl flex justify-center translate-y-32 ${handleWalletTypeButtonColour}`}
+        >
           <BsChevronCompactDown />
         </div>
-
-        <div className="group-hover:text-orange-600 text-sm translate-y-4 text-gray-400">
+        <div
+          className={`group-hover:text-orange-600 text-sm translate-y-4 ${handleWalletTypeButtonColour}`}
+        >
           {content.text}
         </div>
       </div>
