@@ -8,6 +8,11 @@ type Content = {
   activeImage: string;
 };
 
+type ImagesState = [
+  imagesToShow: string,
+  setImagesToShow: (val: string) => void
+];
+
 export default function WalletTypeButton({
   imagesToShow,
   setImagesToShow,
@@ -16,8 +21,8 @@ export default function WalletTypeButton({
 }: {
   index: number;
   content: Content;
-  imagesToShow: string;
-  setImagesToShow: (val: string) => void;
+  imagesToShow: ImagesState[0];
+  setImagesToShow: ImagesState[1];
 }) {
   const isActive = imagesToShow === content.text;
 
