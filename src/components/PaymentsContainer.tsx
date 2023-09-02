@@ -1,3 +1,4 @@
+
 import react from "react";
 import Image from "next/image";
 
@@ -22,7 +23,7 @@ export default function PaymentsContainer() {
     </div>
   );
 }
-
+        
 const PaymentIcons = [
   {
     icon: "/payment-icons-visa.avif",

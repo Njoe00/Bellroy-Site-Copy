@@ -23,7 +23,12 @@ import ProductCard from "../components/ProductCard";
 import Header from "../components/Header";
 import SliderImageWallet from "@/components/SliderImageWallet";
 import PaymentsContainer from "../components/PaymentsContainer";
+<<<<<<< HEAD
 >>>>>>> e775417 (Feature/payments container (#7))
+=======
+import NewsLetterSignUp from "../components/NewsLetterSignUp";
+
+>>>>>>> 890f1d8 (Feature/news letter signup footer (#8))
 
 export default function Home() {
   const [walletDataSet, setWalletDataSet] = useState(cardsOnlyProduct);
@@ -122,6 +127,8 @@ export default function Home() {
       </div>
       <QuotesContainer />
       <PaymentsContainer />
+      <NewsLetterSignUp />
+
     </header>
   );
 }

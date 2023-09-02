@@ -1,8 +1,6 @@
 import React from "react";
 import WalletTypeButton from "./WalletTypeButton";
 
-
-
 export default function WalletTypeButtons({
   imagesToShow,
   setImagesToShow,
@@ -17,7 +15,7 @@ export default function WalletTypeButtons({
           setImagesToShow={setImagesToShow}
           imagesToShow={imagesToShow}
           index={index}
-          content={content}   
+          content={content}
         />
       ))}
     </div>
