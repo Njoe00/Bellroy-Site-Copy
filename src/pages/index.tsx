@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+<<<<<<< HEAD
 import Image from "next/image";
 import ProductCard from "../components/ProductCard";
 import Header from "../components/Header";
@@ -9,6 +10,14 @@ import QuotesContainer from "@/components/QuotesContainer";
 import PaymentsContainer from "../components/PaymentsContainer";
 import NewsLetterSignUp from "../components/NewsLetterSignUp";
 import SiteMapFooter from "@/components/SiteMapFooter";
+=======
+import ProductCard from "../components/ProductCard";
+import Header from "../components/Header";
+import VideoPlayerAndText from "@/components/VideoPlayerAndText";
+import BannerText from "@/components/BannerText";
+import SliderImage from "@/components/SliderImage";
+import WalletTypeButtons from "@/components/WalletTypeButtons";
+>>>>>>> e77e380 (fixing merge conflicts)
 
 export default function Home() {
   const [walletDataSet, setWalletDataSet] = useState(cardsOnlyProduct);
@@ -35,65 +44,22 @@ export default function Home() {
         <h1 className="font-serif flex text-white text-8xl p-16 justify-center">
           Slim Your Wallet
         </h1>
-        <SliderImageWallet />
-      </div>
-      <div className="bg-gray-200 flex justify-evenly py-8 p-8">
-        <div className="flex items-center pl-4">
-          <div>
-            <Image
-              src="/check-mark.png"
-              alt="check-mark"
-              width={30}
-              height={10}
-              style={{ height: "100%", width: "auto" }}
-            />
-          </div>
-          <div>
-            <span className="text-base text-background-main pl-4">
-              3 year warranty
-            </span>
-          </div>
-        </div>
-        <div className="flex items-center -mx-96">
-          <div>
-            <Image
-              src="/leather.png"
-              alt="check-mark"
-              width={30}
-              height={10}
-              style={{ height: "100%", width: "auto" }}
-            />
-          </div>
-          <div>
-            <span className="text-base text-background-main pl-4">
-              Environmentally certified leather
-            </span>
-          </div>
-        </div>
-        <div className="flex items-center">
-          <div>
-            <Image
-              src="/trophy.png"
-              alt="check-mark"
-              width={30}
-              height={10}
-              style={{ height: "100%", width: "auto" }}
-            />
-          </div>
-          <div>
-            <span className="text-base text-background-main pl-4">
-              Award-winning service
-            </span>
-          </div>
-        </div>
       </div>
 
+<<<<<<< HEAD
       <SliderImage />
 
       <div className="bg-white flex flex-col items-center p-40">
         <h1 className="text-xl flex absolute h-40 w-auto">
           What do you carry in your wallet?
         </h1>
+=======
+      <BannerText />
+      <VideoPlayerAndText />
+      <SliderImage />
+
+      <div className="bg-white flex flex-col items-center p-40">
+>>>>>>> e77e380 (fixing merge conflicts)
         <WalletTypeButtons
           imagesToShow={imagesToShow}
           setImagesToShow={setImagesToShow}
@@ -101,7 +67,13 @@ export default function Home() {
 
         <div className="flex flex-row flex-wrap justify-center">
           {walletDataSet.map((content, index) => (
-            <ProductCard key={index} content={content} />
+            <ProductCard
+              key={index}
+              content={content}
+              image={content.image}
+              index={index}
+              imageAlt={content.imageAlt}
+            />
           ))}
         </div>
       </div>
