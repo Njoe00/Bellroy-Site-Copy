@@ -5,7 +5,11 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+<<<<<<< HEAD
   plugins: [require("flowbite/plugin", "tailwindcss-3d"), { legacy: true }],
+=======
+  plugins: [require("flowbite/plugin")],
+>>>>>>> 6d53d33 ( adding webkit global styling and removed style tag from sheets to keep code dry)
   theme: {
     extend: {
       display: ["group-hover"],
@@ -29,6 +33,7 @@ module.exports = {
         "slider-colour-full": "#357176",
         "slider-colour-empty": "#d1e1e4",
       },
+
     },
   },
 };
