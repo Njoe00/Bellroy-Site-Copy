@@ -1,34 +1,15 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-<<<<<<< HEAD
 import ProductCard from "../components/ProductCard";
 import Header from "../components/Header";
 import SliderImageWallet from "@/components/SliderImageWallet";
 import SliderImage from "@/components/SliderImage";
 import WalletTypeButtons from "@/components/WalletTypeButtons";
-=======
-import { useEffect, useState } from "react";
-import { Transition } from "@headlessui/react";
-import {
-  BsChevronCompactLeft,
-  BsChevronCompactRight,
-  BsChevronCompactDown,
-} from "react-icons/bs";
-import { RxDotFilled } from "react-icons/rx";
->>>>>>> 9a2c4f1 (resolving PR comments)
 import QuotesContainer from "@/components/QuotesContainer";
-<<<<<<< HEAD
-=======
-import ProductCard from "../components/ProductCard";
-import Header from "../components/Header";
-import SliderImageWallet from "@/components/SliderImageWallet";
 import PaymentsContainer from "../components/PaymentsContainer";
-<<<<<<< HEAD
->>>>>>> e775417 (Feature/payments container (#7))
-=======
 import NewsLetterSignUp from "../components/NewsLetterSignUp";
+import SiteMapFooter from "@/components/SiteMapFooter";
 
->>>>>>> 890f1d8 (Feature/news letter signup footer (#8))
 
 export default function Home() {
   const [walletDataSet, setWalletDataSet] = useState(cardsOnlyProduct);
@@ -128,7 +109,7 @@ export default function Home() {
       <QuotesContainer />
       <PaymentsContainer />
       <NewsLetterSignUp />
-
+      <SiteMapFooter />
     </header>
   );
 }

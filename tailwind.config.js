@@ -6,6 +6,11 @@ module.exports = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   plugins: [require("flowbite/plugin", "tailwindcss-3d"), { legacy: true }],
+  plugins: [require("flowbite/plugin")],
+  variants: {
+    fill: ["hover", "focus"],
+  },
+
   theme: {
     extend: {
       display: ["group-hover"],
@@ -29,6 +34,9 @@ module.exports = {
         "note-sleeve-terracotta": "#BC7049",
         "slider-colour-full": "#357176",
         "slider-colour-empty": "#d1e1e4",
+        "background-payments-colour": "#DCD9D9",
+        "background-news-letter-colour": "#EFEAE5",
+        "background-site-footer-colour": "#222222",
         "background-payments-colour" : "#DCD9D9",
         "background-news-letter-colour" : "#EFEAE5",
       },
