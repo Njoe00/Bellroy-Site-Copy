@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import SliderImageWallet from "@/components/SliderImageWallet";
 import SliderImage from "@/components/SliderImage";
 import WalletTypeButtons from "@/components/WalletTypeButtons";
+import QuotesContainer from "@/components/QuotesContainer";
 
 export default function Home() {
   const [walletDataSet, setWalletDataSet] = useState(cardsOnlyProduct);
@@ -101,6 +102,7 @@ export default function Home() {
           ))}
         </div>
       </div>
+      <QuotesContainer />
     </header>
   );
 }

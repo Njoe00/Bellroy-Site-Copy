@@ -5,11 +5,7 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-<<<<<<< HEAD
   plugins: [require("flowbite/plugin", "tailwindcss-3d"), { legacy: true }],
-=======
-  plugins: [require("flowbite/plugin")],
->>>>>>> 6d53d33 ( adding webkit global styling and removed style tag from sheets to keep code dry)
   theme: {
     extend: {
       display: ["group-hover"],
@@ -19,6 +15,7 @@ module.exports = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
+        "background-quotes": "#829C9B",
         "background-main": "#A3CBCC",
         "card-sleeve-gray": "#424242",
         "card-sleeve-ocean": "#3D4665",
@@ -33,7 +30,6 @@ module.exports = {
         "slider-colour-full": "#357176",
         "slider-colour-empty": "#d1e1e4",
       },
-
     },
   },
 };
