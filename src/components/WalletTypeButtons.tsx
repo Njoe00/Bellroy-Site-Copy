@@ -1,5 +1,8 @@
 import React from "react";
+import Image from "next/image";
 import WalletTypeButton from "./WalletTypeButton";
+import { BsChevronCompactDown } from "react-icons/bs";
+
 
 export default function WalletTypeButtons({
   imagesToShow,
