@@ -1,8 +1,5 @@
 import React, { useState } from "react";
-import {
-  BsChevronCompactLeft,
-  BsChevronCompactRight,
-} from "react-icons/bs";
+import SliderImageIcons from "./SliderImageIcons";
 import { RxDotFilled } from "react-icons/rx";
 
 export default function SliderImage() {
@@ -23,6 +20,7 @@ export default function SliderImage() {
   const goToSlide = (slideIndex: number) => {
     setCurrentIndex(slideIndex);
   };
+
   return (
     <div className="relative flex flex-col py-28 justify-center bg-gray-100 items-center z-40">
       <div className="flex flex-row space-x-4 drop-shadow-lg">
@@ -42,24 +40,18 @@ export default function SliderImage() {
         <div>
           <div
             style={{
-              backgroundImage: `url(${slidesSlidesSetTwo[currentIndex].url})`,
+              backgroundImage: `url(${SlidesSetTwo[currentIndex].url})`,
             }}
             className="bg-cover w-[365px] h-[280px] duration-500 bg-no-repeat flex q"
           ></div>
           <div className="flex flex-col bottom-4 items-center text-xs">
             <div className="bg-white w-[365px] h-[94px] flex flex-col text-center justify-center p-4">
-              {`${slidesSlidesSetTwo[currentIndex].text}`}
+              {`${SlidesSetTwo[currentIndex].text}`}
             </div>
           </div>
         </div>
       </div>
-      <div className="absolute top-[50%] -translate-x-[-500px] translate-y-[-40%] left-2 text-2xl rounded-full p-2 text-gray-300 cursor-pointer">
-        <BsChevronCompactLeft onClick={prevSlide} size="40" />
-      </div>
-      <div className="absolute top-[50%] -translate-x-[500px] translate-y-[-60%] right-1 text-2xl rounded-full p-2 text-gray-300 cursor-pointer">
-        <BsChevronCompactRight onClick={nextSlide} size="40" />
-      </div>
-
+      <SliderImageIcons prevSlide={prevSlide} nextSlide={nextSlide} />
       <div className="flex absolute justify-center bottom-4 items-center">
         {slidesSetOne.map((slide, slideIndex) => (
           <div
@@ -86,7 +78,7 @@ const slidesSetOne = [
   },
 ];
 
-const slidesSlidesSetTwo = [
+const SlidesSetTwo = [
   {
     url: "https://bellroy-cms-images.imgix.net/4414/slider-image03.jpg",
     text: "their clever design features help keep them slim, even when they're full…",

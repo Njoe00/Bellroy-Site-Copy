@@ -10,7 +10,7 @@ export default function Header() {
   };
 
   return (
-    <div>
+    <>
       <div className="bg-white p-5 flex relative gap-2 font-normal space-x-10 text-sm items-center h-28 z-10">
         <div className="gap-2 font-normal space-x-14 items-center flex">
           <Image
@@ -78,7 +78,7 @@ export default function Header() {
           ))}
         </ul>
       </Transition>
-    </div>
+    </>
   );
 }
 
