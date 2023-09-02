@@ -24,16 +24,16 @@ export default function SliderImage() {
   return (
     <div className="relative flex flex-col py-28 justify-center bg-gray-100 items-center z-40">
       <div className="flex flex-row space-x-4 drop-shadow-lg">
-          <div
-            style={{
-              backgroundImage: `url(${slidesSetOne[currentIndex].url})`,
-            }}
-            className="bg-cover w-[365px] h-[280px] duration-500 bg-no-repeat flex q"
-          ></div>
-          <div className="flex flex-col bottom-4 items-center text-xs">
-            <div className="bg-white w-[365px] h-[94px] flex flex-col text-center justify-center p-4">
-              {`${slidesSetOne[currentIndex].text}`}
-            </div>
+        <div
+          style={{
+            backgroundImage: `url(${slidesSetOne[currentIndex].url})`,
+          }}
+          className="bg-cover w-[365px] h-[280px] duration-500 bg-no-repeat flex q"
+        ></div>
+        <div className="flex flex-col bottom-4 items-center text-xs">
+          <div className="bg-white w-[365px] h-[94px] flex flex-col text-center justify-center p-4">
+            {`${slidesSetOne[currentIndex].text}`}
+          </div>
         </div>
         <div>
           <div

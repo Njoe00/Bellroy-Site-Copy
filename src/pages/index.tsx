@@ -48,12 +48,7 @@ export default function Home() {
 
         <div className="flex flex-row flex-wrap justify-center">
           {walletDataSet.map((content, index) => (
-            <ProductCard
-              key={index}
-              content={content}
-              image={content.image}
-              imageAlt={content.imageAlt}
-            />
+            <ProductCard key={index} content={content} />
           ))}
         </div>
       </div>

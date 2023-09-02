@@ -54,30 +54,7 @@ export default function ProductCard({
 
         <div className="flex flex-col w-[413.33px] h-[508px] items-center relative bg-gray-100">
           <div className="top-10 relative">
-            {isCardFlipped ? (
-              <div className="[transform:rotateY(180deg)] ease-in-out [transform-style-:preserve-3d] [backface-visblity:hidden] transition-all duration-1000">
-                <Image
-                  className={`transition-all ease-in-out duration-300`}
-                  src={cardImage}
-                  height={300}
-                  width={300}
-                  alt="cardImage"
-                  style={{ opacity: opacity / 100 }}
-                />
-              </div>
-            ) : (
-              <div className="[transform:-rotateY(180deg)] ease-in-out [transform-style-:preserve-3d] [backface-visblity:hidden] transition-all duration-1000">
-                <Image
-                  className={`transition-all ease-in-out duration-300`}
-                  src={cardImage}
-                  height={300}
-                  width={300}
-                  alt="cardImage"
-                  style={{ opacity: opacity / 100 }}
-                />
-              </div>
-            )}
-
+            <Image src={cardImage} height={300} width={300} alt="cardImage" />
             <ProductColourButton
               content={content}
               selectedColour={selectedColour}
