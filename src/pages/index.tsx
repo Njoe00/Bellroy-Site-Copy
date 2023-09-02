@@ -1,10 +1,21 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
+<<<<<<< HEAD
 import ProductCard from "../components/ProductCard";
 import Header from "../components/Header";
 import SliderImageWallet from "@/components/SliderImageWallet";
 import SliderImage from "@/components/SliderImage";
 import WalletTypeButtons from "@/components/WalletTypeButtons";
+=======
+import { useEffect, useState } from "react";
+import { Transition } from "@headlessui/react";
+import {
+  BsChevronCompactLeft,
+  BsChevronCompactRight,
+  BsChevronCompactDown,
+} from "react-icons/bs";
+import { RxDotFilled } from "react-icons/rx";
+>>>>>>> 9a2c4f1 (resolving PR comments)
 import QuotesContainer from "@/components/QuotesContainer";
 
 export default function Home() {

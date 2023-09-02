@@ -1,20 +1,17 @@
-import React, { useEffect, useState } from "react";
-import QuotesText from "./QuotesText";
+import React, { useState } from "react";
 import Image from "next/image";
+import QuotesText from "./QuotesText";
 
 export default function QuotesContainer() {
-  const [quotesText, setQuotesText] = useState(Quotes[0].quote);
-  const [buttonHighlighted, setButtonHighLighted] = useState(0);
+  const [quotesText, setQuotesText] = useState(quotes[0].quote);
 
   return (
     <div className="bg-background-quotes flex justify-center p-20">
       <div className="flex items-center justify-center flex-col text-gray-200 font-serif">
         <h1 className="text-2xl flex py-6">Don't just take our word for it</h1>
         <QuotesText
-          Quotes={Quotes}
+          quotes={quotes}
           setQuotesText={setQuotesText}
-          buttonHighlighted={buttonHighlighted}
-          setButtonHighLighted={setButtonHighLighted}
         />
         <div className="flex flex-col items-center text-center py-20 text-2xl space-y-10">
           <Image
@@ -31,7 +28,7 @@ export default function QuotesContainer() {
   );
 }
 
-const Quotes = [
+const quotes = [
   {
     title: "/logo-gear-patrol-white.png",
     quote:
