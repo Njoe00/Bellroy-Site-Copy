@@ -10,8 +10,8 @@ export type Content = {
   imageAlt: string | undefined;
   index: number;
   name: string;
-  edition?: string | undefined;
   price: string;
+  edition?: string;
 };
 
 export default function ProductCard({
