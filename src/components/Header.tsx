@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Transition } from "@headlessui/react";
 import Image from "next/image";
 
-export default function Header(){
- 
+export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleDropDown = () => {
@@ -76,7 +75,8 @@ export default function Header(){
               </a>
             </li>
           ))}
-c        </ul>
+          c{" "}
+        </ul>
       </Transition>
     </div>
   );
@@ -87,7 +87,6 @@ const headerIcons = [
   "/header/magnifying-glass.png",
   "/header/trolley.png",
 ];
-
 
 const headerSubSections = [
   {
@@ -147,7 +146,6 @@ const headerSubSectionsContentBags = [
     image: "/Travel_Bags.avif",
   },
 ];
-
 
 export const headerSubSectionsContentWallets = [
   {
