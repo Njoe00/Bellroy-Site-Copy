@@ -69,6 +69,7 @@ export default function Header() {
                 height={75}
                 alt="Mens Bags"
                 style={{ height: "100%", width: "auto" }}
+                key={index}
               />
               <a href="#" className=" hover:text-orange-600">
                 {content.text}
