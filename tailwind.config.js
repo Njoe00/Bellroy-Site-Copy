@@ -29,6 +29,7 @@ module.exports = {
         "note-sleeve-terracotta": "#BC7049",
         "slider-colour-full": "#357176",
         "slider-colour-empty": "#d1e1e4",
+        "background-payments-colour" : "#DCD9D9",
       },
     },
   },

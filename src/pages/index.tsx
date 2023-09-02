@@ -17,6 +17,13 @@ import {
 import { RxDotFilled } from "react-icons/rx";
 >>>>>>> 9a2c4f1 (resolving PR comments)
 import QuotesContainer from "@/components/QuotesContainer";
+<<<<<<< HEAD
+=======
+import ProductCard from "../components/ProductCard";
+import Header from "../components/Header";
+import SliderImageWallet from "@/components/SliderImageWallet";
+import PaymentsContainer from "../components/PaymentsContainer";
+>>>>>>> e775417 (Feature/payments container (#7))
 
 export default function Home() {
   const [walletDataSet, setWalletDataSet] = useState(cardsOnlyProduct);
@@ -114,6 +121,7 @@ export default function Home() {
         </div>
       </div>
       <QuotesContainer />
+      <PaymentsContainer />
     </header>
   );
 }
