@@ -13,11 +13,7 @@ module.exports = {
 
   theme: {
     extend: {
-<<<<<<< HEAD
       display: ["group-hover"],
-=======
-      display : ["group-hover"],
->>>>>>> e77e380 (fixing merge conflicts)
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -41,8 +37,8 @@ module.exports = {
         "background-payments-colour": "#DCD9D9",
         "background-news-letter-colour": "#EFEAE5",
         "background-site-footer-colour": "#222222",
-        "background-payments-colour" : "#DCD9D9",
-        "background-news-letter-colour" : "#EFEAE5",
+        "background-payments-colour": "#DCD9D9",
+        "background-news-letter-colour": "#EFEAE5",
       },
     },
   },

@@ -1,23 +1,12 @@
 import React, { useEffect, useState } from "react";
-<<<<<<< HEAD
-import Image from "next/image";
 import ProductCard from "../components/ProductCard";
 import Header from "../components/Header";
-import SliderImageWallet from "@/components/SliderImageWallet";
 import SliderImage from "@/components/SliderImage";
 import WalletTypeButtons from "@/components/WalletTypeButtons";
 import QuotesContainer from "@/components/QuotesContainer";
 import PaymentsContainer from "../components/PaymentsContainer";
 import NewsLetterSignUp from "../components/NewsLetterSignUp";
 import SiteMapFooter from "@/components/SiteMapFooter";
-=======
-import ProductCard from "../components/ProductCard";
-import Header from "../components/Header";
-import VideoPlayerAndText from "@/components/VideoPlayerAndText";
-import BannerText from "@/components/BannerText";
-import SliderImage from "@/components/SliderImage";
-import WalletTypeButtons from "@/components/WalletTypeButtons";
->>>>>>> e77e380 (fixing merge conflicts)
 
 export default function Home() {
   const [walletDataSet, setWalletDataSet] = useState(cardsOnlyProduct);
@@ -46,20 +35,12 @@ export default function Home() {
         </h1>
       </div>
 
-<<<<<<< HEAD
       <SliderImage />
 
       <div className="bg-white flex flex-col items-center p-40">
         <h1 className="text-xl flex absolute h-40 w-auto">
           What do you carry in your wallet?
         </h1>
-=======
-      <BannerText />
-      <VideoPlayerAndText />
-      <SliderImage />
-
-      <div className="bg-white flex flex-col items-center p-40">
->>>>>>> e77e380 (fixing merge conflicts)
         <WalletTypeButtons
           imagesToShow={imagesToShow}
           setImagesToShow={setImagesToShow}
