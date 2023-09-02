@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 import ProductCard from "../components/ProductCard";
 import Header from "../components/Header";
-import VideoPlayerAndText from "@/components/VideoPlayerAndText";
-import BannerText from "@/components/BannerText";
+import SliderImageWallet from "@/components/SliderImageWallet";
 import SliderImage from "@/components/SliderImage";
 import WalletTypeButtons from "@/components/WalletTypeButtons";
 
@@ -27,14 +27,63 @@ export default function Home() {
       </span>
       <Header />
 
-      <div className="h-screen bg-background-main">
+      <div className="h-screen flex flex-col bg-background-main">
         <h1 className="font-serif flex text-white text-8xl p-16 justify-center">
           Slim Your Wallet
         </h1>
+        <SliderImageWallet />
+      </div>
+      <div className="bg-gray-200 flex justify-evenly py-8 p-8">
+        <div className="flex items-center pl-4">
+          <div>
+            <Image
+              src="/check-mark.png"
+              alt="check-mark"
+              width={30}
+              height={10}
+              style={{ height: "100%", width: "auto" }}
+            />
+          </div>
+          <div>
+            <span className="text-base text-background-main pl-4">
+              3 year warranty
+            </span>
+          </div>
+        </div>
+        <div className="flex items-center -mx-96">
+          <div>
+            <Image
+              src="/leather.png"
+              alt="check-mark"
+              width={30}
+              height={10}
+              style={{ height: "100%", width: "auto" }}
+            />
+          </div>
+          <div>
+            <span className="text-base text-background-main pl-4">
+              Environmentally certified leather
+            </span>
+          </div>
+        </div>
+        <div className="flex items-center">
+          <div>
+            <Image
+              src="/trophy.png"
+              alt="check-mark"
+              width={30}
+              height={10}
+              style={{ height: "100%", width: "auto" }}
+            />
+          </div>
+          <div>
+            <span className="text-base text-background-main pl-4">
+              Award-winning service
+            </span>
+          </div>
+        </div>
       </div>
 
-      <BannerText />
-      <VideoPlayerAndText />
       <SliderImage />
 
       <div className="bg-white flex flex-col items-center p-40">
