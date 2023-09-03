@@ -83,12 +83,7 @@ export default function Header() {
           </a>
           {headerIcons.map((image, index) => (
             <span className="flex" key={index}>
-              <Image
-                src={image}
-                alt="mail"
-                width={18}
-                height={18}
-              />
+              <Image src={image} alt="mail" width={18} height={18} />
             </span>
           ))}
         </div>

@@ -13,7 +13,13 @@ export type Content = {
   price: string;
 };
 
-export default function ProductCard({ content }: { content: Content }) {
+export default function ProductCard({
+  content,
+  index,
+}: {
+  content: Content;
+  index: number;
+}) {
   const [selectedColour, setSelectedColour] = useState("black");
   const [cardImage, setCardImage] = useState<string | undefined>(
     content.image[0]
@@ -29,7 +35,6 @@ export default function ProductCard({ content }: { content: Content }) {
       setOpacity(1);
     }, 350);
   };
-
   const toggleIsFlippedCard = () => {
     setIsCardFlipped(!isCardFlipped);
   };
@@ -53,6 +58,7 @@ export default function ProductCard({ content }: { content: Content }) {
           toggleIsFlippedCard={toggleIsFlippedCard}
           changeImage={changeImage}
           content={content}
+          index={index}
         />
       </div>
       <div className="flex flex-col w-[413.33px] h-[508px] items-center relative bg-gray-100">
