@@ -26,7 +26,6 @@ export default function ProductColourButton({
             onClick={() => {
               setImageIndex(index);
               setSelectedColour(colour);
-              setCardImage(content.image[index]);
             }}
             key={index}
             className={`${bgColour} h-4 w-4 rounded-full outline-1 outline outline-offset-2 ${
