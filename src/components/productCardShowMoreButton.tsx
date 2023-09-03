@@ -12,6 +12,7 @@ type ProductCardProps = {
   changeImage?: (newImage?: string) => void;
   toggleIsFlippedCard: () => void;
   index: number;
+  imageIndex: number;
 };
 
 export default function productCardShowMoreButton({
@@ -19,12 +20,12 @@ export default function productCardShowMoreButton({
   isCardFlipped,
   changeImage,
   toggleIsFlippedCard,
-  index,
+  imageIndex,
 }: ProductCardProps) {
-  const frontProductImage = content.image[index];
+  const frontProductImage = content.image[imageIndex];
   const backProductImage = (content: string[] | undefined) => {
     if (content !== undefined) {
-      return content[index];
+      return content[imageIndex];
     }
   };
 

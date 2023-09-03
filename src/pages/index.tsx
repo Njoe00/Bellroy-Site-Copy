@@ -371,7 +371,7 @@ const cardsOnlyProduct = [
     ],
     backOfCardImage: [
       "/card-Sleeves/card-Sleeve-Black_Alt.avif",
-      "/card-Sleeves/card-Sleeve_Ocean_Alt.avif",
+      "/card-Sleeves/card-Sleeve_Ocean_alt.avif",
       "/card-Sleeves/card-Sleeve_Gray_Alt.avif",
       "/card-Sleeves/card-Sleeve_Teal_Alt.avif",
       "/card-Sleeves/card-Sleeve_Hazel_Alt.avif",

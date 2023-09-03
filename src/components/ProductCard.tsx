@@ -26,6 +26,7 @@ export default function ProductCard({
   );
   const [isCardFlipped, setIsCardFlipped] = useState(true);
   const [opacity, setOpacity] = useState(1);
+  const [imageIndex, setImageIndex] = useState(0);
 
   const changeImage = (newImage?: string) => {
     setOpacity(0);
@@ -43,7 +44,7 @@ export default function ProductCard({
     ? `[transform:rotateY(180deg)]`
     : `[transform:-rotateY(180deg)]`;
 
-  const cardImageIsValid = (image?: string) => {
+  const cardImageIsDefined = (image?: string) => {
     if (image !== undefined) {
       return image;
     } else {
@@ -59,6 +60,7 @@ export default function ProductCard({
           changeImage={changeImage}
           content={content}
           index={index}
+          imageIndex={imageIndex}
         />
       </div>
       <div className="flex flex-col w-[413.33px] h-[508px] items-center relative bg-gray-100">
@@ -68,7 +70,7 @@ export default function ProductCard({
           >
             <Image
               className="transition-all ease-in-out duration-300"
-              src={cardImageIsValid(cardImage) as string}
+              src={cardImageIsDefined(cardImage) as string}
               height={300}
               width={300}
               alt="cardImage"
@@ -81,6 +83,7 @@ export default function ProductCard({
             selectedColour={selectedColour}
             setSelectedColour={setSelectedColour}
             setCardImage={setCardImage}
+            setImageIndex={setImageIndex}
           />
           <ProudctNameAndEdition content={content} />
         </div>

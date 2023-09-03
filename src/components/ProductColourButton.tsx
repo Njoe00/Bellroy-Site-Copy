@@ -6,6 +6,7 @@ type ProductColourButtonProps = {
   selectedColour: string;
   setSelectedColour: React.Dispatch<React.SetStateAction<string>>;
   setCardImage: React.Dispatch<React.SetStateAction<string | undefined>>;
+  setImageIndex: React.Dispatch<React.SetStateAction<number>>;
 };
 
 export default function ProductColourButton({
@@ -13,6 +14,7 @@ export default function ProductColourButton({
   selectedColour,
   setSelectedColour,
   setCardImage,
+  setImageIndex,
 }: ProductColourButtonProps) {
   return (
     <div className="static p-2 flex flex-row justify-center space-x-2 ">
@@ -24,6 +26,7 @@ export default function ProductColourButton({
             onClick={() => {
               setSelectedColour(colour);
               setCardImage(content.image[index]);
+              setImageIndex(index);
             }}
             key={index}
             className={`${bgColour} h-4 w-4 rounded-full outline-1 outline outline-offset-2 ${
