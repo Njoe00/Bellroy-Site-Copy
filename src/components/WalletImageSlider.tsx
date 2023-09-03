@@ -26,8 +26,8 @@ export default function WalletImageSlider({
   }%`;
 
   return (
-    <div className="flex flex-col justify-center w-1/2 z-40 absolute bottom-0">
-      <div className="relative">
+    <div className="flex flex-col justify-center w-1/2 z-60 absolute">
+      <div className="relative bottom-20">
         <div
           className="absolute bg-slider-colour-full h-2 z-40 transition-all	ease-in duration-200"
           style={{

@@ -27,7 +27,7 @@ export default function WalletImageSlider({
 
   return (
     <div className="flex-nowrap flex-col justify-center w-full float-left z-40 absolute bottom-0">
-      <div className="relative flex text-center">
+      <div className="flex text-center">
         <input
           type="range"
           className="w-full absolute appearance-none h-0 -bottom-2 outline-none z-10"
