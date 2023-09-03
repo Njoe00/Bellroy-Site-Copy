@@ -7,6 +7,7 @@ type ProductColourButtonProps = {
   setSelectedColour: React.Dispatch<React.SetStateAction<string>>;
   setCardImage: React.Dispatch<React.SetStateAction<string | undefined>>;
   setImageIndex: React.Dispatch<React.SetStateAction<number>>;
+  setIsCardFlipped: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 export default function ProductColourButton({
@@ -15,18 +16,20 @@ export default function ProductColourButton({
   setSelectedColour,
   setCardImage,
   setImageIndex,
+  setIsCardFlipped,
 }: ProductColourButtonProps) {
   return (
     <div className="static p-2 flex flex-row justify-center space-x-2 ">
       {content.colours.map((colour, index) => {
         const outlineColour = `outline-${selectedColour}`;
-        const bgColour = `bg-${colour}`;
+        const bgColour = `${colour}`;
         return (
           <button
             onClick={() => {
               setImageIndex(index);
               setSelectedColour(colour);
               setCardImage(content.image[index]);
+              setIsCardFlipped(true);
             }}
             key={index}
             className={`${bgColour} h-4 w-4 rounded-full outline-1 outline outline-offset-2 ${

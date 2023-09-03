@@ -34,7 +34,7 @@ export default function ProductCard({
     setTimeout(() => {
       setCardImage(newImage);
       setOpacity(1);
-    }, 425);
+    }, 350);
   };
   const toggleIsFlippedCard = () => {
     setIsCardFlipped(!isCardFlipped);
@@ -74,7 +74,7 @@ export default function ProductCard({
               height={300}
               width={300}
               alt="cardImage"
-              style={{ opacity }}
+              style={{ opacity, height: "auto", width: "auto" }}
             />
           </div>
 
@@ -84,6 +84,7 @@ export default function ProductCard({
             setSelectedColour={setSelectedColour}
             setCardImage={setCardImage}
             setImageIndex={setImageIndex}
+            setIsCardFlipped={setIsCardFlipped}
           />
           <ProudctNameAndEdition content={content} />
         </div>

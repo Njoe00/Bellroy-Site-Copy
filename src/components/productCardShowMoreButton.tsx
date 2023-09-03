@@ -29,17 +29,18 @@ export default function productCardShowMoreButton({
     }
   };
 
+  console.log(isCardFlipped, "line 32--------");
   return (
     <div className="z-50">
       <button
         className="group-hover:visible invisible flex flex-row absolute top-0 right-0 py-1 px-2 text-xs bg-gray-300"
         onClick={() => {
-          toggleIsFlippedCard();
           changeImage?.(
             isCardFlipped
               ? backProductImage(content.backOfCardImage)
               : frontProductImage
           );
+          toggleIsFlippedCard();
         }}
       >
         {isCardFlipped ? "SHOW MORE" : "CLOSE"}

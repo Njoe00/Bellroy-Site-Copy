@@ -355,11 +355,11 @@ const cardsOnlyProduct = [
   {
     name: "Card Sleeve",
     colours: [
-      "black",
-      "card-sleeve-ocean",
-      "card-sleeve-gray",
-      "card-sleeve-teal",
-      "card-sleeve-hazel",
+      "bg-black",
+      "bg-card-sleeve-ocean",
+      "bg-card-sleeve-gray",
+      "bg-card-sleeve-teal",
+      "bg-card-sleeve-hazel",
     ],
     price: "C$69",
     image: [
