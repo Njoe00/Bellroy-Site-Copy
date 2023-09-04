@@ -43,7 +43,7 @@ export default function ProductCard({
       setTimeout(() => {
         setOpacity(1);
       }, 0);
-    }, 600);
+    }, 750);
   };
   const toggleIsFlippedCard = () => {
     setIsCardFlipped(!isCardFlipped);
