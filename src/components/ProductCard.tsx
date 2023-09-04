@@ -28,11 +28,18 @@ export default function ProductCard({
   const [opacity, setOpacity] = useState(1);
   const [imageIndex, setImageIndex] = useState(0);
 
+  const cardImageIsDefined = (image?: string) => {
+    if (image !== undefined) {
+      return image;
+    } else {
+      return "cardImage";
+    }
+  };
   const changeImage = (newImage?: string) => {
     setOpacity(0);
-    setCardImage(newImage);
 
     setTimeout(() => {
+      setCardImage(newImage);
       setOpacity(1);
     }, 425);
   };
@@ -44,13 +51,6 @@ export default function ProductCard({
     ? `[transform:rotateY(180deg)]`
     : `[transform:-rotateY(180deg)]`;
 
-  const cardImageIsDefined = (image?: string) => {
-    if (image !== undefined) {
-      return image;
-    } else {
-      return "cardImage";
-    }
-  };
   return (
     <div className=" group flex flex-col flex-wrap justify-center border-4 bg-gray-100 border-white">
       <div className="flex flex-row relative justify-center">
