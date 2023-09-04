@@ -29,7 +29,7 @@ export default function ProductCard({
   const [imageIndex, setImageIndex] = useState(0);
 
   const cardImageIsDefined = (image?: string) => {
-    if (image !== undefined) {
+    if (image) {
       return image;
     } else {
       return "cardImage";
@@ -37,11 +37,12 @@ export default function ProductCard({
   };
   const changeImage = (newImage?: string) => {
     setOpacity(0);
+    setCardImage(newImage);
 
     setTimeout(() => {
+      setOpacity(0);
       setOpacity(1);
-      setCardImage(newImage);
-    }, 425);
+    }, 600);
   };
   const toggleIsFlippedCard = () => {
     setIsCardFlipped(!isCardFlipped);
@@ -74,7 +75,7 @@ export default function ProductCard({
               height={300}
               width={300}
               alt="cardImage"
-              style={{ opacity, height: "auto", width: "auto" }}
+              style={{ opacity: opacity, height: "auto", width: "auto" }}
             />
           </div>
 
