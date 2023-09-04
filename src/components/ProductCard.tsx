@@ -71,6 +71,7 @@ export default function ProductCard({
             className={`${rotateCardImage} ease-in-out [transform-style-:preserve-3d] [backface-visblity:hidden] transition-all duration-1000`}
           >
             <Image
+              key={imageIndex}
               className="transition-all ease-in-out duration-300"
               src={cardImageIsDefined(cardImage) as string}
               height={300}
