@@ -72,7 +72,7 @@ export default function ProductCard({
           >
             <Image
               key={imageIndex}
-              className="transition-all ease-in-out duration-300"
+              className="transition-all duration-300"
               src={cardImageIsDefined(cardImage) as string}
               height={300}
               width={300}
