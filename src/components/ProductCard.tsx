@@ -29,10 +29,10 @@ export default function ProductCard({
   const [imageIndex, setImageIndex] = useState(0);
 
   const changeImage = (newImage?: string) => {
+    setCardImage(newImage);
     setOpacity(0);
 
     setTimeout(() => {
-      setCardImage(newImage);
       setOpacity(1);
     }, 350);
   };
