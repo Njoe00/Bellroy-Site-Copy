@@ -37,11 +37,12 @@ export default function ProductCard({
   };
   const changeImage = (newImage?: string) => {
     setOpacity(0);
-    setCardImage(newImage);
 
     setTimeout(() => {
-      setOpacity(0);
-      setOpacity(1);
+      setCardImage(newImage);
+      setTimeout(() => {
+        setOpacity(1);
+      }, 0);
     }, 600);
   };
   const toggleIsFlippedCard = () => {
