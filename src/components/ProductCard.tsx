@@ -43,7 +43,7 @@ export default function ProductCard({
 
     setTimeout(() => {
       setOpacity(1);
-    }, 700);
+    }, 600);
   };
   const toggleIsFlippedCard = () => {
     setIsCardFlipped(!isCardFlipped);
@@ -68,7 +68,7 @@ export default function ProductCard({
       <div className="flex flex-col w-[413.33px] h-[508px] items-center relative bg-gray-100">
         <div className="top-10 relative">
           <div
-            className={`${rotateCardImage} ease-in-out [transform-style-:preserve-3d] [backface-visblity:hidden] transition-all duration-1000`}
+            className={`${rotateCardImage} ease-in-out [transform-style-:preserve-3d] [backface-visblity:hidden] transition-all duration-900`}
           >
             <Image
               key={imageIndex}
