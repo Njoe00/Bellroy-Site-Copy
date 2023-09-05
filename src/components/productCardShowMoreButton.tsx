@@ -29,7 +29,6 @@ export default function productCardShowMoreButton({
     }
   };
 
-  console.log(isCardFlipped, "line 32--------");
   return (
     <div className="z-50">
       <button

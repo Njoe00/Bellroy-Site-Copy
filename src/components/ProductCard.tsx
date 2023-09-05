@@ -40,10 +40,11 @@ export default function ProductCard({
 
     setTimeout(() => {
       setCardImage(newImage);
-      setTimeout(() => {
-        setOpacity(1);
-      }, 0);
-    }, 750);
+    }, 100);
+
+    setTimeout(() => {
+      setOpacity(1);
+    }, 600);
   };
   const toggleIsFlippedCard = () => {
     setIsCardFlipped(!isCardFlipped);
@@ -72,7 +73,7 @@ export default function ProductCard({
           >
             <Image
               key={imageIndex}
-              className="transition-all duration-300"
+              className="transition-all ease-in-out duration-300"
               src={cardImageIsDefined(cardImage) as string}
               height={300}
               width={300}
