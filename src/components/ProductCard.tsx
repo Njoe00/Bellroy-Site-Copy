@@ -40,7 +40,7 @@ export default function ProductCard({
 
     setTimeout(() => {
       setCardImage(newImage);
-    }, 200);
+    }, 400);
 
     setTimeout(() => {
       setOpacity(1);
