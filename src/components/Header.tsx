@@ -53,6 +53,7 @@ export default function Header() {
             alt="test"
             style={{ height: "100%", width: "auto" }}
           />
+
           <div className="relative w-max space-x-14 flex top-2">
             {headerSubSections.map((section, index) => (
               <button
@@ -82,7 +83,7 @@ export default function Header() {
           </a>
           {headerIcons.map((image, index) => (
             <span className="flex" key={index}>
-              <Image src={image} alt="mail" width={16} height={16} />
+              <Image src={image} alt="mail" width={18} height={18} />
             </span>
           ))}
         </div>
