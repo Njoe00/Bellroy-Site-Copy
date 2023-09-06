@@ -74,7 +74,6 @@ export default function ProductCard({
             className={`${rotateCardImage} ease-in-out [transform-style-:preserve-3d] [backface-visblity:hidden] transition-all duration-[1350ms]`}
           >
             <Image
-              key={imageIndex}
               className="transition-all ease-in-out"
               src={cardImageIsDefined(cardImage) as string}
               height={300}
@@ -88,9 +87,11 @@ export default function ProductCard({
             content={content}
             selectedColour={selectedColour}
             setSelectedColour={setSelectedColour}
-            setCardImage={setCardImage}
             setImageIndex={setImageIndex}
+            isCardFlipped={isCardFlipped}
+            changeImage={changeImage}
             setIsCardFlipped={setIsCardFlipped}
+            setCardImage={setCardImage}
           />
           <ProudctNameAndEdition content={content} />
         </div>
