@@ -36,14 +36,17 @@ export default function ProductCard({
     }
   };
   const changeImage = (newImage?: string) => {
-    setOpacity(0);
+    setTimeout(() => {
+      setOpacity(0);
+    }, 450);
+
     setTimeout(() => {
       setCardImage(newImage);
-    }, 300);
+    }, 600);
 
     setTimeout(() => {
       setOpacity(1);
-    }, 450);
+    }, 700);
   };
   const toggleIsFlippedCard = () => {
     setIsCardFlipped(!isCardFlipped);
@@ -68,16 +71,16 @@ export default function ProductCard({
       <div className="flex flex-col w-[413.33px] h-[508px] items-center relative bg-gray-100">
         <div className="top-10 relative">
           <div
-            className={`${rotateCardImage} ease-in-out [transform-style-:preserve-3d] [backface-visblity:hidden] transition-all duration-[900ms]`}
+            className={`${rotateCardImage} ease-in-out [transform-style-:preserve-3d] [backface-visblity:hidden] transition-all duration-[1200ms]`}
           >
             <Image
               key={imageIndex}
-              className="transition-all ease-in-out duration-300"
+              className="transition-all ease-in-out"
               src={cardImageIsDefined(cardImage) as string}
               height={300}
               width={300}
               alt="cardImage"
-              style={{ opacity: opacity, height: "auto", width: "auto" }}
+              style={{ opacity: opacity }}
             />
           </div>
 
