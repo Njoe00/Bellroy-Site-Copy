@@ -161,6 +161,13 @@ export default function Home() {
           width="190"
           alt="alt"
         />
+        <Image
+          className="z-50 absolute max-w-[190px] flex left-0 mt-[400px]"
+          src="/card-Sleeves/coinsx3.avif"
+          height="397"
+          width="190"
+          alt="alt"
+        />
         <div className="relative flex flex-col py-28 justify-center bg-gray-100 items-center z-40">
           <div className="flex flex-row space-x-4 drop-shadow-lg">
             <div>
