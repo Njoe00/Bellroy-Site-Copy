@@ -162,13 +162,16 @@ export default function Home() {
           alt="alt"
         />
         <Image
-          className="z-50 absolute max-w-[190px] flex left-0 mt-[400px]"
+          className="z-50 absolute max-w-[190px] flex left-0 mt-[360px]"
           src="/card-Sleeves/coinsx3.avif"
           height="397"
           width="190"
           alt="alt"
         />
-        <div className="relative flex flex-col py-28 justify-center bg-gray-100 items-center z-40">
+        <div className="relative flex flex-col pt-20 pb-40 justify-center bg-gray-100 items-center z-40 bottom-triangle-container">
+          <div className="text-[26px] font-serif">
+            Thoughtful designs, made to last
+          </div>
           <div className="flex flex-row space-x-4 drop-shadow-lg">
             <div>
               <div
@@ -197,14 +200,14 @@ export default function Home() {
               </div>
             </div>
           </div>
+
           <div className="absolute top-[50%] -translate-x-[-500px] translate-y-[-40%] left-2 text-2xl rounded-full p-2 text-gray-300 cursor-pointer">
             <BsChevronCompactLeft onClick={prevSlide} size="40" />
           </div>
           <div className="absolute top-[50%] -translate-x-[500px] translate-y-[-60%] right-1 text-2xl rounded-full p-2 text-gray-300 cursor-pointer">
             <BsChevronCompactRight onClick={nextSlide} size="40" />
           </div>
-
-          <div className="flex absolute space-x-2 justify-center bottom-4 items-center">
+          <div className="z-50 flex pt-10 space-x-2 justify-center items-center">
             {slidesSetOne.map((slide, slideIndex) => (
               <div
                 key={slideIndex}

@@ -16,6 +16,10 @@
   }
 }
 
+.bottom-triangle-container {
+  clip-path: polygon(100% 0%, 100% 80%, 50% 90%, 50% 90%, 0 80%, 0 0);
+}
+
 body {
   /* color: rgb(var(--foreground-rgb));
   background: linear-gradient(
