@@ -169,10 +169,10 @@ export default function Home() {
           alt="alt"
         />
         <div className="relative flex flex-col pt-20 pb-40 justify-center bg-gray-100 items-center z-40 bottom-triangle-container">
-          <div className="text-[26px] font-serif">
+          <div className="flex absolute text-[26px] font-serif top-10">
             Thoughtful designs, made to last
           </div>
-          <div className="flex flex-row space-x-4 drop-shadow-lg">
+          <div className="flex flex-row space-x-4 drop-shadow-lg py-10">
             <div>
               <div
                 style={{
@@ -201,10 +201,10 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="absolute top-[50%] -translate-x-[-500px] translate-y-[-40%] left-2 text-2xl rounded-full p-2 text-gray-300 cursor-pointer">
+          <div className="absolute top-[50%] -translate-x-[-500px] translate-y-[-110%] left-2 text-2xl rounded-full p-2 text-gray-300 cursor-pointer">
             <BsChevronCompactLeft onClick={prevSlide} size="40" />
           </div>
-          <div className="absolute top-[50%] -translate-x-[500px] translate-y-[-60%] right-1 text-2xl rounded-full p-2 text-gray-300 cursor-pointer">
+          <div className="absolute top-[50%] -translate-x-[500px] translate-y-[-100%] right-1 text-2xl rounded-full p-2 text-gray-300 cursor-pointer">
             <BsChevronCompactRight onClick={nextSlide} size="40" />
           </div>
           <div className="z-50 flex pt-10 space-x-2 justify-center items-center">
