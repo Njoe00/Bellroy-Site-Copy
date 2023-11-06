@@ -30,7 +30,7 @@ export default function WalletImageSlider({
       <div className="flex text-center">
         <input
           type="range"
-          className="w-full absolute appearance-none h-0 -bottom-2 outline-none z-10"
+          className="w-full absolute appearance-none h-0 -bottom-2 z-10"
           min={0}
           max={sliderImage.length - 1}
           step={0.01}

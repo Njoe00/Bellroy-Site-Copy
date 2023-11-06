@@ -29,7 +29,7 @@ export default function WalletImageSlider({
     <div className="flex flex-col justify-center w-1/2 z-60 absolute">
       <div className="relative bottom-20">
         <div
-          className="absolute bg-slider-colour-full h-2 z-40 transition-all	ease-in duration-200"
+          className="absolute bg-slider-colour-full h-2 z-40 transition-all ease-in-out duration-250"
           style={{
             width: filledWidthCalucation,
           }}
@@ -44,7 +44,7 @@ export default function WalletImageSlider({
           value={sliderValue}
           onChange={handleEventChange}
         />
-        <div className="flex absolute -bottom-6 flex-row justify-between w-full z-30">
+        <div className="flex absolute -bottom-[22px] flex-row justify-between w-full z-30">
           {sliderImage.map((image, index) => (
             <div
               key={index}
